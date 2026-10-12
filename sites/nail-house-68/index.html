@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nail House by Aishani — Sector 68, Mohali | Nails, Lashes &amp; Skin</title>
+<meta name="description" content="Nail House by Aishani, VRS District One, Sector 68, Mohali. 5.0 from 184 Google reviews. Nail art, extensions, facials — home services available.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blush:#faf1ec; --blush2:#f4e4da; --terra:#b4574a; --terra-deep:#96443a;
+  --ink:#2c2320; --muted:#8a7a72; --line:rgba(180,87,74,.2); --card:#fffdfb;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden;scroll-behavior:smooth}
+body{overflow-x:hidden;background:var(--blush);color:var(--ink);font-family:'Karla',system-ui,sans-serif;font-weight:300;line-height:1.75;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.2}
+img{max-width:100%;display:block}
+a{color:inherit}
+.narrow{max-width:760px;margin:0 auto;padding:0 24px}
+.wide{max-width:1080px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--terra);font-weight:600}
+.center{text-align:center}
+.rule{width:56px;height:2px;background:var(--terra);margin:22px auto;opacity:.7}
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(250,241,236,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1080px;margin:0 auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;text-decoration:none;letter-spacing:.04em}
+.brand em{font-style:italic;color:var(--terra)}
+.nav-links{display:flex;gap:24px;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}
+.nav-links a{text-decoration:none;color:var(--muted)}
+.nav-links a:hover{color:var(--terra)}
+.nav-cta{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;background:var(--terra);color:#fff;padding:10px 20px;border-radius:999px;text-decoration:none;font-weight:600}
+/* HERO */
+.hero{padding:84px 0 20px;text-align:center}
+.hero h1{font-size:clamp(2.8rem,6.5vw,4.8rem);margin:20px 0 6px}
+.hero h1 em{font-style:italic;color:var(--terra)}
+.hero .tag{font-size:.95rem;color:var(--muted);letter-spacing:.06em}
+.hero-portrait{margin:48px auto 0;max-width:420px;position:relative}
+.hero-portrait img{border-radius:210px 210px 18px 18px;height:520px;width:100%;object-fit:cover;box-shadow:0 30px 70px rgba(150,68,58,.22)}
+.hero-portrait figcaption{margin-top:16px;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.hero-stats{display:flex;justify-content:center;gap:44px;margin:44px 0 8px;flex-wrap:wrap}
+.hstat b{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--terra);display:block}
+.hstat span{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+/* MENU CARD */
+section{padding:72px 0}
+.menu-card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:56px 52px;box-shadow:0 24px 60px rgba(150,68,58,.1);position:relative}
+.menu-card::before{content:"";position:absolute;inset:12px;border:1px solid var(--line);border-radius:3px;pointer-events:none}
+.menu-item{display:flex;align-items:baseline;gap:14px;padding:20px 0;border-bottom:1px dotted var(--line)}
+.menu-item:last-of-type{border-bottom:none}
+.menu-item .nm{font-family:'Cormorant Garamond',serif;font-size:1.4rem}
+.menu-item .dots{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-6px)}
+.menu-item .pr{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--terra);white-space:nowrap}
+.menu-item .nt{width:100%;font-size:.85rem;color:var(--muted)}
+.footnote{font-size:.8rem;color:var(--muted);margin-top:22px;text-align:center}
+/* GALLERY */
+.gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:44px}
+.gal-grid figure{border-radius:12px;overflow:hidden;position:relative;background:var(--card)}
+.gal-grid img{height:380px;width:100%;object-fit:cover;transition:transform .6s}
+.gal-grid figure:hover img{transform:scale(1.04)}
+.gal-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 14px;background:linear-gradient(transparent,rgba(44,35,32,.72));color:#fff;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase}
+/* HOME SERVICE STRIP */
+.strip{background:var(--terra);color:#fff;border-radius:14px;padding:48px 44px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-top:72px}
+.strip h3{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:6px}
+.strip p{color:rgba(255,255,255,.85);font-size:.95rem}
+.strip a{display:inline-block;background:#fff;color:var(--terra-deep);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:15px 30px;border-radius:999px;text-decoration:none;white-space:nowrap}
+/* REVIEWS */
+.rev-list{margin-top:44px;display:grid;gap:18px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:30px 32px}
+.rev .stars{color:var(--terra);letter-spacing:.22em;margin-bottom:10px}
+.rev p{color:var(--muted);font-size:.94rem}
+.rev b{color:var(--ink);font-weight:500}
+/* CONTACT */
+.contact-card{background:var(--ink);color:#f3e9e2;border-radius:14px;padding:52px 48px;text-align:center}
+.contact-card h2{color:#fff}
+.contact-card address{font-style:normal;color:#c9b6ac;line-height:2.1;margin:18px 0 26px}
+.contact-card address b{color:#fff;font-weight:500}
+.contact-card a.ig{color:#f0b9a8}
+.btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:15px 32px;border-radius:999px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;font-weight:600;min-height:52px}
+.btn-solid{background:var(--terra);color:#fff}
+.btn-line{border:1px solid rgba(243,233,226,.4);color:#f3e9e2}
+.sticky-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(250,241,236,.97);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.sticky-bar a{flex:1;text-align:center;padding:16px 8px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;font-weight:600;min-height:56px;display:flex;align-items:center;justify-content:center}
+.sticky-bar a.dm{background:var(--terra);color:#fff}
+.sticky-bar a.dir{color:var(--terra-deep)}
+footer{padding:40px 24px 120px;text-align:center;color:var(--muted);font-size:.84rem}
+footer .demo{margin-top:8px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase}
+@media(max-width:900px){
+  .nav-links{display:none}
+  .menu-card{padding:40px 26px}
+  .menu-card::before{inset:8px}
+  .gal-grid img{height:260px}
+  .strip{grid-template-columns:1fr;padding:36px 28px;text-align:left}
+  .hero-portrait img{height:420px}
+  section{padding:54px 0}
+  .sticky-bar{display:flex}
+  footer{padding-bottom:150px}
+}
+@media(max-width:560px){.gal-grid{grid-template-columns:1fr}.gal-grid img{height:320px}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#">Nail House <em>by Aishani</em></a>
+    <div class="nav-links">
+      <a href="#menu">Menu</a><a href="#gallery">Work</a><a href="#reviews">Reviews</a><a href="#contact">Visit</a>
+    </div>
+    <a class="nav-cta" href="https://ig.me/m/nail_house_byaishani" target="_blank" rel="noopener">DM to Book</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="narrow">
+    <span class="eyebrow">Nail studio · Sector 68, Mohali</span>
+    <h1>Small details,<br><em>done beautifully.</em></h1>
+    <div class="rule"></div>
+    <p class="tag">A boutique nail studio by Aishani — art, extensions and skin, with home visits across Mohali.</p>
+    <figure class="hero-portrait">
+      <img src="https://files.catbox.moe/vv4ihs.jpg" alt="Nail House by Aishani studio, Sector 68 Mohali">
+      <figcaption>Our studio</figcaption>
+    </figure>
+    <div class="hero-stats">
+      <div class="hstat"><b>5.0</b><span>Google rating</span></div>
+      <div class="hstat"><b>184</b><span>Happy reviews</span></div>
+      <div class="hstat"><b>Home</b><span>Visits available</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="menu">
+  <div class="narrow">
+    <div class="center">
+      <span class="eyebrow">The menu</span>
+      <h2 style="font-size:clamp(2rem,4.4vw,2.9rem);margin-top:12px">Services &amp; pricing</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-item">
+        <span class="nm">Classic Nail Art</span><span class="dots"></span><span class="pr">₹599*</span>
+        <span class="nt">Hand-painted designs, French tips, minimal art — per set.</span>
+      </div>
+      <div class="menu-item">
+        <span class="nm">Nail Extensions</span><span class="dots"></span><span class="pr">₹1,499*</span>
+        <span class="nt">Acrylic / gel extensions with shape of your choice.</span>
+      </div>
+      <div class="menu-item">
+        <span class="nm">Gel Polish Manicure</span><span class="dots"></span><span class="pr">₹799*</span>
+        <span class="nt">Long-wear gel colour with cuticle care.</span>
+      </div>
+      <div class="menu-item">
+        <span class="nm">Bridal Nail Package</span><span class="dots"></span><span class="pr">₹2,499*</span>
+        <span class="nt">Extensions + bridal art + trial, matched to your outfit.</span>
+      </div>
+      <div class="menu-item">
+        <span class="nm">Signature Facial</span><span class="dots"></span><span class="pr">₹1,299*</span>
+        <span class="nt">Deep cleanse and glow facial for all skin types.</span>
+      </div>
+      <p class="footnote">* Indicative pricing — final quote confirmed on Instagram DM. Home visits available across Mohali.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="padding-top:0">
+  <div class="wide">
+    <div class="center">
+      <span class="eyebrow">Portfolio</span>
+      <h2 style="font-size:clamp(2rem,4.4vw,2.9rem);margin-top:12px">Signature looks</h2>
+      <div class="rule"></div>
+      <p style="color:var(--muted);max-width:52ch;margin:0 auto">A glimpse of the finishes Nail House is known for. Follow @nail_house_byaishani for daily work.</p>
+    </div>
+    <div class="gal-grid">
+      <figure><img src="https://files.catbox.moe/uiofwr.jpg" alt="Elegant nail art"><figcaption>Signature looks</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/kodtqc.jpg" alt="Nail design"><figcaption>Signature looks</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/znorvu.jpg" alt="Manicure finish"><figcaption>Signature looks</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/7srmd6.jpg" alt="Nail art detail"><figcaption>Signature looks</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:0">
+  <div class="narrow">
+    <div class="center">
+      <span class="eyebrow">Reviews</span>
+      <h2 style="font-size:clamp(2rem,4.4vw,2.9rem);margin-top:12px">Loved, 184 times over</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="rev-list">
+      <div class="rev"><div class="stars">★★★★★</div><p><b>Detail-obsessed artistry.</b><br>Reviewers consistently praise the precision of the nail art and how long sets last without chipping.</p></div>
+      <div class="rev"><div class="stars">★★★★★</div><p><b>A calm, personal studio.</b><br>Guests mention unhurried appointments and honest advice on what suits their nails.</p></div>
+      <div class="rev"><div class="stars">★★★★★</div><p><b>Home service done right.</b><br>At-home appointments get special mention — professional setup, no compromise on quality.</p></div>
+    </div>
+    <div class="strip">
+      <div>
+        <h3 class="serif">Prefer pampering at home?</h3>
+        <p>Nail House offers home services across Mohali — same studio finish, your living room.</p>
+      </div>
+      <a href="https://ig.me/m/nail_house_byaishani" target="_blank" rel="noopener">Book home visit</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:0">
+  <div class="narrow">
+    <div class="contact-card">
+      <span class="eyebrow" style="color:#f0b9a8">Visit us</span>
+      <h2 style="font-size:clamp(2rem,4vw,2.8rem);margin-top:12px">Find the studio</h2>
+      <address>
+        <b>Nail House by Aishani</b><br>
+        VRS District One, Sector 68<br>
+        SAS Nagar, Mohali<br><br>
+        Instagram: <a class="ig" href="https://www.instagram.com/nail_house_byaishani" target="_blank" rel="noopener">@nail_house_byaishani</a><br>
+        Booking: Instagram DM · Open all days, 10 AM – 8 PM
+      </address>
+      <div class="btn-row">
+        <a class="btn btn-solid" href="https://ig.me/m/nail_house_byaishani" target="_blank" rel="noopener">DM to book</a>
+        <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=Nail+House+by+Aishani+VRS+District+One+Sector+68+Mohali" target="_blank" rel="noopener">Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sticky-bar">
+  <a class="dm" href="https://ig.me/m/nail_house_byaishani" target="_blank" rel="noopener">DM to Book</a>
+  <a class="dir" href="https://www.google.com/maps/search/?api=1&query=Nail+House+by+Aishani+VRS+District+One+Sector+68+Mohali" target="_blank" rel="noopener">Directions</a>
+</div>
+
+<footer>
+  <div>Nail House by Aishani · VRS District One, Sector 68, Mohali · 5.0 (184 Google reviews)</div>
+  <div class="demo">Demo by StyleFrame Co.</div>
+</footer>
+
+</body>
+</html>

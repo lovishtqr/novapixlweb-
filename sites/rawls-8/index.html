@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAWLS | Ultra-Luxury Salon · Sector 8, Panchkula — Now Open</title>
+<meta name="description" content="RAWLS — Panchkula's new ultra-luxury salon. Opened 19 Sep 2026 in Sector 8. Hair, beauty, grooming, makeup, self-care. DM @rawls_official to book.">
+<style>
+:root{--blk:#060505;--blk2:#0d0b09;--gold:#e6c988;--gold-d:#b98f4e;--cream:#f5efe2;--mut:#a89e8a;--line:#241d13;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden;scroll-behavior:smooth}
+body{overflow-x:hidden;background:var(--blk);color:var(--cream);font-family:'Helvetica Neue',Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',Georgia,'Times New Roman',serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+/* nav */
+.top{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(6,5,5,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 24px}
+.logo{font-family:'Playfair Display',Georgia,serif;font-size:22px;letter-spacing:.34em;color:var(--gold);text-decoration:none}
+.tnav{display:flex;gap:28px}
+.tnav a{color:var(--cream);text-decoration:none;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase}
+.tnav a:hover{color:var(--gold)}
+/* hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;padding:120px 24px 80px;background:url('images/launch.png') center/cover}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(6,5,5,.72),rgba(6,5,5,.55) 45%,rgba(6,5,5,.9));}
+.hero>*{position:relative;z-index:2}
+.hero .announce{font-size:11px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-d);padding:10px 22px;margin-bottom:34px;background:rgba(6,5,5,.55)}
+.hero .mono{font-family:'Playfair Display',Georgia,serif;font-size:clamp(120px,22vw,260px);line-height:1;color:var(--gold);text-shadow:0 0 80px rgba(230,201,136,.35);font-weight:700}
+.hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(34px,5.5vw,62px);letter-spacing:.3em;margin:6px 0 18px;font-weight:400}
+.hero .tag{font-size:12px;letter-spacing:.44em;text-transform:uppercase;color:var(--mut)}
+.hero .tag b{color:var(--gold);font-weight:400}
+.hero p.lede{color:#d8cfb9;max-width:52ch;margin:26px auto 38px;font-size:16px}
+.btnrow{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:17px 40px;text-decoration:none;font-size:12px;letter-spacing:.26em;text-transform:uppercase;min-height:56px;font-weight:700;transition:all .18s ease}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#171106}
+.btn-gold:hover{filter:brightness(1.12);transform:translateY(-2px)}
+.btn-line{border:1px solid var(--gold-d);color:var(--gold)}
+.btn-line:hover{background:rgba(230,201,136,.12)}
+.scrollhint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--mut)}
+/* ticker */
+.tick{background:var(--gold);color:#171106;overflow:hidden;padding:13px 0}
+.tick .track{display:flex;white-space:nowrap;width:max-content;animation:slide 30s linear infinite}
+.tick span{font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;padding:0 30px;font-weight:600}
+@keyframes slide{to{transform:translateX(-50%)}}
+/* numbers */
+.nums{border-bottom:1px solid var(--line)}
+.nums .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.nums div{padding:44px 12px;text-align:center;border-left:1px solid var(--line)}
+.nums div:first-child{border-left:none}
+.nums b{display:block;font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,4vw,50px);color:var(--gold);font-weight:700}
+.nums small{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--mut)}
+/* rituals */
+.sec{padding:96px 0}
+.kick{font-size:10px;letter-spacing:.46em;text-transform:uppercase;color:var(--gold-d);display:block;margin-bottom:18px;text-align:center}
+.sec h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,4.6vw,56px);line-height:1.14;font-weight:700;text-align:center}
+.sec h2 em{font-style:italic;color:var(--gold)}
+.sec .sub{color:var(--mut);text-align:center;margin:16px auto 0;max-width:62ch}
+.rituals{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px;background:var(--line);border:1px solid var(--line)}
+.rit{background:var(--blk);padding:52px 38px;transition:background .2s ease}
+.rit:hover{background:var(--blk2)}
+.rit .n{font-family:'Playfair Display',Georgia,serif;font-size:14px;color:var(--gold-d);letter-spacing:.3em}
+.rit h3{font-family:'Playfair Display',Georgia,serif;font-size:30px;margin:14px 0 12px;font-weight:700}
+.rit p{color:var(--mut);font-size:15px}
+.rit .enq{display:inline-block;margin-top:22px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-d);padding-bottom:4px}
+.rit .enq:hover{color:#fff;border-color:#fff}
+/* split feature */
+.feat{display:grid;grid-template-columns:1fr 1fr;min-height:70vh;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.feat .art{background:url('images/lounge.jpg') center/cover;min-height:460px}
+.feat .copy{padding:84px 8%;display:flex;flex-direction:column;justify-content:center;background:radial-gradient(900px 460px at 30% 30%,rgba(230,201,136,.07),transparent)}
+.feat h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,4.4vw,52px);line-height:1.15;font-weight:700}
+.feat h2 em{font-style:italic;color:var(--gold)}
+.feat p{color:var(--mut);margin:22px 0 34px;max-width:48ch;font-size:16px}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:54px}
+.gal figure{overflow:hidden;background:var(--blk2)}
+.gal img{width:100%;height:300px;object-fit:cover;display:block;filter:saturate(.92);transition:transform .45s ease,filter .3s ease}
+.gal figure:hover img{transform:scale(1.06);filter:saturate(1.1)}
+.gal figcaption{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);padding:12px 4px 0;text-align:center}
+/* launch panel */
+.panel{border:1px solid var(--gold-d);margin-top:60px;padding:60px 8%;text-align:center;background:linear-gradient(rgba(230,201,136,.05),transparent)}
+.panel h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,4.2vw,50px);font-weight:700}
+.panel h2 em{font-style:italic;color:var(--gold)}
+.panel p{color:var(--mut);max-width:56ch;margin:18px auto 34px}
+/* visit */
+.visit{background:var(--blk2);border-top:1px solid var(--line)}
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:48px}
+.vitem{margin-bottom:26px}
+.vitem .lab{font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold-d);display:block;margin-bottom:8px}
+.vitem p,.vitem a{font-size:17px;color:var(--cream);text-decoration:none}
+.vitem a:hover{color:var(--gold)}
+.vcta{background:var(--blk);border:1px solid var(--gold-d);padding:56px 40px;text-align:center}
+.vcta h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,3.8vw,42px);margin-bottom:14px}
+.vcta h2 em{font-style:italic;color:var(--gold)}
+.vcta p{color:var(--mut);margin-bottom:32px}
+footer{border-top:1px solid var(--line);padding:44px 0 116px;text-align:center;font-size:13px;color:var(--mut)}
+footer .fin{font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px}
+footer a{color:var(--gold);text-decoration:none}
+.stickybar{display:none}
+@media(max-width:900px){
+  .tnav{display:none}
+  .feat{grid-template-columns:1fr}
+  .feat .art{min-height:320px}
+  .rituals{grid-template-columns:1fr}
+  .nums .wrap{grid-template-columns:1fr 1fr}
+  .nums div{border-left:none;border-top:1px solid var(--line)}
+  .nums div:nth-child(-n+2){border-top:none}
+  .nums div:nth-child(even){border-left:1px solid var(--line)}
+  .gal{grid-template-columns:1fr 1fr}
+  .gal img{height:230px}
+  .vgrid{grid-template-columns:1fr;gap:36px}
+  .sec{padding:68px 0}
+  .stickybar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60}
+  .stickybar a{flex:1;text-align:center;padding:17px 0;text-decoration:none;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;min-height:54px;display:flex;align-items:center;justify-content:center}
+  .stickybar .dm{background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#171106}
+  .stickybar .ig{border:1px solid var(--gold-d);background:var(--blk);color:var(--gold)}
+  footer{padding-bottom:150px}
+}
+@media(max-width:560px){.gal{grid-template-columns:1fr}.gal img{height:260px}}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="logo" href="#">RAWLS</a>
+    <div class="tnav"><a href="#rituals">Rituals</a><a href="#gallery">Gallery</a><a href="#visit">Visit</a></div>
+    <a class="btn btn-line" style="padding:12px 26px;min-height:44px" href="https://instagram.com/rawls_official" target="_blank" rel="noopener">Book on Instagram</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="announce">Now Open · Sector 8, Panchkula</div>
+  <div class="mono">R</div>
+  <h1 class="serif">RAWLS</h1>
+  <div class="tag">Ultra-Luxury Salon <b>·</b> Opened 19 September 2026</div>
+  <p class="lede">Panchkula's newest address for hair, beauty, grooming, makeup and self-care. One floor, one standard: uncompromising. Walk in curious — walk out transformed.</p>
+  <div class="btnrow">
+    <a class="btn btn-gold" href="https://instagram.com/rawls_official" target="_blank" rel="noopener">DM @rawls_official to Book</a>
+    <a class="btn btn-line" href="#rituals">Explore Rituals</a>
+  </div>
+  <div class="scrollhint">Scroll</div>
+</header>
+
+<div class="tick" aria-hidden="true">
+  <div class="track">
+    <span>Hair</span><span>Beauty</span><span>Grooming</span><span>Makeup</span><span>Self-Care</span><span>Nails</span><span>Hair</span><span>Beauty</span><span>Grooming</span><span>Makeup</span><span>Self-Care</span><span>Nails</span>
+  </div>
+</div>
+
+<section class="nums">
+  <div class="wrap">
+    <div><b>19 Sep</b><small>Grand opening 2026</small></div>
+    <div><b>5.2K</b><small>Instagram community</small></div>
+    <div><b>Sec 8</b><small>Panchkula flagship</small></div>
+    <div><b>1 : 1</b><small>Personal consultations</small></div>
+  </div>
+</section>
+
+<section class="sec" id="rituals">
+  <div class="wrap">
+    <span class="kick">The RAWLS Rituals</span>
+    <h2 class="serif">Five disciplines. <em>One obsession.</em></h2>
+    <p class="sub">Launch-phase menu — DM us for current rituals and opening-season pricing.</p>
+    <div class="rituals">
+      <div class="rit"><span class="n">01</span><h3 class="serif">Hair</h3><p>Precision cuts, colour science, keratin rituals and restorative treatments — built around your hair's texture, not a trend.</p><a class="enq" href="https://instagram.com/rawls_official" target="_blank" rel="noopener">Enquire on Instagram</a></div>
+      <div class="rit"><span class="n">02</span><h3 class="serif">Beauty</h3><p>Skin-first facials and glow rituals with clinical-grade products, tailored after a personal skin consultation.</p><a class="enq" href="https://instagram.com/rawls_official" target="_blank" rel="noopener">Enquire on Instagram</a></div>
+      <div class="rit"><span class="n">03</span><h3 class="serif">Grooming</h3><p>Beard architecture, classic shaves and full grooming suites — sharp, unhurried, precise.</p><a class="enq" href="https://instagram.com/rawls_official" target="_blank" rel="noopener">Enquire on Instagram</a></div>
+      <div class="rit"><span class="n">04</span><h3 class="serif">Makeup</h3><p>Signature RAWLS makeup — from soft-luxe day looks to full bridal artistry, finished to photograph beautifully.</p><a class="enq" href="https://instagram.com/rawls_official" target="_blank" rel="noopener">Enquire on Instagram</a></div>
+      <div class="rit"><span class="n">05</span><h3 class="serif">Self-Care</h3><p>Nails, spa and head-to-toe rituals designed as an escape — book a half-day and switch the world off.</p><a class="enq" href="https://instagram.com/rawls_official" target="_blank" rel="noopener">Enquire on Instagram</a></div>
+      <div class="rit"><span class="n">06</span><h3 class="serif">Bridal Suite</h3><p>The complete RAWLS bridal journey — trials, rituals and the-day artistry under one roof.</p><a class="enq" href="https://instagram.com/rawls_official" target="_blank" rel="noopener">Enquire on Instagram</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="feat">
+  <div class="art" role="img" aria-label="RAWLS lounge"></div>
+  <div class="copy">
+    <span class="kick" style="text-align:left">The Space</span>
+    <h2 class="serif">A salon that feels like a <em>private club</em>.</h2>
+    <p>Every detail — lighting, scent, sound, chair — was designed before opening day. RAWLS is not a quick in-and-out: it is an appointment with yourself.</p>
+    <div class="btnrow" style="justify-content:flex-start">
+      <a class="btn btn-gold" href="https://instagram.com/rawls_official" target="_blank" rel="noopener">Reserve Your Visit</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="gallery" style="padding-bottom:70px">
+  <div class="wrap">
+    <span class="kick">First Impressions</span>
+    <h2 class="serif">The launch, <em>in frames</em>.</h2>
+    <div class="gal">
+      <figure><img src="https://files.catbox.moe/yz07zd.png" alt="RAWLS launch"><figcaption>Launch · Sector 8</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/bate5o.jpg" alt="RAWLS lounge ambience"><figcaption>The lounge</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/kwejfr.jpg" alt="RAWLS detail"><figcaption>Detail</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/yhhvon.jpg" alt="RAWLS ritual"><figcaption>Ritual</figcaption></figure>
+    </div>
+    <div class="panel">
+      <span class="kick">Opening Season</span>
+      <h2 class="serif">Be among the <em>first</em> to sit in the chair.</h2>
+      <p>RAWLS opened its doors on 19 September 2026. Opening-season rituals are filling fast — message us on Instagram and the team will personally confirm your slot.</p>
+      <div class="btnrow">
+        <a class="btn btn-gold" href="https://instagram.com/rawls_official" target="_blank" rel="noopener">DM @rawls_official</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec visit" id="visit">
+  <div class="wrap">
+    <span class="kick">Visit</span>
+    <h2 class="serif">Find us in <em>Sector 8</em>.</h2>
+    <div class="vgrid">
+      <div>
+        <div class="vitem"><span class="lab">Address</span><p>Sector 8, Panchkula, Haryana<br><span style="color:var(--mut);font-size:14px">Exact studio address shared on booking — DM us.</span></p></div>
+        <div class="vitem"><span class="lab">Booking</span><p><a href="https://instagram.com/rawls_official" target="_blank" rel="noopener">@rawls_official</a> · Instagram DM<br><span style="color:var(--mut);font-size:14px">5.2K followers · launch teasers Sep 2026</span></p></div>
+        <div class="btnrow" style="justify-content:flex-start;margin-top:8px"><a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=Sector+8+Panchkula+Haryana" target="_blank" rel="noopener">Open in Maps</a></div>
+      </div>
+      <div class="vcta">
+        <h2 class="serif">Your chair is <em>waiting</em>.</h2>
+        <p>No phone queues, no hold music — one DM and a real person confirms your appointment.</p>
+        <div class="btnrow">
+          <a class="btn btn-gold" href="https://instagram.com/rawls_official" target="_blank" rel="noopener">Book on Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="fin">RAWLS · Sector 8, Panchkula</span>
+    <p>Demo by <b>StyleFrame Co.</b> — a concept preview for the salon team. Menu and pricing confirmed on Instagram DM.</p>
+  </div>
+</footer>
+
+<div class="stickybar">
+  <a class="dm" href="https://instagram.com/rawls_official" target="_blank" rel="noopener">DM to Book</a>
+  <a class="ig" href="https://instagram.com/rawls_official" target="_blank" rel="noopener">@rawls_official</a>
+</div>
+
+</body>
+</html>

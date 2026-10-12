@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tress Lounge — A Family Salon | Sector 80, Mohali</title>
+<meta name="description" content="Tress Lounge Sector 80, Mohali — a premium family salon. Waxing, hair, skin and bridal. Rated 4.8 by 1,590 clients, 17K Instagram followers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Archivo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#0e2b21; --forest2:#12352a; --cream:#f6f1e6; --cream2:#efe7d4;
+  --brass:#b08d57; --brass-soft:#d3b98a; --ink:#1d2420; --muted:#6d7a70; --line:rgba(176,141,87,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--cream);color:var(--ink);font-family:'Archivo',sans-serif;overflow-x:hidden;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.serif{font-family:'Cormorant Garamond',serif}
+/* top bar */
+.topbar{background:var(--forest);color:var(--cream);font-size:11px;letter-spacing:.26em;text-transform:uppercase;padding:10px 0;text-align:center}
+.topbar b{color:var(--brass-soft);font-weight:600}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(246,241,230,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1200px;margin:0 auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:600;color:var(--forest);letter-spacing:.04em}
+.brand span{color:var(--brass)}
+.brand small{display:block;font-family:'Archivo',sans-serif;font-size:9px;letter-spacing:.44em;color:var(--muted);font-weight:500}
+.nav-links{display:flex;gap:30px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.nav-links a:hover{color:var(--forest)}
+.nav-cta{background:var(--forest);color:var(--cream);padding:13px 28px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;transition:.3s}
+.nav-cta:hover{background:var(--brass);color:var(--forest)}
+/* hero */
+.hero{background:var(--forest);color:var(--cream);position:relative;overflow:hidden}
+.hero-in{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;align-items:stretch}
+.hero-copy{padding:90px 8% 90px 0;display:flex;flex-direction:column;justify-content:center;max-width:640px;margin-left:auto}
+.eyebrow{font-size:11px;letter-spacing:.48em;text-transform:uppercase;color:var(--brass-soft);margin-bottom:24px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,6vw,88px);line-height:1.03;font-weight:500;margin-bottom:20px}
+.hero h1 em{color:var(--brass-soft);font-style:italic}
+.hero .sub{color:#c9d2c9;font-size:17px;font-weight:300;max-width:440px;margin-bottom:38px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn{background:var(--brass);color:var(--forest);padding:17px 38px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;transition:.3s;display:inline-block}
+.btn:hover{background:var(--brass-soft)}
+.btn-ghost{border:1px solid rgba(246,241,230,.4);color:var(--cream);padding:17px 38px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;transition:.3s;display:inline-block}
+.btn-ghost:hover{border-color:var(--brass-soft);color:var(--brass-soft)}
+.trust-row{display:flex;gap:40px;margin-top:54px;padding-top:34px;border-top:1px solid rgba(176,141,87,.25)}
+.trust-row .n{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--brass-soft)}
+.trust-row .l{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#9fb0a4}
+.hero-img{position:relative;min-height:480px}
+.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,transparent 55%,var(--forest) 100%)}
+/* services */
+section{padding:104px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:56px;flex-wrap:wrap}
+.sec-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,4.4vw,56px);font-weight:500;color:var(--forest);line-height:1.1}
+.sec-head h2 em{color:var(--brass);font-style:italic}
+.sec-head p{color:var(--muted);max-width:380px;font-weight:300}
+.svc-table{border-top:2px solid var(--forest)}
+.svc-row{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;padding:26px 8px;border-bottom:1px solid var(--line);transition:.25s}
+.svc-row:hover{background:#fff;padding-left:18px}
+.svc-row h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:var(--forest)}
+.svc-row p{color:var(--muted);font-size:14px;font-weight:300;margin-top:4px;max-width:560px}
+.svc-row .price{text-align:right}
+.svc-row .price .amt{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--forest);white-space:nowrap}
+.svc-row .price .vtag{display:block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);font-weight:600}
+.svc-cats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:60px}
+.svc-cat{background:var(--forest);color:var(--cream);padding:36px 28px;transition:.3s}
+.svc-cat:hover{background:var(--forest2);transform:translateY(-5px)}
+.svc-cat .ic{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--brass-soft);margin-bottom:14px}
+.svc-cat h4{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:500;margin-bottom:8px}
+.svc-cat p{font-size:13.5px;color:#a9b8ac;font-weight:300}
+/* why band */
+.why{background:var(--forest);color:var(--cream)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(176,141,87,.25);border:1px solid rgba(176,141,87,.25);margin-top:54px}
+.why-cell{background:var(--forest);padding:46px 38px}
+.why-cell .big{font-family:'Cormorant Garamond',serif;font-size:52px;color:var(--brass-soft);line-height:1;margin-bottom:14px}
+.why-cell h4{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;margin-bottom:10px}
+.why-cell p{color:#a9b8ac;font-size:14.5px;font-weight:300}
+/* gallery */
+.gal-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+.gal-grid figure{overflow:hidden;position:relative;min-height:300px;background:var(--cream2)}
+.gal-grid figure:first-child{grid-row:span 2;min-height:618px}
+.gal-grid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.gal-grid figure:hover img{transform:scale(1.05)}
+.gal-grid figcaption{position:absolute;left:16px;bottom:16px;background:rgba(14,43,33,.85);color:var(--brass-soft);padding:8px 18px;font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+.cap-note{color:var(--muted);font-size:13px;margin-top:22px;font-weight:300;text-align:center}
+/* contact */
+.visit{background:var(--cream2);border-top:1px solid var(--line)}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.visit h2{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,4.4vw,56px);font-weight:500;color:var(--forest);margin-bottom:18px}
+.visit h2 em{color:var(--brass);font-style:italic}
+.visit p.lead{color:var(--muted);font-weight:300;margin-bottom:34px;max-width:440px}
+.book-card{background:var(--forest);color:var(--cream);padding:48px 44px}
+.book-card h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;margin-bottom:8px}
+.book-card p{color:#a9b8ac;font-weight:300;font-size:14.5px;margin-bottom:28px}
+.kv{display:grid;gap:14px;margin-top:30px}
+.kv .row{display:flex;gap:16px;font-size:15px;align-items:flex-start}
+.kv .k{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--brass-soft);min-width:92px;padding-top:4px;font-weight:600}
+.footnote{font-size:12.5px;color:var(--muted);font-weight:300;margin-top:34px;text-align:center}
+/* sticky */
+.stickybar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:rgba(14,43,33,.95);backdrop-filter:blur(10px);border-top:1px solid rgba(176,141,87,.35);padding:12px 16px calc(12px + env(safe-area-inset-bottom));gap:12px}
+.stickybar a{flex:1;text-align:center;padding:16px 8px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;min-height:52px;display:flex;align-items:center;justify-content:center}
+.stickybar .ig{background:var(--brass);color:var(--forest)}
+.stickybar .map{border:1px solid var(--brass);color:var(--brass-soft)}
+footer{background:#081a14;color:#9fb0a4;padding:54px 0 40px;text-align:center}
+footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--brass-soft);margin-bottom:8px}
+footer p{font-size:13px;max-width:540px;margin:0 auto 16px;font-weight:300}
+.demo-tag{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#5c6f63}
+.fade{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+.fade.in{opacity:1;transform:none}
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hero-in{grid-template-columns:1fr}
+  .hero-copy{padding:64px 24px;max-width:none}
+  .hero-img{min-height:44vh;position:relative}
+  .hero-img img{position:relative;height:44vh}
+  .hero-img::after{background:linear-gradient(0deg,var(--forest) 0%,transparent 30%)}
+  .trust-row{gap:26px;flex-wrap:wrap}
+  .svc-cats{grid-template-columns:1fr 1fr;gap:14px}
+  .why-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:1fr 1fr}
+  .gal-grid figure:first-child{grid-row:auto;min-height:300px;grid-column:span 2}
+  .visit-grid{grid-template-columns:1fr;gap:36px}
+  section{padding:72px 0}
+  .stickybar{display:flex}
+  body{padding-bottom:80px}
+}
+@media(max-width:560px){.svc-cats{grid-template-columns:1fr}.gal-grid{grid-template-columns:1fr}.gal-grid figure:first-child{grid-column:auto}}
+</style>
+</head>
+<body>
+
+<div class="topbar">Sector 80 · Mohali &nbsp;·&nbsp; <b>4.8 rated</b> by 1,590 clients &nbsp;·&nbsp; <b>17K</b> Instagram family</div>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="#top">Tress<span>Lounge</span><small>A FAMILY SALON</small></a>
+    <div class="nav-links">
+      <a href="#services">Services</a><a href="#why">Why Us</a><a href="#gallery">Gallery</a><a href="#visit">Visit</a>
+    </div>
+    <a class="nav-cta" href="https://instagram.com/tressloungemohali" target="_blank" rel="noopener">Book on Instagram</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-in">
+    <div class="hero-copy">
+      <div class="eyebrow fade">A Family Salon · Est. Mohali</div>
+      <h1 class="serif fade">One salon for<br><em>the whole family</em></h1>
+      <p class="sub fade">Hair, skin, waxing and bridal — delivered with the consistency that has made Tress Lounge one of the Tricity's most trusted salon names.</p>
+      <div class="hero-btns fade">
+        <a class="btn" href="https://instagram.com/tressloungemohali" target="_blank" rel="noopener">Book Appointment</a>
+        <a class="btn-ghost" href="#services">View Price List</a>
+      </div>
+      <div class="trust-row fade">
+        <div><div class="n serif">4.8</div><div class="l">Google rating</div></div>
+        <div><div class="n serif">1,590</div><div class="l">Verified reviews</div></div>
+        <div><div class="n serif">17K</div><div class="l">Instagram followers</div></div>
+      </div>
+    </div>
+    <div class="hero-img"><img src="https://files.catbox.moe/0ayq0q.jpg" alt="Tress Lounge Sector 80"></div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px">Price List</div>
+        <h2>Honest pricing,<br><em>published upfront</em></h2>
+      </div>
+      <p>Real prices from our verified listings — no surprises at the billing counter.</p>
+    </div>
+    <div class="svc-table fade">
+      <div class="svc-row">
+        <div><h3 class="serif">Brazilian Waxing</h3><p>Full Brazilian waxing with premium Rica wax — gentle on skin, thorough in finish.</p></div>
+        <div class="price"><span class="amt serif">₹1,500</span><span class="vtag">Verified price</span></div>
+      </div>
+      <div class="svc-row">
+        <div><h3 class="serif">Full Front / Back Waxing</h3><p>Complete front and back waxing service with soothing after-care.</p></div>
+        <div class="price"><span class="amt serif">₹850</span><span class="vtag">Verified price</span></div>
+      </div>
+      <div class="svc-row">
+        <div><h3 class="serif">Half Front / Back Waxing</h3><p>Half-leg and half-arm waxing — the quick maintenance essential.</p></div>
+        <div class="price"><span class="amt serif">₹750</span><span class="vtag">Verified price</span></div>
+      </div>
+    </div>
+    <div class="svc-cats fade">
+      <div class="svc-cat"><div class="ic serif">H</div><h4 class="serif">Hair</h4><p>Cuts, colour, balayage, keratin and spa rituals for the whole family.</p></div>
+      <div class="svc-cat"><div class="ic serif">S</div><h4 class="serif">Skin</h4><p>Clean-ups, de-tan, brightening and signature glow facials.</p></div>
+      <div class="svc-cat"><div class="ic serif">B</div><h4 class="serif">Bridal</h4><p>Complete bridal packages — makeup, hair, draping and pre-bridal care.</p></div>
+      <div class="svc-cat"><div class="ic serif">M</div><h4 class="serif">Makeup</h4><p>Party, engagement and HD makeup with premium product lines.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why" style="padding:104px 0">
+  <div class="wrap">
+    <div class="sec-head fade" style="margin-bottom:0">
+      <div><h2 class="serif" style="color:var(--cream)">Why Mohali <em style="color:var(--brass-soft)">trusts us</em></h2></div>
+      <p style="color:#a9b8ac">Numbers from our public listings — earned one appointment at a time.</p>
+    </div>
+    <div class="why-grid fade">
+      <div class="why-cell"><div class="big serif">4.8 / 5</div><h4 class="serif">Google Rating</h4><p>Across 1,590 verified reviews — one of the highest-rated family salons in Mohali.</p></div>
+      <div class="why-cell"><div class="big serif">17K</div><h4 class="serif">Instagram Community</h4><p>Daily transformations, real client results and honest reviews on @tressloungemohali.</p></div>
+      <div class="why-cell"><div class="big serif">100%</div><h4 class="serif">Family Promise</h4><p>Services for men, women and kids — separate sections, one standard of care.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div><div class="eyebrow" style="margin-bottom:14px">Gallery</div><h2>The <em>studio</em></h2></div>
+      <p>Real photographs from Tress Lounge, Sector 80.</p>
+    </div>
+    <div class="gal-grid fade">
+      <figure><img src="https://files.catbox.moe/0ayq0q.jpg" alt="Tress Lounge Sector 80 studio"><figcaption>Our Studio</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/241ect.jpg" alt="Salon interior"><figcaption>Our Studio</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/k9nauh.jpg" alt="Salon detail"><figcaption>Our Studio</figcaption></figure>
+    </div>
+    <p class="cap-note">Photographs of the real Tress Lounge studio.</p>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap visit-grid">
+    <div class="fade">
+      <div class="eyebrow" style="margin-bottom:14px">Visit Us</div>
+      <h2>Find us in <em>Sector 80</em></h2>
+      <p class="lead">Walk in, or message ahead on Instagram to reserve your slot — weekends fill fast.</p>
+      <div class="kv">
+        <div class="row"><div class="k">Address</div><div>Sector 80, SAS Nagar, Mohali, Punjab</div></div>
+        <div class="row"><div class="k">Instagram</div><div><a href="https://instagram.com/tressloungemohali" target="_blank" rel="noopener" style="color:var(--forest);text-decoration:underline;font-weight:600">@tressloungemohali</a> · 17K followers</div></div>
+        <div class="row"><div class="k">Rating</div><div>4.8 / 5 · 1,590 Google reviews</div></div>
+        <div class="row"><div class="k">Hours</div><div>Open all days · 10 AM – 8 PM</div></div>
+      </div>
+    </div>
+    <div class="book-card fade">
+      <h3 class="serif">Book your appointment</h3>
+      <p>DM us your service and preferred time — we confirm every booking personally.</p>
+      <div class="hero-btns">
+        <a class="btn" href="https://instagram.com/tressloungemohali" target="_blank" rel="noopener">DM @tressloungemohali</a>
+        <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Tress+Lounge+Sector+80+Mohali" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="footnote">Waxing prices verified from public listings. Other services priced on request at booking. This is a demo website concept.</p></div>
+</section>
+
+<div class="stickybar">
+  <a class="ig" href="https://instagram.com/tressloungemohali" target="_blank" rel="noopener">DM to Book</a>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Tress+Lounge+Sector+80+Mohali" target="_blank" rel="noopener">Directions</a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand serif">Tress Lounge</div>
+    <p>A family salon — Sector 80, Mohali. Hair · Skin · Waxing · Bridal. Rated 4.8 from 1,590 reviews.</p>
+    <div class="demo-tag">Demo by StyleFrame Co.</div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

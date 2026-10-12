@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salon De Sapphire — Kharar | Bridal from ₹4,999 · Laser ₹999/session</title>
+<meta name="description" content="Salon De Sapphire, Kharar. Complete bridal makeovers from ₹4,999, advanced laser hair removal ₹999/session. Rated 5.0 across 617 reviews. Call 86999 78887.">
+<style>
+  :root{
+    --sapphire:#12315E; --sapphire-deep:#0B2140; --sapphire-ink:#081A33;
+    --pearl:#F7F9FD; --pearl-2:#EDF1F8; --silver:#8FA8D8; --gold:#C8A24B;
+    --gold-soft:#E3C87E; --ink:#1C2A44; --muted:#5E6E8C; --card:#FFFFFF; --line:#DCE3F0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--pearl);color:var(--ink);line-height:1.7;overflow-x:hidden}
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:600;line-height:1.25;letter-spacing:.3px}
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;z-index:50;background:rgba(247,249,253,.94);backdrop-filter:blur(10px);
+         border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{font-family:Georgia,serif;font-size:1.55rem;color:var(--sapphire)}
+  .brand small{display:block;font-family:-apple-system,sans-serif;font-size:.6rem;letter-spacing:3.5px;
+              text-transform:uppercase;color:var(--gold);margin-top:2px}
+  .nav-links{display:flex;gap:28px;font-size:.84rem;letter-spacing:1.5px;text-transform:uppercase}
+  .nav-links a{color:var(--muted)}.nav-links a:hover{color:var(--sapphire)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 32px;
+       border-radius:12px;font-size:.88rem;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;transition:all .25s}
+  .btn-sap{background:var(--sapphire);color:#fff}
+  .btn-sap:hover{background:var(--sapphire-deep);transform:translateY(-2px)}
+  .btn-gold{background:var(--gold);color:#221806}
+  .btn-gold:hover{background:var(--gold-soft);transform:translateY(-2px)}
+  .btn-line{border:1.5px solid rgba(255,255,255,.7);color:#fff}
+  .btn-line:hover{background:#fff;color:var(--sapphire-deep)}
+  /* hero full-bleed */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+  .hero-bg{position:absolute;inset:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover}
+  .hero-bg::after{content:"";position:absolute;inset:0;
+       background:linear-gradient(180deg,rgba(8,26,51,.35) 0%,rgba(8,26,51,.25) 40%,rgba(8,26,51,.92) 100%)}
+  .hero-inner{position:relative;z-index:1;width:100%;padding:70px 0 64px}
+  .eyebrow{font-size:.74rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:16px}
+  .hero h1{font-size:3.8rem;max-width:720px;margin-bottom:18px}
+  .hero h1 em{font-style:italic;color:var(--gold-soft)}
+  .hero p.lead{max-width:560px;color:#D7E1F2;font-size:1.1rem;margin-bottom:28px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+  .hero-proof{display:flex;gap:26px;flex-wrap:wrap;font-size:.9rem;color:#D7E1F2}
+  .hero-proof strong{color:#fff}
+  .hero-proof .stars{color:var(--gold-soft);letter-spacing:2px}
+  /* spotlight cards overlap */
+  .spot{margin-top:-72px;position:relative;z-index:2}
+  .spot-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .spot-card{background:var(--card);border-radius:20px;padding:40px 36px;border:1px solid var(--line);
+             box-shadow:0 30px 70px -24px rgba(11,33,64,.35);border-top:4px solid var(--gold)}
+  .spot-card .tag{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:700}
+  .spot-card h2{font-size:2rem;color:var(--sapphire);margin-bottom:10px}
+  .spot-card .from{font-family:Georgia,serif;font-size:2.6rem;color:var(--sapphire);margin:8px 0}
+  .spot-card .from small{font-size:1rem;font-family:-apple-system,sans-serif;color:var(--muted);font-weight:400}
+  .spot-card ul{list-style:none;margin:14px 0 24px}
+  .spot-card li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem;color:var(--ink)}
+  .spot-card li:last-child{border:0}
+  .spot-card li::before{content:"✓ ";color:var(--gold);font-weight:700}
+  /* services */
+  section{padding:80px 0}
+  .sec-head{text-align:center;max-width:660px;margin:0 auto 52px}
+  .sec-head h2{font-size:2.5rem;color:var(--sapphire);margin-bottom:10px}
+  .sec-head p{color:var(--muted);margin-top:10px}
+  .rule{width:64px;height:2px;background:var(--gold);margin:16px auto 0}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .svc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:32px 28px;transition:transform .25s,box-shadow .25s}
+  .svc:hover{transform:translateY(-5px);box-shadow:0 24px 50px -20px rgba(11,33,64,.25)}
+  .svc h3{font-size:1.3rem;color:var(--sapphire);margin-bottom:8px}
+  .svc p{color:var(--muted);font-size:.93rem}
+  .svc .p{margin-top:12px;font-weight:700;color:var(--gold);font-size:1.05rem}
+  .fine{text-align:center;color:var(--muted);font-size:.85rem;font-style:italic;margin-top:28px}
+  /* gallery */
+  .gallery{background:var(--pearl-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .gal{border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+  .gal img{width:100%;height:280px;object-fit:cover;transition:transform .4s}
+  .gal:hover img{transform:scale(1.05)}
+  .gal figcaption{font-size:.78rem;color:var(--muted);padding:10px 14px;font-style:italic}
+  /* reviews */
+  .rev-agg{text-align:center;margin-bottom:44px}
+  .rev-agg .big{font-family:Georgia,serif;font-size:3.6rem;color:var(--sapphire)}
+  .rev-agg .stars{color:var(--gold);letter-spacing:3px;font-size:1.2rem}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .rev{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:32px 28px}
+  .rev .stars{color:var(--gold);letter-spacing:2px;margin-bottom:10px}
+  .rev p{font-size:.95rem}
+  .rev .who{margin-top:14px;font-size:.8rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+  /* visit */
+  .visit{background:linear-gradient(150deg,var(--sapphire-deep),var(--sapphire));color:#DCE6F5}
+  .visit .sec-head h2{color:#fff}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+  .visit .addr{font-size:1.12rem;color:#fff;margin-bottom:10px}
+  .visit p{color:#B9C7E2;margin-bottom:14px}
+  .contact-lines{margin:24px 0;display:grid;gap:12px}
+  .contact-lines a{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.07);
+                   border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:16px 20px;min-height:58px;transition:all .2s}
+  .contact-lines a:hover{border-color:var(--gold-soft);background:rgba(255,255,255,.12)}
+  .contact-lines .k{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold-soft);width:96px;flex-shrink:0}
+  .contact-lines .v{font-size:1.05rem;font-weight:600;color:#fff}
+  .map{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.2)}
+  .map iframe{width:100%;height:360px;border:0;display:block}
+  /* final */
+  .final{text-align:center;padding:90px 0;background:var(--pearl)}
+  .final h2{font-size:2.7rem;color:var(--sapphire);margin-bottom:14px}
+  .final p{color:var(--muted);max-width:540px;margin:0 auto 30px}
+  .final .call-big{font-family:Georgia,serif;font-size:2rem;color:var(--sapphire);display:block;margin-bottom:22px}
+  footer{background:var(--sapphire-ink);color:#8FA0BE;padding:28px 0;font-size:.84rem}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:rgba(8,26,51,.97);
+             padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:10px;border-top:1px solid rgba(200,162,75,.4)}
+  .sticky-cta a{flex:1;min-height:54px;display:flex;align-items:center;justify-content:center;border-radius:12px;
+                font-weight:800;font-size:1rem;letter-spacing:.5px}
+  .sticky-cta .s-call{background:var(--gold);color:#221806}
+  .sticky-cta .s-wa{background:transparent;border:1.5px solid var(--gold-soft);color:var(--gold-soft)}
+  @media(max-width:900px){
+    .hero{min-height:80vh}.hero h1{font-size:2.5rem}
+    .spot{margin-top:-48px}
+    .spot-grid,.visit-grid{grid-template-columns:1fr;gap:22px}
+    .spot-card{padding:30px 24px}
+    .svc-grid,.rev-grid{grid-template-columns:1fr}
+    .gal-grid{grid-template-columns:repeat(2,1fr)}
+    .nav-links{display:none}
+    section{padding:54px 0}
+    .sticky-cta{display:flex}
+    body{padding-bottom:78px}
+    .sec-head h2{font-size:2rem}
+    .final h2{font-size:2rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand">Salon De Sapphire<small>Kharar · Est. of Elegance</small></a>
+    <nav class="nav-links">
+      <a href="#bridal">Bridal</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn-sap" href="tel:+918699978887">86999 78887</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-bg"><img src="https://files.catbox.moe/spz1wg.jpg" alt="Bridal styling at Salon De Sapphire, Kharar"></div>
+  <div class="hero-inner">
+    <div class="wrap">
+      <div class="eyebrow">Kharar · Bridal · Skin · Hair · Nails</div>
+      <h1>Where brides become <em>unforgettable</em></h1>
+      <p class="lead">Complete bridal makeovers, advanced laser, luxury hair and nails — Kharar's five-star studio for the biggest days of your life.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="tel:+918699978887">Call to Book</a>
+        <a class="btn btn-line" href="https://wa.me/918699978887?text=Hi%20Salon%20De%20Sapphire%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+      <div class="hero-proof">
+        <span><span class="stars">★★★★★</span></span>
+        <span><strong>5.0</strong> · 617 reviews on JustDial</span>
+        <span>Bridal from <strong>₹4,999</strong></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="spot" id="bridal">
+  <div class="wrap spot-grid">
+    <div class="spot-card">
+      <div class="tag">Signature</div>
+      <h2>Complete Bridal Makeover</h2>
+      <div class="from">₹4,999 <small>onwards</small></div>
+      <ul>
+        <li>HD / Airbrush bridal makeup</li>
+        <li>Bridal hair styling</li>
+        <li>Engagement makeup</li>
+        <li>Mehendi application</li>
+        <li>Bridal nails</li>
+        <li>Pre-bridal skin preparation</li>
+      </ul>
+      <a class="btn btn-gold" href="https://wa.me/918699978887?text=Hi%20Salon%20De%20Sapphire%2C%20I%27d%20like%20to%20discuss%20a%20bridal%20package." target="_blank" rel="noopener">Enquire on WhatsApp</a>
+    </div>
+    <div class="spot-card">
+      <div class="tag">Advanced aesthetics</div>
+      <h2>Laser Hair Removal</h2>
+      <div class="from">₹999 <small>per session</small></div>
+      <ul>
+        <li>Advanced laser technology</li>
+        <li>Full-body &amp; targeted areas</li>
+        <li>Trained aesthetic technicians</li>
+        <li>Hygienic, private treatment rooms</li>
+        <li>Personalised session plans</li>
+      </ul>
+      <a class="btn btn-sap" href="tel:+918699978887">Call for a Consultation</a>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" style="color:var(--gold)">Full menu</div>
+      <h2>Services &amp; Rituals</h2>
+      <div class="rule"></div>
+      <p>Hair, skin, nails and aesthetics — one studio, complete care.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <h3>Bridal &amp; Party Makeup</h3>
+        <p>HD and airbrush artistry for weddings, engagements and celebrations.</p>
+        <div class="p">Bridal from ₹4,999</div>
+      </div>
+      <div class="svc">
+        <h3>Laser Hair Removal</h3>
+        <p>Advanced, precise and gentle — planned across sessions for lasting smoothness.</p>
+        <div class="p">₹999 / session</div>
+      </div>
+      <div class="svc">
+        <h3>Keratin Smoothening</h3>
+        <p>Frizz-free, glossy, manageable hair that lasts for months.</p>
+      </div>
+      <div class="svc">
+        <h3>Global Colour</h3>
+        <p>Rich, even colour with professional ranges and a healthy shine.</p>
+      </div>
+      <div class="svc">
+        <h3>Luxury Mani / Pedi</h3>
+        <p>Spa-grade hand and foot rituals with immaculate finishing.</p>
+      </div>
+      <div class="svc">
+        <h3>Gel &amp; Acrylic Nails</h3>
+        <p>Extensions and art that stay flawless through the wedding season.</p>
+      </div>
+    </div>
+    <p class="fine">Bridal and laser prices are the studio's listed prices; other services are quoted on consultation.</p>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" style="color:var(--gold)">Inside the studio</div>
+      <h2>The Sapphire Space</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="gal-grid">
+      <figure class="gal"><img src="https://files.catbox.moe/spz1wg.jpg" alt="Bridal look"><figcaption>Signature bridal looks</figcaption></figure>
+      <figure class="gal"><img src="https://files.catbox.moe/ci9kgd.jpg" alt="Salon interior"><figcaption>Our studio</figcaption></figure>
+      <figure class="gal"><img src="https://files.catbox.moe/47x6xk.jpg" alt="Styling area"><figcaption>Our studio</figcaption></figure>
+      <figure class="gal"><img src="https://files.catbox.moe/shqby4.jpg" alt="Treatment area"><figcaption>Our studio</figcaption></figure>
+      <figure class="gal"><img src="https://files.catbox.moe/ulty63.jpg" alt="Nail services"><figcaption>Our studio</figcaption></figure>
+      <figure class="gal"><img src="https://files.catbox.moe/itvv2q.jpg" alt="Salon lounge"><figcaption>Our studio</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" style="color:var(--gold)">Guest love</div>
+      <h2>Kharar's Five-Star Studio</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="rev-agg">
+      <div class="big">5.0 / 5</div>
+      <div class="stars">★★★★★</div>
+      <p style="color:var(--muted)">Across 617 JustDial reviews — a near-perfect record at real scale.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>Bridal clients return to the feed again and again — makeup that photographs flawlessly and lasts the whole event.</p>
+        <div class="who">Recurring theme · JustDial</div>
+      </div>
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>Laser and skin clients praise the professional, hygienic approach and honest session guidance.</p>
+        <div class="who">Recurring theme · JustDial</div>
+      </div>
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>617 five-star reviews make it one of the most consistently rated salons in the Kharar–Mohali belt.</p>
+        <div class="who">Rating record · JustDial</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" style="color:var(--gold-soft)">Book your appointment</div>
+      <h2>Visit Salon De Sapphire</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="visit-grid">
+      <div>
+        <p class="addr">SCO 14, 1st Floor, Near Bank of India,<br>Bansa Wali Jhungi, Kharar 140301</p>
+        <p>Call or WhatsApp for bridal trials, laser consultations and all appointments. Also visit us at <strong style="color:#fff">salondesapphire.com</strong>.</p>
+        <div class="contact-lines">
+          <a href="tel:+918699978887"><span class="k">Call</span><span class="v">86999 78887</span></a>
+          <a href="https://wa.me/918699978887?text=Hi%20Salon%20De%20Sapphire%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener"><span class="k">WhatsApp</span><span class="v">Chat with the studio</span></a>
+          <a href="https://salondesapphire.com" target="_blank" rel="noopener"><span class="k">Website</span><span class="v">salondesapphire.com</span></a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Map — Salon De Sapphire Kharar" loading="lazy"
+          src="https://www.google.com/maps?q=Salon%20De%20Sapphire%20Kharar&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="final">
+  <div class="wrap">
+    <h2>Your big day deserves Sapphire</h2>
+    <p>Bridal trials, laser plans and luxury rituals — one call starts it all.</p>
+    <a class="call-big" href="tel:+918699978887">86999 78887</a>
+    <a class="btn btn-sap" href="https://wa.me/918699978887?text=Hi%20Salon%20De%20Sapphire%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Book on WhatsApp</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <span>Salon De Sapphire · SCO 14, Near Bank of India, Kharar 140301 · 86999 78887</span>
+    <span>Demo by StyleFrame Co.</span>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="s-call" href="tel:+918699978887">Call Now</a>
+  <a class="s-wa" href="https://wa.me/918699978887?text=Hi%20Salon%20De%20Sapphire%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+</body>
+</html>

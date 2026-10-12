@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Elegance | Sector 15, Panchkula — Unisex Salon &amp; Spa</title>
+<meta name="description" content="Le Elegance, SCF 25 Sector 15 Panchkula. Men's grooming ₹1,099, women's glow ₹1,499, Nanoplastia BOGO ₹5,999. Call 9041071539.">
+<style>
+:root{--ivory:#faf6ef;--paper:#fffdf9;--navy:#1b2a45;--navy2:#24365a;--copper:#c07a3e;--copper-d:#9a5f2c;--ink:#26221c;--mut:#7a7268;--line:#e7ddcb;--gold-soft:#f3e7d2;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden;scroll-behavior:smooth}
+body{overflow-x:hidden;background:var(--ivory);color:var(--ink);font-family:'Helvetica Neue',Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',Georgia,'Times New Roman',serif}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+/* top utility bar */
+.ubar{background:var(--navy);color:#e9e2d4;font-size:12px;letter-spacing:.06em}
+.ubar .wrap{display:flex;justify-content:space-between;align-items:center;padding:9px 24px;gap:10px;flex-wrap:wrap}
+.ubar a{color:#f3d9ae;text-decoration:none;font-weight:600}
+.ubar a:hover{color:#fff}
+/* masthead */
+.mast{background:var(--paper);border-bottom:1px solid var(--line);text-align:center;padding:26px 16px 14px}
+.mast .over{font-size:10px;letter-spacing:.55em;text-transform:uppercase;color:var(--copper)}
+.mast h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(40px,6.4vw,66px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin:10px 0 4px}
+.mast .under{font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--mut)}
+.mnav{display:flex;justify-content:center;gap:30px;padding:15px 0 18px;flex-wrap:wrap}
+.mnav a{color:var(--ink);text-decoration:none;font-size:11px;letter-spacing:.28em;text-transform:uppercase}
+.mnav a:hover{color:var(--copper-d)}
+/* hero split */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;min-height:80vh;border-bottom:1px solid var(--line)}
+.hero .copy{padding:80px 24px 70px 8%;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{display:inline-block;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--copper-d);border:1px solid var(--copper);padding:8px 16px;margin-bottom:26px;width:fit-content}
+.copy h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(42px,5.6vw,72px);line-height:1.06;color:var(--navy);font-weight:700}
+.copy h2 em{font-style:italic;color:var(--copper-d)}
+.copy .lede{color:var(--mut);margin:24px 0 34px;max-width:46ch;font-size:17px}
+.copy .lede b{color:var(--navy)}
+.btnrow{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 34px;text-decoration:none;font-size:12px;letter-spacing:.22em;text-transform:uppercase;min-height:54px;font-weight:700;transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-copper{background:var(--copper);color:#fff}
+.btn-copper:hover{background:var(--copper-d)}
+.btn-navy{border:1.5px solid var(--navy);color:var(--navy)}
+.btn-navy:hover{background:var(--navy);color:#fff}
+.hero .art{position:relative;min-height:480px;background:url('images/storefront.jpg') center/cover}
+.hero .art .badge{position:absolute;left:24px;bottom:24px;background:rgba(27,42,69,.92);color:#f3e7d2;padding:14px 22px;font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+.hero .art .badge b{color:#f6c87e;font-size:14px;display:block;letter-spacing:.1em}
+/* marquee offers */
+.marq{background:var(--navy);color:#f3e7d2;overflow:hidden;padding:16px 0;border-top:1px solid var(--navy2);border-bottom:1px solid var(--navy2)}
+.marq .track{display:flex;gap:0;white-space:nowrap;animation:slide 28s linear infinite;width:max-content}
+.marq span{font-size:12px;letter-spacing:.3em;text-transform:uppercase;padding:0 34px}
+.marq span b{color:#f6c87e}
+@keyframes slide{to{transform:translateX(-50%)}}
+/* trust strip */
+.trust{background:var(--paper);border-bottom:1px solid var(--line)}
+.trust .grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust .cell{padding:34px 18px;text-align:center;border-left:1px solid var(--line)}
+.trust .cell:first-child{border-left:none}
+.trust b{display:block;font-family:'Playfair Display',Georgia,serif;font-size:26px;color:var(--navy)}
+.trust small{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--mut)}
+/* sections */
+.sec{padding:92px 0}
+.kick{font-size:10px;letter-spacing:.44em;text-transform:uppercase;color:var(--copper-d);display:block;margin-bottom:16px}
+.sec h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,4.4vw,52px);line-height:1.14;color:var(--navy);font-weight:700}
+.sec h2 em{font-style:italic;color:var(--copper-d)}
+.sec .sub{color:var(--mut);margin-top:14px;max-width:64ch}
+/* price cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px}
+.card{background:var(--paper);border:1px solid var(--line);padding:44px 36px;position:relative;transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(27,42,69,.25)}
+.card.feat{border:2px solid var(--copper)}
+.card .flag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--copper);color:#fff;font-size:10px;letter-spacing:.3em;text-transform:uppercase;padding:7px 18px;white-space:nowrap}
+.card .cat{font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--copper-d)}
+.card h3{font-family:'Playfair Display',Georgia,serif;font-size:28px;color:var(--navy);margin:12px 0 6px}
+.card .price{font-family:'Playfair Display',Georgia,serif;font-size:44px;color:var(--navy);font-weight:700;margin:16px 0 4px}
+.card .price small{font-size:15px;color:var(--mut);font-weight:400;font-family:'Helvetica Neue',Arial,sans-serif}
+.card ul{list-style:none;margin:20px 0 30px}
+.card ul li{padding:9px 0;border-bottom:1px dashed var(--line);font-size:14.5px;color:#4a443b}
+.card ul li:last-child{border-bottom:none}
+/* offer band */
+.band{background:var(--navy);color:#f3e7d2;margin:0}
+.band .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;padding:70px 24px}
+.band h2{color:#fff;font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,4vw,46px);line-height:1.2}
+.band h2 em{font-style:italic;color:#f6c87e}
+.band p{color:#cfc6b4;margin:18px 0 28px}
+.band img{width:100%;height:380px;object-fit:cover;display:block;border:1px solid rgba(246,200,126,.35)}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.gal figure{position:relative;overflow:hidden;background:var(--gold-soft)}
+.gal img{width:100%;height:340px;object-fit:cover;display:block;transition:transform .4s ease}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(27,42,69,.85));color:#fff;font-size:11px;letter-spacing:.24em;text-transform:uppercase;padding:30px 18px 14px}
+/* contact */
+.contact{background:var(--paper);border-top:1px solid var(--line)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:46px}
+.citem{margin-bottom:26px}
+.citem .lab{font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--copper-d);display:block;margin-bottom:8px}
+.citem p,.citem a{font-size:17px;color:var(--ink);text-decoration:none}
+.citem a:hover{color:var(--copper-d)}
+.bigcta{background:var(--navy);color:#fff;padding:56px 40px;text-align:center}
+.bigcta h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,4vw,46px);margin-bottom:12px}
+.bigcta h2 em{font-style:italic;color:#f6c87e}
+.bigcta p{color:#cfc6b4;margin-bottom:30px}
+/* footer */
+footer{background:#141a2c;color:#a99f8c;padding:44px 0 110px;text-align:center;font-size:13px}
+footer .fin{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:#f6c87e;display:block;margin-bottom:12px}
+footer a{color:#f6c87e;text-decoration:none}
+/* sticky mobile bar */
+.stickybar{display:none}
+.footnote{font-size:12.5px;color:var(--mut);margin-top:26px;border-top:1px dashed var(--line);padding-top:18px}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero .copy{padding:52px 24px 44px}
+  .hero .art{min-height:340px}
+  .trust .grid{grid-template-columns:1fr 1fr}
+  .trust .cell{border-left:none;border-top:1px solid var(--line)}
+  .trust .cell:nth-child(-n+2){border-top:none}
+  .trust .cell:nth-child(even){border-left:1px solid var(--line)}
+  .cards{grid-template-columns:1fr}
+  .band .wrap{grid-template-columns:1fr;padding:52px 24px}
+  .band img{height:280px}
+  .gal{grid-template-columns:1fr 1fr}
+  .gal img{height:240px}
+  .cgrid{grid-template-columns:1fr;gap:34px}
+  .sec{padding:64px 0}
+  .stickybar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50}
+  .stickybar a{flex:1;text-align:center;padding:17px 0;text-decoration:none;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;min-height:54px;display:flex;align-items:center;justify-content:center}
+  .stickybar .call{background:var(--navy);color:#fff}
+  .stickybar .wa{background:#1f8a4c;color:#fff}
+  footer{padding-bottom:150px}
+}
+@media(max-width:560px){.gal{grid-template-columns:1fr}.gal img{height:280px}}
+</style>
+</head>
+<body>
+
+<div class="ubar">
+  <div class="wrap">
+    <span>SCF 25, 1st Floor, Sector 15, Panchkula</span>
+    <span>Call: <a href="tel:+919041071539">90410 71539</a> &nbsp;·&nbsp; <a href="tel:+919878081582">98780 81582</a></span>
+  </div>
+</div>
+
+<header class="mast">
+  <span class="over">Unisex Salon &amp; Spa</span>
+  <h1 class="serif">Le Elegance</h1>
+  <span class="under">Panchkula · Sector 15</span>
+  <nav class="mnav">
+    <a href="#services">Services</a><a href="#offers">Offers</a><a href="#gallery">Gallery</a><a href="#contact">Visit</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="copy">
+    <span class="eyebrow">Real prices · JustDial verified</span>
+    <h2 class="serif">Elegance is a <em>daily ritual</em>, not an occasion.</h2>
+    <p class="lede">Hair, skin and grooming at <b>SCF 25, Sector 15, Panchkula</b> — with honest, published packages. Men's full grooming at <b>₹1,099</b>, women's glow at <b>₹1,499</b>, and the signature <b>Nanoplastia treatment (buy-one-get-one) at ₹5,999</b>.</p>
+    <div class="btnrow">
+      <a class="btn btn-copper" href="tel:+919041071539">Call to Book</a>
+      <a class="btn btn-navy" href="https://wa.me/919041071539?text=Hi%20Le%20Elegance!%20I%27d%20like%20to%20book%20an%20appointment.">WhatsApp Us</a>
+    </div>
+  </div>
+  <div class="art" role="img" aria-label="Le Elegance salon storefront"><div class="badge"><b>Buy 1 Get 1</b>Nanoplastia · ₹5,999</div></div>
+</section>
+
+<div class="marq" aria-hidden="true">
+  <div class="track">
+    <span>Men's Grooming <b>₹1,099</b></span><span>Women's Glow <b>₹1,499</b></span><span>Nanoplastia BOGO <b>₹5,999</b></span><span>L'Oréal Hair Spa <b>1+1</b></span><span>Men's Grooming <b>₹1,099</b></span><span>Women's Glow <b>₹1,499</b></span><span>Nanoplastia BOGO <b>₹5,999</b></span><span>L'Oréal Hair Spa <b>1+1</b></span>
+  </div>
+</div>
+
+<section class="trust">
+  <div class="grid">
+    <div class="cell"><b>1,099</b><small>Men's package · ₹</small></div>
+    <div class="cell"><b>1,499</b><small>Women's package · ₹</small></div>
+    <div class="cell"><b>5,999</b><small>Nanoplastia BOGO · ₹</small></div>
+    <div class="cell"><b>1.2K</b><small>Instagram community</small></div>
+  </div>
+</section>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <span class="kick">Services &amp; Packages</span>
+    <h2 class="serif">Honest prices, <em>published</em> upfront.</h2>
+    <p class="sub">No surprises at billing — these packages are as listed by the salon on JustDial.</p>
+    <div class="cards">
+      <div class="card">
+        <span class="cat">For Him</span>
+        <h3 class="serif">Men's Grooming Ritual</h3>
+        <div class="price">₹1,099 <small>/ package</small></div>
+        <ul>
+          <li>Haircut + Beard styling</li>
+          <li>Relaxing head massage</li>
+          <li>Manicure</li>
+          <li>Skin cleanup</li>
+        </ul>
+        <a class="btn btn-navy" href="https://wa.me/919041071539?text=Hi!%20I%20want%20to%20book%20the%20Men%27s%20Grooming%20Ritual%20at%20%E2%82%B91%2C099.">Book This</a>
+      </div>
+      <div class="card feat">
+        <span class="flag">Most Loved</span>
+        <span class="cat">For Her</span>
+        <h3 class="serif">Women's Glow Package</h3>
+        <div class="price">₹1,499 <small>/ package</small></div>
+        <ul>
+          <li>Full-body waxing</li>
+          <li>Skin cleanup</li>
+          <li>Expert therapists</li>
+          <li>Premium products</li>
+        </ul>
+        <a class="btn btn-copper" href="https://wa.me/919041071539?text=Hi!%20I%20want%20to%20book%20the%20Women%27s%20Glow%20Package%20at%20%E2%82%B91%2C499.">Book This</a>
+      </div>
+      <div class="card">
+        <span class="cat">Hair Science</span>
+        <h3 class="serif">Nanoplastia Treatment</h3>
+        <div class="price">₹5,999 <small>/ BOGO offer</small></div>
+        <ul>
+          <li>Buy one, get one free</li>
+          <li>Frizz-free, glass-like hair</li>
+          <li>Formaldehyde-conscious formula</li>
+          <li>Suits most hair lengths</li>
+        </ul>
+        <a class="btn btn-navy" href="https://wa.me/919041071539?text=Hi!%20I%20want%20to%20book%20the%20Nanoplastia%20BOGO%20treatment%20at%20%E2%82%B95%2C999.">Book This</a>
+      </div>
+    </div>
+    <p class="footnote">Prices verified from the salon's JustDial listing. Service combinations may vary — confirm on call.</p>
+  </div>
+</section>
+
+<section class="band" id="offers">
+  <div class="wrap">
+    <div>
+      <span class="kick" style="color:#f6c87e">Limited Offers</span>
+      <h2 class="serif">L'Oréal Professionnel <em>Absolut Repair</em> Molecular Hair Spa — 1+1.</h2>
+      <p>Plus the 3TENX Keratin Collagen Hair Spa for deep, lasting smoothness. Both run on limited slots each week — call ahead and the team will hold one for you.</p>
+      <div class="btnrow">
+        <a class="btn btn-copper" href="tel:+919041071539">Call 90410 71539</a>
+      </div>
+    </div>
+    <img src="https://files.catbox.moe/rgdwux.jpg" alt="Inside Le Elegance salon">
+  </div>
+</section>
+
+<section class="sec" id="gallery" style="padding-top:80px">
+  <div class="wrap">
+    <span class="kick">The Studio</span>
+    <h2 class="serif">Step inside <em>Le Elegance</em>.</h2>
+    <div class="gal">
+      <figure><img src="https://files.catbox.moe/yuth1u.jpg" alt="Le Elegance storefront"><figcaption>Our studio · Sector 15</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/dbfv1k.jpg" alt="Styling at Le Elegance"><figcaption>Signature styling</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/l2gy89.png" alt="Spa and wellness ambience"><figcaption>Signature looks</figcaption></figure>
+    </div>
+    <p class="footnote">Studio photos from the salon's public listings. "Signature looks" images are representative style references.</p>
+  </div>
+</section>
+
+<section class="sec contact" id="contact" style="padding-bottom:70px">
+  <div class="wrap">
+    <span class="kick">Visit Us</span>
+    <h2 class="serif">Find your way to <em>elegance</em>.</h2>
+    <div class="cgrid">
+      <div>
+        <div class="citem"><span class="lab">Address</span><p>SCF 25, 1st Floor, Near Bhavan Vidhyalaya School,<br>Sector 15, Panchkula, Haryana</p></div>
+        <div class="citem"><span class="lab">Phone</span><p><a href="tel:+919041071539">+91 90410 71539</a><br><a href="tel:+919878081582">+91 98780 81582</a></p></div>
+        <div class="citem"><span class="lab">Instagram</span><p><a href="https://instagram.com/le.elegance15" target="_blank" rel="noopener">@le.elegance15</a> · 1.2K followers</p></div>
+        <div class="btnrow"><a class="btn btn-navy" href="https://www.google.com/maps/search/?api=1&query=Le+Elegance+Salon+Sector+15+Panchkula" target="_blank" rel="noopener">Open in Maps</a></div>
+      </div>
+      <div class="bigcta">
+        <h2 class="serif">Ready when <em>you</em> are.</h2>
+        <p>Call or WhatsApp — the team confirms every booking personally.</p>
+        <div class="btnrow" style="justify-content:center">
+          <a class="btn btn-copper" href="tel:+919041071539">Call Now</a>
+          <a class="btn" style="border:1.5px solid #f6c87e;color:#f6c87e" href="https://wa.me/919041071539">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="fin">Le Elegance · Sector 15, Panchkula</span>
+    <p>Demo by <b>StyleFrame Co.</b> — a concept preview for the salon team. Prices from public listings; confirm before visiting.</p>
+  </div>
+</footer>
+
+<div class="stickybar">
+  <a class="call" href="tel:+919041071539">Call Now</a>
+  <a class="wa" href="https://wa.me/919041071539?text=Hi%20Le%20Elegance!%20I%27d%20like%20to%20book%20an%20appointment.">WhatsApp</a>
+</div>
+
+</body>
+</html>

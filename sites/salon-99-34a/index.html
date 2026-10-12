@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>99 Salon &amp; Academy — Sector 34A, Chandigarh | Demo by StyleFrame Co.</title>
+<meta name="description" content="99 Salon and Academy, Sector 34A Chandigarh — 5.0 rated salon, spa & beauty institute. Bridal makeup, hair, skin and professional beauty courses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f1b2d; --ink2:#16263e; --gold:#c9a24b; --gold-soft:#e6d3a3;
+  --ivory:#f7f4ec; --paper:#fffdf8; --muted:#5d6b80; --line:#e8e0cf;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;color:var(--ink);background:var(--ivory);overflow-x:hidden;line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
+
+/* top utility bar */
+.topbar{background:var(--ink);color:var(--gold-soft);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:9px 12px}
+.topbar b{color:#fff;font-weight:600}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(247,244,236,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;letter-spacing:.02em}
+.brand span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;font-size:14px;font-weight:500;letter-spacing:.04em}
+.nav-links a{position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);transition:width .3s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--ink);color:#fff;padding:11px 22px;font-size:13.5px;font-weight:600;letter-spacing:.06em;border:1px solid var(--ink);transition:.3s}
+.nav-cta:hover{background:transparent;color:var(--ink)}
+
+/* hero */
+.hero{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 60%,#0c1523 100%);color:#fff;overflow:hidden;position:relative}
+.hero::before{content:"";position:absolute;top:-120px;right:-120px;width:420px;height:420px;border:1px solid rgba(201,162,75,.25);border-radius:50%}
+.hero::after{content:"";position:absolute;bottom:-160px;left:30%;width:520px;height:520px;border:1px solid rgba(201,162,75,.14);border-radius:50%}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:88px 0 96px;position:relative;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:22px}
+.eyebrow::before{content:"";width:38px;height:1px;background:var(--gold)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,5.4vw,68px);line-height:1.06;font-weight:600;margin-bottom:22px}
+.hero h1 em{font-style:italic;color:var(--gold-soft)}
+.hero p.lead{color:#c3cfdd;font-size:17px;max-width:480px;margin-bottom:34px;font-weight:300}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:15px 32px;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:.3s;min-height:48px}
+.btn-gold{background:var(--gold);color:var(--ink);border:1px solid var(--gold)}
+.btn-gold:hover{background:transparent;color:var(--gold-soft)}
+.btn-ghost{border:1px solid rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft)}
+.hero-stats{display:flex;gap:44px;margin-top:46px;flex-wrap:wrap}
+.hstat .n{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:var(--gold-soft)}
+.hstat .l{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8fa0b5;margin-top:4px}
+
+.photo-frame{position:relative;padding:14px;border:1px solid rgba(201,162,75,.5);background:rgba(255,255,255,.03)}
+.photo-frame::before{content:"";position:absolute;inset:6px;border:1px solid rgba(201,162,75,.25);pointer-events:none}
+.photo-frame img{width:100%;height:440px;object-fit:cover;filter:saturate(.92)}
+.photo-cap{margin-top:12px;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#9fb0c6;text-align:center}
+.floating-badge{position:absolute;top:-24px;right:-18px;background:var(--gold);color:var(--ink);padding:16px 20px;text-align:center;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.floating-badge .s{font-size:26px;font-weight:700;line-height:1}
+.floating-badge .t{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+
+/* marquee strip */
+.strip{background:var(--gold);color:var(--ink);overflow:hidden;white-space:nowrap;padding:14px 0}
+.strip-inner{display:inline-block;animation:scroll 26s linear infinite;font-size:13px;font-weight:700;letter-spacing:.3em;text-transform:uppercase}
+.strip-inner span{margin:0 26px}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:88px 0}
+.sec-head{max-width:640px;margin-bottom:52px}
+.sec-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,46px);font-weight:600;line-height:1.12;margin:14px 0 16px}
+.sec-head p{color:var(--muted);font-size:16px}
+.kicker{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700}
+
+/* courses */
+#academy{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.course-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.course{border:1px solid var(--line);background:#fff;padding:34px 26px;transition:.35s;position:relative;overflow:hidden}
+.course:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 22px 44px rgba(15,27,45,.1)}
+.course .num{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold);letter-spacing:.2em;font-weight:600}
+.course h3{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;margin:12px 0 10px;line-height:1.25}
+.course p{font-size:13.5px;color:var(--muted)}
+.course .dur{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);font-weight:600}
+
+/* services list */
+.svc{display:grid;grid-template-columns:1fr auto;gap:8px 24px;padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.svc:first-of-type{border-top:1px solid var(--line)}
+.svc h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600}
+.svc .d{grid-column:1;color:var(--muted);font-size:14.5px;max-width:560px}
+.svc .p{font-size:14px;font-weight:600;letter-spacing:.06em;color:var(--gold);text-transform:uppercase;white-space:nowrap}
+.footnote{margin-top:22px;font-size:13px;color:var(--muted);font-style:italic}
+
+/* visit */
+#visit{background:var(--ink);color:#fff}
+#visit .sec-head h2{color:#fff}
+#visit .sec-head p{color:#a9b8cb}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.addr-card{border:1px solid rgba(201,162,75,.4);padding:40px}
+.addr-card h3{font-family:'Cormorant Garamond',serif;font-size:26px;margin-bottom:14px;color:var(--gold-soft)}
+.addr-card address{font-style:normal;color:#c3cfdd;margin-bottom:22px;line-height:1.9}
+.addr-card .row{display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid rgba(255,255,255,.12);font-size:14.5px}
+.addr-card .row .k{color:#8fa0b5}
+.map-link{display:inline-block;margin-top:24px;border:1px solid var(--gold);color:var(--gold-soft);padding:13px 28px;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;transition:.3s}
+.map-link:hover{background:var(--gold);color:var(--ink)}
+.hours-note{margin-top:18px;font-size:13px;color:#8fa0b5;font-style:italic}
+
+/* reviews */
+.rev-card{border:1px solid var(--line);background:var(--paper);padding:44px;max-width:760px;margin:0 auto;text-align:center}
+.rev-stars{font-size:30px;color:var(--gold);letter-spacing:6px;margin-bottom:16px}
+.rev-card .score{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:700;line-height:1}
+.rev-card .src{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.rev-card p{margin-top:20px;color:var(--muted);font-size:15px}
+.rev-link{display:inline-block;margin-top:24px;color:var(--ink);font-weight:600;border-bottom:2px solid var(--gold);padding-bottom:3px;font-size:14.5px}
+
+/* cta banner */
+.cta-banner{background:linear-gradient(120deg,#0f1b2d,#1c2f4a);color:#fff;text-align:center;padding:76px 24px}
+.cta-banner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,44px);font-weight:600;margin-bottom:14px}
+.cta-banner h2 em{color:var(--gold-soft);font-style:italic}
+.cta-banner p{color:#a9b8cb;margin-bottom:30px}
+
+/* footer */
+footer{background:#0a1320;color:#8fa0b5;padding:44px 0;font-size:13.5px}
+.foot-in{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.foot-in .demo{letter-spacing:.1em;text-transform:uppercase;font-size:11.5px}
+.foot-in .demo b{color:var(--gold-soft)}
+
+/* sticky mobile bar */
+.stickybar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(10,19,32,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(201,162,75,.4)}
+.stickybar a{flex:1;text-align:center;padding:14px 8px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;min-height:48px;display:flex;align-items:center;justify-content:center}
+.sb-dm{background:var(--gold);color:var(--ink)}
+.sb-map{border:1px solid rgba(255,255,255,.4);color:#fff}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:44px;padding:60px 0 72px}
+  .photo-frame img{height:320px}
+  .course-grid{grid-template-columns:1fr 1fr;gap:14px}
+  .visit-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .stickybar{display:flex}
+  body{padding-bottom:78px}
+  section{padding:64px 0}
+  .floating-badge{right:6px}
+}
+@media(max-width:560px){
+  .course-grid{grid-template-columns:1fr}
+  .hero-stats{gap:26px}
+  .svc{grid-template-columns:1fr}
+  .svc .p{grid-column:1}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar"><b>5.0 rated</b> &nbsp;·&nbsp; 2,088 JustDial reviews &nbsp;·&nbsp; Salon · Spa · Academy</div>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="#">99 <span>Salon</span></a>
+    <div class="nav-links">
+      <a href="#academy">Academy</a>
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <a class="nav-cta" href="https://www.instagram.com/" target="_blank" rel="noopener">Message on Instagram</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Sector 34A · Chandigarh</span>
+      <h1>Where Chandigarh <em>learns</em> beauty — and gets pampered.</h1>
+      <p class="lead">99 Salon &amp; Academy is one of the city's most trusted beauty destinations — a full-service salon, spa and a professional beauty institute under one roof.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="#academy">Explore Courses</a>
+        <a class="btn btn-ghost" href="#services">Salon Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="n">5.0</div><div class="l">JustDial rating</div></div>
+        <div class="hstat"><div class="n">2,088</div><div class="l">Verified reviews</div></div>
+        <div class="hstat"><div class="n">1</div><div class="l">Salon · Spa · Academy</div></div>
+      </div>
+    </div>
+    <div style="position:relative">
+      <div class="floating-badge"><div class="s">5.0★</div><div class="t">Top rated</div></div>
+      <div class="photo-frame">
+        <img src="https://files.catbox.moe/bfsuns.jpg" alt="99 Institute of Beauty &amp; Wellness reception, Sector 34A Chandigarh">
+        <div class="photo-cap">Our reception — 99 Institute of Beauty &amp; Wellness</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="strip"><div class="strip-inner">
+  <span>Bridal Makeup</span>·<span>Hair Services</span>·<span>Skin &amp; Spa</span>·<span>Beauty Courses</span>·<span>Salon-n-Spa</span>·<span>Bridal Makeup</span>·<span>Hair Services</span>·<span>Skin &amp; Spa</span>·<span>Beauty Courses</span>·<span>Salon-n-Spa</span>·
+</div></div>
+
+<section id="academy">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">The Academy</div>
+      <h2>Train where the professionals do.</h2>
+      <p>99 runs as a working institute of beauty &amp; wellness — students learn on real clients, under working professionals. Full curriculum and fee details on request.</p>
+    </div>
+    <div class="course-grid">
+      <div class="course">
+        <div class="num">01</div>
+        <h3>Professional Bridal Makeup</h3>
+        <p>Complete bridal artistry training — traditional to contemporary looks, on real bridal bookings.</p>
+        <div class="dur">Curriculum on request</div>
+      </div>
+      <div class="course">
+        <div class="num">02</div>
+        <h3>Hair Services Diploma</h3>
+        <p>Cutting, colouring, styling and treatments taught inside a working salon floor.</p>
+        <div class="dur">Curriculum on request</div>
+      </div>
+      <div class="course">
+        <div class="num">03</div>
+        <h3>Skin &amp; Spa Therapy</h3>
+        <p>Facials, skin analysis and spa rituals — the wellness side of the institute.</p>
+        <div class="dur">Curriculum on request</div>
+      </div>
+      <div class="course">
+        <div class="num">04</div>
+        <h3>Beauty Parlour Certification</h3>
+        <p>End-to-end beauty parlour skills — start your own studio with professional grounding.</p>
+        <div class="dur">Curriculum on request</div>
+      </div>
+    </div>
+    <p class="footnote">* Course names reflect the academy's published specialisations. Detailed syllabus, duration and fees are shared at the institute — message us on Instagram.</p>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Salon &amp; Spa</div>
+      <h2>Services, done the 5.0-star way.</h2>
+      <p>A full menu across bridal, hair, skin and spa. Prices are confirmed at consultation — a 2,088-review reputation is built on honesty.</p>
+    </div>
+    <div class="svc">
+      <h3>Bridal Makeup</h3><div class="p">Price on consultation</div>
+      <div class="d">Signature bridal looks with trials, draping and finish that photographs beautifully.</div>
+    </div>
+    <div class="svc">
+      <h3>Hair Services</h3><div class="p">Price on consultation</div>
+      <div class="d">Cutting, styling, colour and treatments by academy-trained professionals.</div>
+    </div>
+    <div class="svc">
+      <h3>Skin &amp; Facials</h3><div class="p">Price on consultation</div>
+      <div class="d">Deep-cleansing facials and skin rituals tailored to your skin type.</div>
+    </div>
+    <div class="svc">
+      <h3>Spa Rituals</h3><div class="p">Price on consultation</div>
+      <div class="d">Relaxation therapies inside the Salon-n-Spa wing.</div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center;max-width:640px;margin-left:auto;margin-right:auto">
+      <div class="kicker">Client Love</div>
+      <h2>Rated 5.0 by 2,088 clients.</h2>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <div class="score">5.0 / 5</div>
+      <div class="src">2,088 reviews on JustDial</div>
+      <p>One of the highest-reviewed salons in Chandigarh. Read the full reviews on our JustDial listing — or come experience it yourself.</p>
+      <a class="rev-link" href="https://maps.google.com/?q=99+Salon+and+Academy+Sector+34A+Chandigarh" target="_blank" rel="noopener">Find us on Google Maps →</a>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker" style="color:var(--gold)">Find Us</div>
+      <h2>In the heart of Sector 34A.</h2>
+      <p>Walk in for salon services, or drop by the institute desk to ask about courses.</p>
+    </div>
+    <div class="visit-grid">
+      <div class="addr-card">
+        <h3>99 Salon and Academy</h3>
+        <address>Near Sham Fashion Mall,<br>Sector 34A,<br>Chandigarh</address>
+        <div class="row"><span class="k">Rating</span><span>5.0 ★ · 2,088 reviews</span></div>
+        <div class="row"><span class="k">Best for</span><span>Bridal · Academy courses</span></div>
+        <a class="map-link" href="https://maps.google.com/?q=99+Salon+and+Academy+Sector+34A+Chandigarh" target="_blank" rel="noopener">Get Directions</a>
+        <div class="hours-note">Walk-ins welcome · Appointments via Instagram DM</div>
+      </div>
+      <div class="photo-frame">
+        <img src="https://files.catbox.moe/bfsuns.jpg" alt="Inside 99 Salon &amp; Academy, Sector 34A">
+        <div class="photo-cap">Inside the institute — Sector 34A</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <h2>Ready to look <em>stunning</em> — or train to make others?</h2>
+  <p>Salon bookings and academy admissions both start with one message.</p>
+  <a class="btn btn-gold" href="https://www.instagram.com/" target="_blank" rel="noopener">Message 99 Salon on Instagram</a>
+</div>
+
+<footer>
+  <div class="wrap foot-in">
+    <div>99 Salon and Academy · Sector 34A, Chandigarh</div>
+    <div class="demo">Demo by <b>StyleFrame Co.</b></div>
+  </div>
+</footer>
+
+<div class="stickybar">
+  <a class="sb-dm" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram DM</a>
+  <a class="sb-map" href="https://maps.google.com/?q=99+Salon+and+Academy+Sector+34A+Chandigarh" target="_blank" rel="noopener">Directions</a>
+</div>
+
+</body>
+</html>

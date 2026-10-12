@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barber King Unisex Salon | Sector 68, Mohali</title>
+<meta name="description" content="Barber King Unisex Salon — Main Market, Sector 68, Mohali. Rated 4.9 by 531 clients. Haircuts, styling, hair spa, bridal makeup, facials.">
+<style>
+:root{--ink:#141210;--ink2:#1e1a17;--amber:#c8862a;--amber2:#e0a23f;--paper:#f5f1e8;--line:#3a332c;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden;scroll-behavior:smooth}
+body{overflow-x:hidden;background:var(--ink);color:var(--paper);font-family:'Helvetica Neue',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.display{font-family:Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:.01em}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+/* top bar */
+.topbar{background:var(--amber);color:#141210;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-align:center;padding:9px 12px}
+.topbar a{color:#141210}
+/* header */
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;max-width:1120px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .crown{width:38px;height:38px;background:var(--amber);color:#141210;display:grid;place-items:center;font-family:Georgia,serif;font-weight:700;font-size:22px;border-radius:4px}
+.brand b{font-family:Georgia,serif;font-size:20px;letter-spacing:.06em;text-transform:uppercase}
+.brand small{display:block;font-family:'Helvetica Neue',Arial;font-size:11px;letter-spacing:.28em;color:var(--amber2);text-transform:uppercase}
+nav a{color:var(--paper);text-decoration:none;margin-left:22px;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+nav a:hover{color:var(--amber2)}
+@media(max-width:900px){nav{display:none}}
+/* hero */
+.hero{position:relative;overflow:hidden;border-top:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:78vh}
+.hero-copy{padding:64px 22px 48px 0;max-width:560px;margin-left:auto}
+.kicker{display:inline-block;background:var(--ink2);border:1px solid var(--line);color:var(--amber2);font-size:12px;letter-spacing:.24em;text-transform:uppercase;padding:7px 14px;margin-bottom:22px}
+.hero-copy h1{font-size:clamp(42px,6vw,76px);line-height:1.02;text-transform:uppercase}
+.hero-copy h1 span{color:var(--amber);display:block}
+.hero-copy p.lead{margin:20px 0 28px;color:#cfc7b8;font-size:17px;max-width:44ch}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:16px 30px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:14px;text-decoration:none;min-height:52px}
+.btn-amber{background:var(--amber);color:#141210}
+.btn-amber:hover{background:var(--amber2)}
+.btn-ghost{border:2px solid var(--paper);color:var(--paper)}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+.hero-img{background:url('images/hero.jpg') center/cover;min-height:420px;position:relative;clip-path:polygon(8% 0,100% 0,100% 100%,0 100%)}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,18,16,.55),transparent 40%)}
+.hero-badge{position:absolute;left:0;bottom:36px;background:var(--amber);color:#141210;padding:12px 20px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:13px;z-index:2}
+/* trust strip */
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink2)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+.trust div{padding:26px 10px;border-left:1px solid var(--line)}
+.trust div:first-child{border-left:none}
+.trust b{display:block;font-family:Georgia,serif;font-size:34px;color:var(--amber)}
+.trust small{letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:#a89c86}
+/* services */
+.sec{padding:80px 0}
+.sec-head{margin-bottom:44px}
+.sec-head .kicker{background:transparent;border-color:var(--amber);color:var(--amber)}
+.sec-head h2{font-size:clamp(30px,4vw,46px);text-transform:uppercase}
+.sec-head h2 span{color:var(--amber)}
+.menu{border:1px solid var(--line)}
+.menu .row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:22px 26px;border-bottom:1px solid var(--line)}
+.menu .row:last-child{border-bottom:none}
+.menu .row:hover{background:var(--ink2)}
+.menu h3{font-size:20px;letter-spacing:.04em}
+.menu p{color:#a89c86;font-size:14px}
+.menu .price{font-family:Georgia,serif;font-size:22px;color:var(--amber);white-space:nowrap}
+.footnote{color:#8a7f6a;font-size:13px;margin-top:16px}
+/* two-col feature */
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin-top:0}
+.feature img{width:100%;height:100%;object-fit:cover;display:block;min-height:320px}
+.feature .fcopy{padding:56px 48px;background:var(--ink2)}
+.feature .fcopy h2{font-size:clamp(26px,3vw,38px);text-transform:uppercase;margin-bottom:16px}
+.feature .fcopy h2 span{color:var(--amber)}
+.feature ul{list-style:none;margin:20px 0 28px}
+.feature li{padding:10px 0;border-bottom:1px dashed var(--line);color:#d8cfbd}
+.feature li::before{content:"—";color:var(--amber);margin-right:10px}
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gallery img{width:100%;height:280px;object-fit:cover;display:block;filter:grayscale(15%)}
+.gallery img:first-child{grid-column:span 2;grid-row:span 2;height:574px}
+@media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}.gallery img:first-child{grid-column:span 2;height:340px}.gallery img{height:220px}}
+/* reviews */
+.rev{background:var(--ink2);border:1px solid var(--line);padding:40px 36px;margin-top:8px}
+.rev .stars{color:var(--amber);letter-spacing:.3em;font-size:18px;margin-bottom:12px}
+.rev p{font-family:Georgia,serif;font-size:20px;font-style:italic;color:#e7dfcf}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:8px}
+.card{border:1px solid var(--line);background:var(--ink2);padding:36px 30px}
+.card h3{font-size:22px;text-transform:uppercase;margin-bottom:14px;color:var(--amber)}
+.card p{color:#cfc7b8;margin-bottom:8px}
+.card a{color:var(--paper)}
+/* footer */
+footer{border-top:1px solid var(--line);padding:30px 0 110px;text-align:center;color:#8a7f6a;font-size:13px;letter-spacing:.06em}
+/* sticky bar */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;background:var(--amber)}
+.sticky a{flex:1;text-align:center;padding:17px 8px;color:#141210;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:14px;text-decoration:none;min-height:56px}
+.sticky a+a{border-left:2px solid #141210}
+@media(max-width:900px){
+  .sticky{display:flex}
+  .hero-grid{grid-template-columns:1fr;min-height:0}
+  .hero-copy{padding:48px 22px 40px;margin:0 auto;text-align:left}
+  .hero-img{clip-path:none;min-height:340px}
+  .trust .wrap{grid-template-columns:repeat(2,1fr)}
+  .trust div{border-top:1px solid var(--line)}
+  .feature{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .sec{padding:56px 0}
+}
+</style>
+</head>
+<body>
+<div class="topbar">Walk-ins welcome &nbsp;·&nbsp; Sector 68 Main Market &nbsp;·&nbsp; <a href="https://instagram.com/barberking.india" target="_blank" rel="noopener">DM @barberking.india</a></div>
+<header>
+  <div class="brand"><div class="crown">B</div><div><b>Barber King</b><small>Unisex Salon</small></div></div>
+  <nav>
+    <a href="#services">Services</a><a href="#gallery">Work</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="kicker">Est. Sector 68 · Mohali</span>
+      <h1>Sharp Looks.<span>Zero Compromise.</span></h1>
+      <p class="lead">Barber King is Mohali's go-to unisex salon for precision haircuts, styling, hair spa, facials and bridal makeup — rated 4.9 by more than 530 clients.</p>
+      <div class="cta-row">
+        <a class="btn btn-amber" href="https://instagram.com/barberking.india" target="_blank" rel="noopener">Book on Instagram</a>
+        <a class="btn btn-ghost" href="#services">View Services</a>
+      </div>
+    </div>
+    <div class="hero-img"><div class="hero-badge">4.9 ★ · 531 reviews</div></div>
+  </div>
+</section>
+
+<section class="trust"><div class="wrap">
+  <div><b>4.9</b><small>Average rating</small></div>
+  <div><b>531</b><small>Verified reviews</small></div>
+  <div><b>2</b><small>For him &amp; her</small></div>
+  <div><b>100%</b><small>Unisex services</small></div>
+</div></section>
+
+<section class="sec wrap" id="services">
+  <div class="sec-head"><span class="kicker">The Menu</span><h2>Services <span>&amp;</span> Care</h2></div>
+  <div class="menu">
+    <div class="row"><div><h3>Haircut &amp; Styling</h3><p>Precision cuts, fades, layers and styling for men and women.</p></div><div class="price">In-salon</div></div>
+    <div class="row"><div><h3>Hair Spa</h3><p>Deep-repair spa rituals for damaged, dry and colour-treated hair.</p></div><div class="price">In-salon</div></div>
+    <div class="row"><div><h3>Bridal Makeup</h3><p>Full bridal looks with trial, draping and on-day touch-up plan.</p></div><div class="price">On request</div></div>
+    <div class="row"><div><h3>Facials &amp; Skin</h3><p>Clean-ups to glow facials matched to your skin type.</p></div><div class="price">In-salon</div></div>
+    <div class="row"><div><h3>Colour &amp; Keratin*</h3><p>Global colour, balayage and smoothening treatments.</p></div><div class="price">On request</div></div>
+  </div>
+  <p class="footnote">*Popular add-ons at the Sector 68 studio. Final pricing confirmed in-salon or over Instagram DM — DM @barberking.india for the latest price list.</p>
+</section>
+
+<section class="wrap"><div class="feature">
+  <img src="https://files.catbox.moe/5xdzmi.webp" alt="Barber King — precision styling in progress">
+  <div class="fcopy">
+    <span class="kicker">Why Barber King</span>
+    <h2>The Chair <span>Experience</span></h2>
+    <ul>
+      <li>Senior stylists for both men and women</li>
+      <li>Sanitised tools and fresh capes, every seat</li>
+      <li>Real client work — see the latest reels @barberking.india</li>
+      <li>Walk-ins welcome; appointments for bridal trials</li>
+    </ul>
+    <a class="btn btn-amber" href="https://instagram.com/barberking.india" target="_blank" rel="noopener">DM to Book</a>
+  </div>
+</div></section>
+
+<section class="sec wrap" id="gallery">
+  <div class="sec-head"><span class="kicker">Fresh Off The Chair</span><h2>Recent <span>Work</span></h2></div>
+  <div class="gallery">
+    <img src="https://files.catbox.moe/lc4qwn.jpg" alt="Barber King salon work">
+    <img src="https://files.catbox.moe/sniia7.jpg" alt="Inside Barber King Sector 68">
+    <img src="https://files.catbox.moe/jn7ny0.webp" alt="Barber King styling detail">
+    <img src="https://files.catbox.moe/5xdzmi.webp" alt="Precision cut at Barber King">
+  </div>
+</section>
+
+<section class="sec wrap" id="reviews" style="padding-top:0">
+  <div class="sec-head"><span class="kicker">Word On The Street</span><h2>Client <span>Love</span></h2></div>
+  <div class="rev">
+    <div class="stars">★★★★★</div>
+    <p>"Rated 4.9 out of 5 across 531 verified reviews — one of the highest-rated unisex salons in Sector 68, Mohali."</p>
+  </div>
+</section>
+
+<section class="sec wrap" id="contact" style="padding-top:0">
+  <div class="sec-head"><span class="kicker">Find The Chair</span><h2>Visit <span>Us</span></h2></div>
+  <div class="contact-grid">
+    <div class="card">
+      <h3>Address</h3>
+      <p>Barber King Unisex Salon<br>Main Market, Sector 68<br>Mohali, Punjab</p>
+      <p style="margin-top:14px"><a href="https://www.google.com/maps/search/?api=1&query=Barber+King+Unisex+Salon+Sector+68+Mohali" target="_blank" rel="noopener">Get Directions →</a></p>
+    </div>
+    <div class="card">
+      <h3>Book A Slot</h3>
+      <p>Fastest way to book: message us on Instagram.</p>
+      <p style="margin-top:14px"><a class="btn btn-amber" href="https://instagram.com/barberking.india" target="_blank" rel="noopener">DM @barberking.india</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Barber King Unisex Salon · Sector 68, Mohali</p>
+  <p style="margin-top:6px">Demo by StyleFrame Co.</p>
+</footer>
+
+<div class="sticky">
+  <a href="https://instagram.com/barberking.india" target="_blank" rel="noopener">Book Now</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Barber+King+Unisex+Salon+Sector+68+Mohali" target="_blank" rel="noopener">Directions</a>
+</div>
+</body>
+</html>

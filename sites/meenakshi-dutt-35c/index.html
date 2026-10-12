@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meenakshi Dutt Makeovers — Luxury Salon & Academy | Sector 35C, Chandigarh</title>
+<meta name="description" content="Meenakshi Dutt Makeovers — Luxury Salon & Academy in Sector 35C, Chandigarh. Bridal makeup, hair, nails and professional makeup courses. Rated 4.9 on JustDial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#F8F4EC;--cream:#FFFFFF;--ink:#1B1815;--gold:#B08D57;--gold-soft:#D9C6A5;--muted:#6E675E;--line:#E7DFD2}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--ivory);color:var(--ink);overflow-x:hidden;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:500}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(248,244,236,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1140px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.06em}
+.brand small{display:block;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.4em;color:var(--gold);font-weight:500}
+.nav-links{display:flex;gap:28px;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.nav-links a{text-decoration:none;color:var(--muted);transition:color .3s}
+.nav-links a:hover{color:var(--ink)}
+.btn{display:inline-block;padding:14px 34px;border:1px solid var(--ink);background:var(--ink);color:#fff;text-decoration:none;font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:all .35s}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn.gold{background:var(--gold);border-color:var(--gold)}
+.btn.gold:hover{background:transparent;color:var(--gold)}
+.btn.ghost{background:transparent;color:var(--ink)}
+/* HERO */
+.hero{padding:150px 0 80px;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(44px,5.6vw,76px);line-height:1.06;margin:18px 0 22px;letter-spacing:.01em}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p.lead{color:var(--muted);font-size:17px;font-weight:300;max-width:460px;margin-bottom:34px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.hero-fig{position:relative}
+.hero-fig .frame{position:absolute;inset:0;border:1px solid var(--gold);transform:translate(22px,22px);pointer-events:none}
+.hero-fig img{width:100%;height:560px;object-fit:cover}
+.hero-badge{position:absolute;left:-38px;bottom:44px;background:var(--ink);color:#fff;padding:20px 26px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.18)}
+.hero-badge .n{font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--gold);line-height:1}
+.hero-badge .t{font-size:10px;letter-spacing:.3em;text-transform:uppercase;margin-top:6px}
+/* MARQUEE */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:16px 0;background:var(--cream)}
+.marquee-track{display:flex;gap:56px;white-space:nowrap;animation:scroll 28s linear infinite;width:max-content}
+.marquee-track span{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.marquee-track i{color:var(--gold);font-style:normal}
+@keyframes scroll{to{transform:translateX(-50%)}}
+/* TRUST */
+.trust{padding:70px 0 10px}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.trust-cell{background:var(--ivory);padding:36px 24px;text-align:center}
+.trust-cell .n{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--ink)}
+.trust-cell .t{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.stars{color:var(--gold);letter-spacing:.2em;font-size:14px;margin-bottom:6px}
+/* SECTIONS */
+section{padding:88px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 56px}
+.sec-head h2{font-size:clamp(34px,4vw,52px);margin:14px 0 14px;line-height:1.12}
+.sec-head p{color:var(--muted);font-weight:300;font-size:16px}
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.svc{background:var(--cream);border:1px solid var(--line);padding:40px 32px;transition:transform .4s,box-shadow .4s;position:relative}
+.svc:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(27,24,21,.08)}
+.svc .num{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold);letter-spacing:.2em}
+.svc h3{font-size:28px;margin:12px 0 12px}
+.svc p{color:var(--muted);font-size:14.5px;font-weight:300}
+.svc .tag{display:inline-block;margin-top:18px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--gold-soft);padding-top:14px}
+/* ACADEMY */
+.academy{background:var(--ink);color:#EFE7D7;border-radius:2px}
+.academy .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.academy h2{font-size:clamp(34px,4vw,50px);color:#fff;margin:14px 0 18px;line-height:1.14}
+.academy h2 em{font-style:italic;color:var(--gold)}
+.academy p{color:#B9B0A1;font-weight:300;font-size:16px;margin-bottom:26px}
+.course{border-bottom:1px solid #33302B;padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.course h4{font-family:'Cormorant Garamond',serif;font-size:22px;color:#fff;font-weight:500}
+.course span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.academy img{width:100%;height:480px;object-fit:cover}
+/* GALLERY */
+.gal{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gal figure{overflow:hidden;margin:0}
+.gal figure:hover img{transform:scale(1.05)}
+.g1{grid-column:span 7;height:420px}.g2{grid-column:span 5;height:420px}
+.g3{grid-column:span 4;height:320px}.g4{grid-column:span 4;height:320px}.g5{grid-column:span 4;height:320px}
+/* REVIEWS */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev{background:var(--cream);border:1px solid var(--line);padding:38px 32px;text-align:center}
+.rev .stars{margin-bottom:14px}
+.rev .big{font-family:'Cormorant Garamond',serif;font-size:60px;line-height:1;color:var(--ink)}
+.rev p{color:var(--muted);font-size:13px;letter-spacing:.1em;margin-top:10px;text-transform:uppercase}
+.note{margin-top:34px;text-align:center;color:var(--muted);font-size:13.5px;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:17px}
+/* CONTACT */
+.contact{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.c-item{margin-bottom:26px}
+.c-item h5{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.c-item p,.c-item a{font-size:17px;font-weight:300;color:var(--ink);text-decoration:none}
+.c-item a:hover{color:var(--gold)}
+.hours{width:100%;border-collapse:collapse;margin-top:6px}
+.hours td{padding:8px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--muted)}
+.hours td:last-child{text-align:right;color:var(--ink)}
+/* CTA band */
+.cta-band{background:var(--gold);color:#fff;text-align:center;padding:70px 24px}
+.cta-band h2{font-size:clamp(30px,3.6vw,46px);margin-bottom:14px}
+.cta-band p{font-weight:300;margin-bottom:30px;opacity:.92}
+.cta-band .btn{background:#fff;color:var(--ink);border-color:#fff}
+.cta-band .btn:hover{background:transparent;color:#fff}
+/* FOOTER */
+footer{background:var(--ink);color:#8F867A;padding:44px 0 110px;font-size:13px}
+.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
+.foot-grid .brand{color:#fff}
+/* MOBILE BAR */
+.mbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:#fff;border-top:1px solid var(--line)}
+.mbar a{flex:1;text-align:center;padding:16px 0;font-size:13px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;font-weight:500;min-height:52px}
+.mbar a.call{background:var(--ink);color:#fff}
+.mbar a.wa{background:#1F7A4D;color:#fff}
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.rv.on{opacity:1;transform:none}
+@media(max-width:900px){
+.nav-links{display:none}
+.hero{grid-template-columns:1fr;padding-top:120px;gap:40px}
+.hero-fig img{height:380px}
+.hero-badge{left:12px;bottom:18px;padding:14px 18px}
+.trust-grid{grid-template-columns:repeat(2,1fr)}
+.svc-grid,.rev-grid{grid-template-columns:1fr}
+.academy .wrap{grid-template-columns:1fr;gap:40px}
+.academy img{height:300px}
+.gal .g1,.gal .g2,.gal .g3,.gal .g4,.gal .g5{grid-column:span 12;height:280px}
+.contact-grid{grid-template-columns:1fr}
+section{padding:64px 0}
+.mbar{display:flex}
+footer{padding-bottom:150px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-in">
+    <div class="brand">Meenakshi Dutt<small>MAKEOVERS</small></div>
+    <div class="nav-links">
+      <a href="#services">Services</a><a href="#academy">Academy</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+    </div>
+    <a class="btn gold" href="tel:07041623572">Book Now</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div>
+    <span class="eyebrow">Luxury Salon &amp; Academy &middot; Sector 35C, Chandigarh</span>
+    <h1>The Art of <em>Timeless</em> Bridal Beauty</h1>
+    <p class="lead">Chandigarh's destination for luxury bridal makeovers, precision hair design and professional makeup artistry training — above McDonald's, Sector 35C.</p>
+    <div class="hero-cta">
+      <a class="btn" href="tel:07041623572">Call the Salon</a>
+      <a class="btn ghost" href="#academy">Explore Academy</a>
+    </div>
+  </div>
+  <div class="hero-fig">
+    <div class="frame"></div>
+    <img src="https://files.catbox.moe/i91d6w.jpg" alt="Bridal makeup artistry at Meenakshi Dutt Makeovers">
+    <div class="hero-badge"><div class="n">4.9</div><div class="t">JustDial &middot; 168 reviews</div></div>
+  </div>
+</header>
+
+<div class="marquee"><div class="marquee-track">
+  <span>Bridal Makeup <i>&middot;</i></span><span>Party Makeup <i>&middot;</i></span><span>Hair Design <i>&middot;</i></span><span>Nail Art <i>&middot;</i></span><span>Skin &amp; Facials <i>&middot;</i></span><span>Makeup Academy <i>&middot;</i></span>
+  <span>Bridal Makeup <i>&middot;</i></span><span>Party Makeup <i>&middot;</i></span><span>Hair Design <i>&middot;</i></span><span>Nail Art <i>&middot;</i></span><span>Skin &amp; Facials <i>&middot;</i></span><span>Makeup Academy <i>&middot;</i></span>
+</div></div>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-grid rv">
+      <div class="trust-cell"><div class="stars">★★★★★</div><div class="n">4.9</div><div class="t">JustDial Rating</div></div>
+      <div class="trust-cell"><div class="n">168</div><div class="t">Verified Reviews</div></div>
+      <div class="trust-cell"><div class="n">2-in-1</div><div class="t">Luxury Salon &amp; Academy</div></div>
+      <div class="trust-cell"><div class="n">35C</div><div class="t">Prime Sector Location</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Signature Services</span>
+      <h2>Crafted for the Extraordinary</h2>
+      <p>Every service is a private consultation — luxury pricing shared on request, tailored to your occasion.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc rv"><div class="num">01</div><h3>Bridal Makeup</h3><p>HD and airbrush bridal looks with complete styling — draping, lashes and hair designed around your outfit and venue.</p><span class="tag">Price on consultation</span></div>
+      <div class="svc rv"><div class="num">02</div><h3>Party &amp; Engagement Makeup</h3><p>Camera-ready glam for receptions, engagements and festive evenings — long-wear, flash-friendly finishes.</p><span class="tag">Price on consultation</span></div>
+      <div class="svc rv"><div class="num">03</div><h3>Hair Design &amp; Colour</h3><p>Precision cuts, balayage, global colour and occasion styling by senior stylists.</p><span class="tag">Price on consultation</span></div>
+      <div class="svc rv"><div class="num">04</div><h3>Luxury Skin &amp; Facials</h3><p>Signature facials and pre-bridal skin rituals for a lit-from-within glow.</p><span class="tag">Price on consultation</span></div>
+      <div class="svc rv"><div class="num">05</div><h3>Nail Art Studio</h3><p>Hand-painted nail art, extensions and bridal nail design.</p><span class="tag">Price on consultation</span></div>
+      <div class="svc rv"><div class="num">06</div><h3>Pre-Bridal Packages</h3><p>Curated multi-session journeys — skin, hair and makeup planned to your wedding date.</p><span class="tag">Price on consultation</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="academy" id="academy">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">The Academy</span>
+      <h2>Learn from a <em>Master Artist</em></h2>
+      <p>Meenakshi Dutt Makeovers runs a professional makeup academy inside the luxury salon — train on real clients, real products, real bridal seasons.</p>
+      <div class="course"><h4>Professional Makeup Artistry</h4><span>Foundation to Advanced</span></div>
+      <div class="course"><h4>Bridal Specialisation</h4><span>HD &amp; Airbrush</span></div>
+      <div class="course"><h4>Nail Art &amp; Extensions</h4><span>Certification</span></div>
+      <div class="course"><h4>Hair Styling Courses</h4><span>Occasion &amp; Editorial</span></div>
+      <p style="margin-top:26px;font-size:14px">Course fees and batch dates shared on enquiry — call the academy desk.</p>
+      <a class="btn gold" href="tel:8288813991">Enquire About Courses</a>
+    </div>
+    <img src="https://files.catbox.moe/4k6xto.jpg" alt="Inside Meenakshi Dutt Makeovers salon and academy" class="rv">
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Portfolio</span>
+      <h2>Recent Work</h2>
+      <p>Real looks from the salon floor — bridal, editorial and academy showcases.</p>
+    </div>
+    <div class="gal">
+      <figure class="g1 rv"><img src="https://files.catbox.moe/dyy5s5.jpg" alt="Bridal makeup portfolio" loading="lazy"></figure>
+      <figure class="g2 rv"><img src="https://files.catbox.moe/fmb5f9.jpg" alt="Salon artistry showcase" loading="lazy"></figure>
+      <figure class="g3 rv"><img src="https://files.catbox.moe/s5e18q.jpg" alt="Makeup detail work" loading="lazy"></figure>
+      <figure class="g4 rv"><img src="https://files.catbox.moe/4k6xto.jpg" alt="Salon interior" loading="lazy"></figure>
+      <figure class="g5 rv"><img src="https://files.catbox.moe/i91d6w.jpg" alt="Signature bridal look" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Client Love</span>
+      <h2>Rated 4.9 by Chandigarh</h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rev rv"><div class="stars">★★★★★</div><div class="big">4.9</div><p>Average rating on JustDial</p></div>
+      <div class="rev rv"><div class="stars">★★★★★</div><div class="big">168</div><p>Verified client reviews</p></div>
+      <div class="rev rv"><div class="stars">★★★★★</div><div class="big">No.1</div><p>Luxury bridal pick, Sector 35</p></div>
+    </div>
+    <p class="note rv">"A luxury salon where brides are made — book your trial early in wedding season."</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head rv" style="text-align:left;margin:0 0 44px;max-width:none">
+      <span class="eyebrow">Visit Us</span>
+      <h2>Find the Salon</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="rv">
+        <div class="c-item"><h5>Address</h5><p>SCO 457-458, Above McDonald's,<br>Sector 35C, Chandigarh</p></div>
+        <div class="c-item"><h5>Phone</h5><p><a href="tel:07041623572">07041623572</a><br><a href="tel:8288813991">8288813991</a></p></div>
+        <div class="c-item"><h5>Website</h5><p><a href="https://meenakshidutt.com" target="_blank" rel="noopener">meenakshidutt.com</a></p></div>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Meenakshi+Dutt+Makeovers+Sector+35C+Chandigarh" target="_blank" rel="noopener">Open in Maps</a>
+      </div>
+      <div class="rv">
+        <div class="c-item"><h5>Salon Hours</h5>
+          <table class="hours">
+            <tr><td>Monday – Saturday</td><td>10:00 AM – 8:00 PM</td></tr>
+            <tr><td>Sunday</td><td>10:00 AM – 6:00 PM</td></tr>
+          </table>
+        </div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300">Hours indicative — bridal trials and academy batches by appointment. Please call ahead.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2 class="serif">Your Bridal Story Starts Here</h2>
+  <p>Trials fill fast in wedding season — reserve your consultation today.</p>
+  <a class="btn" href="tel:07041623572">Call 07041623572</a>
+</div>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="brand">Meenakshi Dutt<small>MAKEOVERS</small></div>
+    <div>SCO 457-458, Sector 35C, Chandigarh &middot; Demo by StyleFrame Co.</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="call" href="tel:07041623572">Call Now</a>
+  <a class="wa" href="https://wa.me/917041623572?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Meenakshi%20Dutt%20Makeovers.">WhatsApp</a>
+</div>
+
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

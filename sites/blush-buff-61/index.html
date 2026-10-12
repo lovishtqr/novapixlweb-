@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blush &amp; Buff by Ruhi — A Luxury Studio | Sector 61, Mohali</title>
+<meta name="description" content="Blush & Buff by Ruhi — a luxury nail, makeup and skin studio in Sector 61 Phase 7, Mohali. Nail art from Rs. 500. Rated 4.9 by 192 clients.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fbf7f2; --blush:#f3dfe1; --rose:#d48a94; --rosedeep:#b45f6c;
+  --plum:#46303c; --ink:#2b2028; --soft:#8a7379; --line:#ecd9da; --card:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--cream);color:var(--ink);font-family:'Outfit',sans-serif;overflow-x:hidden;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.serif{font-family:'Fraunces',serif}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(251,247,242,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1140px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:'Fraunces',serif;font-size:22px;font-weight:500;color:var(--plum)}
+.brand em{color:var(--rosedeep);font-style:italic}
+.brand small{display:block;font-family:'Outfit',sans-serif;font-size:9px;letter-spacing:.42em;color:var(--soft);text-transform:uppercase}
+.nav-links{display:flex;gap:28px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+.nav-links a:hover{color:var(--rosedeep)}
+.nav-cta{background:var(--plum);color:#fff;padding:12px 26px;border-radius:100px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;transition:.3s}
+.nav-cta:hover{background:var(--rosedeep)}
+/* hero */
+.hero{padding:150px 0 90px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-140px;right:-140px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,var(--blush) 0%,transparent 70%);opacity:.8;pointer-events:none}
+.hero::after{content:"";position:absolute;bottom:-180px;left:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,var(--blush) 0%,transparent 70%);opacity:.55;pointer-events:none}
+.hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;position:relative;z-index:1}
+.pill{display:inline-block;background:#fff;border:1px solid var(--line);color:var(--rosedeep);font-size:11px;letter-spacing:.3em;text-transform:uppercase;padding:10px 22px;border-radius:100px;margin-bottom:26px}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(46px,5.6vw,78px);line-height:1.04;font-weight:400;color:var(--plum);margin-bottom:22px}
+.hero h1 em{color:var(--rosedeep);font-style:italic;font-weight:300}
+.hero .sub{color:var(--soft);font-size:17px;font-weight:300;max-width:460px;margin-bottom:36px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{background:var(--rosedeep);color:#fff;padding:16px 36px;border-radius:100px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;transition:.3s;display:inline-block}
+.btn:hover{background:var(--plum);transform:translateY(-2px)}
+.btn2{border:1.5px solid var(--rose);color:var(--rosedeep);padding:16px 36px;border-radius:100px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;transition:.3s;display:inline-block}
+.btn2:hover{background:var(--blush)}
+.hero-stats{display:flex;gap:38px;margin-top:48px}
+.hero-stats .n{font-family:'Fraunces',serif;font-size:36px;color:var(--plum)}
+.hero-stats .l{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--soft)}
+.hero-photo{position:relative}
+.hero-photo .main{border-radius:28px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(180,95,108,.35)}
+.hero-photo .main img{width:100%;height:520px;object-fit:cover}
+.badge{position:absolute;bottom:-24px;left:-24px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px 26px;box-shadow:0 18px 40px -14px rgba(70,48,60,.25)}
+.badge .s{color:var(--rosedeep);letter-spacing:.3em;font-size:16px}
+.badge .t{font-size:12px;letter-spacing:.1em;color:var(--soft);margin-top:4px}
+/* marquee */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;overflow:hidden;white-space:nowrap;padding:18px 0}
+.marquee span{display:inline-block;font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--rose);padding:0 26px;animation:mq 26s linear infinite}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* sections */
+section{padding:100px 0}
+.sec-head{max-width:620px;margin:0 auto 58px;text-align:center}
+.sec-head .kicker{font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--rosedeep);margin-bottom:16px}
+.sec-head h2{font-family:'Fraunces',serif;font-size:clamp(36px,4.2vw,54px);font-weight:400;color:var(--plum);margin-bottom:14px}
+.sec-head h2 em{color:var(--rosedeep);font-style:italic}
+.sec-head p{color:var(--soft);font-weight:300}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:40px 34px;transition:.35s;position:relative;overflow:hidden}
+.svc:hover{transform:translateY(-6px);box-shadow:0 24px 50px -18px rgba(180,95,108,.3)}
+.svc .tag{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--rosedeep);margin-bottom:14px}
+.svc h3{font-family:'Fraunces',serif;font-size:26px;font-weight:500;color:var(--plum);margin-bottom:10px}
+.svc p{color:var(--soft);font-size:14.5px;font-weight:300;margin-bottom:18px}
+.svc .price{font-family:'Fraunces',serif;font-size:22px;color:var(--rosedeep)}
+.svc .price small{font-family:'Outfit',sans-serif;font-size:12px;color:var(--soft);font-weight:400}
+.svc.hl{background:var(--plum);border-color:var(--plum)}
+.svc.hl h3{color:#fff}.svc.hl p{color:#d9c4c9}.svc.hl .price{color:var(--blush)}
+/* offer band */
+.offer{background:linear-gradient(120deg,var(--rosedeep),#8f4453);border-radius:32px;padding:60px 8%;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;color:#fff;position:relative;overflow:hidden}
+.offer::before{content:"";position:absolute;top:-80px;right:60px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.12)}
+.offer h3{font-family:'Fraunces',serif;font-size:clamp(30px,3.6vw,44px);font-weight:400;margin-bottom:10px}
+.offer p{opacity:.85;font-weight:300;max-width:440px}
+.offer .btn{background:#fff;color:var(--rosedeep)}
+.offer .btn:hover{background:var(--blush)}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gal figure{border-radius:22px;overflow:hidden;aspect-ratio:4/5;position:relative;background:var(--blush)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.gal figure:hover img{transform:scale(1.07)}
+.gal figcaption{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.92);border-radius:100px;padding:8px 18px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--rosedeep)}
+.cap-note{text-align:center;color:var(--soft);font-size:13px;margin-top:24px;font-weight:300}
+/* about */
+.about{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-in{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:center}
+.about img{border-radius:26px;box-shadow:0 26px 50px -22px rgba(70,48,60,.3)}
+.about .kicker{font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--rosedeep);margin-bottom:16px}
+.about h2{font-family:'Fraunces',serif;font-size:clamp(34px,3.8vw,48px);font-weight:400;color:var(--plum);margin-bottom:18px}
+.about p{color:var(--soft);font-weight:300;margin-bottom:14px}
+.checks{margin-top:22px;display:grid;gap:12px}
+.checks div{display:flex;gap:12px;align-items:center;font-size:15px;color:var(--plum)}
+.checks .dot{width:22px;height:22px;border-radius:50%;background:var(--blush);color:var(--rosedeep);display:flex;align-items:center;justify-content:center;font-size:13px;flex:none}
+/* contact */
+.contact-card{background:var(--plum);color:#f6ecec;border-radius:32px;padding:60px 8%;display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.contact-card h3{font-family:'Fraunces',serif;font-size:clamp(30px,3.4vw,42px);font-weight:400;margin-bottom:12px}
+.contact-card p{opacity:.75;font-weight:300;margin-bottom:28px}
+.info{display:grid;gap:16px}
+.info .row{display:flex;gap:16px;align-items:flex-start;font-size:15px}
+.info .k{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--rose);min-width:96px;padding-top:4px}
+.footnote{font-size:12.5px;color:var(--soft);font-weight:300;margin-top:30px;text-align:center}
+/* sticky */
+.stickybar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom));gap:12px}
+.stickybar a{flex:1;text-align:center;padding:16px 8px;border-radius:100px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;min-height:52px;display:flex;align-items:center;justify-content:center}
+.stickybar .ig{background:var(--rosedeep);color:#fff}
+.stickybar .map{border:1.5px solid var(--rose);color:var(--rosedeep)}
+footer{background:var(--plum);color:#e9d6d9;padding:52px 0 40px;text-align:center}
+footer .fbrand{font-family:'Fraunces',serif;font-size:24px;margin-bottom:8px}
+footer .fbrand em{color:var(--rose);font-style:italic}
+footer p{font-size:13px;opacity:.7;max-width:520px;margin:0 auto 16px;font-weight:300}
+.demo-tag{font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.55}
+.fade{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+.fade.in{opacity:1;transform:none}
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hero{padding:120px 0 70px}
+  .hero-in{grid-template-columns:1fr;gap:44px}
+  .hero-photo .main img{height:380px}
+  .badge{left:12px}
+  .svc-grid{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr;gap:12px}
+  .about-in{grid-template-columns:1fr;gap:36px}
+  .contact-card{grid-template-columns:1fr;gap:30px;padding:44px 8%}
+  section{padding:70px 0}
+  .stickybar{display:flex}
+  body{padding-bottom:80px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="#top">Blush <em>&amp;</em> Buff<small>by Ruhi · A Luxury Studio</small></a>
+    <div class="nav-links">
+      <a href="#services">Services</a><a href="#offer">Offers</a><a href="#gallery">Gallery</a><a href="#visit">Visit</a>
+    </div>
+    <a class="nav-cta" href="https://instagram.com/blushandbuffbyruhi" target="_blank" rel="noopener">Book on Instagram</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-in">
+    <div>
+      <div class="pill fade">Sector 61 · Phase 7 · Mohali</div>
+      <h1 class="serif fade">Where nails become <em>little luxuries</em></h1>
+      <p class="sub fade">A luxury studio for nails, makeup and skin — run by Ruhi, loved for honest prices and finishes that photograph beautifully.</p>
+      <div class="hero-btns fade">
+        <a class="btn" href="https://instagram.com/blushandbuffbyruhi" target="_blank" rel="noopener">Book Appointment</a>
+        <a class="btn2" href="#offer">See Offers</a>
+      </div>
+      <div class="hero-stats fade">
+        <div><div class="n serif">4.9</div><div class="l">Google rating</div></div>
+        <div><div class="n serif">192</div><div class="l">Reviews</div></div>
+        <div><div class="n serif">₹500</div><div class="l">Nail art from</div></div>
+      </div>
+    </div>
+    <div class="hero-photo fade">
+      <div class="main"><img src="https://files.catbox.moe/c51a46.jpg" alt="Blush and Buff studio interior"></div>
+      <div class="badge"><div class="s">★★★★★</div><div class="t">4.9 · 192 Google reviews</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <span>Nail Art · Bridal Makeup · Party Makeup · Skin Rituals · Academy · Nail Art · Bridal Makeup · Party Makeup · Skin Rituals · Academy ·&nbsp;</span>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="kicker">Our Menu</div>
+      <h2>Services, <em>priced honestly</em></h2>
+      <p>Transparent pricing is the house rule — what you see is what you pay.</p>
+    </div>
+    <div class="svc-grid fade">
+      <div class="svc hl">
+        <div class="tag">Most loved</div>
+        <h3 class="serif">Nail Art</h3>
+        <p>Hand-painted designs, French finishes, chrome and 3D accents — from everyday elegant to full statement sets.</p>
+        <div class="price">from ₹500 <small>· Google verified</small></div>
+      </div>
+      <div class="svc">
+        <div class="tag">Bridal</div>
+        <h3 class="serif">Bridal Makeup</h3>
+        <p>Complete bridal looks with trial session — skin prep, HD finish and styling that lasts the whole celebration.</p>
+        <div class="price">on request* <small>· DM for quote</small></div>
+      </div>
+      <div class="svc">
+        <div class="tag">Events</div>
+        <h3 class="serif">Party Makeup</h3>
+        <p>Engagement, sangeet and evening looks — camera-ready glam with premium products.</p>
+        <div class="price">on request* <small>· DM for quote</small></div>
+      </div>
+      <div class="svc">
+        <div class="tag">Skin</div>
+        <h3 class="serif">Skin Rituals</h3>
+        <p>Clean-ups, de-tan and glow facials tailored to your skin type before the big day.</p>
+        <div class="price">on request* <small>· DM for quote</small></div>
+      </div>
+      <div class="svc">
+        <div class="tag">Learn</div>
+        <h3 class="serif">Academy</h3>
+        <p>Professional nail and makeup courses at the studio — learn from working artists, not textbooks.</p>
+        <div class="price">on request* <small>· DM for details</small></div>
+      </div>
+      <div class="svc">
+        <div class="tag">Nails</div>
+        <h3 class="serif">Extensions &amp; Care</h3>
+        <p>Gel and acrylic extensions, overlays, refills and nail repair — shaped to suit your hands.</p>
+        <div class="price">on request* <small>· DM for quote</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="offer" style="padding-top:0">
+  <div class="wrap">
+    <div class="offer fade">
+      <div>
+        <h3 class="serif">Great offers, running now</h3>
+        <p>Seasonal combos on nail art + party makeup. DM the studio on Instagram to grab this month's deal before slots fill.</p>
+      </div>
+      <a class="btn" href="https://instagram.com/blushandbuffbyruhi" target="_blank" rel="noopener">Claim on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap about-in">
+    <div class="fade"><img src="https://files.catbox.moe/ej69qw.jpg" alt="Blush and Buff storefront by Ruhi"></div>
+    <div class="fade">
+      <div class="kicker">The Studio</div>
+      <h2 class="serif">A luxury studio,<br>with a personal touch</h2>
+      <p>Blush &amp; Buff by Ruhi sits in Sector 61, Phase 7 — a bright, blush-toned studio where nails, makeup and skin get equal attention.</p>
+      <p>Clients come for the nail art and stay for the honesty: clear pricing, gentle products and an artist who remembers your preferences visit after visit.</p>
+      <div class="checks">
+        <div><span class="dot">✓</span> Nail art starting at ₹500 — verified pricing</div>
+        <div><span class="dot">✓</span> Bridal, party makeup and skin under one roof</div>
+        <div><span class="dot">✓</span> In-house academy for aspiring artists</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="kicker">Gallery</div>
+      <h2>Inside the <em>studio</em></h2>
+    </div>
+    <div class="gal fade">
+      <figure><img src="https://files.catbox.moe/yg7aq3.webp" alt="Studio detail"><figcaption>Our Studio</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/t15r6u.jpg" alt="Studio corner"><figcaption>Our Studio</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/c51a46.jpg" alt="Studio interior"><figcaption>Our Studio</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/ej69qw.jpg" alt="Storefront"><figcaption>Our Studio</figcaption></figure>
+    </div>
+    <p class="cap-note">All photographs are of the real Blush &amp; Buff studio, Sector 61 Phase 7.</p>
+  </div>
+</section>
+
+<section id="visit" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact-card fade">
+      <div>
+        <h3 class="serif">Visit the studio</h3>
+        <p>Walk-ins welcome when slots allow — booking ahead on Instagram guarantees your chair.</p>
+        <div class="hero-btns">
+          <a class="btn" href="https://instagram.com/blushandbuffbyruhi" target="_blank" rel="noopener">DM @blushandbuffbyruhi</a>
+        </div>
+      </div>
+      <div class="info">
+        <div class="row"><div class="k">Address</div><div>Sector 61, Phase 7, Mohali, Punjab</div></div>
+        <div class="row"><div class="k">Instagram</div><div><a href="https://instagram.com/blushandbuffbyruhi" target="_blank" rel="noopener" style="text-decoration:underline">@blushandbuffbyruhi</a></div></div>
+        <div class="row"><div class="k">Rating</div><div>4.9 / 5 · 192 Google reviews</div></div>
+        <div class="row"><div class="k">Hours</div><div>Open all days · 10 AM – 8 PM</div></div>
+      </div>
+    </div>
+    <p class="footnote">* Prices marked "on request" are confirmed by the studio at booking. Nail art from ₹500 as listed on Google/JustDial. This is a demo website concept.</p>
+  </div>
+</section>
+
+<div class="stickybar">
+  <a class="ig" href="https://instagram.com/blushandbuffbyruhi" target="_blank" rel="noopener">DM to Book</a>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Blush+and+Buff+Sector+61+Phase+7+Mohali" target="_blank" rel="noopener">Directions</a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand serif">Blush <em>&amp;</em> Buff</div>
+    <p>A luxury studio by Ruhi — nails · makeup · skin · academy. Sector 61, Phase 7, Mohali.</p>
+    <div class="demo-tag">Demo by StyleFrame Co.</div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

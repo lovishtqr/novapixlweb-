@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nail N Lash Studio &amp; Academy | Sector 64, Mohali</title>
+<meta name="description" content="Nail N Lash Studio & Academy — Sector 64 Phase 10, Mohali. Rated 5.0 by 228 clients. Nail art, lashes, waxing. Call 08401 959 479.">
+<style>
+:root{--teal:#0e4444;--teal-deep:#0a3333;--champ:#c9a35c;--cream:#f7f3ec;--ink:#1d2220;--mut:#6b6f6a;--line:#e3dccd;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden;scroll-behavior:smooth}
+body{overflow-x:hidden;background:var(--cream);color:var(--ink);font-family:'Avenir Next','Segoe UI',Helvetica,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.serif{font-family:Didot,'Bodoni MT',Georgia,serif}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+/* header */
+header{position:sticky;top:0;z-index:40;background:rgba(247,243,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hbar{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;max-width:1140px;margin:0 auto}
+.brand{font-family:Didot,'Bodoni MT',Georgia,serif;font-size:22px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-deep);text-decoration:none}
+.brand em{font-style:normal;color:var(--champ)}
+nav a{color:var(--ink);text-decoration:none;margin-left:26px;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+nav a:hover{color:var(--teal)}
+@media(max-width:900px){nav{display:none}}
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;max-width:1280px;margin:0 auto}
+.hero-copy{padding:90px 40px 70px 24px}
+.kick{display:inline-block;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--champ);border-bottom:2px solid var(--champ);padding-bottom:8px;margin-bottom:26px}
+.hero-copy h1{font-family:Didot,'Bodoni MT',Georgia,serif;font-size:clamp(44px,5.6vw,78px);line-height:1.04;color:var(--teal-deep);font-weight:400}
+.hero-copy h1 i{font-style:italic;color:var(--teal)}
+.hero-copy .sub{margin:22px 0 30px;color:var(--mut);font-size:17px;max-width:44ch}
+.meta{display:flex;gap:36px;margin:26px 0 34px}
+.meta div b{display:block;font-family:Didot,Georgia,serif;font-size:30px;color:var(--teal-deep)}
+.meta div small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.btn{display:inline-block;padding:16px 32px;text-decoration:none;font-size:13px;letter-spacing:.2em;text-transform:uppercase;min-height:52px}
+.btn-solid{background:var(--teal);color:#fff}
+.btn-solid:hover{background:var(--teal-deep)}
+.btn-line{border:1px solid var(--teal);color:var(--teal)}
+.btn-line:hover{background:var(--teal);color:#fff}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.hero-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:24px}
+.hero-photos img{width:100%;height:100%;object-fit:cover;display:block;min-height:220px}
+.hero-photos .tall{grid-row:span 2;min-height:460px}
+/* price board */
+.sec{padding:84px 0}
+.sec-title{text-align:center;margin-bottom:48px}
+.sec-title h2{font-family:Didot,'Bodoni MT',Georgia,serif;font-size:clamp(32px,4vw,50px);color:var(--teal-deep);font-weight:400}
+.sec-title .kick{border:none;padding-bottom:0}
+.board{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--line);box-shadow:0 24px 60px -30px rgba(14,68,68,.25)}
+.board-head{background:var(--teal);color:#fff;padding:26px 34px;display:flex;justify-content:space-between;align-items:center}
+.board-head h3{font-family:Didot,Georgia,serif;font-size:24px;font-weight:400;letter-spacing:.06em}
+.board-head span{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--champ)}
+.board .row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 34px;border-bottom:1px solid var(--line)}
+.board .row:last-of-type{border-bottom:none}
+.board .row b{font-size:16px;font-weight:600}
+.board .row small{display:block;color:var(--mut);font-size:13px}
+.board .price{font-family:Didot,Georgia,serif;font-size:26px;color:var(--teal-deep);white-space:nowrap}
+.verified{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-top:18px;text-align:center}
+.note{font-size:13px;color:var(--mut);text-align:center;margin-top:10px}
+/* gallery editorial */
+.ed{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:start}
+.ed .big img{width:100%;height:520px;object-fit:cover;display:block}
+.ed .stack img{width:100%;height:247px;object-fit:cover;display:block;margin-bottom:26px}
+.ed .stack img:last-child{margin-bottom:0}
+.cap{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin-top:12px}
+/* academy band */
+.band{background:var(--teal-deep);color:#f2ede1;padding:70px 0}
+.band h2{font-family:Didot,Georgia,serif;font-size:clamp(28px,3.6vw,44px);font-weight:400;margin-bottom:16px}
+.band h2 em{font-style:italic;color:var(--champ)}
+.band p{max-width:60ch;color:#cfd8d3;margin-bottom:28px}
+/* contact */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border:1px solid var(--line);padding:34px 28px;text-align:center}
+.card h3{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--champ);margin-bottom:14px}
+.card p{font-size:15px;color:var(--ink)}
+.card a{color:var(--teal);font-weight:600}
+footer{background:var(--teal-deep);color:#9fb3b0;text-align:center;padding:26px 20px 110px;font-size:13px;letter-spacing:.06em}
+footer b{color:#e9e2d0}
+/* sticky */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;background:#fff;border-top:1px solid var(--line)}
+.sticky a{flex:1;text-align:center;padding:17px 6px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;font-weight:700;min-height:56px;color:var(--teal)}
+.sticky a.call{background:var(--teal);color:#fff}
+@media(max-width:900px){
+  .sticky{display:flex}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-copy{padding:56px 24px 30px}
+  .hero-photos{grid-template-columns:1fr 1fr;padding:0 24px 40px}
+  .hero-photos .tall{min-height:300px}
+  .ed{grid-template-columns:1fr}
+  .ed .big img{height:340px}
+  .cards{grid-template-columns:1fr}
+  .board .row{padding:18px 22px}
+  .sec{padding:58px 0}
+}
+</style>
+</head>
+<body>
+<header><div class="hbar">
+  <a class="brand" href="#">Nail N <em>Lash</em></a>
+  <nav><a href="#prices">Prices</a><a href="#work">Work</a><a href="#academy">Academy</a><a href="#visit">Visit</a></nav>
+</div></header>
+
+<section class="hero"><div class="hero-inner">
+  <div class="hero-copy">
+    <span class="kick">Studio &amp; Academy · Sector 64</span>
+    <h1>Fine nails.<br><i>Finer lashes.</i></h1>
+    <p class="sub">Nail N Lash Studio &amp; Academy in Phase 10, Mohali — a 5.0-rated studio for precision nail art, lash services and gentle Rica waxing.</p>
+    <div class="meta">
+      <div><b>5.0</b><small>Rating</small></div>
+      <div><b>228</b><small>Reviews</small></div>
+      <div><b>2</b><small>Nails + Lashes</small></div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="tel:+918401959479">Call 08401 959 479</a>
+      <a class="btn btn-line" href="#prices">See Prices</a>
+    </div>
+  </div>
+  <div class="hero-photos">
+    <img class="tall" src="https://files.catbox.moe/ftr9qr.jpg" alt="Nail N Lash Studio — nail work">
+    <img src="https://files.catbox.moe/6423ql.jpg" alt="Nail N Lash Studio interior">
+    <img src="https://files.catbox.moe/z3ghjn.jpg" alt="Nail N Lash Studio detail work">
+  </div>
+</div></section>
+
+<section class="sec wrap" id="prices">
+  <div class="sec-title"><span class="kick">Transparent Pricing</span><h2>Services &amp; Rates</h2></div>
+  <div class="board">
+    <div class="board-head"><h3>Waxing &amp; Lashes</h3><span>JustDial verified</span></div>
+    <div class="row"><div><b>Eyebrow Shape + Rica Waxing</b><small>Full arms + underarms Rica waxing</small></div><div class="price">₹400</div></div>
+    <div class="row"><div><b>Eyelash Removal</b><small>Gentle, safe removal service</small></div><div class="price">₹1,000</div></div>
+    <div class="row"><div><b>Full Arms + Underarms Rica Waxing</b><small>Skin-friendly Rica formula</small></div><div class="price">₹500</div></div>
+  </div>
+  <p class="verified">Prices as listed on JustDial · October 2026</p>
+  <p class="note">Nail art, extensions and lash sets are priced per design — call or DM for a quote.</p>
+</section>
+
+<section class="sec wrap" id="work" style="padding-top:0">
+  <div class="sec-title"><span class="kick">The Portfolio</span><h2>Recent Work</h2></div>
+  <div class="ed">
+    <div class="big"><img src="https://files.catbox.moe/ftr9qr.jpg" alt="Nail art by Nail N Lash Studio"><div class="cap">Studio nail work · Mohali</div></div>
+    <div class="stack">
+      <img src="https://files.catbox.moe/6423ql.jpg" alt="Inside the studio">
+      <img src="https://files.catbox.moe/z3ghjn.jpg" alt="Detail work at Nail N Lash">
+    </div>
+  </div>
+</section>
+
+<section class="band" id="academy"><div class="wrap">
+  <span class="kick" style="border-color:var(--champ)">Nail N Lash Academy</span>
+  <h2>Train with the <em>studio</em> that does it daily.</h2>
+  <p>The studio also runs its professional academy for nail art and lash techniques — learn on live studio work, not just models. Ask about upcoming batches on call or Instagram.</p>
+  <a class="btn btn-solid" style="background:var(--champ);color:var(--teal-deep)" href="https://instagram.com/nailnlashstudio" target="_blank" rel="noopener">DM @nailnlashstudio</a>
+</div></section>
+
+<section class="sec wrap" id="visit">
+  <div class="sec-title"><span class="kick">Find Us</span><h2>Visit the Studio</h2></div>
+  <div class="cards">
+    <div class="card"><h3>Address</h3><p>Nail N Lash Studio &amp; Academy<br>Near ICICI Bank, Sector 64, Phase 10<br>Mohali, Punjab</p></div>
+    <div class="card"><h3>Call / WhatsApp</h3><p><a href="tel:+918401959479">08401 959 479</a></p><p style="margin-top:8px;font-size:13px;color:var(--mut)">Tap to call or message</p></div>
+    <div class="card"><h3>Instagram</h3><p><a href="https://instagram.com/nailnlashstudio" target="_blank" rel="noopener">@nailnlashstudio</a></p><p style="margin-top:8px;font-size:13px;color:var(--mut)">Latest work &amp; offers in stories</p></div>
+  </div>
+  <p style="text-align:center;margin-top:24px"><a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=Nail+N+Lash+Studio+Sector+64+Phase+10+Mohali" target="_blank" rel="noopener">Get Directions</a></p>
+</section>
+
+<footer>
+  <p><b>Nail N Lash Studio &amp; Academy</b> · Sector 64, Phase 10, Mohali</p>
+  <p style="margin-top:6px">Demo by StyleFrame Co.</p>
+</footer>
+
+<div class="sticky">
+  <a class="call" href="tel:+918401959479">Call Now</a>
+  <a href="https://wa.me/918401959479" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+</body>
+</html>

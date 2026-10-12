@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quasar Salon — Sector 79, Mohali | Salon &amp; Home Services</title>
+<meta name="description" content="Quasar Salon, Sector 79, Mohali. 5.0 from 420 Google reviews. Nail art, waxing, facials — in-salon and at-home services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#160d22; --bg2:#1e1230; --cream:#f2eafb; --muted:#a793bd;
+  --orchid:#c77dff; --orchid-deep:#9d4edd; --rose:#ff8fb3;
+  --line:rgba(199,125,255,.2); --card:#211538;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden;scroll-behavior:smooth}
+body{overflow-x:hidden;background:var(--bg);color:var(--cream);font-family:'Outfit',system-ui,sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Syne',sans-serif;font-weight:700;line-height:1.1}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--orchid);font-weight:600}
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(22,13,34,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1200px;margin:0 auto}
+.brand{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:.14em;text-decoration:none}
+.brand i{font-style:normal;color:var(--orchid)}
+.nav-links{display:flex;gap:26px;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase}
+.nav-links a{text-decoration:none;color:var(--muted)}
+.nav-links a:hover{color:var(--orchid)}
+.nav-cta{background:linear-gradient(120deg,var(--orchid-deep),var(--orchid));color:#fff;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:11px 22px;border-radius:999px;text-decoration:none;font-weight:600}
+/* HERO — asymmetric magazine */
+.hero{position:relative;padding:90px 0 0;overflow:hidden}
+.hero-in{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:center}
+.hero-copy{padding:20px 40px 90px 24px;max-width:600px;justify-self:end}
+.hero-copy h1{font-size:clamp(3rem,7vw,5.6rem);letter-spacing:-.01em;margin:20px 0 6px}
+.hero-copy h1 .grad{background:linear-gradient(100deg,var(--orchid),var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{color:var(--muted);font-size:1.05rem;max-width:42ch;margin:16px 0 28px}
+.home-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(199,125,255,.1);border:1px solid var(--line);border-radius:999px;padding:10px 20px;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--orchid);font-weight:600;margin-bottom:8px}
+.home-badge .dot{width:9px;height:9px;border-radius:50%;background:var(--rose);box-shadow:0 0 12px var(--rose)}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-block;padding:15px 32px;border-radius:999px;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;font-weight:600;min-height:52px;transition:.25s}
+.btn-grad{background:linear-gradient(120deg,var(--orchid-deep),var(--orchid));color:#fff}
+.btn-grad:hover{filter:brightness(1.12)}
+.btn-ghost{border:1px solid var(--line);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--orchid);color:var(--orchid)}
+.hero-visual{position:relative;padding:0 24px 90px 0}
+.hero-visual img.main{width:88%;margin-left:auto;border-radius:18px;height:520px;object-fit:cover;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.hero-visual img.float{position:absolute;left:0;bottom:40px;width:44%;border-radius:14px;border:6px solid var(--bg);box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.rating-chip{position:absolute;top:26px;right:8px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 20px;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.rating-chip b{font-family:'Syne',sans-serif;font-size:1.8rem;color:var(--orchid);display:block}
+.rating-chip span{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+/* MARQUEE */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:16px 0;background:var(--bg2)}
+.marquee span{display:inline-block;font-family:'Syne',sans-serif;font-size:.95rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);padding:0 34px}
+.marquee span i{font-style:normal;color:var(--orchid);padding-right:34px}
+/* HOW */
+section{padding:100px 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:36px 30px;position:relative}
+.step .n{font-family:'Syne',sans-serif;font-size:2.6rem;color:transparent;-webkit-text-stroke:1.5px var(--orchid);display:block;margin-bottom:14px}
+.step h3{font-size:1.25rem;margin-bottom:8px}
+.step p{color:var(--muted);font-size:.93rem}
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .25s}
+.svc:hover{transform:translateY(-6px)}
+.svc .ph{height:210px;overflow:hidden;position:relative}
+.svc .ph img{width:100%;height:100%;object-fit:cover}
+.chip{position:absolute;top:14px;right:14px;background:rgba(22,13,34,.85);backdrop-filter:blur(6px);border:1px solid var(--line);color:var(--orchid);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:7px 14px;border-radius:999px;font-weight:600}
+.svc .tx{padding:26px 26px 30px}
+.svc h3{font-size:1.3rem;margin-bottom:6px}
+.svc p{color:var(--muted);font-size:.9rem}
+.svc .from{margin-top:14px;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--orchid);font-weight:600}
+/* GALLERY offset */
+.gal{display:grid;grid-template-columns:1.2fr .8fr 1fr;gap:18px;margin-top:52px;align-items:start}
+.gal figure{border-radius:16px;overflow:hidden;position:relative}
+.gal figure:nth-child(2){margin-top:56px}
+.gal figure:nth-child(3){margin-top:24px}
+.gal img{width:100%;height:340px;object-fit:cover;transition:transform .6s}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:36px 18px 14px;background:linear-gradient(transparent,rgba(10,5,18,.85));font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--orchid)}
+/* REVIEWS */
+.rev-band{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rev-row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.rev{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:32px 28px}
+.rev .stars{color:var(--orchid);letter-spacing:.24em;margin-bottom:12px}
+.rev p{color:var(--muted);font-size:.93rem}
+.rev b{color:var(--cream);font-weight:500}
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:48px;align-items:start}
+.addr{font-style:normal;color:var(--muted);line-height:2.1}
+.addr b{color:var(--cream);font-weight:500}
+.big-dm{display:block;background:linear-gradient(120deg,var(--orchid-deep),var(--orchid));border-radius:18px;padding:44px 40px;text-decoration:none;transition:.25s}
+.big-dm:hover{filter:brightness(1.1)}
+.big-dm h3{color:#fff;font-size:1.7rem;margin-bottom:6px}
+.big-dm p{color:rgba(255,255,255,.82);font-size:.95rem}
+.big-dm .go{display:inline-block;margin-top:18px;background:#fff;color:var(--orchid-deep);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:13px 26px;border-radius:999px}
+.sticky-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(22,13,34,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.sticky-bar a{flex:1;text-align:center;padding:16px 8px;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;font-weight:600;min-height:56px;display:flex;align-items:center;justify-content:center}
+.sticky-bar a.dm{background:linear-gradient(120deg,var(--orchid-deep),var(--orchid));color:#fff}
+.sticky-bar a.dir{color:var(--orchid)}
+footer{padding:44px 24px 120px;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+footer .demo{margin-top:8px;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase}
+@media(max-width:900px){
+  .hero{padding-top:56px}
+  .hero-in{grid-template-columns:1fr}
+  .hero-copy{padding:0 24px 30px;max-width:none}
+  .hero-visual{padding:0 24px 60px}
+  .hero-visual img.main{height:340px;width:100%}
+  .hero-visual img.float{width:40%;left:36px;bottom:30px}
+  .nav-links{display:none}
+  .steps,.svc-grid,.rev-row,.contact-grid{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr}
+  .gal figure:nth-child(2),.gal figure:nth-child(3){margin-top:0}
+  .gal img{height:230px}
+  section{padding:64px 0}
+  .sticky-bar{display:flex}
+  footer{padding-bottom:150px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#">QUASAR<i>.</i></a>
+    <div class="nav-links">
+      <a href="#home-services">Home Services</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="https://ig.me/m/quasar_salon_mohali" target="_blank" rel="noopener">DM to Book</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-in">
+    <div class="hero-copy">
+      <span class="home-badge"><span class="dot"></span> Home services available</span>
+      <h1>Salon glow,<br><span class="grad">delivered home.</span></h1>
+      <p class="hero-sub">Quasar Salon in Sector 79 brings the full salon menu to your chair — nails, waxing, facials — or welcomes you into the studio.</p>
+      <div class="btn-row">
+        <a class="btn btn-grad" href="https://ig.me/m/quasar_salon_mohali" target="_blank" rel="noopener">Book home visit</a>
+        <a class="btn btn-ghost" href="#services">Explore services</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img class="main" src="https://files.catbox.moe/6pof5f.jpg" alt="Quasar Salon, Sector 79 Mohali">
+      <img class="float" src="https://files.catbox.moe/i6t80n.jpg" alt="Quasar Salon work">
+      <div class="rating-chip"><b>5.0</b><span>420 reviews</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee">
+  <span>Nail Art <i>·</i></span><span>Waxing <i>·</i></span><span>Facials <i>·</i></span><span>Home Services <i>·</i></span><span>Sector 79 Mohali <i>·</i></span><span>Nail Art <i>·</i></span><span>Waxing <i>·</i></span><span>Facials <i>·</i></span>
+</div>
+
+<section id="home-services">
+  <div class="wrap">
+    <span class="eyebrow">At your doorstep</span>
+    <h2 style="font-size:clamp(2rem,4.4vw,3.2rem);margin-top:14px;max-width:18ch">The salon comes to you in three steps</h2>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><h3>DM your service</h3><p>Message @quasar_salon_mohali with the service you want and your preferred slot.</p></div>
+      <div class="step"><span class="n">02</span><h3>We arrive equipped</h3><p>Certified artists reach your home with a full professional kit — hygienic and contactless.</p></div>
+      <div class="step"><span class="n">03</span><h3>Relax, get pampered</h3><p>Salon-grade results on your couch. Pay after the service, rate your artist.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Menu</span>
+    <h2 style="font-size:clamp(2rem,4.4vw,3.2rem);margin-top:14px">Services &amp; pricing</h2>
+    <p style="color:var(--muted);max-width:60ch;margin-top:10px">Every service available in-salon and at home. Final quote confirmed on DM — home visits may carry a small travel fee.</p>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="ph"><img src="https://files.catbox.moe/7djftg.jpg" alt="Nail art at Quasar Salon"><span class="chip">In-salon + home</span></div>
+        <div class="tx"><h3>Nail Art &amp; Extensions</h3><p>Hand-painted art, chrome, French tips and extensions in the season's shades.</p><div class="from">From ₹499* · DM for quote</div></div>
+      </div>
+      <div class="svc">
+        <div class="ph"><img src="https://files.catbox.moe/0piko1.webp" alt="Waxing services"><span class="chip">In-salon + home</span></div>
+        <div class="tx"><h3>Waxing</h3><p>Rica and normal waxing with pre- and post-care for smooth, calm skin.</p><div class="from">From ₹349* · DM for quote</div></div>
+      </div>
+      <div class="svc">
+        <div class="ph"><img src="https://files.catbox.moe/6pof5f.jpg" alt="Facial treatment"><span class="chip">In-salon + home</span></div>
+        <div class="tx"><h3>Facials &amp; Clean-ups</h3><p>Skin analysis first, then a facial matched to your skin — glow guaranteed.</p><div class="from">From ₹899* · DM for quote</div></div>
+      </div>
+    </div>
+    <p style="font-size:.82rem;color:var(--muted);margin-top:18px">* Indicative pricing. Exact quotes are shared on Instagram DM based on service and location.</p>
+  </div>
+</section>
+
+<section id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">The work</span>
+    <h2 style="font-size:clamp(2rem,4.4vw,3.2rem);margin-top:14px">Fresh from the studio</h2>
+    <div class="gal">
+      <figure><img src="https://files.catbox.moe/i6t80n.jpg" alt="Quasar Salon studio"><figcaption>Our studio</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/7djftg.jpg" alt="Nail work"><figcaption>Our studio</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/83xc00.jpg" alt="Quasar Salon branding"><figcaption>Our studio</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="rev-band">
+  <div class="wrap" style="padding:80px 24px">
+    <span class="eyebrow">Reviews</span>
+    <h2 style="font-size:clamp(2rem,4.4vw,3.2rem);margin-top:14px">5.0 across 420 reviews</h2>
+    <div class="rev-row">
+      <div class="rev"><div class="stars">★★★★★</div><p><b>Home service that feels premium.</b><br>Guests love the at-home experience — punctual artists, full kits, zero mess.</p></div>
+      <div class="rev"><div class="stars">★★★★★</div><p><b>Nail art worth photographing.</b><br>Intricate, durable nail work is the most praised skill in recent reviews.</p></div>
+      <div class="rev"><div class="stars">★★★★★</div><p><b>Gentle, hygienic waxing.</b><br>Reviewers highlight careful technique and strict hygiene standards.</p></div>
+    </div>
+  </div>
+</div>
+
+<section id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Get in touch</span>
+    <h2 style="font-size:clamp(2rem,4.4vw,3.2rem);margin-top:14px">Book your slot</h2>
+    <div class="contact-grid">
+      <div>
+        <address class="addr">
+          <b>Quasar Salon</b><br>
+          SAS Nagar, Sector 79<br>
+          Mohali 140308<br><br>
+          <b>Instagram:</b> <a href="https://www.instagram.com/quasar_salon_mohali" target="_blank" rel="noopener" style="color:var(--orchid)">@quasar_salon_mohali</a><br>
+          <b>Booking:</b> Instagram DM — in-salon &amp; home visits<br>
+          <b>Hours:</b> All days, 10 AM – 8 PM
+        </address>
+      </div>
+      <a class="big-dm" href="https://ig.me/m/quasar_salon_mohali" target="_blank" rel="noopener">
+        <h3>DM @quasar_salon_mohali</h3>
+        <p>Tell us the service and your area — we will confirm your slot and quote within the hour.</p>
+        <span class="go">Start chat</span>
+      </a>
+    </div>
+    <div style="margin-top:36px">
+      <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Quasar+Salon+Sector+79+Mohali" target="_blank" rel="noopener">Get directions to the studio</a>
+    </div>
+  </div>
+</section>
+
+<div class="sticky-bar">
+  <a class="dm" href="https://ig.me/m/quasar_salon_mohali" target="_blank" rel="noopener">DM to Book</a>
+  <a class="dir" href="https://www.google.com/maps/search/?api=1&query=Quasar+Salon+Sector+79+Mohali" target="_blank" rel="noopener">Directions</a>
+</div>
+
+<footer>
+  <div>Quasar Salon · Sector 79, SAS Nagar, Mohali 140308 · 5.0 (420 Google reviews)</div>
+  <div class="demo">Demo by StyleFrame Co.</div>
+</footer>
+
+</body>
+</html>

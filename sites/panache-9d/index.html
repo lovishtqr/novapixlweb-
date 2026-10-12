@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panache by Aakaanksha Singh — Luxury Salon, Sector 9D Chandigarh</title>
+<meta name="description" content="Panache by Aakaanksha Singh — luxury salon on Madhya Marg, Sector 9D Chandigarh. 5.0 stars from 157 reviews. Hair, nails, makeup.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#0E1F1A; --forest2:#14291F; --cream:#F4ECDD; --gold:#C9A96A; --gold-dim:rgba(201,169,106,.35);
+    --ink:#22332B; --mut:#8FA094;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;background:var(--forest);color:var(--cream);overflow-x:hidden;line-height:1.75;font-weight:300;letter-spacing:.02em}
+  h1,h2,h3{font-family:'Marcellus',serif;font-weight:400;line-height:1.2}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+  /* side rail nav */
+  header.top{display:flex;justify-content:space-between;align-items:center;padding:22px 28px;max-width:1160px;margin:0 auto}
+  .brand{font-family:'Marcellus',serif;font-size:22px;letter-spacing:.3em}
+  .brand em{display:block;font-family:'Inter',sans-serif;font-style:normal;font-size:9px;letter-spacing:.55em;color:var(--gold);margin-top:4px}
+  .toplinks{display:flex;gap:28px;font-size:11px;letter-spacing:.3em;text-transform:uppercase}
+  .toplinks a{text-decoration:none;color:var(--cream);opacity:.75;transition:opacity .3s}
+  .toplinks a:hover{opacity:1;color:var(--gold)}
+  /* hero: full-bleed image with offset panel */
+  .hero{position:relative;margin-top:8px}
+  .hero-img{height:72vh;min-height:460px;overflow:hidden;position:relative}
+  .hero-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) brightness(.82);transform:scale(1.06);animation:drift 22s ease-in-out infinite alternate}
+  @keyframes drift{to{transform:scale(1.12) translateY(-12px)}}
+  .hero-panel{position:absolute;left:50%;bottom:-1px;transform:translate(-50%,50%);background:var(--forest2);border:1px solid var(--gold-dim);padding:48px 56px;text-align:center;max-width:640px;width:calc(100% - 48px);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+  .hero-panel .kicker{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .hero-panel h1{font-size:clamp(34px,5vw,54px);color:var(--cream)}
+  .hero-panel p{color:var(--mut);margin-top:14px;font-size:15px}
+  .spacer{height:120px}
+  /* five-star band */
+  .stars-band{border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim);text-align:center;padding:30px 24px}
+  .stars-band .row{display:flex;justify-content:center;gap:6px;font-size:22px;color:var(--gold);letter-spacing:.2em;margin-bottom:8px}
+  .stars-band p{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--mut)}
+  /* services: two-column ledger */
+  section{padding:90px 0}
+  .sec-head{margin-bottom:54px}
+  .sec-head .kicker{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .sec-head h2{font-size:clamp(30px,4.4vw,48px)}
+  .sec-head p{color:var(--mut);max-width:520px;margin-top:12px}
+  .ledger{display:grid;grid-template-columns:1fr 1fr;gap:0 64px}
+  .svc{padding:24px 0;border-bottom:1px solid rgba(201,169,106,.22);display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+  .svc h3{font-size:21px}
+  .svc h3 small{display:block;font-family:'Inter',sans-serif;font-size:13px;color:var(--mut);font-weight:300;margin-top:4px}
+  .svc .pr{font-family:'Marcellus',serif;color:var(--gold);font-size:17px;white-space:nowrap}
+  .fine{margin-top:26px;font-size:13px;color:var(--mut);max-width:640px}
+  /* experience strip: image + text asymmetric */
+  .duo{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+  .duo .img-frame{position:relative}
+  .duo .img-frame::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--gold-dim);z-index:-1}
+  .duo img{height:480px;width:100%;object-fit:cover;filter:saturate(.92)}
+  .duo h2{font-size:clamp(28px,3.8vw,42px);margin-bottom:18px}
+  .duo p{color:var(--mut);margin-bottom:16px}
+  .tick{list-style:none;margin-top:22px}
+  .tick li{padding:10px 0 10px 34px;position:relative;border-bottom:1px solid rgba(201,169,106,.18);font-size:15px}
+  .tick li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+  /* gallery rail */
+  .rail{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .rail figure{overflow:hidden;position:relative}
+  .rail img{height:340px;width:100%;object-fit:cover;transition:transform .7s ease;filter:saturate(.92)}
+  .rail figure:hover img{transform:scale(1.05)}
+  .rail figcaption{position:absolute;left:0;bottom:0;right:0;padding:14px 18px;background:linear-gradient(transparent,rgba(8,18,14,.85));font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--cream)}
+  /* booking card */
+  .book{background:var(--forest2);border:1px solid var(--gold-dim);padding:64px 56px;display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  .book h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:16px}
+  .book p{color:var(--mut)}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+  .field div{font-size:16px}
+  .field a{text-decoration:none;border-bottom:1px solid var(--gold-dim);padding-bottom:2px}
+  .cta-row{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:16px 38px;background:var(--gold);color:#101B16;text-decoration:none;font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;transition:filter .3s}
+  .btn:hover{filter:brightness(1.1)}
+  .btn.line{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+  footer{border-top:1px solid var(--gold-dim);text-align:center;padding:40px 24px}
+  footer .fb{font-family:'Marcellus',serif;letter-spacing:.3em;font-size:18px}
+  footer p{font-size:12px;color:var(--mut);margin-top:10px}
+  footer .demo{margin-top:14px;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);opacity:.7}
+  .sticky-bar{display:none}
+  @media(max-width:900px){
+    .toplinks{display:none}
+    .hero-panel{padding:34px 26px}
+    .spacer{height:150px}
+    .ledger,.duo,.book{grid-template-columns:1fr}
+    .duo{gap:40px}
+    .duo img{height:320px}
+    .rail{grid-template-columns:1fr 1fr}
+    .rail img{height:230px}
+    .book{padding:40px 28px;gap:36px}
+    section{padding:64px 0}
+    .sticky-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;background:#0A1611;border-top:1px solid var(--gold-dim)}
+    .sticky-bar a{flex:1;text-align:center;padding:16px 8px;color:var(--cream);text-decoration:none;font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+    .sticky-bar a+a{border-left:1px solid rgba(201,169,106,.25)}
+    .sticky-bar a:first-child{background:var(--gold);color:#101B16;font-weight:500}
+    body{padding-bottom:56px}
+  }
+  .fade{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .fade.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">PANACHE<em>BY AAKAANKSHA SINGH</em></div>
+  <nav class="toplinks"><a href="#services">Services</a><a href="#experience">Experience</a><a href="#book">Book</a></nav>
+</header>
+
+<div class="hero">
+  <div class="hero-img"><img src="https://files.catbox.moe/cr08xo.jpg" alt="Panache Luxury Salon interior"></div>
+  <div class="hero-panel fade">
+    <div class="kicker">Luxury Salon · Sector 9D, Chandigarh</div>
+    <h1>Quiet luxury,<br>done properly.</h1>
+    <p>Hair · Nails · Makeup — on Madhya Marg, by Aakaanksha Singh.</p>
+  </div>
+</div>
+<div class="spacer"></div>
+
+<div class="stars-band fade">
+  <div class="row">★ ★ ★ ★ ★</div>
+  <p>Rated 5.0 · 157 reviews on JustDial</p>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="kicker">The Service Ledger</div>
+      <h2>Everything, considered.</h2>
+      <p>A luxury salon with honest, approachable pricing — reviews consistently call it affordable for the experience.</p>
+    </div>
+    <div class="ledger fade">
+      <div>
+        <div class="svc"><div><h3>Advance Hair Cut<small>consultation-led, precision cut</small></h3></div><div class="pr">On request</div></div>
+        <div class="svc"><div><h3>Hair Spa<small>restorative deep-conditioning ritual</small></h3></div><div class="pr">On request</div></div>
+        <div class="svc"><div><h3>Hair Extension<small>length & volume, natural finish</small></h3></div><div class="pr">On request</div></div>
+      </div>
+      <div>
+        <div class="svc"><div><h3>Acrylic Nail Extension<small>sculpted, salon-durable</small></h3></div><div class="pr">On request</div></div>
+        <div class="svc"><div><h3>Manicure / Pedicure<small>the full luxury ritual</small></h3></div><div class="pr">On request</div></div>
+        <div class="svc"><div><h3>Basic Makeup<small>day & evening looks</small></h3></div><div class="pr">On request</div></div>
+      </div>
+    </div>
+    <p class="fine fade"><b style="color:var(--gold)">Pricing note:</b> Panache publishes no public price list — quotes are given on consultation. Call or message on Instagram for exact pricing.</p>
+  </div>
+</section>
+
+<section id="experience" style="background:var(--forest2);border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim)">
+  <div class="wrap duo">
+    <div class="img-frame fade"><img src="https://files.catbox.moe/z5npbd.jpg" alt="Inside Panache Luxury Salon"></div>
+    <div class="fade">
+      <div class="kicker" style="font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">The Experience</div>
+      <h2>A five-star room on Madhya Marg.</h2>
+      <p>Every one of 157 JustDial reviews lands at five stars. That does not happen by accident — it is the product of unhurried appointments, senior stylists, and a room designed to feel calm.</p>
+      <ul class="tick">
+        <li>Senior stylists, consultation-first approach</li>
+        <li>Hair, nails and makeup under one roof</li>
+        <li>Near Sub Zero Fitness, Madhya Marg, Sector 9D</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="kicker">The Space</div>
+      <h2>Step inside.</h2>
+    </div>
+    <div class="rail">
+      <figure class="fade"><img src="https://files.catbox.moe/243p7e.jpg" alt="Panache salon styling area"><figcaption>Styling floor</figcaption></figure>
+      <figure class="fade"><img src="https://files.catbox.moe/q7gne1.jpg" alt="Panache luxury salon studio"><figcaption>The studio</figcaption></figure>
+      <figure class="fade"><img src="https://files.catbox.moe/cr08xo.jpg" alt="Panache luxury salon reception"><figcaption>Reception</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="book" style="padding-top:0">
+  <div class="wrap">
+    <div class="book fade">
+      <div>
+        <div class="kicker" style="font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">Reservations</div>
+        <h2>Your chair is waiting.</h2>
+        <p>Appointments are recommended. Call, WhatsApp, or DM us on Instagram.</p>
+        <div class="cta-row">
+          <a class="btn" href="tel:+918920020505">Call 89200 20505</a>
+          <a class="btn line" href="https://wa.me/918920020505?text=Hello%20Panache%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <div>
+        <div class="field"><label>Address</label><div>Near Sub Zero Fitness, Madhya Marg,<br>Sector 9D, Chandigarh</div></div>
+        <div class="field"><label>Instagram</label><div><a href="https://www.instagram.com/" target="_blank" rel="noopener">Message us on Instagram</a></div></div>
+        <div class="field"><label>Directions</label><div><a href="https://www.google.com/maps/search/?api=1&query=Panache+by+Aakaanksha+Singh+Luxury+Salon+Madhya+Marg+Sector+9D+Chandigarh" target="_blank" rel="noopener">Open in Google Maps</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fb">PANACHE</div>
+  <p>By Aakaanksha Singh · Luxury Salon · Sector 9D, Chandigarh</p>
+  <div class="demo">Demo by StyleFrame Co.</div>
+</footer>
+
+<div class="sticky-bar">
+  <a href="tel:+918920020505">Call</a>
+  <a href="https://wa.me/918920020505?text=Hello%20Panache%2C%20I%27d%20like%20to%20book." target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script>
+  const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('in')),{threshold:.12});
+  document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

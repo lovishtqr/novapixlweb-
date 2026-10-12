@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Nail Story — Nail Studio &amp; Academy, Sector 61 Chandigarh | Demo by StyleFrame Co.</title>
+<meta name="description" content="The Nail Story Nail Studio & Academy, Phase 7 Sector 61 Chandigarh — 5.0 rated. Nail extensions, nail art, professional nail technician academy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0c0d; --bg2:#141415; --crim:#d61f3f; --crim-d:#a81430;
+  --white:#f5f4f2; --muted:#96939a; --line:#232326;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--white);overflow-x:hidden;line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.grot{font-family:'Space Grotesk',sans-serif}
+
+/* pitch ribbon */
+.ribbon{background:var(--crim);color:#fff;text-align:center;font-size:12.5px;letter-spacing:.1em;padding:10px 14px;font-weight:500}
+.ribbon b{font-weight:700}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(12,12,13,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;letter-spacing:.04em}
+.brand i{color:var(--crim);font-style:normal}
+.nav-links{display:flex;gap:26px;font-size:13px;font-weight:500;letter-spacing:.08em;color:var(--muted)}
+.nav-links a{transition:.25s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--crim);color:#fff;padding:11px 24px;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;transition:.3s;min-height:44px;display:inline-flex;align-items:center}
+.nav-cta:hover{background:var(--crim-d)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.32;filter:saturate(.9)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,12,13,.55) 0%,rgba(12,12,13,.88) 100%)}
+.hero-in{position:relative;z-index:2;padding:110px 0 100px;max-width:1160px;margin:0 auto;padding-left:24px;padding-right:24px}
+.pitch-tag{display:inline-block;border:1px solid var(--crim);color:#ff8aa0;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;padding:8px 18px;margin-bottom:26px;font-weight:600}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(44px,7vw,92px);line-height:1;font-weight:700;letter-spacing:-.015em;margin-bottom:24px}
+.hero h1 .cr{color:var(--crim)}
+.hero p.lead{color:#c9c6cd;font-size:17px;max-width:520px;margin-bottom:38px;font-weight:300}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:16px 36px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:.3s;min-height:52px}
+.btn-crim{background:var(--crim);color:#fff}
+.btn-crim:hover{background:var(--crim-d)}
+.btn-ghost{border:1px solid rgba(255,255,255,.3);color:#fff}
+.btn-ghost:hover{border-color:var(--crim);color:#ff8aa0}
+.trust-row{display:flex;gap:40px;margin-top:52px;flex-wrap:wrap}
+.trust-row .t .n{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700}
+.trust-row .t .n span{color:var(--crim)}
+.trust-row .t .l{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+/* then vs now pitch */
+.pitch{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:80px 0}
+.pitch-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pitch-card{border:1px solid var(--line);padding:40px 36px;background:var(--bg)}
+.pitch-card.old{opacity:.6}
+.pitch-card .lbl{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:600}
+.pitch-card.new{border-color:var(--crim);position:relative}
+.pitch-card.new .lbl{color:var(--crim)}
+.pitch-card h3{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;margin-bottom:14px}
+.pitch-card p{color:var(--muted);font-size:15px}
+.pitch-card ul{list-style:none;margin-top:20px;display:grid;gap:12px}
+.pitch-card ul li{font-size:14px;color:#c9c6cd;display:flex;gap:12px;align-items:baseline}
+.pitch-card ul li::before{content:"→";color:var(--crim);font-weight:700}
+
+/* sections */
+section{padding:88px 0}
+.kicker{font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--crim);font-weight:700;margin-bottom:16px}
+.sec-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(30px,4.5vw,50px);font-weight:600;letter-spacing:-.01em;margin-bottom:16px}
+.sec-sub{color:var(--muted);max-width:580px;font-size:15.5px;margin-bottom:48px}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{border:1px solid var(--line);padding:38px 32px;transition:.35s;background:var(--bg)}
+.svc:hover{border-color:var(--crim);transform:translateY(-6px)}
+.svc .ic{width:54px;height:54px;border:1px solid var(--crim);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--crim);font-size:20px;margin-bottom:24px}
+.svc h3{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;margin-bottom:10px}
+.svc p{color:var(--muted);font-size:14px;margin-bottom:18px}
+.svc .p{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#ff8aa0}
+
+/* studio strip */
+.studio{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:0;background:var(--bg2)}
+.studio-grid{display:grid;grid-template-columns:1fr 1fr;min-height:480px}
+.studio-img img{width:100%;height:100%;object-fit:cover;min-height:320px}
+.studio-txt{padding:70px 60px;display:flex;flex-direction:column;justify-content:center}
+.studio-txt h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.6vw,42px);font-weight:600;margin:14px 0 18px}
+.studio-txt p{color:var(--muted);font-size:15.5px;margin-bottom:14px}
+.studio-txt p b{color:var(--white);font-weight:600}
+
+/* academy */
+.acad-list{border-top:1px solid var(--line)}
+.acad-row{display:grid;grid-template-columns:80px 1fr auto;gap:28px;align-items:center;padding:32px 0;border-bottom:1px solid var(--line)}
+.acad-row .n{font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--crim);font-weight:700}
+.acad-row h3{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;margin-bottom:6px}
+.acad-row p{color:var(--muted);font-size:14px;max-width:520px}
+.acad-row .go{border:1px solid var(--line);color:var(--white);padding:12px 26px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:.3s;white-space:nowrap}
+.acad-row .go:hover{border-color:var(--crim);color:#ff8aa0}
+
+/* reviews */
+.rev-center{text-align:center;max-width:720px;margin:0 auto}
+.rev-center .score{font-family:'Space Grotesk',sans-serif;font-size:80px;font-weight:700;line-height:1}
+.rev-center .score span{color:var(--crim)}
+.rev-center .src{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:16px 0 26px}
+.rev-center p{color:var(--muted);font-size:16px}
+
+/* visit */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.addr{border:1px solid var(--line);padding:44px}
+.addr h3{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:16px}
+.addr address{font-style:normal;color:var(--muted);line-height:2;margin-bottom:26px}
+.visit-cta{display:flex;flex-direction:column;justify-content:center;gap:16px}
+
+/* final cta */
+.final{border-top:1px solid var(--line);text-align:center;padding:90px 24px;background:radial-gradient(ellipse at 50% 100%,rgba(214,31,63,.16),transparent 60%)}
+.final h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(30px,4.5vw,52px);font-weight:600;margin-bottom:16px}
+.final h2 span{color:var(--crim)}
+.final p{color:var(--muted);margin-bottom:32px}
+
+footer{border-top:1px solid var(--line);padding:40px 0;font-size:13px;color:#6f6c74}
+.foot-in{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;max-width:1160px;margin:0 auto;padding:0 24px}
+.foot-in .demo{font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.foot-in .demo b{color:var(--crim)}
+
+.stickybar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(12,12,13,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.stickybar a{flex:1;text-align:center;padding:14px 8px;font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;min-height:50px;display:flex;align-items:center;justify-content:center}
+.sb-dm{background:var(--crim);color:#fff}
+.sb-map{border:1px solid var(--line);color:var(--white)}
+
+@media(max-width:900px){
+  .pitch-grid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr}
+  .studio-grid{grid-template-columns:1fr}
+  .studio-txt{padding:48px 24px}
+  .visit-grid{grid-template-columns:1fr}
+  .acad-row{grid-template-columns:1fr;gap:10px}
+  .nav-links{display:none}
+  .stickybar{display:flex}
+  body{padding-bottom:82px}
+  section{padding:64px 0}
+  .hero-in{padding:80px 24px 70px}
+  .trust-row{gap:26px}
+}
+</style>
+</head>
+<body>
+
+<div class="ribbon"><b>Design concept</b> — how thenailstorystudios.com could look, rebuilt by StyleFrame Co.</div>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="#">The Nail <i>Story</i></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#studio">Studio</a>
+      <a href="#academy">Academy</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <a class="nav-cta" href="https://www.instagram.com/" target="_blank" rel="noopener">DM to Book</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg"><img src="https://files.catbox.moe/01svsr.jpg" alt=""></div>
+  <div class="hero-in">
+    <div class="pitch-tag">Nail Studio · Academy · Sector 61</div>
+    <h1>Every nail<br>tells <span class="cr">a story.</span></h1>
+    <p class="lead">The Nail Story is Sector 61's 5.0-rated nail studio and professional academy — precision extensions, statement art, and training that launches careers.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-crim" href="https://www.instagram.com/" target="_blank" rel="noopener">Book on Instagram</a>
+      <a class="btn btn-ghost" href="#academy">Academy</a>
+    </div>
+    <div class="trust-row">
+      <div class="t"><div class="n">5.0<span>★</span></div><div class="l">JustDial rating</div></div>
+      <div class="t"><div class="n">283</div><div class="l">Reviews</div></div>
+      <div class="t"><div class="n">61</div><div class="l">Phase 7, Sector 61</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="pitch">
+  <div class="wrap">
+    <div class="kicker">Why this redesign</div>
+    <div class="sec-title">Your site, reimagined.</div>
+    <p class="sec-sub">You already own thenailstorystudios.com — this is a concept of what it could become: darker, sharper, and built to convert visitors into bookings.</p>
+    <div class="pitch-grid">
+      <div class="pitch-card old">
+        <div class="lbl">Current — thenailstorystudios.com</div>
+        <h3>Your existing site</h3>
+        <p>A functional presence — but it doesn't carry the energy of your studio floor: the crimson chairs, the polish walls, the 5.0-star reputation.</p>
+      </div>
+      <div class="pitch-card new">
+        <div class="lbl">Concept — by StyleFrame Co.</div>
+        <h3>This demo</h3>
+        <ul>
+          <li>Cinematic dark theme matched to your studio branding</li>
+          <li>Studio + Academy split for two audiences</li>
+          <li>One-tap booking CTAs on every screen</li>
+          <li>Mobile-first — where most clients find you</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="kicker">Services</div>
+    <div class="sec-title">The studio menu</div>
+    <p class="sec-sub">Specialist nail services — priced at consultation, finished to a 5.0-star standard.</p>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="ic">E</div>
+        <h3>Nail Extensions</h3>
+        <p>Acrylic and gel extensions — length, shape and strength engineered to last.</p>
+        <div class="p">Price on request</div>
+      </div>
+      <div class="svc">
+        <div class="ic">A</div>
+        <h3>Nail Art</h3>
+        <p>Statement designs, hand-painted detail and trend finishes.</p>
+        <div class="p">Price on request</div>
+      </div>
+      <div class="svc">
+        <div class="ic">T</div>
+        <h3>Nail Technician Academy</h3>
+        <p>Professional training inside a working studio — learn on real clients.</p>
+        <div class="p">Fees on request</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="studio">
+  <div class="studio-grid">
+    <div class="studio-img"><img src="https://files.catbox.moe/01svsr.jpg" alt="The Nail Story studio floor — manicure tables, crimson chairs and polish displays"></div>
+    <div class="studio-txt">
+      <div class="kicker">The Studio</div>
+      <h2>Built for nail work, styled for the camera.</h2>
+      <p>Rows of manicure stations, walls of polish, and the signature crimson seating — the <b>Sector 61 studio</b> is designed around the craft.</p>
+      <p>A <b>5.0 rating across 283 reviews</b> says the results match the room.</p>
+    </div>
+  </div>
+</div>
+
+<section id="academy">
+  <div class="wrap">
+    <div class="kicker">The Academy</div>
+    <div class="sec-title">Train as a nail technician</div>
+    <p class="sec-sub">Professional nail-technician training inside a working studio. DM for the full syllabus and fees.</p>
+    <div class="acad-list">
+      <div class="acad-row">
+        <div class="n">01</div>
+        <div><h3>Foundation Course</h3><p>Nail anatomy, hygiene, tools and core application techniques.</p></div>
+        <a class="go" href="https://www.instagram.com/" target="_blank" rel="noopener">Ask →</a>
+      </div>
+      <div class="acad-row">
+        <div class="n">02</div>
+        <div><h3>Extensions Mastery</h3><p>Acrylic and gel systems, shaping and salon-speed finishing.</p></div>
+        <a class="go" href="https://www.instagram.com/" target="_blank" rel="noopener">Ask →</a>
+      </div>
+      <div class="acad-row">
+        <div class="n">03</div>
+        <div><h3>Nail Art Specialisation</h3><p>Hand-painted art, 3D design and portfolio-ready trend work.</p></div>
+        <a class="go" href="https://www.instagram.com/" target="_blank" rel="noopener">Ask →</a>
+      </div>
+    </div>
+    <p style="margin-top:20px;font-size:13px;color:var(--muted);font-style:italic">* Course levels reflect the academy's advertised nail-technician training. Full syllabus and fees shared on request.</p>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="rev-center">
+      <div class="kicker" style="text-align:center">Client love</div>
+      <div class="score">5.0<span>★</span></div>
+      <div class="src">283 reviews on JustDial · Sector 61</div>
+      <p>A perfect 5.0 across 283 reviews — one of the highest-rated nail studios in the Tricity.</p>
+    </div>
+  </div>
+</section>
+
+<section id="visit" style="padding-top:0">
+  <div class="wrap">
+    <div class="visit-grid">
+      <div class="addr">
+        <div class="kicker">Visit</div>
+        <h3>The Nail Story</h3>
+        <address>Phase 7, Sector 61<br>Chandigarh</address>
+        <div style="font-size:14px;color:var(--muted);line-height:2">Rating: <b style="color:var(--white)">5.0 ★ · 283 reviews</b><br>Site: <b style="color:var(--white)">thenailstorystudios.com</b></div>
+      </div>
+      <div class="visit-cta">
+        <a class="btn btn-crim" href="https://maps.google.com/?q=The+Nail+Story+Nail+Studio+Sector+61+Chandigarh" target="_blank" rel="noopener">Get Directions</a>
+        <a class="btn btn-ghost" href="https://www.instagram.com/" target="_blank" rel="noopener">Message on Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="final">
+  <h2>Your story deserves <span>a better site.</span></h2>
+  <p>Like this concept? Reply to our DM — we'll rebuild your real site like this.</p>
+  <a class="btn btn-crim" href="https://www.instagram.com/" target="_blank" rel="noopener">Start the Conversation</a>
+</div>
+
+<footer>
+  <div class="foot-in">
+    <div>The Nail Story · Phase 7, Sector 61, Chandigarh</div>
+    <div class="demo">Demo by <b>StyleFrame Co.</b></div>
+  </div>
+</footer>
+
+<div class="stickybar">
+  <a class="sb-dm" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram DM</a>
+  <a class="sb-map" href="https://maps.google.com/?q=The+Nail+Story+Nail+Studio+Sector+61+Chandigarh" target="_blank" rel="noopener">Directions</a>
+</div>
+
+</body>
+</html>

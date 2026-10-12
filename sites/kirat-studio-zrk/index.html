@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kirat Hair Studio — Premium Haircuts & Colour | VIP Road, Zirakpur</title>
+<meta name="description" content="Kirat Hair Studio, High Street Market, VIP Road, Zirakpur. Premium balayage, colour transformations, butterfly cuts and precision fades. 15K Instagram followers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--coal:#131313;--coal2:#1c1c1c;--coal3:#0b0b0b;--amber:#c47f3d;--amber2:#e0a45e;
+--bone:#f2ede2;--bone2:#e6ddc9;--ink:#201a14;--muted:#7c7268;--line:rgba(196,127,61,.28)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--bone);color:var(--ink);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.disp{font-family:'Oswald',sans-serif}
+.kicker{font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:20px}
+nav{position:sticky;top:0;z-index:50;background:rgba(19,19,19,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:'Oswald',sans-serif;font-size:23px;font-weight:700;color:var(--bone);letter-spacing:.06em}
+.brand span{color:var(--amber2)}
+.brand small{display:block;font-family:'Inter',sans-serif;font-size:8.5px;letter-spacing:.4em;color:#9a8d7d;font-weight:600;margin-top:3px}
+.nav-links{display:flex;gap:28px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:#9a8d7d;font-weight:600}
+.nav-links a:hover{color:var(--amber2)}
+.nav-cta{background:var(--amber);color:var(--coal3);padding:13px 26px;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;transition:.3s;white-space:nowrap}
+.nav-cta:hover{background:var(--amber2)}
+.hero{background:var(--coal3);color:var(--bone);padding:88px 0 0;overflow:hidden}
+.hero h1{font-family:'Oswald',sans-serif;font-size:clamp(56px,9vw,132px);line-height:.98;font-weight:700;letter-spacing:.01em;text-transform:uppercase}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:1.5px var(--amber2)}
+.hero .row{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin:30px 0 46px}
+.hero .row p{color:#a89b86;font-weight:300;max-width:480px;font-size:16px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{background:var(--amber);color:var(--coal3);padding:16px 36px;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;transition:.3s;display:inline-block}
+.btn:hover{background:var(--amber2)}
+.btn-ghost{border:1px solid rgba(242,237,226,.4);color:var(--bone);padding:16px 36px;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;transition:.3s;display:inline-block}
+.btn-ghost:hover{border-color:var(--amber2);color:var(--amber2)}
+.hero-img{margin-top:52px}
+.hero-img img{width:100%;height:52vh;min-height:320px;object-fit:cover;filter:saturate(.92)}
+.stat-band{background:var(--amber);color:var(--coal3)}
+.stat-in{max-width:1180px;margin:0 auto;padding:30px 24px;display:flex;gap:48px;flex-wrap:wrap;align-items:center}
+.stat-in .s .n{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700}
+.stat-in .s .l{font-size:10px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;opacity:.75}
+section{padding:96px 0}
+.sec-head{margin-bottom:52px}
+.sec-head h2{font-family:'Oswald',sans-serif;font-size:clamp(36px,4.6vw,60px);font-weight:600;text-transform:uppercase;color:var(--ink);line-height:1.05}
+.sec-head h2 span{color:var(--amber)}
+.sec-head p{color:var(--muted);max-width:520px;margin-top:12px}
+.svc-table{border-top:3px solid var(--ink)}
+.svc-row{display:grid;grid-template-columns:56px 1fr auto;gap:22px;align-items:center;padding:28px 8px;border-bottom:1px solid var(--line);transition:.25s}
+.svc-row:hover{background:#fff;padding-left:18px}
+.svc-row .num{font-family:'Oswald',sans-serif;font-size:20px;color:var(--amber);font-weight:600}
+.svc-row h3{font-family:'Oswald',sans-serif;font-size:27px;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:.02em}
+.svc-row p{color:var(--muted);font-size:14px;font-weight:300;margin-top:4px;max-width:560px}
+.svc-row .p{text-align:right}
+.svc-row .p .amt{font-family:'Oswald',sans-serif;font-size:24px;color:var(--ink);font-weight:600;white-space:nowrap}
+.svc-row .p .vtag{display:block;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);font-weight:700}
+.why{background:var(--coal);color:var(--bone)}
+.why .sec-head h2{color:var(--bone)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.why-cell{background:var(--coal2);border:1px solid rgba(196,127,61,.22);padding:42px 34px;transition:.3s}
+.why-cell:hover{border-color:var(--amber);transform:translateY(-5px)}
+.why-cell .big{font-family:'Oswald',sans-serif;font-size:50px;color:var(--amber2);line-height:1;margin-bottom:14px;font-weight:600}
+.why-cell h4{font-family:'Oswald',sans-serif;font-size:22px;font-weight:600;text-transform:uppercase;margin-bottom:10px;letter-spacing:.03em}
+.why-cell p{color:#a89b86;font-size:14.5px;font-weight:300}
+.gal-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px}
+.gal-grid figure{overflow:hidden;position:relative;min-height:300px;background:var(--bone2)}
+.gal-grid figure:first-child{grid-row:span 2;min-height:616px}
+.gal-grid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease;filter:saturate(.94)}
+.gal-grid figure:hover img{transform:scale(1.05)}
+.gal-grid figcaption{position:absolute;left:14px;bottom:14px;background:rgba(11,11,11,.88);color:var(--amber2);padding:8px 18px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:700}
+.cap-note{color:var(--muted);font-size:13px;margin-top:20px;text-align:center;font-weight:300}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.visit h2{font-family:'Oswald',sans-serif;font-size:clamp(36px,4.4vw,58px);font-weight:600;text-transform:uppercase;line-height:1.05;margin-bottom:16px}
+.visit h2 span{color:var(--amber)}
+.visit p.lead{color:var(--muted);margin-bottom:30px;max-width:440px}
+.kv{display:grid;gap:14px}
+.kv .row{display:flex;gap:16px;font-size:15px;align-items:flex-start}
+.kv .k{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--amber);min-width:92px;padding-top:4px;font-weight:700}
+.kv a.ph{color:var(--ink);font-weight:700;text-decoration:underline}
+.book-card{background:var(--coal3);color:var(--bone);padding:46px 42px}
+.book-card h3{font-family:'Oswald',sans-serif;font-size:30px;font-weight:600;text-transform:uppercase;margin-bottom:8px}
+.book-card h3 span{color:var(--amber2)}
+.book-card p{color:#a89b86;font-weight:300;font-size:14.5px;margin-bottom:28px}
+.footnote{font-size:12.5px;color:var(--muted);font-weight:300;margin-top:32px;text-align:center;max-width:760px;margin-left:auto;margin-right:auto}
+.stickybar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:rgba(11,11,11,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:12px 14px calc(12px + env(safe-area-inset-bottom));gap:12px}
+.stickybar a{flex:1;text-align:center;padding:16px 8px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;min-height:52px;display:flex;align-items:center;justify-content:center}
+.stickybar .call{background:var(--amber);color:var(--coal3)}
+.stickybar .wa{border:1px solid var(--amber);color:var(--amber2)}
+footer{background:var(--coal3);color:#8d8172;padding:52px 0 40px;text-align:center}
+footer .fbrand{font-family:'Oswald',sans-serif;font-size:25px;color:var(--amber2);margin-bottom:8px;letter-spacing:.04em}
+footer p{font-size:13px;max-width:560px;margin:0 auto 16px;font-weight:300}
+.demo-tag{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:#5c5347}
+.fade{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+.fade.in{opacity:1;transform:none}
+@media(max-width:900px){
+  .nav-links{display:none}
+  .why-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:1fr 1fr}
+  .gal-grid figure:first-child{grid-row:auto;min-height:300px;grid-column:span 2}
+  .visit-grid{grid-template-columns:1fr;gap:36px}
+  section{padding:68px 0}
+  .svc-row{grid-template-columns:1fr auto}
+  .svc-row .num{display:none}
+  .stickybar{display:flex}
+  body{padding-bottom:78px}
+}
+@media(max-width:560px){.gal-grid{grid-template-columns:1fr}.gal-grid figure:first-child{grid-column:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="#top">KIRAT<span>STUDIO</span><small>HAIR STUDIO · VIP ROAD</small></a>
+    <div class="nav-links">
+      <a href="#services">Services</a><a href="#why">Why Us</a><a href="#gallery">Gallery</a><a href="#visit">Visit</a>
+    </div>
+    <a class="nav-cta" href="tel:+919023900931">Book a Chair</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="kicker fade">Kirat Hair Studio · High Street Market, VIP Road</div>
+    <h1 class="fade">Sharp cuts.<br><span class="outline">Bold colour.</span><br>No compromise.</h1>
+    <div class="row fade">
+      <p>A premium hair studio on VIP Road, Zirakpur — balayage, colour transformations and precision fades, built for clients who notice the details.</p>
+      <div class="hero-btns">
+        <a class="btn" href="tel:+919023900931">Book Appointment</a>
+        <a class="btn-ghost" href="#services">View Services</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-img fade"><img src="https://files.catbox.moe/dagnor.jpg" alt="Kirat Hair Studio interior"></div>
+</header>
+
+<div class="stat-band">
+  <div class="stat-in fade">
+    <div class="s"><div class="n disp">15K</div><div class="l">Instagram followers</div></div>
+    <div class="s"><div class="n disp">VIP Rd</div><div class="l">High Street Market, Zirakpur</div></div>
+    <div class="s"><div class="n disp">Premium</div><div class="l">Studio-grade craft</div></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="kicker">Services</div>
+      <h2>The <span>menu</span></h2>
+      <p>A premium studio — final quotes are personalised on consultation, so the work matches the hair exactly.</p>
+    </div>
+    <div class="fade">
+      <div class="svc-row"><div class="num">01</div><div><h3 class="disp">Balayage Highlights</h3><p>Hand-painted, dimensional colour that grows out softly.</p></div><div class="p"><span class="amt disp">On consultation</span><span class="vtag">Premium</span></div></div>
+      <div class="svc-row"><div class="num">02</div><div><h3 class="disp">Colour Transformation</h3><p>Full colour corrections and dramatic shade changes, done safely.</p></div><div class="p"><span class="amt disp">On consultation</span><span class="vtag">Premium</span></div></div>
+      <div class="svc-row"><div class="num">03</div><div><h3 class="disp">Butterfly Cut</h3><p>Layered, face-framing movement — the signature layered cut.</p></div><div class="p"><span class="amt disp">On consultation</span><span class="vtag">Premium</span></div></div>
+      <div class="svc-row"><div class="num">04</div><div><h3 class="disp">Fade Haircut</h3><p>Skin fades, tapers and sharp line-ups with razor-clean finish.</p></div><div class="p"><span class="amt disp">On consultation</span><span class="vtag">Premium</span></div></div>
+      <div class="svc-row"><div class="num">05</div><div><h3 class="disp">Fresh Fade</h3><p>The maintenance essential — crisp edges, tidy neckline, styled out.</p></div><div class="p"><span class="amt disp">On consultation</span><span class="vtag">Premium</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="kicker">Why Kirat</div>
+      <h2>Built for <span style="color:var(--amber2)">detail people</span></h2>
+    </div>
+    <div class="why-grid fade">
+      <div class="why-cell"><div class="big disp">01</div><h4 class="disp">Colour Specialists</h4><p>Balayage and transformations are the house craft — not an afterthought.</p></div>
+      <div class="why-cell"><div class="big disp">02</div><h4 class="disp">Fade Precision</h4><p>Clipper work with barber-grade discipline: crisp lines, clean blends.</p></div>
+      <div class="why-cell"><div class="big disp">03</div><h4 class="disp">15K Community</h4><p>A 15,000-strong Instagram audience watches every transformation drop.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="kicker">Gallery</div>
+      <h2>The <span>studio</span></h2>
+      <p>Inside Kirat Hair Studio, plus a look at the craft.</p>
+    </div>
+    <div class="gal-grid fade">
+      <figure><img src="https://files.catbox.moe/dagnor.jpg" alt="Kirat Hair Studio floor"><figcaption>Our Studio</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/yaevrc.jpg" alt="Kirat Hair Studio detail"><figcaption>Our Studio</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/cgg6py.webp" alt="Signature barber craft"><figcaption>Signature Looks</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/ncmk8l.jpg" alt="Signature hair work"><figcaption>Signature Looks</figcaption></figure>
+    </div>
+    <p class="cap-note">"Our Studio" photographs are from Kirat Hair Studio's own listings; "Signature Looks" are representative style imagery.</p>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap visit-grid">
+    <div class="fade">
+      <div class="kicker">Visit Us</div>
+      <h2>On <span>VIP Road</span></h2>
+      <p class="lead">High Street Market, Block B — walk in or call ahead to lock your slot.</p>
+      <div class="kv">
+        <div class="row"><div class="k">Address</div><div>SCF 23-24, Block B, High Street Market, VIP Road, Zirakpur</div></div>
+        <div class="row"><div class="k">Phone</div><div><a class="ph" href="tel:+919023900931">90239 00931</a></div></div>
+        <div class="row"><div class="k">Instagram</div><div><a class="ph" href="https://instagram.com/kirathairstudio" target="_blank" rel="noopener">@kirathairstudio</a> · 15K followers</div></div>
+        <div class="row"><div class="k">Pricing</div><div>Premium studio — final quote on consultation</div></div>
+      </div>
+    </div>
+    <div class="book-card fade">
+      <h3 class="disp">Book <span>your chair</span></h3>
+      <p>Call or WhatsApp with the service you want — we confirm every booking personally.</p>
+      <div class="hero-btns">
+        <a class="btn" href="tel:+919023900931">Call Now</a>
+        <a class="btn-ghost" href="https://wa.me/919023900931?text=Hello%20Kirat%20Hair%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="footnote">Services priced on consultation — premium studio positioning per public listings. This is a demo website concept.</p></div>
+</section>
+
+<div class="stickybar">
+  <a class="call" href="tel:+919023900931">Call Now</a>
+  <a class="wa" href="https://wa.me/919023900931?text=Hello%20Kirat%20Hair%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand disp">KIRAT HAIR STUDIO</div>
+    <p>High Street Market, VIP Road, Zirakpur. Balayage · Colour · Fades. 15K Instagram community.</p>
+    <div class="demo-tag">Demo by StyleFrame Co.</div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

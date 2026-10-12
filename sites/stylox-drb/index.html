@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stylox Studio — Unisex Salon &amp; Academy, Derabassi | Packages from ₹599</title>
+<meta name="description" content="Stylox Studio Unisex Salon & Academy, Mubarakpur Road, Derabassi. Mini offers from ₹599 and premium pamper tiers up to ₹3999. Call 99157 57047.">
+<style>
+  :root{
+    --bg:#14110C; --bg2:#1C1812; --card:#201B13; --line:#3A2F1D;
+    --amber:#E9A13B; --amber-soft:#F2C66D; --cream:#F5EFE3; --muted:#B9AC93;
+    --ink:#0F0D08;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--bg);color:var(--cream);line-height:1.65;overflow-x:hidden}
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:600;line-height:1.25;letter-spacing:.3px}
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;z-index:50;background:rgba(20,17,12,.93);backdrop-filter:blur(10px);
+         border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{font-family:Georgia,serif;font-size:1.55rem;color:var(--amber)}
+  .brand small{display:block;font-family:-apple-system,sans-serif;font-size:.6rem;letter-spacing:3px;
+              text-transform:uppercase;color:var(--muted);margin-top:2px}
+  .nav-links{display:flex;gap:28px;font-size:.84rem;letter-spacing:1.5px;text-transform:uppercase}
+  .nav-links a{color:var(--muted)}.nav-links a:hover{color:var(--amber)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 32px;
+       border-radius:12px;font-size:.9rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;transition:all .25s}
+  .btn-amber{background:var(--amber);color:var(--ink)}
+  .btn-amber:hover{background:var(--amber-soft);transform:translateY(-2px)}
+  .btn-ghost{border:1.5px solid var(--line);color:var(--cream)}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+  /* hero */
+  .hero{padding:70px 0 60px;background:
+       radial-gradient(900px 420px at 20% 0%,rgba(233,161,59,.12),transparent 60%),
+       radial-gradient(700px 380px at 85% 20%,rgba(233,161,59,.08),transparent 60%)}
+  .hero-top{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;margin-bottom:64px}
+  .eyebrow{font-size:.74rem;letter-spacing:4px;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+  .hero h1{font-size:3.3rem;margin-bottom:18px}
+  .hero h1 em{font-style:italic;color:var(--amber-soft)}
+  .hero p.lead{color:var(--muted);font-size:1.08rem;max-width:480px;margin-bottom:28px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+  .proof{display:flex;gap:22px;flex-wrap:wrap;font-size:.88rem;color:var(--muted)}
+  .proof strong{color:var(--cream)}
+  .hero-img{border-radius:20px;overflow:hidden;border:1px solid var(--line);
+            box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+  .hero-img img{width:100%;height:480px;object-fit:cover}
+  /* tier hero cards */
+  .tiers-title{text-align:center;margin-bottom:36px}
+  .tiers-title h2{font-size:2.4rem}
+  .tiers-title h2 span{color:var(--amber)}
+  .tiers-title p{color:var(--muted);margin-top:10px}
+  .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .tier{background:linear-gradient(180deg,var(--card),#191410);border:1px solid var(--line);
+        border-radius:18px;padding:34px 30px;position:relative;transition:transform .25s,border-color .25s,box-shadow .25s}
+  .tier:hover{transform:translateY(-6px);border-color:var(--amber);box-shadow:0 30px 60px -20px rgba(233,161,59,.25)}
+  .tier.featured{border:1.5px solid var(--amber);
+        background:linear-gradient(180deg,#2A2113,#191410)}
+  .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--amber);color:var(--ink);
+       font-size:.7rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:999px;white-space:nowrap}
+  .tier .pname{font-size:.74rem;letter-spacing:3px;text-transform:uppercase;color:var(--amber-soft);margin-bottom:6px}
+  .tier h3{font-size:1.9rem;margin-bottom:8px}
+  .tier .price{font-family:Georgia,serif;font-size:2.7rem;color:var(--amber);margin:10px 0 4px}
+  .tier ul{list-style:none;margin:16px 0 24px}
+  .tier li{padding:9px 0;border-bottom:1px dashed var(--line);font-size:.94rem;color:var(--cream)}
+  .tier li:last-child{border:0}
+  .tier li::before{content:"— ";color:var(--amber)}
+  .tier .btn{width:100%}
+  /* mini offers */
+  .minis{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .mini{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:30px 28px;transition:transform .25s,border-color .25s}
+  .mini:hover{transform:translateY(-5px);border-color:var(--amber-soft)}
+  .mini .mprice{font-family:Georgia,serif;font-size:2.2rem;color:var(--amber-soft)}
+  .mini h3{font-size:1.35rem;margin:8px 0}
+  .mini p{color:var(--muted);font-size:.93rem;margin-bottom:20px}
+  .mini a.book{display:inline-block;min-height:48px;line-height:48px;padding:0 24px;border-radius:10px;
+              background:transparent;border:1.5px solid var(--amber);color:var(--amber);
+              font-weight:700;font-size:.85rem;letter-spacing:1px;text-transform:uppercase}
+  .mini a.book:hover{background:var(--amber);color:var(--ink)}
+  /* sections */
+  section{padding:78px 0}
+  .sec-head{text-align:center;max-width:660px;margin:0 auto 50px}
+  .sec-head h2{font-size:2.4rem;margin-bottom:10px}
+  .sec-head h2 span{color:var(--amber)}
+  .sec-head p{color:var(--muted);margin-top:10px}
+  .rule{width:64px;height:2px;background:var(--amber);margin:16px auto 0}
+  /* academy */
+  .academy{background:linear-gradient(135deg,#241B0E,#14110C);border:1px solid var(--line);border-radius:22px;
+           overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+  .academy img{width:100%;height:100%;min-height:320px;object-fit:cover}
+  .academy .txt{padding:52px 48px}
+  .academy .txt h2{font-size:2.1rem;margin-bottom:14px}
+  .academy .txt h2 span{color:var(--amber)}
+  .academy .txt p{color:var(--muted);margin-bottom:24px}
+  /* gallery */
+  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .gal{border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .gal img{width:100%;height:240px;object-fit:cover;transition:transform .4s}
+  .gal:hover img{transform:scale(1.05)}
+  .gal figcaption{font-size:.76rem;color:var(--muted);padding:10px 14px;font-style:italic;background:var(--bg2)}
+  /* trust */
+  .trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .tcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:32px 28px}
+  .tcard .stars{color:var(--amber);letter-spacing:2px;margin-bottom:10px}
+  .tcard p{font-size:.95rem;color:var(--cream)}
+  .tcard .who{margin-top:14px;font-size:.8rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+  /* visit */
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .visit .addr{font-size:1.12rem;color:var(--cream);margin-bottom:10px}
+  .visit p{color:var(--muted);margin-bottom:14px}
+  .contact-lines{margin:24px 0;display:grid;gap:12px}
+  .contact-lines a{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);
+                   border-radius:12px;padding:16px 20px;min-height:56px;transition:border-color .2s}
+  .contact-lines a:hover{border-color:var(--amber)}
+  .contact-lines .k{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--amber-soft);width:92px;flex-shrink:0}
+  .contact-lines .v{font-size:1.05rem;font-weight:600}
+  .map{border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+  .map iframe{width:100%;height:360px;border:0;display:block;filter:grayscale(.4) invert(.92) hue-rotate(180deg)}
+  .fine{font-size:.82rem;color:var(--muted);margin-top:26px;font-style:italic}
+  footer{background:#0D0B07;border-top:1px solid var(--line);padding:28px 0;font-size:.84rem;color:var(--muted)}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:rgba(15,13,8,.97);
+             padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:10px;border-top:1px solid var(--line)}
+  .sticky-cta a{flex:1;min-height:54px;display:flex;align-items:center;justify-content:center;border-radius:12px;
+                font-weight:800;font-size:1rem;letter-spacing:.5px}
+  .sticky-cta .s-call{background:var(--amber);color:var(--ink)}
+  .sticky-cta .s-wa{background:transparent;border:1.5px solid var(--amber);color:var(--amber)}
+  @media(max-width:900px){
+    .hero-top,.visit-grid{grid-template-columns:1fr;gap:34px}
+    .hero{padding:48px 0 40px}.hero h1{font-size:2.5rem}
+    .hero-img img{height:320px}
+    .tier-grid,.mini-grid{grid-template-columns:1fr}
+    .tier.featured{order:-1}
+    .gal-grid{grid-template-columns:repeat(2,1fr)}
+    .trust-row{grid-template-columns:1fr}
+    .academy{grid-template-columns:1fr}
+    .academy img{min-height:220px}
+    .academy .txt{padding:36px 28px}
+    .nav-links{display:none}
+    section{padding:54px 0}
+    .sticky-cta{display:flex}
+    body{padding-bottom:78px}
+    .sec-head h2,.tiers-title h2{font-size:1.9rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand">Stylox<small>Studio · Salon &amp; Academy</small></a>
+    <nav class="nav-links">
+      <a href="#tiers">Packages</a>
+      <a href="#minis">Mini Offers</a>
+      <a href="#academy">Academy</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn-amber" href="tel:+919915757047">Call Now</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div>
+        <div class="eyebrow">Derabassi · Unisex Salon &amp; Academy</div>
+        <h1>Derabassi's <em>luxury</em> pamper destination</h1>
+        <p class="lead">Curated head-to-toe packages with honest, published prices — pick a tier, tap to book on WhatsApp, walk out glowing.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-amber" href="#tiers">View Price Menu</a>
+          <a class="btn btn-ghost" href="https://wa.me/919915757047?text=Hi%20Stylox%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+        <div class="proof">
+          <span><strong>Influencer-verified</strong> "best luxury salon in Derabassi"</span>
+          <span><strong>@stylox_studio.derabassi</strong> on Instagram</span>
+        </div>
+      </div>
+      <div>
+        <div class="hero-img">
+          <img src="https://files.catbox.moe/6gorca.jpg" alt="Stylox Studio branding, Derabassi">
+        </div>
+      </div>
+    </div>
+
+    <div class="tiers-title" id="tiers">
+      <div class="eyebrow">The Price Menu</div>
+      <h2>Premium <span>Pamper Tiers</span></h2>
+      <p>All-inclusive packages. No surprises — what's listed is what's included.</p>
+    </div>
+    <div class="tier-grid">
+      <div class="tier">
+        <div class="pname">Tier 01</div>
+        <h3>Glow &amp; Renew</h3>
+        <div class="price">₹1,999</div>
+        <ul>
+          <li>Luxury Organic Facial</li>
+          <li>Rica Waxing</li>
+          <li>Deep Conditioning Treatment</li>
+          <li>Brow Shaping</li>
+          <li>Nail Polish Application</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://wa.me/919915757047?text=Hi%20Stylox%20Studio%2C%20I%20want%20to%20book%20the%20Glow%20%26%20Renew%20package%20(%E2%82%B91%2C999)." target="_blank" rel="noopener">Book on WhatsApp</a>
+      </div>
+      <div class="tier featured">
+        <div class="tag">Most Booked</div>
+        <div class="pname">Tier 02</div>
+        <h3>Radiance &amp; Style</h3>
+        <div class="price">₹2,999</div>
+        <ul>
+          <li>Korean Premium Facial</li>
+          <li>Premium Hair Spa</li>
+          <li>Advance Haircut</li>
+          <li>Rica Waxing</li>
+          <li>Threading</li>
+          <li>Manicure + Pedicure</li>
+        </ul>
+        <a class="btn btn-amber" href="https://wa.me/919915757047?text=Hi%20Stylox%20Studio%2C%20I%20want%20to%20book%20the%20Radiance%20%26%20Style%20package%20(%E2%82%B92%2C999)." target="_blank" rel="noopener">Book on WhatsApp</a>
+      </div>
+      <div class="tier">
+        <div class="pname">Tier 03</div>
+        <h3>Royal Pamper</h3>
+        <div class="price">₹3,999</div>
+        <ul>
+          <li>Japanese Premium Facial</li>
+          <li>Half-Legs Rica Waxing</li>
+          <li>Schwarzkopf Hair Spa</li>
+          <li>Advance Cut + Styling</li>
+          <li>Manicure + Pedicure</li>
+          <li>Threading</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://wa.me/919915757047?text=Hi%20Stylox%20Studio%2C%20I%20want%20to%20book%20the%20Royal%20Pamper%20package%20(%E2%82%B93%2C999)." target="_blank" rel="noopener">Book on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="minis" id="minis">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Quick refresh</div>
+      <h2>Mini Offers — <span>Under ₹1,000</span></h2>
+      <div class="rule"></div>
+      <p>Short on time? These express rituals keep you glowing between full sessions.</p>
+    </div>
+    <div class="mini-grid">
+      <div class="mini">
+        <div class="mprice">₹599</div>
+        <h3>Quick Glow Mini</h3>
+        <p>Arms + Underarms Waxing with an Organic Cleanup.</p>
+        <a class="book" href="https://wa.me/919915757047?text=Hi%20Stylox%20Studio%2C%20I%20want%20the%20%E2%82%B9599%20Quick%20Glow%20mini%20offer." target="_blank" rel="noopener">Book ₹599</a>
+      </div>
+      <div class="mini">
+        <div class="mprice">₹699</div>
+        <h3>Detan Refresh</h3>
+        <p>Dtan Cleanup + Deep Conditioning + Threading.</p>
+        <a class="book" href="https://wa.me/919915757047?text=Hi%20Stylox%20Studio%2C%20I%20want%20the%20%E2%82%B9699%20Detan%20Refresh%20mini%20offer." target="_blank" rel="noopener">Book ₹699</a>
+      </div>
+      <div class="mini">
+        <div class="mprice">₹999</div>
+        <h3>Facial + Hair Spa Mini</h3>
+        <p>Organic Facial + Frizz-Control Hair Spa + Threading.</p>
+        <a class="book" href="https://wa.me/919915757047?text=Hi%20Stylox%20Studio%2C%20I%20want%20the%20%E2%82%B9999%20Facial%20%2B%20Hair%20Spa%20mini%20offer." target="_blank" rel="noopener">Book ₹999</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="academy" id="academy">
+      <div><img src="https://files.catbox.moe/kwejfr.jpg" alt="Stylox Academy training floor"></div>
+      <div class="txt">
+        <div class="eyebrow">Stylox Academy</div>
+        <h2>Learn the craft. <span>Become a stylist.</span></h2>
+        <p>Professional salon &amp; academy under one roof — train with working stylists on real clients, real products and real technique. Courses for beginners and working professionals.</p>
+        <a class="btn btn-amber" href="https://wa.me/919915757047?text=Hi%20Stylox%20Studio%2C%20I%27d%20like%20details%20about%20Academy%20courses." target="_blank" rel="noopener">Ask About Courses</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">The studio</div>
+      <h2>Inside <span>Stylox</span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="gal-grid">
+      <figure class="gal"><img src="https://files.catbox.moe/n70fa2.jpg" alt="Stylox Studio interior"><figcaption>Our studio</figcaption></figure>
+      <figure class="gal"><img src="https://files.catbox.moe/fe5e9e.jpg" alt="Stylox Studio styling chairs"><figcaption>Our studio</figcaption></figure>
+      <figure class="gal"><img src="https://files.catbox.moe/6gorca.jpg" alt="Stylox Studio branding"><figcaption>Our studio</figcaption></figure>
+      <figure class="gal"><img src="https://files.catbox.moe/kwejfr.jpg" alt="Academy training look"><figcaption>Signature looks</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0" id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Word on the street</div>
+      <h2>Why Derabassi <span>Chooses Stylox</span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="trust-row">
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <p>Influencer-verified as the best luxury salon in Derabassi — a title earned on results, not ads.</p>
+        <div class="who">Influencer review · 2026</div>
+      </div>
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <p>Guests love the transparent pricing — premium tiers with everything listed upfront.</p>
+        <div class="who">Recurring theme · listings</div>
+      </div>
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <p>One roof for salon + academy means the team trains constantly — and it shows in the chair.</p>
+        <div class="who">Studio note</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Book your chair</div>
+      <h2>Visit <span>Stylox Studio</span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="visit-grid">
+      <div>
+        <p class="addr">SCO 27, Bella Homes,<br>Mubarakpur Road, Derabassi</p>
+        <p>Call or WhatsApp to reserve — mention the package name and we will confirm your slot.</p>
+        <div class="contact-lines">
+          <a href="tel:+919915757047"><span class="k">Call</span><span class="v">99157 57047</span></a>
+          <a href="https://wa.me/919915757047" target="_blank" rel="noopener"><span class="k">WhatsApp</span><span class="v">Chat with the studio</span></a>
+          <a href="https://instagram.com/stylox_studio.derabassi" target="_blank" rel="noopener"><span class="k">Instagram</span><span class="v">@stylox_studio.derabassi</span></a>
+        </div>
+        <p class="fine">Package prices are the studio's published menu prices; confirm inclusions when booking.</p>
+      </div>
+      <div class="map">
+        <iframe title="Map — Stylox Studio Derabassi" loading="lazy"
+          src="https://www.google.com/maps?q=Stylox%20Studio%20Mubarakpur%20Road%20Derabassi&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>Stylox Studio Unisex Salon &amp; Academy · Mubarakpur Road, Derabassi · 99157 57047</span>
+    <span>Demo by StyleFrame Co.</span>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="s-call" href="tel:+919915757047">Call Now</a>
+  <a class="s-wa" href="https://wa.me/919915757047?text=Hi%20Stylox%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+</body>
+</html>

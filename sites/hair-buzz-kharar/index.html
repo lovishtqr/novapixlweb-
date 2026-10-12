@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hair Buzz Family Salon — Kharar | Luxury Hair Transformations</title>
+<meta name="description" content="Hair Buzz Family Salon, Gillco Valley, Kharar. Luxury hair transformations, extensions, colour and keratin. A Zirakpur–Kharar–Chandigarh chain where every client is a celebrity.">
+<style>
+  :root{
+    --plum:#2C1436; --plum-deep:#1B0D23; --plum-soft:#3E1F4E;
+    --champ:#D8B98B; --champ-soft:#EAD3AC; --cream:#FAF5EC; --muted:#8F7E99;
+    --card:#FFFFFF; --ink:#241327; --line:#E7DCCB;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--cream);color:var(--ink);line-height:1.7;overflow-x:hidden}
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:600;line-height:1.22;letter-spacing:.3px}
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  /* top bar */
+  .topbar{background:var(--plum-deep);color:var(--champ-soft);font-size:.78rem;letter-spacing:1.5px;
+          text-transform:uppercase;text-align:center;padding:9px 12px}
+  header{position:sticky;top:0;z-index:50;background:rgba(250,245,236,.94);backdrop-filter:blur(10px);
+         border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{font-family:Georgia,serif;font-size:1.6rem;color:var(--plum)}
+  .brand small{display:block;font-family:-apple-system,sans-serif;font-size:.6rem;letter-spacing:4px;
+              text-transform:uppercase;color:#9A7B4F;margin-top:2px}
+  .nav-links{display:flex;gap:30px;font-size:.84rem;letter-spacing:1.5px;text-transform:uppercase}
+  .nav-links a{color:#6B5A74}.nav-links a:hover{color:var(--plum)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 32px;
+       border-radius:999px;font-size:.88rem;letter-spacing:1.4px;text-transform:uppercase;font-weight:700;transition:all .25s}
+  .btn-plum{background:var(--plum);color:#fff}
+  .btn-plum:hover{background:var(--plum-soft);transform:translateY(-2px)}
+  .btn-gold{background:var(--champ);color:#2A1A2E}
+  .btn-gold:hover{background:var(--champ-soft);transform:translateY(-2px)}
+  /* hero */
+  .hero{background:linear-gradient(160deg,var(--plum-deep) 0%,var(--plum) 55%,#40204F 100%);
+        color:#fff;padding:84px 0 0;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:auto -10% -40% -10%;height:60%;
+        background:radial-gradient(closest-side,rgba(216,185,139,.14),transparent)}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+  .eyebrow{font-size:.74rem;letter-spacing:4px;text-transform:uppercase;color:var(--champ);margin-bottom:18px}
+  .hero h1{font-size:3.5rem;margin-bottom:20px}
+  .hero h1 em{font-style:italic;color:var(--champ-soft)}
+  .pull{font-family:Georgia,serif;font-size:1.35rem;font-style:italic;color:var(--champ-soft);
+        border-left:3px solid var(--champ);padding-left:20px;margin:26px 0;max-width:460px}
+  .hero p.lead{color:#CBB9D1;max-width:480px;margin-bottom:30px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+  .hero-frame{border-radius:22px 22px 0 0;overflow:hidden;border:1px solid rgba(216,185,139,.35);
+              border-bottom:0;box-shadow:0 -20px 80px rgba(0,0,0,.45)}
+  .hero-frame img{width:100%;height:520px;object-fit:cover}
+  /* chain strip */
+  .chain{background:var(--plum-deep);color:#E8DCC6;padding:36px 0;border-top:1px solid rgba(216,185,139,.25)}
+  .chain-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+  .chain-item .n{font-family:Georgia,serif;font-size:2.1rem;color:var(--champ)}
+  .chain-item .l{font-size:.76rem;letter-spacing:2.2px;text-transform:uppercase;color:#A893B4;margin-top:4px}
+  /* magazine splits */
+  .split{padding:84px 0}
+  .split .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .split.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .split .kicker{font-size:.74rem;letter-spacing:4px;text-transform:uppercase;color:#9A7B4F;margin-bottom:14px}
+  .split h2{font-size:2.6rem;color:var(--plum);margin-bottom:16px}
+  .split p{color:#5C4B63;margin-bottom:18px}
+  .split ul{list-style:none;margin:6px 0 26px}
+  .split li{padding:10px 0;border-bottom:1px solid var(--line);font-size:.97rem}
+  .split li:last-child{border:0}
+  .split li strong{color:var(--plum)}
+  .split-img{border-radius:20px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(44,20,54,.35)}
+  .split-img img{width:100%;height:440px;object-fit:cover;transition:transform .5s}
+  .split-img:hover img{transform:scale(1.04)}
+  .img-cap{font-size:.78rem;color:#8A7A92;padding:10px 4px 0;font-style:italic}
+  /* outlets */
+  .outlets{background:var(--plum);color:#fff}
+  .outlets .sec-head h2{color:#fff}
+  .out-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .out{background:rgba(255,255,255,.05);border:1px solid rgba(216,185,139,.3);border-radius:18px;
+       padding:36px 30px;transition:transform .25s,background .25s}
+  .out:hover{transform:translateY(-5px);background:rgba(255,255,255,.08)}
+  .out .city{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--champ);margin-bottom:8px}
+  .out h3{font-size:1.5rem;margin-bottom:8px}
+  .out p{color:#CBB9D1;font-size:.93rem}
+  .out.current{border-color:var(--champ);background:rgba(216,185,139,.1)}
+  .sec-head{text-align:center;max-width:660px;margin:0 auto 52px}
+  .sec-head h2{font-size:2.5rem;color:var(--plum);margin-bottom:10px}
+  .sec-head p{color:#5C4B63;margin-top:10px}
+  .rule{width:64px;height:2px;background:var(--champ);margin:16px auto 0}
+  /* gallery */
+  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .gal{border-radius:14px;overflow:hidden}
+  .gal img{width:100%;height:250px;object-fit:cover;transition:transform .4s}
+  .gal:hover img{transform:scale(1.05)}
+  .gal figcaption{font-size:.76rem;color:#8A7A92;padding:10px 4px 0;font-style:italic}
+  section{padding:78px 0}
+  /* reviews */
+  .rev-band{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .rev{border:1px solid var(--line);border-radius:16px;padding:32px 28px;background:var(--cream)}
+  .rev .stars{color:#B98A3D;letter-spacing:2px;margin-bottom:10px}
+  .rev p{font-size:.95rem}
+  .rev .who{margin-top:14px;font-size:.8rem;color:#8A7A92;letter-spacing:1px;text-transform:uppercase}
+  /* visit */
+  .visit{background:var(--plum-deep);color:#EDE4F2}
+  .visit h2{color:#fff}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+  .visit .addr{font-size:1.12rem;color:#fff;margin-bottom:10px}
+  .visit p{color:#B9A9C2;margin-bottom:14px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+  .map{border-radius:16px;overflow:hidden;border:1px solid rgba(216,185,139,.3)}
+  .map iframe{width:100%;height:350px;border:0;display:block}
+  /* final */
+  .final{text-align:center;padding:90px 0}
+  .final h2{font-size:2.7rem;color:var(--plum);margin-bottom:14px}
+  .final p{color:#5C4B63;max-width:540px;margin:0 auto 30px}
+  footer{background:var(--plum-deep);color:#A893B4;padding:28px 0;font-size:.84rem}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:rgba(27,13,35,.97);
+             padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:10px;border-top:1px solid rgba(216,185,139,.3)}
+  .sticky-cta a{flex:1;min-height:54px;display:flex;align-items:center;justify-content:center;border-radius:12px;
+                font-weight:800;font-size:1rem;letter-spacing:.5px}
+  .sticky-cta .s-dm{background:var(--champ);color:#2A1A2E}
+  .sticky-cta .s-dir{background:transparent;border:1.5px solid var(--champ);color:var(--champ)}
+  @media(max-width:900px){
+    .hero-grid,.split .wrap,.visit-grid{grid-template-columns:1fr;gap:36px}
+    .hero{padding:52px 0 0}.hero h1{font-size:2.5rem}
+    .hero-frame img{height:320px}
+    .chain-row{grid-template-columns:repeat(2,1fr);gap:26px}
+    .split{padding:56px 0}.split h2{font-size:2rem}
+    .split-img img{height:300px}
+    .out-grid,.rev-grid{grid-template-columns:1fr}
+    .gal-grid{grid-template-columns:repeat(2,1fr)}
+    .nav-links{display:none}
+    section{padding:54px 0}
+    .sticky-cta{display:flex}
+    body{padding-bottom:78px}
+    .sec-head h2{font-size:2rem}
+    .topbar{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">A luxury chain — Zirakpur · Kharar · Chandigarh</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand">Hair Buzz<small>Family Salon</small></a>
+    <nav class="nav-links">
+      <a href="#transform">Transformations</a>
+      <a href="#outlets">Outlets</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn-plum" href="https://instagram.com/hairbuzz_kharar" target="_blank" rel="noopener">Book Now</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Kharar · Gillco Valley</div>
+      <h1>Luxury hair, <em>celebrity</em> treatment</h1>
+      <div class="pull">"Every client is a celebrity."</div>
+      <p class="lead">Dramatic hair transformations, precision colour, keratin rituals and extensions — from a salon chain trusted across the Tricity.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="https://instagram.com/hairbuzz_kharar" target="_blank" rel="noopener">DM to Book</a>
+        <a class="btn" style="border:1.5px solid var(--champ);color:var(--champ)" href="#transform">See Transformations</a>
+      </div>
+    </div>
+    <div>
+      <div class="hero-frame">
+        <img src="https://files.catbox.moe/1m72c7.jpg" alt="Hair Buzz Family Salon, Kharar">
+      </div>
+    </div>
+  </div>
+  <div class="chain">
+    <div class="wrap chain-row">
+      <div class="chain-item"><div class="n">3</div><div class="l">City Outlets</div></div>
+      <div class="chain-item"><div class="n">17K+</div><div class="l">Instagram Family</div></div>
+      <div class="chain-item"><div class="n">24K</div><div class="l">Sister Studio @hairbuzz_artistry</div></div>
+      <div class="chain-item"><div class="n">100%</div><div class="l">Celebrity Treatment</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="split" id="transform">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Signature craft</div>
+      <h2>Transformations that turn heads</h2>
+      <p>Hair Buzz built its name on before-and-after moments — colour corrections, texture overhauls and complete restyles planned around your face, lifestyle and hair health.</p>
+      <ul>
+        <li><strong>Luxury hair transformations</strong> — planned, staged, dramatic</li>
+        <li><strong>Colour artistry</strong> — balayage, global, creative shades</li>
+        <li><strong>Keratin &amp; smoothening</strong> — frizz-free, glassy finish</li>
+      </ul>
+      <a class="btn btn-plum" href="https://instagram.com/hairbuzz_kharar" target="_blank" rel="noopener">Ask About Transformations</a>
+    </div>
+    <div>
+      <div class="split-img"><img src="https://files.catbox.moe/ncmk8l.jpg" alt="Hair colour transformation at Hair Buzz"></div>
+      <div class="img-cap">Signature looks</div>
+    </div>
+  </div>
+</div>
+
+<div class="split alt">
+  <div class="wrap">
+    <div>
+      <div class="split-img"><img src="https://files.catbox.moe/ql37tj.jpg" alt="Hair Buzz salon and cafe interior"></div>
+      <div class="img-cap">Our studio — Hair Buzz Salon &amp; Cafe</div>
+    </div>
+    <div>
+      <div class="kicker">More than a salon</div>
+      <h2>Salon, cafe &amp; artistry under one roof</h2>
+      <p>The Kharar studio pairs a full luxury salon with a cafe lounge — arrive for a transformation, stay for the experience. The extended Hair Buzz family includes <strong>@hairbuzz_artistry</strong>, the 24K-strong creative studio.</p>
+      <ul>
+        <li><strong>Hair extensions</strong> — length and volume, natural finish</li>
+        <li><strong>Salon + cafe</strong> — relax between services</li>
+        <li><strong>Chain-wide expertise</strong> — stylists trained across outlets</li>
+      </ul>
+      <a class="btn btn-plum" href="https://instagram.com/hairbuzz_kharar" target="_blank" rel="noopener">DM the Studio</a>
+    </div>
+  </div>
+</div>
+
+<div class="split">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Finishing craft</div>
+      <h2>Detail-obsessed styling</h2>
+      <p>From precision cuts to event styling, every appointment ends with a finish you'd expect on a shoot — because here, every client is treated like the star of one.</p>
+      <ul>
+        <li><strong>Precision haircuts</strong> — for the whole family</li>
+        <li><strong>Event &amp; bridal-adjacent styling</strong></li>
+        <li><strong>Aftercare guidance</strong> — keep the salon finish at home</li>
+      </ul>
+    </div>
+    <div>
+      <div class="split-img"><img src="https://files.catbox.moe/bate5o.jpg" alt="Luxury salon styling at Hair Buzz"></div>
+      <div class="img-cap">Signature looks</div>
+    </div>
+  </div>
+</div>
+
+<section class="outlets" id="outlets">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" style="color:var(--champ)">The chain</div>
+      <h2>One Brand, Three Cities</h2>
+      <div class="rule"></div>
+      <p style="color:#B9A9C2">Same standards, same celebrity treatment — whichever outlet you walk into.</p>
+    </div>
+    <div class="out-grid">
+      <div class="out">
+        <div class="city">Flagship</div>
+        <h3>Zirakpur</h3>
+        <p>The original Hair Buzz — where the chain's transformation reputation was built.</p>
+      </div>
+      <div class="out current">
+        <div class="city">You are viewing</div>
+        <h3>Kharar — Gillco Valley</h3>
+        <p>SCO 67–68, Gillco Valley, near Dominos. Salon + cafe experience.</p>
+      </div>
+      <div class="out">
+        <div class="city">Tricity</div>
+        <h3>Chandigarh</h3>
+        <p>The city outpost carrying the same luxury playbook.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" style="color:#9A7B4F">The work</div>
+      <h2>From the Chair</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="gal-grid">
+      <figure class="gal"><img src="https://files.catbox.moe/1m72c7.jpg" alt="Hair Buzz studio"><figcaption>Our studio</figcaption></figure>
+      <figure class="gal"><img src="https://files.catbox.moe/ql37tj.jpg" alt="Salon and cafe"><figcaption>Our studio</figcaption></figure>
+      <figure class="gal"><img src="https://files.catbox.moe/ncmk8l.jpg" alt="Colour work"><figcaption>Signature looks</figcaption></figure>
+      <figure class="gal"><img src="https://files.catbox.moe/bate5o.jpg" alt="Luxury styling"><figcaption>Signature looks</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="rev-band">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" style="color:#9A7B4F">Guest love</div>
+      <h2>A Chain Guests Recommend</h2>
+      <div class="rule"></div>
+      <p>17,000+ followers watch the transformations on <strong>@hairbuzz_kharar</strong> — and the sister studio <strong>@hairbuzz_artistry</strong> reaches 24K.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>The transformation work is the talk of the feed — dramatic, clean, share-worthy results.</p>
+        <div class="who">Recurring theme · Instagram</div>
+      </div>
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>Guests describe the celebrity treatment as real — personal attention from consult to finish.</p>
+        <div class="who">Recurring theme · Instagram</div>
+      </div>
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>The salon-plus-cafe format makes long colour and keratin sessions genuinely enjoyable.</p>
+        <div class="who">Studio note</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" style="color:var(--champ)">Find us</div>
+      <h2>Visit Hair Buzz Kharar</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="visit-grid">
+      <div>
+        <p class="addr">SCO 67–68, Gillco Valley,<br>Near Dominos, Kharar</p>
+        <p>DM us your service and preferred day — the team confirms your slot personally. Luxury consultations are complimentary.</p>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="https://instagram.com/hairbuzz_kharar" target="_blank" rel="noopener">DM @hairbuzz_kharar</a>
+          <a class="btn" style="border:1.5px solid var(--champ);color:var(--champ)" href="https://www.google.com/maps/search/?api=1&query=Hair+Buzz+Salon+Gillco+Valley+Kharar" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Map — Hair Buzz Kharar" loading="lazy"
+          src="https://www.google.com/maps?q=Hair%20Buzz%20Salon%20Gillco%20Valley%20Kharar&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="final">
+  <div class="wrap">
+    <h2>Your celebrity moment awaits</h2>
+    <p>Message the studio on Instagram — tell us the transformation you are dreaming of.</p>
+    <a class="btn btn-plum" href="https://instagram.com/hairbuzz_kharar" target="_blank" rel="noopener">DM @hairbuzz_kharar</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <span>Hair Buzz Family Salon · SCO 67–68, Gillco Valley, Kharar</span>
+    <span>Demo by StyleFrame Co.</span>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="s-dm" href="https://instagram.com/hairbuzz_kharar" target="_blank" rel="noopener">Instagram DM</a>
+  <a class="s-dir" href="https://www.google.com/maps/search/?api=1&query=Hair+Buzz+Salon+Gillco+Valley+Kharar" target="_blank" rel="noopener">Directions</a>
+</div>
+
+</body>
+</html>

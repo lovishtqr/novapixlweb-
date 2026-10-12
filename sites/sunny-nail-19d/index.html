@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunny Nail Place — Sector 19D, Chandigarh | Nail Studio & Academy | Demo by StyleFrame Co.</title>
+<meta name="description" content="Sunny Nail Place, Sector 19D Chandigarh — 5.0 rated women-owned nail studio since 2018. Nail art, extensions, lash extensions ₹999–₹2,999. Nail art classes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --char:#141517; --char2:#1d1e20; --bone:#ede8dd; --bone2:#e2dccf;
+  --bronze:#b07d4f; --bronze-l:#d3a97c; --muted:#8a857a; --line:#2c2d30;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--char);color:var(--bone);overflow-x:hidden;line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.grotesk{font-family:'Archivo',sans-serif}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(20,21,23,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:'Archivo',sans-serif;font-weight:800;font-size:17px;letter-spacing:.12em;text-transform:uppercase}
+.brand i{color:var(--bronze);font-style:normal}
+.nav-links{display:flex;gap:26px;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.nav-links a{transition:.25s}
+.nav-links a:hover{color:var(--bone)}
+.nav-cta{border:1px solid var(--bronze);color:var(--bronze-l);padding:10px 22px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;transition:.3s;min-height:44px;display:inline-flex;align-items:center}
+.nav-cta:hover{background:var(--bronze);color:var(--char)}
+
+/* hero */
+.hero{border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.hero-top{display:grid;grid-template-columns:1.2fr .8fr;min-height:82vh}
+.hero-left{padding:80px 48px 60px 0;display:flex;flex-direction:column;justify-content:center}
+.tag{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);padding:8px 16px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze-l);margin-bottom:28px;width:fit-content}
+.tag .dot{width:7px;height:7px;background:var(--bronze);border-radius:50%}
+.hero h1{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(52px,8vw,112px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:26px}
+.hero h1 .out{color:transparent;-webkit-text-stroke:1.5px var(--bronze-l)}
+.hero-sub{color:var(--muted);font-size:16px;max-width:460px;margin-bottom:36px;font-weight:300}
+.hero-meta{display:flex;gap:0;border:1px solid var(--line)}
+.hero-meta div{flex:1;padding:18px 20px;border-right:1px solid var(--line)}
+.hero-meta div:last-child{border-right:none}
+.hero-meta .n{font-family:'Archivo',sans-serif;font-weight:800;font-size:24px;color:var(--bronze-l)}
+.hero-meta .l{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.hero-right{border-left:1px solid var(--line);position:relative;background:var(--char2)}
+.hero-right img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;filter:saturate(.85)}
+.hero-right .frame-cap{position:absolute;bottom:0;left:0;right:0;padding:14px 20px;background:rgba(20,21,23,.85);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* price band */
+.priceband{background:var(--bronze);color:var(--char);padding:16px 0}
+.priceband .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-family:'Archivo',sans-serif;font-weight:800;font-size:15px;letter-spacing:.06em;text-transform:uppercase}
+
+/* sections */
+section{padding:90px 0}
+.kicker{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--bronze);font-weight:700;margin-bottom:16px}
+.sec-title{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(30px,4.5vw,52px);text-transform:uppercase;letter-spacing:-.01em;line-height:1.05;margin-bottom:18px}
+.sec-sub{color:var(--muted);max-width:560px;font-size:15.5px;margin-bottom:48px}
+
+/* price menu */
+.menu{border-top:1px solid var(--line)}
+.menu-row{display:grid;grid-template-columns:64px 1fr auto;gap:24px;align-items:center;padding:30px 0;border-bottom:1px solid var(--line);transition:.3s}
+.menu-row:hover{background:rgba(176,125,79,.05);padding-left:12px;padding-right:12px}
+.menu-row .idx{font-family:'Archivo',sans-serif;font-weight:800;font-size:15px;color:var(--bronze)}
+.menu-row h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:.02em}
+.menu-row p{color:var(--muted);font-size:14px;margin-top:6px}
+.menu-row .pr{text-align:right}
+.menu-row .pr .v{font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;color:var(--bronze-l);white-space:nowrap}
+.menu-row .pr .n{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+/* about / women-owned */
+.about{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--char2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-photo{position:relative}
+.about-photo img{width:100%;aspect-ratio:1;object-fit:cover;border:1px solid var(--line)}
+.about-photo .corner{position:absolute;width:44px;height:44px;border:2px solid var(--bronze)}
+.c1{top:-12px;left:-12px;border-right:none;border-bottom:none}
+.c2{bottom:-12px;right:-12px;border-left:none;border-top:none}
+.owned{display:inline-block;background:var(--bone);color:var(--char);font-family:'Archivo',sans-serif;font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;padding:10px 20px;margin:26px 0 20px}
+.about p{color:var(--muted);font-size:15.5px;margin-bottom:16px}
+.about p b{color:var(--bone);font-weight:600}
+.check-list{margin-top:26px;display:grid;gap:14px}
+.check-list div{display:flex;gap:14px;align-items:baseline;font-size:14.5px}
+.check-list .ck{color:var(--bronze);font-weight:800;font-family:'Archivo',sans-serif}
+
+/* academy */
+.acad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line)}
+.acad-cell{padding:44px 34px;border-right:1px solid var(--line);transition:.3s}
+.acad-cell:last-child{border-right:none}
+.acad-cell:hover{background:var(--char2)}
+.acad-cell .big{font-family:'Archivo',sans-serif;font-weight:900;font-size:44px;color:var(--bronze);line-height:1;margin-bottom:18px}
+.acad-cell h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:18px;text-transform:uppercase;margin-bottom:10px}
+.acad-cell p{color:var(--muted);font-size:14px}
+
+/* reviews */
+.rev-row{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line)}
+.rev-big{padding:60px 44px;border-right:1px solid var(--line)}
+.rev-big .score{font-family:'Archivo',sans-serif;font-weight:900;font-size:72px;line-height:1;color:var(--bone)}
+.rev-big .score small{font-size:24px;color:var(--bronze)}
+.rev-big .src{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:14px 0 24px}
+.rev-big p{color:var(--muted);font-size:15px}
+.rev-cta{padding:60px 44px;display:flex;flex-direction:column;justify-content:center;gap:18px;background:var(--char2)}
+.btn{display:inline-block;padding:16px 34px;font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;transition:.3s;text-align:center;min-height:52px}
+.btn-bronze{background:var(--bronze);color:var(--char)}
+.btn-bronze:hover{background:var(--bronze-l)}
+.btn-line{border:1px solid var(--line);color:var(--bone)}
+.btn-line:hover{border-color:var(--bronze);color:var(--bronze-l)}
+
+/* visit */
+.visit{background:var(--bone);color:var(--char);padding:80px 0}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.visit h2{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,4vw,44px);text-transform:uppercase;margin-bottom:18px}
+.visit address{font-style:normal;font-size:16px;line-height:2;color:#3a3b3d;margin-bottom:28px}
+.visit .row{display:flex;justify-content:space-between;padding:14px 0;border-top:1px solid #cfc7b4;font-size:14px;font-weight:500}
+.visit .row .k{color:#8a857a}
+.btn-dark{background:var(--char);color:var(--bone)}
+.btn-dark:hover{background:var(--bronze);color:var(--char)}
+.visit-note{margin-top:20px;font-size:13px;color:#8a857a;font-style:italic}
+
+footer{background:#0c0d0e;padding:40px 0;font-size:13px;color:#6b675d}
+.foot-in{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;max-width:1180px;margin:0 auto;padding:0 24px}
+.foot-in .demo{font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.foot-in .demo b{color:var(--bronze-l)}
+
+.stickybar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(12,13,14,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.stickybar a{flex:1;text-align:center;padding:14px 8px;font-family:'Archivo',sans-serif;font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase;min-height:50px;display:flex;align-items:center;justify-content:center}
+.sb-dm{background:var(--bronze);color:var(--char)}
+.sb-map{border:1px solid var(--line);color:var(--bone)}
+
+@media(max-width:900px){
+  .hero-top{grid-template-columns:1fr;min-height:0}
+  .hero-left{padding:56px 0 44px}
+  .hero-right{border-left:none;border-top:1px solid var(--line);min-height:340px}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .acad-grid{grid-template-columns:1fr}
+  .acad-cell{border-right:none;border-bottom:1px solid var(--line)}
+  .acad-cell:last-child{border-bottom:none}
+  .rev-row{grid-template-columns:1fr}
+  .rev-big{border-right:none;border-bottom:1px solid var(--line)}
+  .visit-grid{grid-template-columns:1fr;gap:36px}
+  .menu-row{grid-template-columns:1fr;gap:8px}
+  .menu-row .pr{text-align:left}
+  .nav-links{display:none}
+  .stickybar{display:flex}
+  body{padding-bottom:82px}
+  section{padding:64px 0}
+  .hero h1{font-size:clamp(46px,13vw,80px)}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="#">Sunny <i>Nail</i> Place</a>
+    <div class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#studio">Studio</a>
+      <a href="#academy">Classes</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <a class="nav-cta" href="https://www.instagram.com/" target="_blank" rel="noopener">DM to Book</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-top">
+    <div class="hero-left">
+      <div class="tag"><span class="dot"></span> Nail Studio · Sector 19D · Est. 2018</div>
+      <h1>Nails,<br>done <span class="out">right.</span></h1>
+      <p class="hero-sub">A women-owned nail studio in Chandigarh known for clean technique and honest pricing. Sessions listed ₹999–₹2,999 — the rate you see is the rate you pay.</p>
+      <div class="hero-meta">
+        <div><div class="n">5.0</div><div class="l">JustDial rating</div></div>
+        <div><div class="n">245</div><div class="l">Reviews</div></div>
+        <div><div class="n">2018</div><div class="l">Women-owned</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="https://files.catbox.moe/s8kkjs.jpg" alt="Nude nail art with glitter accents by Nail Sunny, Sunny Nail Place">
+      <div class="frame-cap">Signature work — Nail Sunny studio</div>
+    </div>
+  </div>
+</header>
+
+<div class="priceband"><div class="wrap">
+  <div>Sessions ₹999 — ₹2,999</div>
+  <div style="font-weight:600;font-size:12px;letter-spacing:.18em">Listed range on JustDial</div>
+</div></div>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="kicker">The Menu</div>
+    <div class="sec-title">Services &amp; pricing</div>
+    <p class="sec-sub">Transparent ranges from the JustDial listing. Final quote confirmed on DM before your appointment — no surprises at the chair.</p>
+    <div class="menu">
+      <div class="menu-row">
+        <div class="idx">01</div>
+        <div><h3>Nail Art</h3><p>Hand-painted designs, glitter, chrome and minimal looks.</p></div>
+        <div class="pr"><div class="v">₹999+</div><div class="n">Listed range</div></div>
+      </div>
+      <div class="menu-row">
+        <div class="idx">02</div>
+        <div><h3>Nail Extensions</h3><p>Acrylic and gel extensions, shaped and finished to last.</p></div>
+        <div class="pr"><div class="v">₹999 – ₹2,999</div><div class="n">Listed range</div></div>
+      </div>
+      <div class="menu-row">
+        <div class="idx">03</div>
+        <div><h3>Eyelash Extensions</h3><p>Natural to dramatic lash sets by trained technicians.</p></div>
+        <div class="pr"><div class="v">₹999 – ₹2,999</div><div class="n">Listed range</div></div>
+      </div>
+      <div class="menu-row">
+        <div class="idx">04</div>
+        <div><h3>Nail Art Classes</h3><p>Professional nail-art training at the studio.</p></div>
+        <div class="pr"><div class="v">On request</div><div class="n">DM for syllabus</div></div>
+      </div>
+    </div>
+    <p style="margin-top:20px;font-size:13px;color:var(--muted);font-style:italic">* Price ranges are the studio's JustDial-listed session range (₹999–₹2,999). Exact quotes confirmed on DM or call before booking.</p>
+  </div>
+</section>
+
+<section id="studio" class="about">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <span class="corner c1"></span><span class="corner c2"></span>
+      <img src="https://files.catbox.moe/s8kkjs.jpg" alt="Close-up of nail art by Sunny Nail Place, Sector 19D">
+    </div>
+    <div>
+      <div class="kicker">The Studio</div>
+      <div class="sec-title">Women-owned.<br>Detail-obsessed.</div>
+      <div class="owned">Women-owned since 2018</div>
+      <p>Sunny Nail Place has been <b>Sector 19D's specialist nail studio</b> for years — a top-floor studio where the focus is entirely on nails and lashes, done properly.</p>
+      <p>Every set is built on <b>hygiene-first technique</b>: sanitised tools, quality product, and finishes that last. That's how you hold a <b>5.0 rating across 245 reviews</b>.</p>
+      <div class="check-list">
+        <div><span class="ck">—</span><span>Specialist nail studio — not a general parlour add-on</span></div>
+        <div><span class="ck">—</span><span>Hygiene-first: sanitised tools, quality product</span></div>
+        <div><span class="ck">—</span><span>Honest ₹999–₹2,999 session pricing</span></div>
+        <div><span class="ck">—</span><span>Nail-art training for aspiring artists</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="academy">
+  <div class="wrap">
+    <div class="kicker">Classes</div>
+    <div class="sec-title">Learn the craft</div>
+    <p class="sec-sub">Sunny Nail Place runs nail-art classes at the studio. DM for the syllabus, duration and fees.</p>
+    <div class="acad-grid">
+      <div class="acad-cell">
+        <div class="big">A</div>
+        <h3>Foundation Nail Art</h3>
+        <p>Core techniques, tools and hygiene — the base every artist needs.</p>
+      </div>
+      <div class="acad-cell">
+        <div class="big">B</div>
+        <h3>Extensions &amp; Shaping</h3>
+        <p>Acrylic and gel extensions, shaping and finishing to a professional standard.</p>
+      </div>
+      <div class="acad-cell">
+        <div class="big">C</div>
+        <h3>Design Masterclass</h3>
+        <p>Advanced art — hand-painted designs, 3D work and trend looks.</p>
+      </div>
+    </div>
+    <p style="margin-top:20px;font-size:13px;color:var(--muted);font-style:italic">* Class levels reflect the studio's advertised nail-art training. Full syllabus and fees shared on DM.</p>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="rev-row">
+      <div class="rev-big">
+        <div class="score">5.0<small> / 5</small></div>
+        <div class="src">245 reviews on JustDial · Women-owned · Est. 2018</div>
+        <p>A perfect 5.0 across 245 reviews puts Sunny Nail Place among Chandigarh's most trusted nail studios. Read the full reviews on our JustDial listing.</p>
+      </div>
+      <div class="rev-cta">
+        <a class="btn btn-bronze" href="https://www.instagram.com/" target="_blank" rel="noopener">DM to Book a Session</a>
+        <a class="btn btn-line" href="https://www.justdial.com/Chandigarh/Sunny-Nail-Place-Near-Peshawari-Store-Chandigarh-Sector-19d/0172PX172-X172-180919140945-V2J6_BZDET" target="_blank" rel="noopener">JustDial Listing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="visit" class="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <h2>Find the studio</h2>
+      <address>Sunny Nail Place<br>Top Floor, Sector 19D<br>Chandigarh</address>
+      <div class="row"><span class="k">Rating</span><span>5.0 ★ · 245 reviews</span></div>
+      <div class="row"><span class="k">Sessions</span><span>₹999 – ₹2,999</span></div>
+      <div class="row"><span class="k">Booking</span><span>Instagram DM</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:center;gap:16px">
+      <a class="btn btn-dark" href="https://maps.google.com/?q=Sunny+Nail+Place+Sector+19D+Chandigarh" target="_blank" rel="noopener">Get Directions</a>
+      <a class="btn btn-line" style="border-color:#b9b2a2;color:var(--char)" href="https://www.instagram.com/" target="_blank" rel="noopener">Message on Instagram</a>
+      <p class="visit-note">Top-floor studio — message us on Instagram before visiting for appointment availability.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div>Sunny Nail Place · Top Floor, Sector 19D, Chandigarh</div>
+    <div class="demo">Demo by <b>StyleFrame Co.</b></div>
+  </div>
+</footer>
+
+<div class="stickybar">
+  <a class="sb-dm" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram DM</a>
+  <a class="sb-map" href="https://maps.google.com/?q=Sunny+Nail+Place+Sector+19D+Chandigarh" target="_blank" rel="noopener">Directions</a>
+</div>
+
+</body>
+</html>

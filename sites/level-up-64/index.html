@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Level Up Unisex Salon — Sector 64, Mohali | Bridal, Makeup & Hair</title>
+<meta name="description" content="Level Up Unisex Salon, Stadium Road, Sector 64 Phase 10, Mohali. Rated 5.0 from 553 Google reviews. Airbrush & HD bridal makeup, hair, skin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0b08; --bg2:#14110c; --cream:#ece2cc; --muted:#a89a7d;
+  --gold:#c9a24b; --gold-soft:#e3c97e; --line:rgba(201,162,75,.22);
+  --card:#171310;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden;scroll-behavior:smooth}
+body{overflow-x:hidden;background:var(--bg);color:var(--cream);font-family:'Jost',system-ui,sans-serif;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.12}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:500}
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(13,11,8,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1180px;margin:0 auto}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;letter-spacing:.06em;color:var(--cream);text-decoration:none}
+.brand span{color:var(--gold)}
+.nav-links{display:flex;gap:26px;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
+.nav-links a{text-decoration:none;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--gold-soft)}
+.nav-cta{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold-soft);padding:10px 20px;text-decoration:none;transition:.25s}
+.nav-cta:hover{background:var(--gold);color:#0d0b08}
+/* HERO */
+.hero{position:relative;padding:0}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:92vh}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:70px 24px 70px max(24px,calc((100vw - 1180px)/2 + 24px))}
+.hero h1{font-size:clamp(2.9rem,6.2vw,5.2rem);margin:18px 0 8px}
+.hero h1 em{font-style:italic;color:var(--gold-soft)}
+.hero-sub{color:var(--muted);font-size:1.06rem;max-width:44ch;margin:14px 0 30px}
+.hero-meta{display:flex;gap:34px;margin:26px 0 34px;flex-wrap:wrap}
+.stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold-soft)}
+.stat span{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:15px 30px;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:.25s;min-height:52px}
+.btn-gold{background:var(--gold);color:#0d0b08}
+.btn-gold:hover{background:var(--gold-soft)}
+.btn-ghost{border:1px solid var(--line);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft)}
+.hero-img{position:relative;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover;min-height:420px}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,transparent 28%)}
+/* TRUST */
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+.trust-in{display:grid;grid-template-columns:repeat(3,1fr);text-align:center}
+.trust div{padding:26px 12px;border-left:1px solid var(--line)}
+.trust div:first-child{border-left:none}
+.trust b{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--gold-soft);display:block}
+.trust span{font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+/* SECTIONS */
+section{padding:96px 0}
+.sec-head{max-width:720px;margin-bottom:52px}
+.sec-head h2{font-size:clamp(2rem,4vw,3rem);margin:14px 0 10px}
+.sec-head p{color:var(--muted)}
+/* SERVICES */
+.svc-list{border-top:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:1fr auto;gap:8px 24px;align-items:baseline;padding:26px 6px;border-bottom:1px solid var(--line);transition:background .2s}
+.svc:hover{background:rgba(201,162,75,.05)}
+.svc h3{font-size:1.45rem}
+.svc .desc{grid-column:1;font-size:.92rem;color:var(--muted)}
+.svc .price{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold-soft);white-space:nowrap}
+.tag{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);color:var(--muted);padding:3px 10px;margin-left:10px;vertical-align:middle}
+.tag.verified{color:var(--gold-soft);border-color:var(--gold)}
+.footnote{font-size:.82rem;color:var(--muted);margin-top:18px}
+/* OFFER */
+.offer{background:linear-gradient(120deg,#191309,#0d0b08 60%);border:1px solid var(--line);padding:54px 48px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.offer h3{font-size:clamp(1.7rem,3.4vw,2.6rem);margin-bottom:8px}
+.offer p{color:var(--muted)}
+/* GALLERY */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gal{position:relative;overflow:hidden;background:var(--card)}
+.gal img{height:320px;width:100%;object-fit:cover;transition:transform .6s ease}
+.gal:hover img{transform:scale(1.05)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 14px;background:linear-gradient(transparent,rgba(0,0,0,.78));font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft)}
+/* REVIEWS */
+.rev-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev-card{background:var(--card);border:1px solid var(--line);padding:34px 30px}
+.rev-card .stars{color:var(--gold);letter-spacing:.2em;font-size:1rem;margin-bottom:14px}
+.rev-card p{color:var(--muted);font-size:.95rem}
+/* CONTACT */
+.contact{background:var(--bg2);border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.addr{font-style:normal;color:var(--muted);line-height:2}
+.addr b{color:var(--cream);font-weight:500}
+.hours{margin-top:22px;font-size:.92rem;color:var(--muted)}
+.hours b{color:var(--cream)}
+/* STICKY BAR */
+.sticky-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(13,11,8,.96);backdrop-filter:blur(10px);border-top:1px solid var(--gold)}
+.sticky-bar a{flex:1;text-align:center;padding:16px 8px;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;font-weight:500;min-height:56px;display:flex;align-items:center;justify-content:center}
+.sticky-bar a.dm{background:var(--gold);color:#0d0b08}
+.sticky-bar a.dir{color:var(--gold-soft)}
+footer{padding:44px 24px 120px;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+footer .demo{margin-top:8px;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;min-height:0}
+  .hero-copy{padding:56px 24px 40px}
+  .hero-img img{min-height:300px;max-height:46vh}
+  .hero-img::after{background:linear-gradient(180deg,var(--bg) 0%,transparent 30%)}
+  .nav-links{display:none}
+  .trust-in{grid-template-columns:1fr}
+  .trust div{border-left:none;border-top:1px solid var(--line);padding:20px 12px}
+  .trust div:first-child{border-top:none}
+  .rev-summary{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:32px}
+  .offer{grid-template-columns:1fr;padding:38px 28px;text-align:left}
+  .gal-grid{grid-template-columns:1fr 1fr}
+  .gal img{height:230px}
+  section{padding:64px 0}
+  .sticky-bar{display:flex}
+  footer{padding-bottom:150px}
+}
+@media(max-width:560px){.gal-grid{grid-template-columns:1fr}.gal img{height:280px}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#">LEVEL <span>UP</span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="https://ig.me/m/levelupsalon.mohali" target="_blank" rel="noopener">DM to Book</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Unisex Salon — Sector 64, Mohali</span>
+      <h1>Look sharp.<br><em>Level up.</em></h1>
+      <p class="hero-sub">Bridal couture makeup, precision hair and skin — one address on Stadium Road that Mohali trusts with its biggest days.</p>
+      <div class="hero-meta">
+        <div class="stat"><b>5.0</b><span>Google rating</span></div>
+        <div class="stat"><b>553</b><span>Verified reviews</span></div>
+        <div class="stat"><b>Unisex</b><span>Salon &amp; studio</span></div>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-gold" href="https://ig.me/m/levelupsalon.mohali" target="_blank" rel="noopener">Book on Instagram</a>
+        <a class="btn btn-ghost" href="#services">View price list</a>
+      </div>
+    </div>
+    <div class="hero-img"><img src="https://files.catbox.moe/pc3znm.jpg" alt="Level Up Unisex Salon studio, Sector 64 Mohali"></div>
+  </div>
+</header>
+
+<div class="trust">
+  <div class="trust-in">
+    <div><b>5.0 / 5</b><span>553 Google reviews</span></div>
+    <div><b>Bridal experts</b><span>Airbrush &amp; HD makeup</span></div>
+    <div><b>Sector 64</b><span>Stadium Road, Mohali</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Menu</span>
+      <h2>Services &amp; pricing</h2>
+      <p>Transparent pricing, no surprises. Bridal trials available on request over DM.</p>
+    </div>
+    <div class="svc-list">
+      <div class="svc">
+        <h3>Airbrush Reception Makeup <span class="tag verified">JustDial verified</span></h3>
+        <span class="price">₹3,499</span>
+        <p class="desc">Flawless, long-wear airbrush base with lashes, hair styling and draping for your reception look.</p>
+      </div>
+      <div class="svc">
+        <h3>HD Engagement Makeup <span class="tag verified">JustDial verified</span></h3>
+        <span class="price">₹2,499</span>
+        <p class="desc">Camera-ready HD finish, skin prep, lashes and hairstyling for engagement ceremonies.</p>
+      </div>
+      <div class="svc">
+        <h3>Party Makeup <span class="tag verified">JustDial verified</span></h3>
+        <span class="price">₹1,499</span>
+        <p class="desc">Soft glam for evenings out — base, eyes, lips and touch-up kit guidance.</p>
+      </div>
+      <div class="svc">
+        <h3>Haircut &amp; Styling <span class="tag">Indicative</span></h3>
+        <span class="price">₹499*</span>
+        <p class="desc">Precision cuts, blowouts and occasion styling for him and her.</p>
+      </div>
+      <div class="svc">
+        <h3>Global Hair Colour <span class="tag">Indicative</span></h3>
+        <span class="price">₹2,999*</span>
+        <p class="desc">Ammonia-free colour with gloss finish and post-colour care.</p>
+      </div>
+      <div class="svc">
+        <h3>Signature Facial <span class="tag">Indicative</span></h3>
+        <span class="price">₹1,799*</span>
+        <p class="desc">Deep-cleanse, exfoliation and glow mask tailored to your skin type.</p>
+      </div>
+    </div>
+    <p class="footnote">* Indicative pricing — confirm the exact quote on Instagram DM before your visit. Verified prices are as listed on JustDial.</p>
+    <div style="margin-top:44px">
+      <div class="offer">
+        <div>
+          <span class="eyebrow">Bridal season offer</span>
+          <h3 class="serif">Complimentary trial with every bridal booking</h3>
+          <p>Book your wedding date this month and get a full makeup trial plus hairstyle consultation — free.</p>
+        </div>
+        <a class="btn btn-gold" href="https://ig.me/m/levelupsalon.mohali" target="_blank" rel="noopener">Claim on DM</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Inside the studio</span>
+      <h2>The space &amp; the work</h2>
+    </div>
+    <div class="gal-grid">
+      <figure class="gal"><img src="https://files.catbox.moe/x1aaq1.jpg" alt="Salon interior"><figcaption>Our studio</figcaption></figure>
+      <figure class="gal"><img src="https://files.catbox.moe/ycefxn.jpg" alt="Salon work"><figcaption>Our studio</figcaption></figure>
+      <figure class="gal"><img src="https://files.catbox.moe/i33vwd.webp" alt="Salon detail"><figcaption>Our studio</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Word on the street</span>
+      <h2>553 reasons to visit</h2>
+      <p>A perfect 5.0 across 553 Google reviews — here is what guests consistently praise.</p>
+    </div>
+    <div class="rev-summary">
+      <div class="rev-card"><div class="stars">★★★★★</div><p><b style="color:var(--cream)">Makeup that photographs beautifully.</b><br>Guests rate the bridal and party makeup as the standout — long-wear, natural finish, no cakey look.</p></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p><b style="color:var(--cream)">Staff that listens first.</b><br>Reviewers mention patient consultations and stylists who adapt the look to face shape and skin tone.</p></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p><b style="color:var(--cream)">Clean, calm studio.</b><br>Hygiene and a relaxed, unhurried atmosphere come up again and again in recent reviews.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Find us</span>
+      <h2>Visit the studio</h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <address class="addr">
+          <b>Level Up Unisex Salon</b><br>
+          Stadium Road, Sector 64, Phase 10<br>
+          SAS Nagar, Mohali 160062<br><br>
+          <b>Instagram:</b> <a href="https://www.instagram.com/levelupsalon.mohali" target="_blank" rel="noopener" style="color:var(--gold-soft)">@levelupsalon.mohali</a><br>
+          <b>Booking:</b> Instagram DM (fastest response)
+        </address>
+        <div class="hours">
+          <b>Open all days</b> · 10:00 AM – 8:30 PM<br>
+          Walk-ins welcome · Bridal by appointment
+        </div>
+      </div>
+      <div>
+        <p style="color:var(--muted);margin-bottom:20px">Tap below for turn-by-turn directions to the salon.</p>
+        <div class="btn-row">
+          <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=Level+Up+Unisex+Salon+Stadium+Road+Sector+64+Phase+10+Mohali" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn btn-ghost" href="https://ig.me/m/levelupsalon.mohali" target="_blank" rel="noopener">DM @levelupsalon.mohali</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sticky-bar">
+  <a class="dm" href="https://ig.me/m/levelupsalon.mohali" target="_blank" rel="noopener">DM to Book</a>
+  <a class="dir" href="https://www.google.com/maps/search/?api=1&query=Level+Up+Unisex+Salon+Stadium+Road+Sector+64+Phase+10+Mohali" target="_blank" rel="noopener">Directions</a>
+</div>
+
+<footer>
+  <div>Level Up Unisex Salon · Stadium Road, Sector 64 Phase 10, Mohali · 5.0 (553 Google reviews)</div>
+  <div class="demo">Demo by StyleFrame Co.</div>
+</footer>
+
+</body>
+</html>

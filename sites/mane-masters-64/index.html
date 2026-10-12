@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mane Masters Salon &amp; Academy — Sector 64, Mohali | Learn. Create. Earn.</title>
+<meta name="description" content="Mane Masters Salon & Academy, Silvy Park, Sector 64 Phase 10, Mohali. 5.0 from 425 Google reviews. Salon services plus professional beauty courses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#faf6ee; --ivory2:#f3ecdd; --teal:#0e3b3c; --teal-deep:#0a2b2c;
+  --copper:#b0703a; --copper-soft:#d29a63; --ink:#23302f; --muted:#6d7a78;
+  --line:rgba(14,59,60,.16); --card:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden;scroll-behavior:smooth}
+body{overflow-x:hidden;background:var(--ivory);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.15;color:var(--teal)}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--copper);font-weight:600}
+/* TOPBAR */
+.topbar{background:var(--teal);color:#f3ecdd;font-size:.8rem;letter-spacing:.08em}
+.topbar-in{max-width:1140px;margin:0 auto;padding:9px 24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topbar a{color:var(--copper-soft);text-decoration:none}
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(250,246,238,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1140px;margin:0 auto}
+.brand{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;color:var(--teal);text-decoration:none}
+.brand em{font-style:normal;color:var(--copper)}
+.nav-links{display:flex;gap:24px;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase}
+.nav-links a{text-decoration:none;color:var(--muted)}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;background:var(--teal);color:#fff;padding:11px 20px;text-decoration:none;border-radius:2px}
+/* HERO */
+.hero{background:var(--teal);color:#f3ecdd;position:relative;overflow:hidden}
+.hero-in{max-width:1140px;margin:0 auto;padding:84px 24px 0;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,5.4vw,4.4rem);color:#fff;margin:16px 0 12px}
+.hero h1 em{font-style:italic;color:var(--copper-soft)}
+.hero p.lead{color:#c8d4d2;max-width:46ch;margin-bottom:30px}
+.hero-badges{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+.pill{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(210,154,99,.55);color:var(--copper-soft);padding:8px 16px;border-radius:999px}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;padding-bottom:70px}
+.btn{display:inline-block;padding:15px 30px;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;font-weight:600;border-radius:2px;min-height:52px}
+.btn-copper{background:var(--copper);color:#fff}
+.btn-copper:hover{background:#9c5f2f}
+.btn-line{border:1px solid rgba(243,236,221,.4);color:#f3ecdd}
+.btn-line:hover{border-color:var(--copper-soft);color:var(--copper-soft)}
+.hero-img{position:relative;align-self:end}
+.hero-img img{border-radius:8px 8px 0 0;height:480px;width:100%;object-fit:cover}
+.logo-chip{position:absolute;left:-30px;bottom:40px;background:#fff;border-radius:10px;padding:10px;box-shadow:0 18px 44px rgba(0,0,0,.28);width:120px}
+.logo-chip img{border-radius:6px}
+/* SPLIT */
+.split{padding:96px 0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:48px}
+.panel{border-radius:10px;padding:46px 42px;position:relative;overflow:hidden}
+.panel.salon{background:var(--teal);color:#eef2f1}
+.panel.salon h3{color:#fff}
+.panel.salon p{color:#c3d0ce;font-size:.96rem}
+.panel.academy{background:#fff;border:1px solid var(--line)}
+.panel.academy p{color:var(--muted);font-size:.96rem}
+.panel h3{font-size:2rem;margin:12px 0 10px}
+.panel .go{display:inline-block;margin-top:24px;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;text-decoration:none}
+.panel.salon .go{color:var(--copper-soft)}
+.panel.academy .go{color:var(--copper)}
+/* COURSES */
+.courses{background:var(--ivory2);padding:96px 0}
+.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.course{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:34px 30px;transition:transform .25s,box-shadow .25s}
+.course:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(14,59,60,.12)}
+.course .dur{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--copper);font-weight:600}
+.course h3{font-size:1.5rem;margin:10px 0 8px}
+.course p{font-size:.92rem;color:var(--muted)}
+.course .fee{margin-top:16px;font-family:'Fraunces',serif;font-size:1.3rem;color:var(--teal)}
+.course .fee small{font-family:'Inter',sans-serif;font-size:.75rem;color:var(--muted);letter-spacing:.06em}
+/* PRICES */
+section{padding:96px 0}
+.price-table{width:100%;border-collapse:collapse;margin-top:40px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.price-table th,.price-table td{text-align:left;padding:18px 24px;border-bottom:1px solid var(--line)}
+.price-table th{background:var(--teal);color:#fff;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+.price-table td:last-child,.price-table th:last-child{text-align:right}
+.price-table td.price{font-family:'Fraunces',serif;font-size:1.25rem;color:var(--teal);white-space:nowrap}
+.vtag{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;background:#e8f0ee;color:var(--teal);border-radius:999px;padding:3px 10px;margin-left:10px;font-weight:600}
+.vtag.ind{background:#f3ecdd;color:#8a6a45}
+.footnote{font-size:.82rem;color:var(--muted);margin-top:16px}
+/* GALLERY */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.gal figure{border-radius:8px;overflow:hidden;position:relative;background:#fff;border:1px solid var(--line)}
+.gal img{height:250px;width:100%;object-fit:cover}
+.gal figcaption{padding:12px 16px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+/* REVIEWS */
+.rev-band{background:var(--teal);color:#eef2f1;padding:80px 0}
+.rev-band h2{color:#fff}
+.rev-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.rev-stat{border:1px solid rgba(243,236,221,.2);border-radius:8px;padding:30px 26px}
+.rev-stat b{font-family:'Fraunces',serif;font-size:2.2rem;color:var(--copper-soft);display:block}
+.rev-stat span{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#b9c6c4}
+.rev-stat p{font-size:.92rem;color:#c3d0ce;margin-top:10px}
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:44px}
+.addr{font-style:normal;line-height:2;color:var(--muted)}
+.addr b{color:var(--teal);font-weight:600}
+.sticky-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line)}
+.sticky-bar a{flex:1;text-align:center;padding:16px 8px;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;font-weight:600;min-height:56px;display:flex;align-items:center;justify-content:center}
+.sticky-bar a.dm{background:var(--teal);color:#fff}
+.sticky-bar a.dir{color:var(--teal)}
+footer{background:var(--teal-deep);color:#9fb3b1;padding:44px 24px 120px;text-align:center;font-size:.85rem}
+footer .demo{margin-top:8px;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:#7d9492}
+@media(max-width:900px){
+  .hero-in{grid-template-columns:1fr;padding-top:60px;gap:36px}
+  .hero-img img{height:340px}
+  .logo-chip{left:12px}
+  .nav-links{display:none}
+  .two-col,.course-grid,.rev-stats,.contact-grid{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr}
+  .gal img{height:210px}
+  section,.split,.courses{padding:64px 0}
+  .sticky-bar{display:flex}
+  footer{padding-bottom:150px}
+  .price-table th:nth-child(3),.price-table td:nth-child(3){display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <span>Silvy Park, Sector 64 Phase 10, Mohali</span>
+    <a href="https://www.instagram.com/manemasters__mohali" target="_blank" rel="noopener">@manemasters__mohali</a>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#">Mane<em>Masters</em></a>
+    <div class="nav-links">
+      <a href="#salon-academy">Salon &amp; Academy</a><a href="#courses">Courses</a><a href="#prices">Prices</a><a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="https://ig.me/m/manemasters__mohali" target="_blank" rel="noopener">DM to Book</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow" style="color:var(--copper-soft)">Salon &amp; Academy — Mohali</span>
+      <h1>Great hair is made.<br><em>We teach how.</em></h1>
+      <p class="lead">A full-service unisex salon and a professional training academy under one roof — 5.0 rated across 425 Google reviews.</p>
+      <div class="hero-badges">
+        <span class="pill">5.0 · 425 reviews</span>
+        <span class="pill">Bridal specialists</span>
+        <span class="pill">Pro academy</span>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-copper" href="https://ig.me/m/manemasters__mohali" target="_blank" rel="noopener">Book appointment</a>
+        <a class="btn btn-line" href="#courses">Explore courses</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://files.catbox.moe/mii0kp.jpg" alt="Mane Masters Salon and Academy, Sector 64 Mohali">
+      <div class="logo-chip"><img src="https://files.catbox.moe/oahc7q.jpg" alt="Mane Masters logo"></div>
+    </div>
+  </div>
+</header>
+
+<section id="salon-academy" class="split" style="padding-bottom:0">
+  <div class="wrap">
+    <span class="eyebrow">Two doors, one address</span>
+    <h2 class="serif" style="font-size:clamp(2rem,4vw,3rem);margin-top:12px">Salon for you. Academy for your career.</h2>
+    <div class="two-col">
+      <div class="panel salon">
+        <span class="eyebrow" style="color:var(--copper-soft)">The Salon</span>
+        <h3>Walk in beautiful,<br>walk out unforgettable</h3>
+        <p>Bridal and party makeup, precision cuts, colour, skin and nails — delivered by the same senior artists who train our academy batches.</p>
+        <a class="go" href="#prices">See salon prices →</a>
+      </div>
+      <div class="panel academy">
+        <span class="eyebrow">The Academy</span>
+        <h3>Turn talent into<br>a profession</h3>
+        <p>Hands-on diplomas in makeup artistry, hairdressing and skin — small batches, live models, portfolio shoots and career guidance.</p>
+        <a class="go" href="#courses">See courses →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="courses" class="courses">
+  <div class="wrap">
+    <span class="eyebrow">Academy</span>
+    <h2 class="serif" style="font-size:clamp(2rem,4vw,3rem);margin-top:12px">Professional courses</h2>
+    <p style="color:var(--muted);max-width:60ch;margin-top:10px">Learn from working salon artists on real clients. Batch sizes are kept small so every student gets chair time.</p>
+    <div class="course-grid">
+      <div class="course">
+        <span class="dur">6 weeks · Beginner to pro</span>
+        <h3>Professional Makeup Artistry</h3>
+        <p>Skin prep, HD &amp; airbrush techniques, bridal looks, portfolio shoot and client handling.</p>
+        <div class="fee">Fee on enquiry <small>· DM for syllabus</small></div>
+      </div>
+      <div class="course">
+        <span class="dur">8 weeks · Hands-on</span>
+        <h3>Hairdressing Diploma</h3>
+        <p>Cutting foundations, colour theory, balayage, keratin treatments and salon workflow.</p>
+        <div class="fee">Fee on enquiry <small>· DM for syllabus</small></div>
+      </div>
+      <div class="course">
+        <span class="dur">4 weeks · Certified</span>
+        <h3>Skin &amp; Nail Technician</h3>
+        <p>Facials, clean-ups, nail extensions and nail art — the fastest-growing salon skills.</p>
+        <div class="fee">Fee on enquiry <small>· DM for syllabus</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prices" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Salon menu</span>
+    <h2 class="serif" style="font-size:clamp(2rem,4vw,3rem);margin-top:12px">Services &amp; pricing</h2>
+    <table class="price-table">
+      <tr><th>Service</th><th>Details</th><th style="text-align:right">Price</th></tr>
+      <tr><td><b>Reception Airbrush Makeup</b><span class="vtag">JustDial verified</span></td><td>Airbrush base, lashes, hairstyling</td><td class="price">₹4,999</td></tr>
+      <tr><td><b>Engagement HD Makeup</b><span class="vtag">JustDial verified</span></td><td>HD finish, skin prep, hairstyling</td><td class="price">₹2,499</td></tr>
+      <tr><td><b>Party Makeup</b><span class="vtag">JustDial verified</span></td><td>Soft glam, eyes &amp; lips</td><td class="price">₹1,499</td></tr>
+      <tr><td><b>Signature Haircut</b><span class="vtag ind">Indicative</span></td><td>Consultation, cut &amp; finish</td><td class="price">₹599*</td></tr>
+      <tr><td><b>Balayage / Highlights</b><span class="vtag ind">Indicative</span></td><td>With toner &amp; gloss</td><td class="price">₹4,499*</td></tr>
+      <tr><td><b>Keratin Smoothening</b><span class="vtag ind">Indicative</span></td><td>Frizz control, mirror shine</td><td class="price">₹5,999*</td></tr>
+    </table>
+    <p class="footnote">* Indicative pricing — confirm on Instagram DM before your visit. Academy fees shared with the full syllabus on enquiry.</p>
+    <div class="gal">
+      <figure><img src="https://files.catbox.moe/iawt9t.jpg" alt="Salon interior"><figcaption>Signature looks</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/074ggd.jpg" alt="Salon styling chairs"><figcaption>Signature looks</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/mii0kp.jpg" alt="Mane Masters studio"><figcaption>Our studio</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/oahc7q.jpg" alt="Mane Masters logo"><figcaption>Our studio</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="rev-band">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--copper-soft)">Reviews</span>
+    <h2 class="serif" style="font-size:clamp(2rem,4vw,3rem);margin-top:12px">Trusted by 425 reviewers</h2>
+    <div class="rev-stats">
+      <div class="rev-stat"><b>5.0 / 5</b><span>Google rating</span><p>A perfect score held across hundreds of verified visits.</p></div>
+      <div class="rev-stat"><b>Bridal</b><span>Most praised</span><p>Makeup artistry is the single most mentioned strength in reviews.</p></div>
+      <div class="rev-stat"><b>Academy</b><span>Career launchpad</span><p>Students highlight hands-on training with real salon clients.</p></div>
+    </div>
+  </div>
+</div>
+
+<section id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Visit or enrol</span>
+    <h2 class="serif" style="font-size:clamp(2rem,4vw,3rem);margin-top:12px">Find us in Sector 64</h2>
+    <div class="contact-grid">
+      <div>
+        <address class="addr">
+          <b>Mane Masters Salon &amp; Academy</b><br>
+          Silvy Park, Sector 64, Phase 10<br>
+          SAS Nagar, Mohali<br><br>
+          <b>Instagram:</b> <a href="https://www.instagram.com/manemasters__mohali" target="_blank" rel="noopener" style="color:var(--copper)">@manemasters__mohali</a><br>
+          <b>Booking &amp; admissions:</b> Instagram DM
+        </address>
+      </div>
+      <div>
+        <p style="color:var(--muted);margin-bottom:20px">Salon open all days, 10 AM – 8 PM. Academy batches start monthly — DM for the next batch date.</p>
+        <div class="btn-row">
+          <a class="btn btn-copper" href="https://ig.me/m/manemasters__mohali" target="_blank" rel="noopener">DM to book</a>
+          <a class="btn btn-line" style="border-color:var(--teal);color:var(--teal)" href="https://www.google.com/maps/search/?api=1&query=Mane+Masters+Salon+and+Academy+Silvy+Park+Sector+64+Phase+10+Mohali" target="_blank" rel="noopener">Directions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sticky-bar">
+  <a class="dm" href="https://ig.me/m/manemasters__mohali" target="_blank" rel="noopener">DM to Book</a>
+  <a class="dir" href="https://www.google.com/maps/search/?api=1&query=Mane+Masters+Salon+and+Academy+Silvy+Park+Sector+64+Phase+10+Mohali" target="_blank" rel="noopener">Directions</a>
+</div>
+
+<footer>
+  <div>Mane Masters Salon &amp; Academy · Silvy Park, Sector 64 Phase 10, Mohali · 5.0 (425 Google reviews)</div>
+  <div class="demo">Demo by StyleFrame Co.</div>
+</footer>
+
+</body>
+</html>

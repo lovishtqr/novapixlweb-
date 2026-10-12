@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elegant Family Unisex Salon — Derabassi | Hair, Colour &amp; Kerasmooth</title>
+<meta name="description" content="Elegant Family Unisex Salon, Barwala Road, Derabassi. Rated 4.9 by 437 guests. Kerasmooth treatments, hair colouring, cuts & styling for the whole family.">
+<style>
+  :root{
+    --ivory:#F8F4EB; --ivory-2:#F1EAD9; --ink:#22301F; --emerald:#0E3B2E;
+    --emerald-deep:#0A2B22; --gold:#B98A3D; --gold-soft:#D9BE8C; --muted:#5E6A5B;
+    --card:#FFFFFF; --line:#E4DCC9;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--ivory);color:var(--ink);line-height:1.7;overflow-x:hidden}
+  h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:600;line-height:1.25;letter-spacing:.2px}
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(248,244,235,.94);backdrop-filter:blur(10px);
+         border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{font-family:Georgia,serif;font-size:1.5rem;color:var(--emerald)}
+  .brand small{display:block;font-family:-apple-system,sans-serif;font-size:.62rem;letter-spacing:3.5px;
+              text-transform:uppercase;color:var(--gold);margin-top:2px}
+  .nav-links{display:flex;gap:30px;font-size:.86rem;letter-spacing:1px;text-transform:uppercase}
+  .nav-links a{color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--emerald)}
+  .btn{display:inline-block;min-height:48px;line-height:48px;padding:0 30px;border-radius:999px;
+       font-size:.88rem;letter-spacing:1.4px;text-transform:uppercase;font-weight:600;transition:all .25s}
+  .btn-dark{background:var(--emerald);color:#fff}
+  .btn-dark:hover{background:var(--emerald-deep);transform:translateY(-2px)}
+  .btn-outline{border:1.5px solid var(--emerald);color:var(--emerald);background:transparent}
+  .btn-outline:hover{background:var(--emerald);color:#fff}
+  /* hero */
+  .hero{padding:88px 0 64px;position:relative}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .eyebrow{font-size:.74rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+  .hero h1{font-size:3.4rem;color:var(--emerald);margin-bottom:20px}
+  .hero h1 em{font-style:italic;color:var(--gold)}
+  .hero p.lead{font-size:1.12rem;color:var(--muted);max-width:480px;margin-bottom:30px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+  .rating-badge{display:inline-flex;align-items:center;gap:12px;background:var(--card);
+       border:1px solid var(--line);border-radius:14px;padding:12px 20px;font-size:.92rem}
+  .stars{color:var(--gold);font-size:1.05rem;letter-spacing:2px}
+  .hero-img{border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(14,59,46,.25);
+            border:1px solid var(--line)}
+  .hero-img img{width:100%;height:520px;object-fit:cover}
+  .img-cap{font-size:.78rem;color:var(--muted);padding:10px 4px 0;font-style:italic}
+  /* trust strip */
+  .trust{background:var(--emerald);color:#EDE6D2;padding:34px 0}
+  .trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+  .trust-item .num{font-family:Georgia,serif;font-size:2rem;color:var(--gold-soft)}
+  .trust-item .lbl{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:#CFC6AB;margin-top:4px}
+  /* sections */
+  section{padding:80px 0}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 52px}
+  .sec-head h2{font-size:2.5rem;color:var(--emerald);margin-bottom:12px}
+  .rule{width:64px;height:2px;background:var(--gold);margin:18px auto 0}
+  .sec-head p{color:var(--muted);margin-top:14px}
+  /* services */
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .svc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:38px 34px;
+       transition:transform .25s,box-shadow .25s}
+  .svc:hover{transform:translateY(-5px);box-shadow:0 24px 50px -18px rgba(14,59,46,.2)}
+  .svc .kicker{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  .svc h3{font-size:1.6rem;color:var(--emerald);margin-bottom:10px}
+  .svc p{color:var(--muted);font-size:.98rem}
+  .price-note{text-align:center;margin-top:34px;color:var(--muted);font-size:.92rem;font-style:italic}
+  /* gallery */
+  .gallery{background:var(--ivory-2)}
+  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .gal{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff}
+  .gal img{width:100%;height:250px;object-fit:cover;transition:transform .4s}
+  .gal:hover img{transform:scale(1.05)}
+  .gal figcaption{font-size:.78rem;color:var(--muted);padding:10px 14px;font-style:italic}
+  /* reviews */
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .rev{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:34px 30px}
+  .rev .stars{margin-bottom:12px}
+  .rev p{font-size:.95rem;color:var(--ink)}
+  .rev .who{margin-top:16px;font-size:.82rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+  .rev-agg{text-align:center;margin-bottom:40px}
+  .rev-agg .big{font-family:Georgia,serif;font-size:3.4rem;color:var(--emerald)}
+  /* visit */
+  .visit{background:var(--emerald-deep);color:#EDE6D2}
+  .visit h2{color:#fff}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .visit p{color:#CFC6AB;margin-bottom:14px}
+  .visit .addr{font-size:1.1rem;color:#fff;margin-bottom:8px}
+  .map{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.15)}
+  .map iframe{width:100%;height:340px;border:0;display:block}
+  .visit .btn-outline{border-color:var(--gold-soft);color:var(--gold-soft)}
+  .visit .btn-outline:hover{background:var(--gold-soft);color:var(--emerald-deep)}
+  /* final cta */
+  .final{text-align:center;padding:90px 0;background:var(--ivory)}
+  .final h2{font-size:2.6rem;color:var(--emerald);margin-bottom:16px}
+  .final p{color:var(--muted);margin-bottom:30px;max-width:520px;margin-left:auto;margin-right:auto}
+  footer{background:#0A211B;color:#9FB3A6;padding:30px 0;font-size:.84rem}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  /* sticky mobile cta */
+  .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;
+             background:rgba(10,43,34,.97);backdrop-filter:blur(8px);padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+             gap:10px;border-top:1px solid rgba(217,190,140,.3)}
+  .sticky-cta a{flex:1;min-height:52px;display:flex;align-items:center;justify-content:center;
+                border-radius:12px;font-weight:700;font-size:.95rem;letter-spacing:.5px}
+  .sticky-cta .s-dm{background:var(--gold);color:#1d1503}
+  .sticky-cta .s-dir{background:transparent;border:1.5px solid var(--gold-soft);color:var(--gold-soft)}
+  @media(max-width:900px){
+    .hero-grid,.visit-grid{grid-template-columns:1fr;gap:34px}
+    .hero{padding:52px 0 44px}
+    .hero h1{font-size:2.5rem}
+    .hero-img img{height:340px}
+    .trust-row{grid-template-columns:repeat(2,1fr);gap:26px}
+    .svc-grid,.rev-grid{grid-template-columns:1fr}
+    .gal-grid{grid-template-columns:repeat(2,1fr)}
+    .nav-links{display:none}
+    section{padding:56px 0}
+    .sticky-cta{display:flex}
+    body{padding-bottom:76px}
+    .sec-head h2{font-size:2rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand">Elegant<small>Family Unisex Salon</small></a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn-dark" href="https://instagram.com/elegant_family_salon" target="_blank" rel="noopener">Book Now</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Derabassi · Family Unisex Salon</div>
+      <h1>Everyday luxury,<br>for <em>everyone</em> in the family</h1>
+      <p class="lead">Kerasmooth treatments, precision colouring and refined cuts — a calm, mid-premium studio on Barwala Road, Derabassi, loved by the neighbourhood.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-dark" href="https://instagram.com/elegant_family_salon" target="_blank" rel="noopener">DM to Book</a>
+        <a class="btn btn-outline" href="#services">Explore Services</a>
+      </div>
+      <div class="rating-badge">
+        <span class="stars">★★★★★</span>
+        <span><strong>4.9</strong> · 437 reviews on JustDial</span>
+      </div>
+    </div>
+    <div>
+      <div class="hero-img">
+        <img src="https://files.catbox.moe/khmlk0.jpg" alt="Elegant Family Unisex Salon studio, Derabassi">
+      </div>
+      <div class="img-cap">Our studio — Elegant Family Salon, Derabassi</div>
+    </div>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="wrap trust-row">
+    <div class="trust-item"><div class="num">4.9</div><div class="lbl">JustDial Rating</div></div>
+    <div class="trust-item"><div class="num">437</div><div class="lbl">Verified Reviews</div></div>
+    <div class="trust-item"><div class="num">890+</div><div class="lbl">Instagram Community</div></div>
+    <div class="trust-item"><div class="num">100%</div><div class="lbl">Family Friendly</div></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">What we do best</div>
+      <h2>Signature Services</h2>
+      <div class="rule"></div>
+      <p>Mid-premium care for hair and skin — for men, women and the whole family.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="kicker">Hair Treatment</div>
+        <h3>Kerasmooth Treatment</h3>
+        <p>Our most-loved smoothing ritual — frizz tamed, shine restored, manageability for weeks. Consulted per hair length and texture.</p>
+      </div>
+      <div class="svc">
+        <div class="kicker">Colour</div>
+        <h3>Hair Colouring</h3>
+        <p>Global colour, highlights and grey coverage with professional ranges — matched to your skin tone, finished with a gloss seal.</p>
+      </div>
+      <div class="svc">
+        <div class="kicker">Cut &amp; Finish</div>
+        <h3>Haircut &amp; Blow-dry</h3>
+        <p>Precision cuts for every age and style, finished with a salon blow-dry so you walk out event-ready.</p>
+      </div>
+      <div class="svc">
+        <div class="kicker">Occasion</div>
+        <h3>Styling</h3>
+        <p>Party and event styling, updos and setting — camera-ready hair without the fuss.</p>
+      </div>
+    </div>
+    <p class="price-note">Rates are shared personally on DM — message us your service and get today's quote.</p>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Inside the studio</div>
+      <h2>The Elegant Space</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="gal-grid">
+      <figure class="gal"><img src="https://files.catbox.moe/khmlk0.jpg" alt="Salon interior"><figcaption>Our studio</figcaption></figure>
+      <figure class="gal"><img src="https://files.catbox.moe/if57oi.jpg" alt="Salon styling area"><figcaption>Our studio</figcaption></figure>
+      <figure class="gal"><img src="https://files.catbox.moe/stup3k.jpg" alt="Signature hair styling look"><figcaption>Signature looks</figcaption></figure>
+      <figure class="gal"><img src="https://files.catbox.moe/l2gy89.png" alt="Relaxing salon ambience"><figcaption>Signature looks</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Guest love</div>
+      <h2>Rated 4.9 by the Neighbourhood</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="rev-agg">
+      <div class="big">4.9 / 5</div>
+      <div class="stars">★★★★★</div>
+      <p style="color:var(--muted)">Across 437 JustDial reviews — one of Derabassi's best-rated family salons.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>Guests consistently praise the Kerasmooth treatment — smooth, shiny results that last.</p>
+        <div class="who">Recurring theme · JustDial</div>
+      </div>
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>Families rate the studio highly for comfort — easy for men, women and kids alike.</p>
+        <div class="who">Recurring theme · JustDial</div>
+      </div>
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>Colouring and styling work earns repeat visits and word-of-mouth across Derabassi.</p>
+        <div class="who">Recurring theme · JustDial</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" style="color:var(--gold-soft)">Find us</div>
+      <h2>Visit the Studio</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="visit-grid">
+      <div>
+        <p class="addr">Near HDFC Bank, Barwala Road,<br>Derabassi, Punjab</p>
+        <p>Booking is easiest over Instagram DM — tell us the service you want and pick your slot. Walk-ins are welcome subject to availability.</p>
+        <p style="margin-top:26px">
+          <a class="btn btn-outline" href="https://instagram.com/elegant_family_salon" target="_blank" rel="noopener">Message on Instagram</a>
+        </p>
+        <p style="margin-top:18px;font-size:.9rem">Instagram: <strong style="color:#fff">@elegant_family_salon</strong></p>
+      </div>
+      <div class="map">
+        <iframe title="Map — Elegant Family Salon Derabassi" loading="lazy"
+          src="https://www.google.com/maps?q=Elegant%20Family%20Salon%20Barwala%20Road%20Derabassi&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="final">
+  <div class="wrap">
+    <h2>Ready for your elegant moment?</h2>
+    <p>DM us on Instagram with your service — we reply fast with slots and today's rates.</p>
+    <a class="btn btn-dark" href="https://instagram.com/elegant_family_salon" target="_blank" rel="noopener">DM @elegant_family_salon</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <span>Elegant Family Unisex Salon · Barwala Road, Derabassi</span>
+    <span>Demo by StyleFrame Co.</span>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="s-dm" href="https://instagram.com/elegant_family_salon" target="_blank" rel="noopener">Instagram DM</a>
+  <a class="s-dir" href="https://www.google.com/maps/search/?api=1&query=Elegant+Family+Salon+Barwala+Road+Derabassi" target="_blank" rel="noopener">Directions</a>
+</div>
+
+</body>
+</html>

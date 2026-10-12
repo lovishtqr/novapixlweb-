@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tresspas Makeover | Natural Bridal MUA · Panchkula</title>
+<meta name="description" content="Tresspas Makeover, Panchkula — natural bridal makeup specialist. Bridal & party makeup by Isha Pahuja. DM @tresspas_makeover to book.">
+<style>
+:root{--cream:#f8f5ee;--cream2:#f1ebdd;--sage:#5f6f58;--sage-d:#44503f;--moss:#2e362b;--gold:#c19a5f;--ink:#33352e;--mut:#8a8a7c;--line:#e3dccb;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden;scroll-behavior:smooth}
+body{overflow-x:hidden;background:var(--cream);color:var(--ink);font-family:'Helvetica Neue',Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Cormorant Garamond','Playfair Display',Georgia,serif}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+/* slim top */
+.top{border-bottom:1px solid var(--line);background:var(--cream)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;padding:12px 24px;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut)}
+.top a{color:var(--sage-d);text-decoration:none;font-weight:700}
+.top a:hover{color:var(--gold)}
+/* masthead centered */
+.mast{text-align:center;padding:40px 20px 8px}
+.mast .over{font-size:10px;letter-spacing:.55em;text-transform:uppercase;color:var(--gold)}
+.mast h1{font-size:clamp(38px,6vw,60px);letter-spacing:.12em;color:var(--moss);font-weight:500;margin:12px 0 4px}
+.mast .under{font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--mut)}
+.mnav{display:flex;justify-content:center;gap:32px;padding:20px 0 26px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin:0 24px}
+.mnav a{color:var(--ink);text-decoration:none;font-size:11px;letter-spacing:.3em;text-transform:uppercase}
+.mnav a:hover{color:var(--gold)}
+/* hero: large image with floating card */
+.hero{position:relative;margin:0}
+.hero img.wide{width:100%;height:min(78vh,640px);object-fit:cover;display:block}
+.hero .card{position:absolute;left:6%;bottom:-60px;background:#fffdf8;border:1px solid var(--line);padding:44px 48px;max-width:520px;box-shadow:0 34px 70px -34px rgba(46,54,43,.35)}
+.hero .card .kick{font-size:10px;letter-spacing:.44em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px}
+.hero .card h2{font-size:clamp(34px,4.6vw,54px);line-height:1.1;color:var(--moss);font-weight:500}
+.hero .card h2 em{font-style:italic;color:var(--sage-d)}
+.hero .card p{color:var(--mut);margin:18px 0 28px;font-size:15.5px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 36px;text-decoration:none;font-size:12px;letter-spacing:.24em;text-transform:uppercase;min-height:54px;font-weight:700;transition:all .16s ease}
+.btn-sage{background:var(--sage);color:#fff}
+.btn-sage:hover{background:var(--sage-d);transform:translateY(-2px)}
+.btn-line{border:1.5px solid var(--moss);color:var(--moss)}
+.btn-line:hover{background:var(--moss);color:#fff}
+.btnrow{display:flex;gap:14px;flex-wrap:wrap}
+.pad{padding-top:150px}
+/* philosophy */
+.sec{padding:90px 0}
+.kickc{font-size:10px;letter-spacing:.46em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:16px;text-align:center}
+.sec h2{font-size:clamp(32px,4.4vw,52px);color:var(--moss);text-align:center;font-weight:500;line-height:1.16}
+.sec h2 em{font-style:italic;color:var(--sage-d)}
+.sec .sub{color:var(--mut);text-align:center;max-width:62ch;margin:16px auto 0}
+.phil{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px}
+.phil .p{background:#fffdf8;border:1px solid var(--line);padding:40px 32px;text-align:center}
+.phil .p .ic{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--gold);font-style:italic}
+.phil h3{font-size:24px;color:var(--moss);margin:12px 0 10px;font-weight:500}
+.phil p{color:var(--mut);font-size:14.5px}
+/* journey timeline */
+.journey{background:var(--moss);color:#efe9d8}
+.journey .kickc{color:var(--gold)}
+.journey h2{color:#f6f1e4}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border:1px solid rgba(193,154,95,.4)}
+.step{padding:44px 30px;border-left:1px solid rgba(193,154,95,.4)}
+.step:first-child{border-left:none}
+.step .n{font-size:13px;letter-spacing:.34em;color:var(--gold)}
+.step h3{font-size:24px;margin:12px 0 10px;font-weight:500}
+.step p{color:#c9c2ae;font-size:14.5px}
+/* services two-col */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:52px}
+.svc .s{background:#fffdf8;border:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.svc .s img{width:100%;height:100%;min-height:300px;object-fit:cover;display:block}
+.svc .s .tx{padding:44px 38px;display:flex;flex-direction:column;justify-content:center}
+.svc .cat{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold)}
+.svc h3{font-size:30px;color:var(--moss);margin:12px 0 12px;font-weight:500}
+.svc p{color:var(--mut);font-size:15px;margin-bottom:24px}
+/* gallery strip */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}
+.gal img{width:100%;height:360px;object-fit:cover;display:block}
+.gal figure{position:relative}
+.gal figcaption{position:absolute;bottom:14px;left:14px;background:rgba(46,54,43,.85);color:#f1ebdd;font-size:10px;letter-spacing:.28em;text-transform:uppercase;padding:8px 14px}
+/* about artist */
+.artist{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center;margin-top:20px}
+.artist img{width:100%;height:520px;object-fit:cover;display:block;border:1px solid var(--line)}
+.artist .kickc{text-align:left}
+.artist h2{text-align:left}
+.artist p{color:var(--mut);margin:18px 0}
+.artist p b{color:var(--moss)}
+.sig{font-family:'Cormorant Garamond',serif;font-size:34px;font-style:italic;color:var(--sage-d);margin-top:10px}
+/* visit */
+.visit{background:var(--cream2);border-top:1px solid var(--line)}
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:52px;margin-top:48px}
+.vitem{margin-bottom:24px}
+.vitem .lab{font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
+.vitem p,.vitem a{font-size:17px;color:var(--ink);text-decoration:none}
+.vitem a:hover{color:var(--sage-d)}
+.vcta{background:var(--moss);color:#efe9d8;padding:54px 38px;text-align:center}
+.vcta h2{font-size:clamp(28px,3.8vw,40px);font-weight:500;margin-bottom:12px}
+.vcta h2 em{font-style:italic;color:var(--gold)}
+.vcta p{color:#c9c2ae;margin-bottom:30px}
+footer{background:var(--moss);color:#a8a294;padding:42px 0 112px;text-align:center;font-size:13px}
+footer .fin{font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px}
+footer a{color:var(--gold);text-decoration:none}
+.stickybar{display:none}
+.footnote{font-size:12.5px;color:var(--mut);margin-top:24px;text-align:center}
+@media(max-width:900px){
+  .hero img.wide{height:52vh}
+  .hero .card{position:static;margin:-40px 24px 0;max-width:none;padding:36px 30px}
+  .pad{padding-top:64px}
+  .phil{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .step{border-left:none;border-top:1px solid rgba(193,154,95,.4)}
+  .step:nth-child(-n+2){border-top:none}
+  .step:nth-child(even){border-left:1px solid rgba(193,154,95,.4)}
+  .svc{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr}
+  .gal img{height:250px}
+  .artist{grid-template-columns:1fr;gap:34px}
+  .artist img{height:380px}
+  .vgrid{grid-template-columns:1fr;gap:34px}
+  .sec{padding:64px 0}
+  .stickybar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50}
+  .stickybar a{flex:1;text-align:center;padding:17px 0;text-decoration:none;font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;min-height:54px;display:flex;align-items:center;justify-content:center}
+  .stickybar .dm{background:var(--sage);color:#fff}
+  .stickybar .ig{background:#fff;border-top:1px solid var(--line);color:var(--sage-d)}
+  footer{padding-bottom:150px}
+}
+@media(max-width:560px){.gal{grid-template-columns:1fr}.gal img{height:280px}.steps{grid-template-columns:1fr}.step:nth-child(even){border-left:none}}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <span>Panchkula · Natural Bridal Specialist</span>
+    <a href="https://instagram.com/tresspas_makeover" target="_blank" rel="noopener">@tresspas_makeover</a>
+  </div>
+</div>
+
+<header class="mast">
+  <span class="over">Bridal Makeup Artistry</span>
+  <h1 class="serif">TRESSPAS</h1>
+  <span class="under">Makeover · Panchkula</span>
+</header>
+<nav class="mnav">
+  <a href="#philosophy">Philosophy</a><a href="#services">Services</a><a href="#gallery">Portfolio</a><a href="#artist">Artist</a><a href="#visit">Book</a>
+</nav>
+
+<section class="hero">
+  <img class="wide" src="https://files.catbox.moe/ncmk8l.jpg" alt="Natural bridal makeup by Tresspas Makeover">
+  <div class="card">
+    <span class="kick">Natural bridal MUA · Panchkula</span>
+    <h2 class="serif">Makeup so natural,<br>it looks like <em>you</em>.</h2>
+    <p>Skin-first bridal and party artistry — luminous, breathable, and photographed beautifully from every angle.</p>
+    <div class="btnrow">
+      <a class="btn btn-sage" href="https://instagram.com/tresspas_makeover" target="_blank" rel="noopener">DM to Book</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec pad" id="philosophy">
+  <div class="wrap">
+    <span class="kickc">Philosophy</span>
+    <h2 class="serif">Less mask. <em>More you.</em></h2>
+    <p class="sub">Tresspas specialises in the natural bridal look — makeup that enhances rather than covers.</p>
+    <div class="phil">
+      <div class="p"><div class="ic">i.</div><h3 class="serif">Skin First</h3><p>Prep, hydration and base work that lets real skin show through — never cakey, never heavy.</p></div>
+      <div class="p"><div class="ic">ii.</div><h3 class="serif">Soft Definition</h3><p>Eyes, lips and contour in harmony with your features — romantic, modern, timeless.</p></div>
+      <div class="p"><div class="ic">iii.</div><h3 class="serif">Lasts All Day</h3><p>Tear-proof, hug-proof, dance-floor-proof — from pheras to the last photograph.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec journey">
+  <div class="wrap">
+    <span class="kickc">The Bridal Journey</span>
+    <h2 class="serif">From first DM to <em>final touch-up</em>.</h2>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><h3 class="serif">Consult</h3><p>Share your outfit, venue and vision on Instagram DM — we plan the look together.</p></div>
+      <div class="step"><span class="n">02</span><h3 class="serif">Trial</h3><p>A full trial session so the wedding morning holds zero surprises.</p></div>
+      <div class="step"><span class="n">03</span><h3 class="serif">Prep</h3><p>Skin-prep guidance in the weeks before, so your base glows naturally.</p></div>
+      <div class="step"><span class="n">04</span><h3 class="serif">The Day</h3><p>Calm, on-time artistry with a touch-up kit — you simply enjoy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <span class="kickc">Services</span>
+    <h2 class="serif">Artistry, <em>your way</em>.</h2>
+    <p class="sub">Personalised quotes on Instagram DM — every face and occasion is different.</p>
+    <div class="svc">
+      <div class="s"><img src="https://files.catbox.moe/7khoms.jpg" alt="Bridal makeup"><div class="tx"><span class="cat">Signature</span><h3 class="serif">Natural Bridal Makeup</h3><p>Complete bridal artistry — skin prep, luminous base, hair styling coordination and draping guidance.</p><a class="btn btn-line" href="https://instagram.com/tresspas_makeover" target="_blank" rel="noopener">Enquire</a></div></div>
+      <div class="s"><img src="https://files.catbox.moe/yhhvon.jpg" alt="Party makeup"><div class="tx"><span class="cat">Celebration</span><h3 class="serif">Party &amp; Occasion Makeup</h3><p>Engagement, sangeet, reception and festive looks — soft glam that photographs beautifully.</p><a class="btn btn-line" href="https://instagram.com/tresspas_makeover" target="_blank" rel="noopener">Enquire</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="gallery" style="padding-top:20px">
+  <div class="wrap">
+    <span class="kickc">Portfolio</span>
+    <h2 class="serif">Signature <em>looks</em>.</h2>
+    <div class="gal">
+      <figure><img src="https://files.catbox.moe/ncmk8l.jpg" alt="Natural bridal look"><figcaption>Natural bridal</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/7khoms.jpg" alt="Soft glam look"><figcaption>Soft glam</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/yhhvon.jpg" alt="Occasion look"><figcaption>Occasion</figcaption></figure>
+    </div>
+    <p class="footnote">Portfolio images are representative style references for the natural-bridal aesthetic.</p>
+  </div>
+</section>
+
+<section class="sec" id="artist" style="padding-top:20px">
+  <div class="wrap">
+    <div class="artist">
+      <img src="https://files.catbox.moe/7khoms.jpg" alt="Makeup artistry by Tresspas">
+      <div>
+        <span class="kickc">The Artist</span>
+        <h2 class="serif">Behind <em>Tresspas</em>.</h2>
+        <p>Founded by <b>Isha Pahuja</b>, Tresspas Makeover is Panchkula's home for the natural bridal look — built on skin-first technique, honest consultations, and artistry that never overpowers the person wearing it.</p>
+        <p>Follow the latest bridal work and behind-the-scenes on Instagram.</p>
+        <div class="sig">Isha Pahuja</div>
+        <div class="btnrow" style="justify-content:flex-start;margin-top:26px">
+          <a class="btn btn-sage" href="https://instagram.com/tresspas_makeover" target="_blank" rel="noopener">Follow on Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec visit" id="visit">
+  <div class="wrap">
+    <span class="kickc">Book</span>
+    <h2 class="serif">Your date, <em>reserved</em>.</h2>
+    <div class="vgrid">
+      <div>
+        <div class="vitem"><span class="lab">Location</span><p>Panchkula, Haryana<br><span style="color:var(--mut);font-size:14px">Studio address shared on booking — DM us.</span></p></div>
+        <div class="vitem"><span class="lab">Instagram</span><p><a href="https://instagram.com/tresspas_makeover" target="_blank" rel="noopener">@tresspas_makeover</a><br><span style="color:var(--mut);font-size:14px">590 followers · active Sep 2026</span></p></div>
+        <div class="vitem"><span class="lab">Booking</span><p>Instagram DM only</p></div>
+      </div>
+      <div class="vcta">
+        <h2 class="serif">Wedding dates go <em>fast</em>.</h2>
+        <p>One DM is all it takes — we reply personally to every enquiry.</p>
+        <div class="btnrow" style="justify-content:center">
+          <a class="btn btn-sage" href="https://instagram.com/tresspas_makeover" target="_blank" rel="noopener">DM @tresspas_makeover</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="fin">Tresspas Makeover · Panchkula</span>
+    <p>Demo by <b>StyleFrame Co.</b> — a concept preview for the artist. Services from public listings; confirm details on Instagram.</p>
+  </div>
+</footer>
+
+<div class="stickybar">
+  <a class="dm" href="https://instagram.com/tresspas_makeover" target="_blank" rel="noopener">DM to Book</a>
+  <a class="ig" href="https://instagram.com/tresspas_makeover" target="_blank" rel="noopener">Instagram</a>
+</div>
+
+</body>
+</html>

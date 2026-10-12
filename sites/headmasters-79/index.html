@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Headmasters Salon | Sector 79, Mohali — Bridal &amp; Luxury Salon</title>
+<meta name="description" content="Headmasters Salon, Sector 79 Mohali — rated 5.0 by 1,925 clients. Bridal makeup ₹10,000, outstation bridal ₹20,000.">
+<style>
+:root{--blk:#0b0a09;--blk2:#141210;--gold:#d4a24e;--gold-d:#a87c2e;--cream:#f4efe4;--mut:#9b9184;--line:#2b2620;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden;scroll-behavior:smooth}
+body{overflow-x:hidden;background:var(--blk);color:var(--cream);font-family:'Helvetica Neue',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',Georgia,'Times New Roman',serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+/* masthead */
+.mast{border-bottom:1px solid var(--line);text-align:center;padding:22px 16px 16px}
+.mast .over{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold)}
+.mast h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(38px,6vw,64px);letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin:8px 0 4px}
+.mast .under{font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--mut)}
+.mnav{display:flex;justify-content:center;gap:34px;padding:14px 0;flex-wrap:wrap}
+.mnav a{color:var(--cream);text-decoration:none;font-size:11px;letter-spacing:.3em;text-transform:uppercase}
+.mnav a:hover{color:var(--gold)}
+/* cover */
+.cover{position:relative;display:grid;grid-template-columns:1.15fr .85fr;min-height:82vh;border-bottom:1px solid var(--line)}
+.cover .art{background:url('images/interior.jpg') center/cover;min-height:480px}
+.cover .copy{padding:70px 24px 60px 56px;display:flex;flex-direction:column;justify-content:center;background:radial-gradient(1000px 500px at 20% 20%,rgba(212,162,78,.08),transparent)}
+.tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:10px;letter-spacing:.4em;text-transform:uppercase;padding:8px 16px;margin-bottom:26px;width:fit-content}
+.copy h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(40px,5.4vw,70px);line-height:1.08;font-weight:700}
+.copy h2 em{font-style:italic;color:var(--gold)}
+.copy p{color:var(--mut);margin:22px 0 32px;max-width:46ch;font-size:16px}
+.btnrow{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:16px 34px;text-decoration:none;font-size:12px;letter-spacing:.24em;text-transform:uppercase;min-height:52px}
+.btn-gold{background:var(--gold);color:#14100a;font-weight:700}
+.btn-gold:hover{background:#e5b968}
+.btn-line{border:1px solid var(--cream);color:var(--cream)}
+.btn-line:hover{border-color:var(--gold);color:var(--gold)}
+/* numbers */
+.nums{border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr)}
+.nums div{padding:38px 12px;text-align:center;border-left:1px solid var(--line)}
+.nums div:first-child{border-left:none}
+.nums b{display:block;font-family:'Playfair Display',Georgia,serif;font-size:clamp(34px,4vw,52px);color:var(--gold)}
+.nums small{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--mut)}
+/* editorial */
+.sec{padding:90px 0}
+.kick{font-size:10px;letter-spacing:.44em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:18px}
+.sec h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,4.4vw,54px);line-height:1.15;font-weight:700}
+.sec h2 em{font-style:italic;color:var(--gold)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:46px}
+.two img{width:100%;height:560px;object-fit:cover;display:block;border:1px solid var(--line)}
+.two p{color:#c9c0b1;margin-bottom:18px;font-size:16px}
+.two p b{color:var(--gold)}
+/* price list — magazine table */
+.pricewrap{margin-top:50px;border:1px solid var(--gold-d)}
+.prow{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;padding:28px 34px;border-bottom:1px solid var(--line)}
+.prow:last-child{border-bottom:none}
+.prow:hover{background:var(--blk2)}
+.prow .n{font-family:'Playfair Display',Georgia,serif;font-size:15px;color:var(--gold);letter-spacing:.2em}
+.prow h3{font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700}
+.prow p{color:var(--mut);font-size:14px}
+.prow .p{font-family:'Playfair Display',Georgia,serif;font-size:32px;color:var(--gold);white-space:nowrap}
+.src{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-top:18px}
+/* gallery strip */
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}
+.strip img{width:100%;height:340px;object-fit:cover;display:block;border:1px solid var(--line)}
+/* review card */
+.rev{max-width:820px;margin:50px auto 0;border:1px solid var(--gold-d);padding:54px 48px;text-align:center;background:var(--blk2)}
+.rev .q{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,3vw,32px);font-style:italic;line-height:1.5}
+.rev .who{margin-top:20px;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+/* contact */
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:46px}
+.ccard{border:1px solid var(--line);padding:40px 36px;background:var(--blk2)}
+.ccard h3{font-family:'Playfair Display',Georgia,serif;font-size:24px;color:var(--gold);margin-bottom:14px}
+.ccard p{color:#c9c0b1}
+.ccard a{color:var(--cream)}
+footer{border-top:1px solid var(--line);text-align:center;padding:30px 16px 110px;color:var(--mut);font-size:12px;letter-spacing:.14em}
+footer .f1{font-family:'Playfair Display',Georgia,serif;font-size:22px;letter-spacing:.2em;color:var(--cream);text-transform:uppercase}
+/* sticky */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;background:var(--gold)}
+.sticky a{flex:1;text-align:center;padding:18px 8px;color:#14100a;font-weight:800;font-size:12px;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;min-height:58px}
+.sticky a+a{border-left:2px solid #14100a}
+@media(max-width:900px){
+  .sticky{display:flex}
+  .cover{grid-template-columns:1fr;min-height:0}
+  .cover .copy{padding:52px 24px 48px}
+  .cover .art{min-height:360px;order:-1}
+  .nums{grid-template-columns:repeat(2,1fr)}
+  .nums div{border-top:1px solid var(--line)}
+  .two{grid-template-columns:1fr;gap:34px}
+  .two img{height:380px}
+  .strip{grid-template-columns:1fr}
+  .prow{grid-template-columns:1fr;gap:8px;padding:24px}
+  .cgrid{grid-template-columns:1fr}
+  .sec{padding:62px 0}
+  .rev{padding:40px 28px}
+}
+</style>
+</head>
+<body>
+<div class="mast">
+  <div class="over">Mohali · Sector 79</div>
+  <h1>Headmasters</h1>
+  <div class="under">Salon · Bridal · Luxury Grooming</div>
+</div>
+<nav class="mnav">
+  <a href="#story">Story</a><a href="#bridal">Bridal</a><a href="#work">Salon</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a>
+</nav>
+
+<section class="cover">
+  <div class="copy">
+    <span class="tag">The most reviewed salon in the sector</span>
+    <h2>Where Mohali gets <em>red-carpet</em> ready.</h2>
+    <p>Headmasters Salon, Sector 79 — rated 5.0 across 1,925 verified reviews, the largest review base of any salon in this batch. Bridal artistry, luxury hair and skin, under one roof.</p>
+    <div class="btnrow">
+      <a class="btn btn-gold" href="https://instagram.com/headmastersmohali" target="_blank" rel="noopener">Book on Instagram</a>
+      <a class="btn btn-line" href="#bridal">Bridal Prices</a>
+    </div>
+  </div>
+  <div class="art"></div>
+</section>
+
+<section class="nums">
+  <div><b>5.0</b><small>Rating</small></div>
+  <div><b>1,925</b><small>Verified reviews</small></div>
+  <div><b>₹10k</b><small>Bridal from</small></div>
+  <div><b>79</b><small>Sector · Mohali</small></div>
+</section>
+
+<section class="sec wrap" id="story">
+  <span class="kick">The Story</span>
+  <h2>A <em>flagship</em> standard<br>of salon luxury.</h2>
+  <div class="two">
+    <img src="https://files.catbox.moe/bhlqb9.jpg" alt="Headmasters Salon, Sector 79 Mohali">
+    <div>
+      <p><b>1,925 five-star reviews</b> don't happen by accident. Headmasters Sector 79 has built its name on consistent bridal transformations, senior stylists and a premium in-salon experience.</p>
+      <p>From signature haircuts and colour to skin rituals and party looks — every service follows the same discipline: consultation first, then craft.</p>
+      <a class="btn btn-line" href="https://instagram.com/headmastersmohali" target="_blank" rel="noopener" style="margin-top:10px">See Latest Work</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap" id="bridal" style="padding-top:0">
+  <span class="kick">Bridal Atelier</span>
+  <h2>Wedding <em>pricing,</em><br>published upfront.</h2>
+  <div class="pricewrap">
+    <div class="prow"><div class="n">01</div><div><h3>Bridal Makeup</h3><p>Signature in-salon bridal look — trial included.</p></div><div class="p">₹10,000</div></div>
+    <div class="prow"><div class="n">02</div><div><h3>Party Makeup <span style="font-size:15px;color:var(--mut)">(family)</span></h3><p>Engagement, sangeet and reception looks for the family.</p></div><div class="p">₹2,500</div></div>
+    <div class="prow"><div class="n">03</div><div><h3>Bridal Makeup — Outstation</h3><p>Destination weddings — artist travels with full kit.</p></div><div class="p">₹20,000</div></div>
+  </div>
+  <p class="src">Prices as listed on JustDial · October 2026 · Final quote confirmed at consultation</p>
+</section>
+
+<section class="sec wrap" id="work" style="padding-top:0">
+  <span class="kick">Inside the Salon</span>
+  <h2>The <em>space.</em></h2>
+  <div class="strip">
+    <img src="images/interior.jpg" alt="Headmasters salon interior">
+    <img src="https://files.catbox.moe/bhlqb9.jpg" alt="Headmasters Sector 79">
+    <img src="images/interior.jpg" alt="Headmasters styling floor">
+  </div>
+</section>
+
+<section class="sec wrap" id="reviews" style="padding-top:0">
+  <div class="rev">
+    <div class="q">"5.0 out of 5 — across 1,925 verified reviews, the strongest rating record in Sector 79."</div>
+    <div class="who">Rating summary · JustDial</div>
+  </div>
+</section>
+
+<section class="sec wrap" id="visit" style="padding-top:0">
+  <span class="kick">Visit</span>
+  <h2>Find <em>us.</em></h2>
+  <div class="cgrid">
+    <div class="ccard">
+      <h3>Address</h3>
+      <p>Headmasters Salon<br>Sector 79, SAS Nagar<br>Mohali, Punjab 140308</p>
+      <p style="margin-top:16px"><a href="https://www.google.com/maps/search/?api=1&query=Headmasters+Salon+Sector+79+Mohali" target="_blank" rel="noopener">Get Directions →</a></p>
+    </div>
+    <div class="ccard">
+      <h3>Appointments</h3>
+      <p>Bridal trials and weekend slots are limited. Message us with your date.</p>
+      <p style="margin-top:16px"><a class="btn btn-gold" href="https://instagram.com/headmastersmohali" target="_blank" rel="noopener">DM @headmastersmohali</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f1">Headmasters</div>
+  <p style="margin-top:10px">Demo by StyleFrame Co.</p>
+</footer>
+
+<div class="sticky">
+  <a href="https://instagram.com/headmastersmohali" target="_blank" rel="noopener">Book Now</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Headmasters+Salon+Sector+79+Mohali" target="_blank" rel="noopener">Directions</a>
+</div>
+</body>
+</html>

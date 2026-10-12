@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hair Haus Unisex Salon | Sector 70, Mohali</title>
+<meta name="description" content="Hair Haus Unisex Salon — modern cuts, colour, balayage and makeup in Sector 70, Mohali. Rated 5.0. Shop 9, 70th Avenue, Homeland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@500;700;800&family=Archivo:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#161618; --ink2:#1f1f23; --amber:#e09a35; --amber2:#f2b45c;
+  --paper:#f4f1ea; --muted:#9a968c; --line:#2c2c31; --steel:#8b8b93;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--ink);color:var(--paper);font-family:'Archivo',sans-serif;overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.disp{font-family:'Space Grotesk',sans-serif}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(22,22,24,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1240px;margin:0 auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:21px;letter-spacing:.06em}
+.brand b{color:var(--amber)}
+.brand small{display:block;font-family:'Archivo',sans-serif;font-size:9px;letter-spacing:.5em;color:var(--steel);font-weight:500}
+.nav-links{display:flex;gap:30px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--steel);font-weight:500}
+.nav-links a:hover{color:var(--amber)}
+.nav-cta{background:var(--amber);color:var(--ink);padding:13px 28px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;transition:.3s}
+.nav-cta:hover{background:var(--amber2)}
+/* hero */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;padding-top:70px}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:70px 9% 70px 0}
+.kicker{display:inline-flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--amber);margin-bottom:26px;font-weight:600}
+.kicker::before{content:"";width:42px;height:2px;background:var(--amber)}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(54px,7vw,104px);line-height:.98;font-weight:700;letter-spacing:-.015em;margin-bottom:22px}
+.hero h1 .stroke{color:transparent;-webkit-text-stroke:1.5px var(--amber)}
+.hero .sub{color:var(--steel);font-size:17px;font-weight:300;max-width:450px;margin-bottom:40px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{background:var(--amber);color:var(--ink);padding:17px 38px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;transition:.3s;display:inline-block}
+.btn:hover{background:var(--amber2);transform:translateY(-2px)}
+.btn-ghost{border:1px solid #3a3a40;color:var(--paper);padding:17px 38px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;transition:.3s;display:inline-block}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+.hero-meta{display:grid;grid-template-columns:repeat(3,auto);gap:40px;margin-top:60px;justify-content:start}
+.hero-meta .n{font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;color:var(--paper)}
+.hero-meta .n b{color:var(--amber)}
+.hero-meta .l{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--steel)}
+.hero-img{position:relative;min-height:440px;background:var(--ink2)}
+.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.04)}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ink) 0%,transparent 28%)}
+.tag-float{position:absolute;bottom:34px;right:34px;background:var(--amber);color:var(--ink);padding:16px 24px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;letter-spacing:.04em;z-index:2}
+/* ticker */
+.ticker{background:var(--amber);color:var(--ink);overflow:hidden;white-space:nowrap;padding:14px 0}
+.ticker span{display:inline-block;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase;padding:0 30px;animation:mq 24s linear infinite}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* sections */
+section{padding:104px 0}
+.sec-head{margin-bottom:54px}
+.sec-head .kicker{margin-bottom:16px}
+.sec-head h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,4.4vw,58px);font-weight:700;letter-spacing:-.01em;line-height:1.05}
+.sec-head h2 .stroke{color:transparent;-webkit-text-stroke:1.5px var(--amber)}
+/* services */
+.svc-list{border-top:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:70px 1fr auto;gap:24px;align-items:center;padding:34px 10px;border-bottom:1px solid var(--line);transition:.25s}
+.svc:hover{background:var(--ink2);padding-left:24px}
+.svc .num{font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--amber);font-weight:700}
+.svc h3{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;margin-bottom:6px}
+.svc p{color:var(--steel);font-size:14.5px;font-weight:300;max-width:520px}
+.svc .price{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--amber2);white-space:nowrap}
+.svc .price small{display:block;font-family:'Archivo',sans-serif;font-size:10px;letter-spacing:.22em;color:var(--steel);font-weight:500;text-transform:uppercase;text-align:right;margin-top:4px}
+/* split feature */
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--ink2);border:1px solid var(--line)}
+.feature .fimg{min-height:420px;position:relative;overflow:hidden}
+.feature .fimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feature .fcopy{padding:70px 60px;display:flex;flex-direction:column;justify-content:center}
+.feature .fcopy h3{font-family:'Space Grotesk',sans-serif;font-size:clamp(30px,3.4vw,44px);font-weight:700;margin:16px 0 16px;line-height:1.1}
+.feature .fcopy p{color:var(--steel);font-weight:300;margin-bottom:14px}
+.flist{margin:26px 0 34px;display:grid;gap:14px}
+.flist div{display:flex;gap:14px;align-items:center;font-weight:500}
+.flist .bar{width:30px;height:3px;background:var(--amber);flex:none}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gal figure{position:relative;overflow:hidden;aspect-ratio:4/5;background:var(--ink2)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease;filter:saturate(.94)}
+.gal figure:hover img{transform:scale(1.07)}
+.gal figcaption{position:absolute;left:14px;bottom:14px;background:rgba(22,22,24,.85);color:var(--amber2);padding:8px 18px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+.cap-note{color:var(--steel);font-size:13px;margin-top:22px;font-weight:300;text-align:center}
+/* visit */
+.visit{background:var(--paper);color:var(--ink)}
+.visit .sec-head h2{color:var(--ink)}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.visit p.lead{color:#5c5a52;font-weight:300;margin-bottom:30px;max-width:440px}
+.kv{display:grid;gap:0;border-top:2px solid var(--ink)}
+.kv .row{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:18px 4px;border-bottom:1px solid #d8d3c4;font-size:15px}
+.kv .k{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#8a8577;font-weight:600;padding-top:4px}
+.book{background:var(--ink);color:var(--paper);padding:50px 46px}
+.book h3{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;margin-bottom:10px}
+.book h3 b{color:var(--amber)}
+.book p{color:var(--steel);font-weight:300;font-size:14.5px;margin-bottom:30px}
+.footnote{font-size:12.5px;color:#8a8577;font-weight:300;margin-top:30px;text-align:center}
+/* sticky */
+.stickybar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:rgba(22,22,24,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom));gap:12px}
+.stickybar a{flex:1;text-align:center;padding:16px 8px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;min-height:52px;display:flex;align-items:center;justify-content:center}
+.stickybar .ig{background:var(--amber);color:var(--ink)}
+.stickybar .map{border:1px solid var(--amber);color:var(--amber)}
+footer{background:#0c0c0e;border-top:1px solid var(--line);padding:52px 0 40px;text-align:center}
+footer .fbrand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;margin-bottom:8px}
+footer .fbrand b{color:var(--amber)}
+footer p{font-size:13px;color:var(--steel);max-width:520px;margin:0 auto 16px;font-weight:300}
+.demo-tag{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#55555e}
+.fade{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+.fade.in{opacity:1;transform:none}
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero-copy{padding:56px 24px;max-width:none}
+  .hero-img{min-height:46vh;position:relative}
+  .hero-img img{position:relative;height:46vh}
+  .hero-img::after{background:linear-gradient(0deg,var(--ink) 0%,transparent 30%)}
+  .tag-float{right:16px;bottom:16px}
+  .hero-meta{gap:26px}
+  .svc{grid-template-columns:44px 1fr;gap:14px}
+  .svc .price{grid-column:2;text-align:left}
+  .svc .price small{text-align:left}
+  .feature{grid-template-columns:1fr}
+  .feature .fimg{min-height:300px;position:relative}
+  .feature .fimg img{position:relative;height:300px}
+  .feature .fcopy{padding:44px 28px}
+  .gal{grid-template-columns:1fr 1fr;gap:12px}
+  .visit-grid{grid-template-columns:1fr;gap:32px}
+  section{padding:72px 0}
+  .stickybar{display:flex}
+  body{padding-bottom:80px}
+}
+@media(max-width:560px){.gal{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="#top">HAIR<b>HAUS</b><small>UNISEX SALON</small></a>
+    <div class="nav-links">
+      <a href="#services">Services</a><a href="#studio">Studio</a><a href="#work">Work</a><a href="#visit">Visit</a>
+    </div>
+    <a class="nav-cta" href="https://instagram.com/hairhausunisexsalon" target="_blank" rel="noopener">Book on Instagram</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-copy">
+    <div class="kicker fade">Sector 70 · Mohali</div>
+    <h1 class="disp fade">CUT.<br>COLOR.<br><span class="stroke">CONFIDENCE.</span></h1>
+    <p class="sub fade">A modern unisex salon for sharp cuts, lived-in colour and camera-ready makeup — rated a perfect 5.0 by every client so far.</p>
+    <div class="hero-btns fade">
+      <a class="btn" href="https://instagram.com/hairhausunisexsalon" target="_blank" rel="noopener">Book Appointment</a>
+      <a class="btn-ghost" href="#services">See Services</a>
+    </div>
+    <div class="hero-meta fade">
+      <div><div class="n disp">5.0<b>★</b></div><div class="l">Google rating</div></div>
+      <div><div class="n disp">35</div><div class="l">Verified reviews</div></div>
+      <div><div class="n disp">100%</div><div class="l">Unisex</div></div>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="https://files.catbox.moe/lub1nm.jpg" alt="Hair Haus salon styling">
+    <div class="tag-float disp">5.0 RATED SALON</div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <span>Haircuts · Balayage · Keratin · Bridal Makeup · Party Makeup · Beard Styling · Haircuts · Balayage · Keratin · Bridal Makeup · Party Makeup · Beard Styling ·&nbsp;</span>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="kicker">The Menu</div>
+      <h2 class="disp">Services, <span class="stroke">no fluff</span></h2>
+    </div>
+    <div class="svc-list fade">
+      <div class="svc">
+        <div class="num disp">01</div>
+        <div><h3 class="disp">Haircuts &amp; Styling</h3><p>Precision cuts for men and women — fades, layers, bobs and restyles, finished with a proper blowout.</p></div>
+        <div class="price">from ₹399*<small>Indicative</small></div>
+      </div>
+      <div class="svc">
+        <div class="num disp">02</div>
+        <div><h3 class="disp">Hair Colour &amp; Balayage</h3><p>Global colour, highlights and hand-painted balayage with bond-care for healthy shine.</p></div>
+        <div class="price">from ₹1,999*<small>Indicative</small></div>
+      </div>
+      <div class="svc">
+        <div class="num disp">03</div>
+        <div><h3 class="disp">Keratin &amp; Smoothening</h3><p>Frizz-taming keratin and smoothening treatments for manageable, glossy hair.</p></div>
+        <div class="price">from ₹2,499*<small>Indicative</small></div>
+      </div>
+      <div class="svc">
+        <div class="num disp">04</div>
+        <div><h3 class="disp">Bridal &amp; Party Makeup</h3><p>HD bridal looks and event makeup with trial sessions and premium products.</p></div>
+        <div class="price">on request*<small>DM for quote</small></div>
+      </div>
+      <div class="svc">
+        <div class="num disp">05</div>
+        <div><h3 class="disp">Beard &amp; Grooming</h3><p>Beard sculpting, clean-ups and men's facials — the full groom in one chair.</p></div>
+        <div class="price">from ₹299*<small>Indicative</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="studio" style="padding-top:0">
+  <div class="wrap">
+    <div class="feature fade">
+      <div class="fimg"><img src="https://files.catbox.moe/in0huw.jpg" alt="Hair Haus studio interior"></div>
+      <div class="fcopy">
+        <div class="kicker">The Studio</div>
+        <h3 class="disp">Built like a workshop.<br>Finished like a lounge.</h3>
+        <p>Hair Haus sits on the first floor at 70th Avenue, Homeland — a focused, modern space where the work does the talking.</p>
+        <p>Small team, sharp standards, and a perfect 5.0 rating across every review the salon has received.</p>
+        <div class="flist">
+          <div><span class="bar"></span> Unisex — cuts and colour for everyone</div>
+          <div><span class="bar"></span> Bridal &amp; party makeup in-house</div>
+          <div><span class="bar"></span> 5.0 / 5 across 35 Google reviews</div>
+        </div>
+        <div class="hero-btns"><a class="btn" href="https://instagram.com/hairhausunisexsalon" target="_blank" rel="noopener">DM @hairhausunisexsalon</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="kicker">Signature Looks</div>
+      <h2 class="disp">The <span class="stroke">work</span></h2>
+    </div>
+    <div class="gal fade">
+      <figure><img src="https://files.catbox.moe/c52yhu.jpg" alt="Precision haircut"><figcaption>Signature Looks</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/smomgx.jpg" alt="Hair colour work"><figcaption>Signature Looks</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/in0huw.jpg" alt="Studio floor"><figcaption>Signature Looks</figcaption></figure>
+    </div>
+    <p class="cap-note">Representative of the cuts, colour and styling offered at Hair Haus.</p>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="kicker">Find Us</div>
+      <h2 class="disp">Sector 70, Mohali</h2>
+    </div>
+    <div class="visit-grid fade">
+      <div>
+        <p class="lead">First floor, easy to reach, easier to leave looking sharp. Message on Instagram to lock your slot.</p>
+        <div class="kv">
+          <div class="row"><div class="k">Address</div><div>Shop 9, First Floor, 70th Avenue, Homeland, Sector 70, Mohali 160071</div></div>
+          <div class="row"><div class="k">Instagram</div><div><a href="https://instagram.com/hairhausunisexsalon" target="_blank" rel="noopener" style="text-decoration:underline;font-weight:600">@hairhausunisexsalon</a></div></div>
+          <div class="row"><div class="k">Rating</div><div>5.0 / 5 · 35 Google reviews</div></div>
+          <div class="row"><div class="k">Hours</div><div>Open all days · 10 AM – 9 PM</div></div>
+        </div>
+      </div>
+      <div class="book">
+        <h3 class="disp">Book your <b>chair</b></h3>
+        <p>DM your service and preferred time — the studio confirms every booking personally.</p>
+        <div class="hero-btns">
+          <a class="btn" href="https://instagram.com/hairhausunisexsalon" target="_blank" rel="noopener">DM to Book</a>
+          <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Hair+Haus+Unisex+Salon+Sector+70+Mohali" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+      </div>
+    </div>
+    <p class="footnote">* Indicative starting prices shown for demonstration — final pricing is confirmed by the studio at booking. Gallery images are representative of services offered. This is a demo website concept.</p>
+  </div>
+</section>
+
+<div class="stickybar">
+  <a class="ig" href="https://instagram.com/hairhausunisexsalon" target="_blank" rel="noopener">DM to Book</a>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Hair+Haus+Unisex+Salon+Sector+70+Mohali" target="_blank" rel="noopener">Directions</a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand disp">HAIR<b>HAUS</b></div>
+    <p>Unisex salon — Shop 9, 70th Avenue, Homeland, Sector 70, Mohali. Rated 5.0 from 35 reviews.</p>
+    <div class="demo-tag">Demo by StyleFrame Co.</div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

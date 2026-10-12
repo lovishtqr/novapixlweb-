@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naomi's Headmasters | Sector 8, Panchkula — Luxury Salon &amp; HD Makeup</title>
+<meta name="description" content="Naomi's Headmasters, Sector 8 Panchkula — 13K Instagram community. HD makeup, luxury hair colour & styling. DM @naomis.headmasters to book.">
+<style>
+:root{--porc:#fbfaf7;--porc2:#f3f0e9;--onyx:#151311;--onyx2:#221f1b;--gold:#b98f4e;--gold-l:#e3c98f;--mut:#8d867a;--line:#e5ded0;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden;scroll-behavior:smooth}
+body{overflow-x:hidden;background:var(--porc);color:var(--onyx);font-family:'Helvetica Neue',Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',Georgia,'Times New Roman',serif}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+/* header */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;justify-content:space-between;align-items:center;padding:13px 24px}
+.brand{font-family:'Playfair Display',Georgia,serif;font-size:19px;letter-spacing:.14em;text-decoration:none;color:var(--onyx)}
+.brand b{color:var(--gold);font-weight:700}
+.hnav{display:flex;gap:24px;align-items:center}
+.hnav a.nl{color:var(--onyx);text-decoration:none;font-size:11px;letter-spacing:.26em;text-transform:uppercase}
+.hnav a.nl:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 30px;text-decoration:none;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;min-height:50px;font-weight:700;transition:all .16s ease}
+.btn-onyx{background:var(--onyx);color:#fbfaf7}
+.btn-onyx:hover{background:var(--onyx2);transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,var(--gold-l),var(--gold));color:#1c1508}
+.btn-gold:hover{filter:brightness(1.08);transform:translateY(-2px)}
+.btn-line{border:1.5px solid var(--onyx);color:var(--onyx)}
+.btn-line:hover{background:var(--onyx);color:#fff}
+/* hero: giant type + collage */
+.hero{padding:70px 0 90px;position:relative;overflow:hidden}
+.hero .giant{font-family:'Playfair Display',Georgia,serif;font-size:clamp(52px,9.5vw,128px);line-height:.98;font-weight:700;letter-spacing:.02em;color:var(--onyx)}
+.hero .giant em{font-style:italic;font-weight:400;color:var(--gold)}
+.hero .meta{display:flex;gap:36px;flex-wrap:wrap;margin:26px 0 40px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut)}
+.hero .meta b{color:var(--onyx)}
+.collage{display:grid;grid-template-columns:1.25fr .75fr;grid-template-rows:340px 340px;gap:14px}
+.collage figure{overflow:hidden;position:relative;background:var(--porc2)}
+.collage figure.big{grid-row:span 2}
+.collage img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.collage figure:hover img{transform:scale(1.04)}
+.collage figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(21,19,17,.78));color:#fff;font-size:10px;letter-spacing:.3em;text-transform:uppercase;padding:34px 18px 14px}
+.hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
+/* strip */
+.strip{background:var(--onyx);color:#f3ecdd;overflow:hidden;padding:14px 0}
+.strip .track{display:flex;white-space:nowrap;width:max-content;animation:slide 26s linear infinite}
+.strip span{font-size:11px;letter-spacing:.34em;text-transform:uppercase;padding:0 32px}
+.strip span b{color:var(--gold-l)}
+@keyframes slide{to{transform:translateX(-50%)}}
+/* promise */
+.sec{padding:92px 0}
+.kick{font-size:10px;letter-spacing:.46em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:16px;text-align:center}
+.sec h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,4.6vw,54px);font-weight:700;text-align:center;line-height:1.14}
+.sec h2 em{font-style:italic;color:var(--gold)}
+.sec .sub{color:var(--mut);text-align:center;max-width:62ch;margin:14px auto 0}
+.promise{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border:1px solid var(--line);background:#fff}
+.pr{padding:50px 38px;border-left:1px solid var(--line)}
+.pr:first-child{border-left:none}
+.pr .n{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:15px;color:var(--gold);letter-spacing:.2em}
+.pr h3{font-family:'Playfair Display',Georgia,serif;font-size:27px;margin:14px 0 12px;font-weight:700}
+.pr p{color:var(--mut);font-size:14.5px}
+/* signature services */
+.sig{background:var(--onyx);color:#f3ecdd}
+.sig .kick{color:var(--gold-l)}
+.sig h2{color:#fff}
+.sig h2 em{color:var(--gold-l)}
+.svcrow{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:54px}
+.svc{background:var(--onyx2);border:1px solid #332c22;padding:48px 44px;display:flex;gap:26px;align-items:flex-start;transition:transform .18s ease}
+.svc:hover{transform:translateY(-5px);border-color:var(--gold)}
+.svc .idx{font-family:'Playfair Display',Georgia,serif;font-size:44px;color:var(--gold);font-style:italic;line-height:1;min-width:64px}
+.svc h3{font-family:'Playfair Display',Georgia,serif;font-size:28px;margin-bottom:10px;font-weight:700}
+.svc p{color:#b9b0a0;font-size:15px}
+.svc .p{display:inline-block;margin-top:16px;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-l);border:1px solid var(--gold);padding:10px 20px;text-decoration:none}
+.svc .p:hover{background:var(--gold);color:#1c1508}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:50px}
+.gal figure{overflow:hidden;background:var(--porc2)}
+.gal img{width:100%;height:300px;object-fit:cover;display:block;transition:transform .4s ease}
+.gal figure:hover img{transform:scale(1.06)}
+.gal figcaption{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--mut);padding:12px 4px 0;text-align:center}
+/* branch note */
+.branch{border:1px solid var(--gold);background:#fff;padding:44px 8%;text-align:center;margin-top:56px}
+.branch h3{font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700}
+.branch h3 em{font-style:italic;color:var(--gold)}
+.branch p{color:var(--mut);margin-top:10px;font-size:15px}
+/* visit */
+.visit{background:#fff;border-top:1px solid var(--line)}
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:54px;margin-top:48px}
+.vitem{margin-bottom:24px}
+.vitem .lab{font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
+.vitem p,.vitem a{font-size:17px;color:var(--onyx);text-decoration:none}
+.vitem a:hover{color:var(--gold)}
+.vcta{background:var(--onyx);color:#f3ecdd;padding:54px 38px;text-align:center}
+.vcta h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,3.8vw,42px);font-weight:700;margin-bottom:12px;color:#fff}
+.vcta h2 em{font-style:italic;color:var(--gold-l)}
+.vcta p{color:#b9b0a0;margin-bottom:30px}
+footer{background:var(--onyx);color:#8d867a;padding:42px 0 112px;text-align:center;font-size:13px}
+footer .fin{font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-l);display:block;margin-bottom:12px}
+footer a{color:var(--gold-l);text-decoration:none}
+.stickybar{display:none}
+.footnote{font-size:12.5px;color:var(--mut);margin-top:24px;text-align:center}
+@media(max-width:900px){
+  .hnav a.nl{display:none}
+  .collage{grid-template-columns:1fr;grid-template-rows:auto}
+  .collage figure.big{grid-row:auto}
+  .collage img{height:300px}
+  .promise{grid-template-columns:1fr}
+  .pr{border-left:none;border-top:1px solid var(--line)}
+  .pr:first-child{border-top:none}
+  .svcrow{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr}
+  .gal img{height:240px}
+  .vgrid{grid-template-columns:1fr;gap:34px}
+  .sec{padding:64px 0}
+  .stickybar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50}
+  .stickybar a{flex:1;text-align:center;padding:17px 0;text-decoration:none;font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;min-height:54px;display:flex;align-items:center;justify-content:center}
+  .stickybar .dm{background:var(--onyx);color:#fbfaf7}
+  .stickybar .ig{background:linear-gradient(135deg,var(--gold-l),var(--gold));color:#1c1508}
+  footer{padding-bottom:150px}
+}
+@media(max-width:560px){.gal{grid-template-columns:1fr}.gal img{height:270px}}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="#">NAOMI'S <b>HEADMASTERS</b></a>
+    <nav class="hnav">
+      <a class="nl" href="#promise">Why Us</a><a class="nl" href="#services">Services</a><a class="nl" href="#gallery">Gallery</a><a class="nl" href="#visit">Visit</a>
+      <a class="btn btn-onyx" href="https://instagram.com/naomis.headmasters" target="_blank" rel="noopener">Book</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="giant">Luxury glam,<br><em>flawless</em> HD finish.</div>
+    <div class="meta"><span><b>13K</b> Instagram community</span><span><b>Sector 8</b> Panchkula</span><span><b>Franchise</b> luxury standard</span></div>
+    <div class="collage">
+      <figure class="big"><img src="https://files.catbox.moe/us1efn.jpg" alt="Naomi's Headmasters salon"><figcaption>Our studio · Sector 8</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/cqysa2.jpg" alt="Inside Naomi's Headmasters"><figcaption>The floor</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/vwz5bo.webp" alt="Naomi's Headmasters work"><figcaption>Signature work</figcaption></figure>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="https://instagram.com/naomis.headmasters" target="_blank" rel="noopener">DM @naomis.headmasters</a>
+      <a class="btn btn-line" href="#services">Explore Services</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true">
+  <div class="track">
+    <span>HD Makeup</span><span>Luxury Hair Colour</span><span>Bridal Artistry</span><span>Precision Styling</span><span>HD Makeup</span><span>Luxury Hair Colour</span><span>Bridal Artistry</span><span>Precision Styling</span>
+  </div>
+</div>
+
+<section class="sec" id="promise">
+  <div class="wrap">
+    <span class="kick">The Headmasters Promise</span>
+    <h2 class="serif">Franchise luxury, <em>personal</em> care.</h2>
+    <p class="sub">The Panchkula Sector 8 studio brings the Naomi's Headmasters standard — trained artists, premium products, and finishes that hold up in HD.</p>
+    <div class="promise">
+      <div class="pr"><span class="n">No. 1</span><h3 class="serif">HD-Finish Makeup</h3><p>Camera-ready makeup engineered for weddings and shoots — flawless in person, perfect in photographs.</p></div>
+      <div class="pr"><span class="n">No. 2</span><h3 class="serif">Luxury Colour Science</h3><p>Balayage, global colour and glossing with premium colour lines, mapped to your skin tone.</p></div>
+      <div class="pr"><span class="n">No. 3</span><h3 class="serif">Trained Artists</h3><p>A franchise-trained team with one standard across every chair — consistency you can trust.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sig" id="services">
+  <div class="wrap">
+    <span class="kick">Signature Services</span>
+    <h2 class="serif">The <em>menu</em>.</h2>
+    <p class="sub" style="color:#b9b0a0">Panchkula Sector 8 studio · personalised quotes on Instagram DM.</p>
+    <div class="svcrow">
+      <div class="svc"><span class="idx">01</span><div><h3 class="serif">HD &amp; Bridal Makeup</h3><p>Signature HD bridal looks, party makeup and complete wedding-day artistry with trials.</p><a class="p" href="https://instagram.com/naomis.headmasters" target="_blank" rel="noopener">Enquire</a></div></div>
+      <div class="svc"><span class="idx">02</span><div><h3 class="serif">Luxury Hair Colour</h3><p>Global colour, balayage, highlights and glossing — mapped, mixed and finished in-house.</p><a class="p" href="https://instagram.com/naomis.headmasters" target="_blank" rel="noopener">Enquire</a></div></div>
+      <div class="svc"><span class="idx">03</span><div><h3 class="serif">Cut &amp; Styling</h3><p>Precision cuts, blowouts and occasion styling from senior stylists.</p><a class="p" href="https://instagram.com/naomis.headmasters" target="_blank" rel="noopener">Enquire</a></div></div>
+      <div class="svc"><span class="idx">04</span><div><h3 class="serif">Skin &amp; Rituals</h3><p>Facials, cleanups and pre-bridal skin rituals for the lit-from-within glow.</p><a class="p" href="https://instagram.com/naomis.headmasters" target="_blank" rel="noopener">Enquire</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <span class="kick">Gallery</span>
+    <h2 class="serif">The work <em>speaks</em>.</h2>
+    <div class="gal">
+      <figure><img src="https://files.catbox.moe/6rrjsb.jpg" alt="Naomi's Headmasters feature"><figcaption>Our studio</figcaption></figure>
+      <figure><img src="images/studio.jpg" alt="Naomi's Headmasters Sector 8"><figcaption>Sector 8</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/cqysa2.jpg" alt="Salon interior"><figcaption>The floor</figcaption></figure>
+      <figure><img src="https://files.catbox.moe/vwz5bo.webp" alt="Signature work"><figcaption>Signature work</figcaption></figure>
+    </div>
+    <div class="branch">
+      <h3 class="serif">Visiting the <em>Sector 8, Panchkula</em> studio.</h3>
+      <p>Naomi's Headmasters has outlets across the Tricity — this page is for the Panchkula Sector 8 branch. Mention "Sector 8" when you DM so the right team replies.</p>
+    </div>
+    <p class="footnote">Photos from the brand's public listings and site. Services from public listings; pricing quoted personally on Instagram.</p>
+  </div>
+</section>
+
+<section class="sec visit" id="visit">
+  <div class="wrap">
+    <span class="kick">Visit</span>
+    <h2 class="serif">Book your <em>chair</em>.</h2>
+    <div class="vgrid">
+      <div>
+        <div class="vitem"><span class="lab">Address</span><p>Sector 8, Panchkula, Haryana<br><span style="color:var(--mut);font-size:14px">Panchkula branch — exact studio address on booking.</span></p></div>
+        <div class="vitem"><span class="lab">Instagram</span><p><a href="https://instagram.com/naomis.headmasters" target="_blank" rel="noopener">@naomis.headmasters</a><br><span style="color:var(--mut);font-size:14px">13K followers · active May 2026</span></p></div>
+        <div class="vitem"><span class="lab">Booking</span><p>Instagram DM only</p></div>
+        <div class="btnrow" style="justify-content:flex-start"><a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=Naomi%27s+Headmasters+Sector+8+Panchkula" target="_blank" rel="noopener">Open in Maps</a></div>
+      </div>
+      <div class="vcta">
+        <h2 class="serif">13,000 followers <em>can't be wrong</em>.</h2>
+        <p>DM the studio — a real team member confirms your slot personally.</p>
+        <div class="btnrow" style="justify-content:center">
+          <a class="btn btn-gold" href="https://instagram.com/naomis.headmasters" target="_blank" rel="noopener">DM to Book</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="fin">Naomi's Headmasters · Sector 8, Panchkula</span>
+    <p>Demo by <b>StyleFrame Co.</b> — a concept preview for the Panchkula branch team. Services from public listings; confirm on Instagram.</p>
+  </div>
+</footer>
+
+<div class="stickybar">
+  <a class="dm" href="https://instagram.com/naomis.headmasters" target="_blank" rel="noopener">DM to Book</a>
+  <a class="ig" href="https://instagram.com/naomis.headmasters" target="_blank" rel="noopener">@naomis.headmasters</a>
+</div>
+
+</body>
+</html>
