@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riot Ink — Loud Tattoos, Walk-In Fridays · Mohali</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--riot:#c1121f;--paper:#f2ede4;--ink:#1a1a1a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:'Prompt',sans-serif;font-weight:400;
+  font-size:clamp(1.05rem,2.1vw,1.25rem);line-height:1.6;overflow-x:hidden;}
+h1,h2,h3{font-family:'New Rocker',cursive;font-weight:400;line-height:1.15;}
+::selection{background:var(--riot);color:var(--paper);}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+section{padding:clamp(76px,10vh,120px) 0;position:relative;}
+/* marquee */
+.marquee{background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding:14px 0;border-top:3px solid var(--riot);border-bottom:3px solid var(--riot);}
+.marquee .track{display:inline-block;animation:mq 22s linear infinite;font-family:'New Rocker',cursive;font-size:1.4rem;letter-spacing:.08em;}
+.marquee .track span{margin:0 26px;}
+.marquee .track b{color:var(--riot);font-weight:400;}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+header.hero{min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;
+  background:radial-gradient(circle at 50% 30%,#f7f3ea 0%,var(--paper) 55%);}
+.hero .stamp{position:absolute;font-family:'New Rocker',cursive;color:var(--riot);border:4px solid var(--riot);border-radius:8px;
+  padding:10px 22px;font-size:clamp(1.1rem,3vw,1.7rem);transform:rotate(-12deg);opacity:.9;}
+.stamp.s1{top:12%;left:7%;}.stamp.s2{bottom:14%;right:6%;transform:rotate(9deg);}
+.eyebrow{letter-spacing:.4em;text-transform:uppercase;font-size:.95rem;font-weight:700;color:var(--riot);margin-bottom:24px;}
+h1{font-size:clamp(3rem,11vw,6.4rem);margin-bottom:18px;}
+h1 .red{color:var(--riot);}
+.hero p.lede{max-width:38ch;margin:0 auto 38px;font-size:clamp(1.15rem,2.6vw,1.45rem);font-weight:300;}
+.btn{display:inline-block;font-family:'Prompt',sans-serif;font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:1rem;
+  color:var(--paper);background:var(--riot);border:3px solid var(--riot);padding:16px 44px;text-decoration:none;cursor:pointer;
+  box-shadow:6px 6px 0 var(--ink);transition:all .18s ease;}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink);}
+.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink);}
+.btn.dark{background:var(--ink);border-color:var(--ink);color:var(--paper);box-shadow:6px 6px 0 var(--riot);}
+h2.sec{font-size:clamp(2.2rem,6vw,3.4rem);text-align:center;margin-bottom:10px;}
+.kicker{text-align:center;font-weight:700;letter-spacing:.3em;text-transform:uppercase;font-size:.9rem;color:var(--riot);margin-bottom:50px;}
+/* gig-poster wall: rotated posters slam in */
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:30px;}
+.poster{background:#fff;border:3px solid var(--ink);padding:14px 14px 18px;text-align:center;position:relative;
+  transform:rotate(var(--tilt,0deg)) scale(1.7);opacity:0;transition:transform .55s cubic-bezier(.2,1.4,.3,1),opacity .4s,box-shadow .25s;}
+.poster.in{transform:rotate(var(--tilt,0deg)) scale(1);opacity:1;}
+.poster:hover{box-shadow:8px 8px 0 var(--riot);z-index:2;}
+.poster .art{height:150px;display:flex;align-items:center;justify-content:center;background:var(--ink);margin-bottom:12px;overflow:hidden;}
+.poster .art svg{width:110px;height:110px;}
+.poster h3{font-size:1.5rem;margin-bottom:4px;}
+.poster .pp{font-weight:700;color:var(--riot);}
+.poster .pin{position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:26px;height:26px;}
+.poster .pin:hover{animation:shake .4s ease;}
+@keyframes shake{0%,100%{transform:translateX(-50%) rotate(0)}25%{transform:translateX(-50%) rotate(-14deg)}75%{transform:translateX(-50%) rotate(14deg)}}
+/* artists — ransom-note rows */
+.arow{display:grid;grid-template-columns:1fr auto;gap:8px 22px;align-items:center;padding:26px 6px;border-top:3px solid var(--ink);}
+.arow:last-child{border-bottom:3px solid var(--ink);}
+.arow h3{font-size:clamp(1.6rem,4.5vw,2.3rem);}
+.arow h3 .tag{display:inline-block;background:var(--riot);color:var(--paper);font-family:'Prompt',sans-serif;font-weight:700;font-size:.75rem;
+  letter-spacing:.2em;padding:5px 12px;vertical-align:middle;margin-left:12px;transform:rotate(-3deg);}
+.arow p{grid-column:1;font-weight:300;}
+.arow .abook{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.95rem;color:var(--riot);text-decoration:none;border-bottom:2px solid var(--riot);white-space:nowrap;}
+/* aftercare accordion */
+.acc{max-width:720px;margin:0 auto;}
+.acc-item{border:3px solid var(--ink);margin-bottom:16px;background:#fff;}
+.acc-head{width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 24px;background:none;border:none;cursor:pointer;
+  font-family:'New Rocker',cursive;font-size:1.4rem;color:var(--ink);text-align:left;}
+.acc-head .x{font-family:'Prompt',sans-serif;font-weight:700;font-size:1.6rem;color:var(--riot);transition:transform .3s;}
+.acc-item.open .acc-head .x{transform:rotate(45deg);}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.acc-body p{padding:0 24px 24px;font-weight:300;}
+/* booking */
+form.book{max-width:560px;margin:0 auto;}
+.field{margin-bottom:22px;}
+.field label{display:block;font-weight:700;font-size:.9rem;letter-spacing:.28em;text-transform:uppercase;margin-bottom:8px;}
+.field label .red{color:var(--riot);}
+.field input,.field select{width:100%;font-family:'Prompt',sans-serif;font-size:1.2rem;background:#fff;border:3px solid var(--ink);color:var(--ink);padding:13px 16px;outline:none;}
+.field input:focus,.field select:focus{border-color:var(--riot);}
+.field select option{color:#1a1a1a;}
+#confirm{display:none;margin-top:26px;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--riot);background:#fff;padding:26px;text-align:center;font-size:1.2rem;}
+footer{background:var(--ink);color:var(--paper);padding:54px 0 80px;text-align:center;}
+footer .fh{font-family:'New Rocker',cursive;font-size:2rem;margin-bottom:10px;}
+footer .fh b{color:var(--riot);font-weight:400;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){.reveal,.poster{opacity:1;transform:none}.marquee .track{animation:none}}
+</style>
+</head>
+<body>
+<div class="marquee" aria-hidden="true"><div class="track" id="mqTrack">
+<span>WALK-IN FRIDAYS <b>///</b></span><span>FLASH FROM ₹1,500 <b>///</b></span><span>NO APPOINTMENT NO PROBLEM <b>///</b></span><span>18+ ONLY <b>///</b></span><span>WALK-IN FRIDAYS <b>///</b></span><span>FLASH FROM ₹1,500 <b>///</b></span><span>NO APPOINTMENT NO PROBLEM <b>///</b></span><span>18+ ONLY <b>///</b></span>
+</div></div>
+
+<header class="hero">
+  <div class="stamp s1">EST.<br>2018</div><div class="stamp s2">MOHALI<br>PUNJAB</div>
+  <div class="wrap">
+    <div class="eyebrow reveal">punk tattoo studio · Mohali</div>
+    <h1 class="reveal">RIOT <span class="red">INK</span></h1>
+    <p class="lede reveal">gig-poster flash, safety-pin energy, zero pretension. Walk in on a Friday, walk out with something loud.</p>
+    <a class="btn reveal" href="#booking">Book a chair</a>
+  </div>
+</header>
+
+<section id="flash"><div class="wrap">
+  <h2 class="sec reveal">Flash riot</h2><div class="kicker reveal">this week's wall · first come first served</div>
+  <div class="wall">
+    <div class="poster" style="--tilt:-3deg"><svg class="pin" viewBox="0 0 26 26"><circle cx="13" cy="5" r="4" fill="none" stroke="#c1121f" stroke-width="3"/><path d="M13 9 L8 24 M13 9 L18 24" stroke="#c1121f" stroke-width="3"/></svg><div class="art"><svg viewBox="0 0 110 110"><g stroke="#f2ede4" stroke-width="4" fill="none"><path d="M30 80 L55 20 L80 80 Z"/><path d="M40 60 H70" stroke="#c1121f"/><circle cx="55" cy="88" r="6" fill="#c1121f" stroke="none"/></g></svg></div><h3>Anarchy Tri</h3><div class="pp">₹1,500</div></div>
+    <div class="poster" style="--tilt:2.5deg"><svg class="pin" viewBox="0 0 26 26"><circle cx="13" cy="5" r="4" fill="none" stroke="#c1121f" stroke-width="3"/><path d="M13 9 L8 24 M13 9 L18 24" stroke="#c1121f" stroke-width="3"/></svg><div class="art"><svg viewBox="0 0 110 110"><g stroke="#f2ede4" stroke-width="4" fill="none"><circle cx="55" cy="55" r="30"/><path d="M55 25 V85 M25 55 H85" stroke="#c1121f"/></g></svg></div><h3>Crosshair</h3><div class="pp">₹1,800</div></div>
+    <div class="poster" style="--tilt:-2deg"><svg class="pin" viewBox="0 0 26 26"><circle cx="13" cy="5" r="4" fill="none" stroke="#c1121f" stroke-width="3"/><path d="M13 9 L8 24 M13 9 L18 24" stroke="#c1121f" stroke-width="3"/></svg><div class="art"><svg viewBox="0 0 110 110"><g stroke="#f2ede4" stroke-width="4" fill="none"><path d="M25 75 Q55 75 55 40 Q55 20 75 20"/><path d="M25 75 L25 90 M85 20 L85 35" stroke="#c1121f"/></g></svg></div><h3>Static Bolt</h3><div class="pp">₹2,000</div></div>
+    <div class="poster" style="--tilt:3deg"><svg class="pin" viewBox="0 0 26 26"><circle cx="13" cy="5" r="4" fill="none" stroke="#c1121f" stroke-width="3"/><path d="M13 9 L8 24 M13 9 L18 24" stroke="#c1121f" stroke-width="3"/></svg><div class="art"><svg viewBox="0 0 110 110"><g stroke="#f2ede4" stroke-width="4" fill="none"><rect x="30" y="30" width="50" height="50" transform="rotate(45 55 55)"/><circle cx="55" cy="55" r="8" fill="#c1121f" stroke="none"/></g></svg></div><h3>Riot Diamond</h3><div class="pp">₹2,200</div></div>
+    <div class="poster" style="--tilt:-3.5deg"><svg class="pin" viewBox="0 0 26 26"><circle cx="13" cy="5" r="4" fill="none" stroke="#c1121f" stroke-width="3"/><path d="M13 9 L8 24 M13 9 L18 24" stroke="#c1121f" stroke-width="3"/></svg><div class="art"><svg viewBox="0 0 110 110"><g stroke="#f2ede4" stroke-width="4" fill="none"><path d="M55 15 L65 45 L95 45 L70 62 L80 92 L55 74 L30 92 L40 62 L15 45 L45 45 Z"/></g></svg></div><h3>Dead Star</h3><div class="pp">₹2,500</div></div>
+    <div class="poster" style="--tilt:2deg"><svg class="pin" viewBox="0 0 26 26"><circle cx="13" cy="5" r="4" fill="none" stroke="#c1121f" stroke-width="3"/><path d="M13 9 L8 24 M13 9 L18 24" stroke="#c1121f" stroke-width="3"/></svg><div class="art"><svg viewBox="0 0 110 110"><g stroke="#f2ede4" stroke-width="4" fill="none"><path d="M30 55 H80 M55 30 V80"/><path d="M40 40 L70 70 M70 40 L40 70" stroke="#c1121f"/></g></svg></div><h3>Noise Mark</h3><div class="pp">₹1,500</div></div>
+  </div>
+</div></section>
+
+<section id="artists"><div class="wrap">
+  <h2 class="sec reveal">The loudmouths</h2><div class="kicker reveal">resident artists</div>
+  <div class="reveal">
+    <div class="arow"><div><h3>Simran "Slam" Kaur <span class="tag">FRIDAYS</span></h3><p>ignorant-style bangers and punk flash. Fastest hands in Mohali — most flash done in under an hour.</p></div><a class="abook" href="#booking">book simran</a></div>
+    <div class="arow"><div><h3>Dev "Decibel" Singh</h3><p>blackwork sleeves with hardcore-flyer energy. Currently booking large-scale pieces for winter.</p></div><a class="abook" href="#booking">book dev</a></div>
+    <div class="arow"><div><h3>Tara "Tear" Gill <span class="tag">GUEST</span></h3><p>Delhi guest artist, here till Diwali. Sticker-slap style tattoos — small, loud, gone by November.</p></div><a class="abook" href="#booking">book tara</a></div>
+  </div>
+</div></section>
+
+<section id="aftercare"><div class="wrap">
+  <h2 class="sec reveal">Aftercare</h2><div class="kicker reveal">don't mess it up</div>
+  <div class="acc reveal">
+    <div class="acc-item"><button class="acc-head">Days 1–3: the plastic era <span class="x">+</span></button><div class="acc-body"><p>Keep the second-skin on for 72 hours unless it leaks. When it comes off, wash with lukewarm water and fragrance-free soap. Pat dry — never rub.</p></div></div>
+    <div class="acc-item"><button class="acc-head">Days 4–14: the itch <span class="x">+</span></button><div class="acc-body"><p>Thin layer of the balm we give you, twice a day. Do not scratch, do not pick, do not "just check" the scab. It itches because it's healing — congratulations.</p></div></div>
+    <div class="acc-item"><button class="acc-head">The first month <span class="x">+</span></button><div class="acc-body"><p>No swimming, no gym sweat-sessions, no sunbathing. After 30 days: sunscreen forever. Your tattoo's enemy is UV, not us.</p></div></div>
+    <div class="acc-item"><button class="acc-head">Free touch-up policy <span class="x">+</span></button><div class="acc-body"><p>One free touch-up within 6 months if anything heals patchy. After that it's ₹1,000 a sitting — still cheap, still loud.</p></div></div>
+  </div>
+</div></section>
+
+<section id="booking"><div class="wrap">
+  <h2 class="sec reveal">Book a chair</h2><div class="kicker reveal">or just show up friday</div>
+  <form class="book reveal" id="bookForm">
+    <div class="field"><label for="bname">Name <span class="red">*</span></label><input id="bname" required placeholder="Harpreet Singh"></div>
+    <div class="field"><label for="bphone">Phone <span class="red">*</span></label><input id="bphone" required inputmode="tel" placeholder="+91 98XXX XXXXX"></div>
+    <div class="field"><label for="bart">Artist</label><select id="bart"><option>Simran "Slam" Kaur</option><option>Dev "Decibel" Singh</option><option>Tara "Tear" Gill (guest)</option><option>Walk-in Friday — whoever's free</option></select></div>
+    <div class="field"><label for="bwhen">When</label><input id="bwhen" type="date" required></div>
+    <button class="btn" type="submit" style="width:100%">Claim my chair</button>
+    <div id="confirm" role="status"></div>
+  </form>
+</div></section>
+
+<footer><div class="wrap"><div class="fh">RIOT <b>INK</b></div>SCO 312, Phase 7, Mohali · walk-in Fridays 12–8 PM · appointments Tue–Sun<br>18+ only · flash from ₹1,500 · bring ID, leave with ink</div></footer>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.2});
+document.querySelectorAll('.reveal,.poster').forEach(el=>io.observe(el));
+// accordion
+document.querySelectorAll('.acc-head').forEach(h=>h.addEventListener('click',()=>{
+  const item=h.parentElement, body=item.querySelector('.acc-body'), open=item.classList.contains('open');
+  document.querySelectorAll('.acc-item.open').forEach(o=>{o.classList.remove('open');o.querySelector('.acc-body').style.maxHeight=null;});
+  if(!open){item.classList.add('open');body.style.maxHeight=body.scrollHeight+'px';}
+}));
+// booking
+document.getElementById('bookForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const n=document.getElementById('bname').value.trim(), a=document.getElementById('bart').value, d=document.getElementById('bwhen').value;
+  const c=document.getElementById('confirm'); c.style.display='block';
+  c.innerHTML='<strong>'+n+'</strong> — chair requested with <strong>'+a+'</strong> for <strong>'+d+'</strong>.<br>We will text you a time slot. Do not be late; punks hate waiting.';
+});
+</script>
+</body>
+</html>

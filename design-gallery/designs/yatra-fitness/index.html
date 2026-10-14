@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yatra Fitness — Outdoor Bootcamp, Chandigarh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Be+Vietnam+Pro:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--trail:#8a6d4b;--sand:#f0e8d8;--pine:#33402a;--sky:#dfe9d8;--rust:#b4552d}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--sand);color:var(--pine);font-family:'Be Vietnam Pro',sans-serif;overflow-x:hidden;line-height:1.7}
+h1,h2,h3,.yatra{font-family:'Yatra One',system-ui}
+img,svg{max-width:100%}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.on{opacity:1;transform:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(51,64,42,.96)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.logo{font-family:'Yatra One';color:var(--sand);text-decoration:none;font-size:1.2rem}
+.logo b{color:#e8b04b;font-weight:400}
+nav a.cta{background:#e8b04b;color:var(--pine);text-decoration:none;font-weight:800;padding:10px 20px;font-size:.85rem;border-radius:999px}
+nav a.cta:hover{background:#fff}
+/* hero — topo map bg via svg contours */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;
+  background:linear-gradient(180deg,#cfdcc3 0%,var(--sand) 60%,var(--sand) 100%)}
+.hero::before{content:"";position:absolute;inset:0;opacity:.35;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cg fill='none' stroke='%238a6d4b' stroke-width='1.5' opacity='0.6'%3E%3Cellipse cx='200' cy='200' rx='180' ry='140'/%3E%3Cellipse cx='200' cy='200' rx='140' ry='105'/%3E%3Cellipse cx='200' cy='200' rx='100' ry='72'/%3E%3Cellipse cx='200' cy='200' rx='60' ry='42'/%3E%3Cellipse cx='200' cy='200' rx='24' ry='16'/%3E%3C/g%3E%3C/svg%3E")}
+.hero .wrap{position:relative;z-index:2}
+.tag{display:inline-block;background:var(--pine);color:var(--sand);font-size:.78rem;font-weight:800;letter-spacing:.2em;padding:8px 18px;border-radius:999px;text-transform:uppercase}
+h1{font-size:clamp(2.8rem,9vw,5.6rem);line-height:1.05;margin:16px 0;color:var(--pine)}
+h1 .r{color:var(--rust)}
+.hero p.lead{max-width:580px;font-size:1.06rem;color:#4a5540}
+.btn{display:inline-block;background:var(--pine);color:var(--sand);text-decoration:none;font-weight:800;padding:15px 34px;border-radius:999px}
+.btn:hover{background:var(--rust);color:#fff}
+.btn.ghost{background:transparent;color:var(--pine);border:2px solid var(--pine);margin-left:12px}
+.btn.ghost:hover{background:var(--pine);color:var(--sand)}
+.hero-badges{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+.hb{background:rgba(255,255,255,.7);border:1px solid var(--trail);border-radius:14px;padding:14px 20px}
+.hb strong{font-family:'Yatra One';font-size:1.5rem;color:var(--pine);display:block}
+.hb span{font-size:.76rem;text-transform:uppercase;letter-spacing:.14em;color:var(--trail)}
+/* trail route drawing */
+.route-sec{padding:90px 0;background:var(--sand)}
+.sec-k{font-weight:800;font-size:.78rem;letter-spacing:.26em;color:var(--rust);text-transform:uppercase}
+h2{font-size:clamp(1.8rem,5vw,2.8rem);margin:10px 0 14px;color:var(--pine)}
+.sub{color:#5c6650;max-width:620px;margin-bottom:20px}
+.mapbox{background:#fbf7ec;border:2px solid var(--trail);border-radius:18px;padding:14px;margin:26px 0}
+.mapbox svg{width:100%;height:auto;display:block}
+.pin{opacity:0;transform:translateY(-14px);transition:opacity .4s,transform .4s cubic-bezier(.34,1.56,.64,1)}
+.pin.on{opacity:1;transform:none}
+.trail-legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:30px}
+.leg{display:flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600;color:var(--pine)}
+.leg i{width:26px;height:6px;border-radius:3px;display:block}
+.trails{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.trail-card{background:#fbf7ec;border:2px solid var(--trail);border-radius:16px;padding:26px;position:relative}
+.trail-card .wp{position:absolute;top:-16px;left:22px;background:var(--pine);color:var(--sand);font-family:'Yatra One';width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.trail-card h3{font-size:1.35rem;margin:6px 0 8px}
+.trail-card .diff{font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.d-easy{color:#4a7a3a}.d-mod{color:var(--rust)}.d-hard{color:#a32e2e}
+.trail-card p{font-size:.92rem;color:#5c6650;margin:10px 0}
+.trail-card .stats{display:flex;gap:16px;margin-top:12px}
+.trail-card .stats div strong{font-family:'Yatra One';font-size:1.2rem;display:block}
+.trail-card .stats div span{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--trail)}
+/* elevation profile */
+.elev{margin:10px 0 30px;background:#fbf7ec;border:2px solid var(--trail);border-radius:16px;padding:22px}
+.elev svg{width:100%;height:auto;display:block}
+/* schedule */
+.sched{background:var(--pine);color:var(--sand)}
+.sched h2{color:var(--sand)}
+.sched .sec-k{color:#e8b04b}
+.sched .sub{color:#b9c2ab}
+.days{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.day{background:rgba(240,232,216,.06);border:1px solid rgba(240,232,216,.25);border-radius:14px;padding:20px}
+.day .d{font-family:'Yatra One';color:#e8b04b;font-size:1.1rem}
+.day .t{font-weight:800;margin:8px 0 4px}
+.day p{font-size:.85rem;color:#b9c2ab}
+/* crew */
+.crew{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.member{background:#fbf7ec;border:2px solid var(--trail);border-radius:16px;padding:24px;text-align:center}
+.member .face{width:80px;height:80px;border-radius:50%;margin:0 auto 14px;background:conic-gradient(var(--trail),var(--pine),var(--trail));display:flex;align-items:center;justify-content:center;font-family:'Yatra One';font-size:1.5rem;color:var(--sand)}
+.member h3{font-size:1.15rem}
+.member .role{font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--rust)}
+.member p{font-size:.9rem;color:#5c6650;margin-top:8px}
+/* book */
+.book{background:linear-gradient(180deg,var(--sand),#e2d5ba)}
+form{display:grid;gap:12px;max-width:540px;margin-top:24px}
+label{font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:var(--trail)}
+input,select{background:#fbf7ec;border:2px solid var(--trail);color:var(--pine);padding:13px;font-family:'Be Vietnam Pro';font-size:1rem;width:100%;border-radius:10px}
+input:focus,select:focus{outline:none;border-color:var(--rust)}
+#ok{display:none;background:#eef6df;border:2px solid #5c8a3a;padding:16px;color:var(--pine);font-weight:600;border-radius:10px}
+footer{background:var(--pine);color:#b9c2ab;padding:26px 0;font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">YATRA<b>FITNESS</b></a>
+    <a class="cta" href="#book">Book Free Trial</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="tag rv on">Outdoor Bootcamp · Chandigarh</span>
+    <h1 class="rv on">THE TRAIL IS<br>YOUR <span class="r">TREADMILL.</span></h1>
+    <p class="lead rv on">Yatra Fitness runs sunrise bootcamps on Sukhna Lake's trails and the Shivalik foothills — no walls, no mirrors, no machines. Just bodyweight, hills, and a crew that shows up at 5:30 AM with you.</p>
+    <div class="rv on" style="margin-top:26px">
+      <a class="btn" href="#book">Join the Next Yatra</a>
+      <a class="btn ghost" href="#trails">See the Trails</a>
+    </div>
+    <div class="hero-badges rv on">
+      <div class="hb"><strong>5:30 AM</strong><span>Sunrise bootcamp daily</span></div>
+      <div class="hb"><strong>₹999</strong><span>Per month, all trails</span></div>
+      <div class="hb"><strong>12 km</strong><span>Of mapped routes</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="route-sec" id="trails">
+  <div class="wrap">
+    <div class="sec-k rv">Waypoint 01 · The Routes</div>
+    <h2 class="rv">Three trails. Pick your suffering.</h2>
+    <p class="sub rv">Every route is mapped, marshalled and swept. Water stations at every waypoint pin.</p>
+    <div class="trail-legend rv">
+      <div class="leg"><i style="background:#4a7a3a"></i>Lake Loop — Easy</div>
+      <div class="leg"><i style="background:#b4552d"></i>Garden Ridge — Moderate</div>
+      <div class="leg"><i style="background:#a32e2e"></i>Foothill Climb — Hard</div>
+    </div>
+    <div class="mapbox rv">
+      <svg viewBox="0 0 900 380" aria-label="Trail map of three routes">
+        <rect x="0" y="0" width="900" height="380" fill="#fbf7ec" rx="10"/>
+        <!-- lake -->
+        <ellipse cx="200" cy="260" rx="130" ry="70" fill="#cfe0e8" stroke="#8a6d4b" stroke-width="2"/>
+        <text x="150" y="265" fill="#5c6650" font-size="14" font-family="Be Vietnam Pro">SUKHNA LAKE</text>
+        <!-- routes: drawn with scroll -->
+        <path id="route1" d="M120,200 C180,120 320,120 380,180 C440,240 520,220 560,160" fill="none" stroke="#4a7a3a" stroke-width="5" stroke-linecap="round"/>
+        <path id="route2" d="M560,160 C620,120 700,140 740,200 C770,250 800,280 830,300" fill="none" stroke="#b4552d" stroke-width="5" stroke-linecap="round"/>
+        <path id="route3" d="M740,200 C780,140 820,90 860,60" fill="none" stroke="#a32e2e" stroke-width="5" stroke-linecap="round"/>
+        <!-- waypoint pins -->
+        <g class="pin" data-pin="1"><circle cx="120" cy="200" r="12" fill="#4a7a3a"/><text x="114" y="205" fill="#fff" font-size="12" font-weight="800">A</text></g>
+        <g class="pin" data-pin="2"><circle cx="380" cy="180" r="12" fill="#4a7a3a"/><text x="374" y="185" fill="#fff" font-size="12" font-weight="800">B</text></g>
+        <g class="pin" data-pin="3"><circle cx="560" cy="160" r="12" fill="#b4552d"/><text x="554" y="165" fill="#fff" font-size="12" font-weight="800">C</text></g>
+        <g class="pin" data-pin="4"><circle cx="740" cy="200" r="12" fill="#b4552d"/><text x="734" y="205" fill="#fff" font-size="12" font-weight="800">D</text></g>
+        <g class="pin" data-pin="5"><circle cx="860" cy="60" r="12" fill="#a32e2e"/><text x="854" y="65" fill="#fff" font-size="12" font-weight="800">E</text></g>
+      </svg>
+    </div>
+    <div class="elev rv">
+      <div class="sec-k" style="margin-bottom:10px">Elevation — Foothill Climb</div>
+      <svg viewBox="0 0 900 160" aria-hidden="true">
+        <path id="elevPath" d="M0,130 C120,120 200,110 300,90 C420,60 520,70 640,45 C740,25 820,30 900,15 L900,160 L0,160 Z" fill="rgba(138,109,75,.25)" stroke="#8a6d4b" stroke-width="3"/>
+        <text x="20" y="30" fill="#8a6d4b" font-size="13" font-family="Be Vietnam Pro" font-weight="700">+320 m gain</text>
+        <text x="790" y="150" fill="#8a6d4b" font-size="13" font-family="Be Vietnam Pro">summit 5.2 km</text>
+      </svg>
+    </div>
+    <div class="trails">
+      <div class="trail-card rv"><div class="wp">A</div><h3>Lake Loop</h3><div class="diff d-easy">Easy · All levels</div><p>Flat 4 km lakeside loop with bodyweight stations every 500 m. The sunrise classic.</p><div class="stats"><div><strong>4 km</strong><span>Distance</span></div><div><strong>45 min</strong><span>Duration</span></div><div><strong>+10 m</strong><span>Gain</span></div></div></div>
+      <div class="trail-card rv"><div class="wp">C</div><h3>Garden Ridge</h3><div class="diff d-mod">Moderate · Regulars</div><p>Rose Garden stairs, ridge sprints and carry intervals through the Leisure Valley stretch.</p><div class="stats"><div><strong>6 km</strong><span>Distance</span></div><div><strong>60 min</strong><span>Duration</span></div><div><strong>+80 m</strong><span>Gain</span></div></div></div>
+      <div class="trail-card rv"><div class="wp">E</div><h3>Foothill Climb</h3><div class="diff d-hard">Hard · Veterans</div><p>Saturday expedition into the Shivaliks: 5.2 km climb, 320 m gain, breakfast at the top.</p><div class="stats"><div><strong>10.4 km</strong><span>Round trip</span></div><div><strong>3 hrs</strong><span>Duration</span></div><div><strong>+320 m</strong><span>Gain</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sched" id="schedule" style="padding:90px 0">
+  <div class="wrap">
+    <div class="sec-k rv">Waypoint 02 · The Schedule</div>
+    <h2 class="rv">Every day has a trail.</h2>
+    <p class="sub rv">Meet points are shared the evening before. Rain plan: covered pavilion circuits.</p>
+    <div class="days">
+      <div class="day rv"><div class="d">MON</div><div class="t">5:30 AM</div><p>Lake Loop + core stations</p></div>
+      <div class="day rv"><div class="d">TUE</div><div class="t">5:30 AM</div><p>Garden Ridge sprints</p></div>
+      <div class="day rv"><div class="d">WED</div><div class="t">5:30 AM</div><p>Lake Loop + carry day</p></div>
+      <div class="day rv"><div class="d">THU</div><div class="t">5:30 AM</div><p>Ridge stairs ladder</p></div>
+      <div class="day rv"><div class="d">FRI</div><div class="t">5:30 AM</div><p>Lake Loop time-trial</p></div>
+      <div class="day rv"><div class="d">SAT</div><div class="t">6:00 AM</div><p>Foothill Climb expedition</p></div>
+      <div class="day rv"><div class="d">SUN</div><div class="t">7:00 AM</div><p>Recovery walk + stretch</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="route-sec" id="crew">
+  <div class="wrap">
+    <div class="sec-k rv">Waypoint 03 · The Crew</div>
+    <h2 class="rv">Trail guides, not trainers.</h2>
+    <p class="sub rv">Certified in wilderness first aid. They've all finished the Foothill Climb under 90 minutes.</p>
+    <div class="crew">
+      <div class="member rv"><div class="face">DS</div><h3>Devinder "Dau" Singh</h3><div class="role">Founder · Lead Guide</div><p>Ex-army mountaineer. Mapped all three routes himself over 40 dawn recce runs.</p></div>
+      <div class="member rv"><div class="face">PK</div><h3>Priya Khanna</h3><div class="role">Bootcamp Coach</div><p>Designs the station workouts. Her burpee ladders are locally famous and feared.</p></div>
+      <div class="member rv"><div class="face">JT</div><h3>Jatin Thakur</h3><div class="role">Endurance · Safety</div><p>Trail runner and first-aid lead. Sweeps every route — nobody gets left behind.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book" style="padding:90px 0">
+  <div class="wrap">
+    <div class="sec-k rv">Waypoint 04 · Join</div>
+    <h2 class="rv">Your first yatra is free.</h2>
+    <p class="sub rv">₹999/month after that. No contracts — the trail doesn't do paperwork.</p>
+    <form class="rv" id="bookForm">
+      <div><label for="bname">Name</label><input id="bname" required placeholder="Tanya Sharma"></div>
+      <div><label for="bphone">Phone</label><input id="bphone" required pattern="[0-9+ ]{10,15}" placeholder="98XXX XXXXX"></div>
+      <div><label for="brail">First trail</label><select id="brail"><option>Lake Loop — Mon 5:30 AM</option><option>Garden Ridge — Tue 5:30 AM</option><option>Foothill Climb — Sat 6:00 AM</option></select></div>
+      <button class="btn" type="submit">Reserve Free Trial</button>
+      <div id="ok">You're on the list. The meet point and what-to-bring note arrive by SMS the evening before. See you at sunrise.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>YATRA FITNESS · Sukhna Lake Promenade, Chandigarh · Daily 5:30 AM</span>
+    <span>Leave only footprints.</span>
+  </div>
+</footer>
+
+<script>
+// scroll reveals
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// trail route draw: deterministic function of mapbox scroll progress
+const routes=['route1','route2','route3'].map(id=>document.getElementById(id));
+const pins=[...document.querySelectorAll('.pin')];
+const lens=routes.map(r=>r.getTotalLength());
+routes.forEach((r,i)=>{r.style.strokeDasharray=lens[i];r.style.strokeDashoffset=lens[i];});
+function drawRoutes(){
+  const box=document.querySelector('.mapbox').getBoundingClientRect(),vh=innerHeight;
+  const p=Math.min(1,Math.max(0,(vh*0.85-box.top)/(vh*0.75)));
+  const total=lens.reduce((a,b)=>a+b,0);
+  let acc=0;
+  routes.forEach((r,i)=>{
+    const start=acc/total,end=(acc+lens[i])/total;acc+=lens[i];
+    const local=Math.min(1,Math.max(0,(p-start)/(end-start)));
+    r.style.strokeDashoffset=lens[i]*(1-local);
+  });
+  pins.forEach(pin=>pin.classList.toggle('on',p>(parseInt(pin.dataset.pin)-0.5)/5));
+  requestAnimationFrame(drawRoutes);
+}
+requestAnimationFrame(drawRoutes);
+// elevation shimmer fill on scroll — static, drawn once
+document.getElementById('bookForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  e.target.querySelector('button').style.display='none';
+  document.getElementById('ok').style.display='block';
+});
+</script>
+</body>
+</html>

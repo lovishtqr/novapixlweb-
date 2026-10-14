@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Salt Room — Luxury Spa-Salon, Dharampur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--stone:#f7f4ee;--taupe:#8a7a6a;--sage:#9caf88;--slate:#3a3a35}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--stone);color:var(--slate);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.9;letter-spacing:.015em}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.15;letter-spacing:0}
+img,svg{max-width:100%;display:block}
+::selection{background:var(--sage);color:#fff}
+a{color:inherit}
+.col{max-width:680px;margin:0 auto;padding:0 1.5rem}
+.rule{width:56px;height:1px;background:var(--taupe);margin:2.2rem auto;opacity:.7}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:40;background:rgba(247,244,238,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(138,122,106,.25)}
+.nav-in{max-width:680px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.5rem}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.35rem;letter-spacing:.14em}
+.nav-in a{font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;color:var(--slate)}
+.nav-in a:hover{color:var(--taupe)}
+
+/* slow cinematic hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;padding:6rem 1.5rem 4rem}
+.hero .halo{position:absolute;width:min(88vw,560px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(156,175,136,.28),rgba(156,175,136,.06) 55%,transparent 70%);
+  animation:breathe 9s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.12);opacity:1}}
+.hero .kicker{font-size:.72rem;letter-spacing:.5em;text-transform:uppercase;color:var(--taupe);margin-bottom:2rem}
+.hero h1{font-size:clamp(2.6rem,8vw,4.8rem);max-width:12ch;font-weight:500}
+.hero h1 em{font-style:italic;color:var(--taupe)}
+.hero p{margin-top:1.8rem;max-width:44ch;color:#5c564d;font-size:1.05rem}
+.hero .cta{margin-top:2.6rem}
+.btn{display:inline-block;border:1px solid var(--slate);color:var(--slate);text-decoration:none;padding:1rem 2.6rem;font-size:.82rem;letter-spacing:.32em;text-transform:uppercase;transition:background 1.2s ease,color 1.2s ease}
+.btn:hover{background:var(--slate);color:var(--stone)}
+
+section{padding:clamp(4rem,10vh,7rem) 0}
+.eyebrow{text-align:center;font-size:.7rem;letter-spacing:.45em;text-transform:uppercase;color:var(--taupe);margin-bottom:1.4rem}
+h2.sec{text-align:center;font-size:clamp(1.9rem,5vw,2.9rem);margin-bottom:.6rem}
+.sec-sub{text-align:center;color:#6b6257;font-size:1rem;max-width:46ch;margin:0 auto}
+
+/* rituals */
+.ritual{margin:4.5rem 0;text-align:center}
+.ritual .num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--sage);letter-spacing:.2em}
+.ritual h3{font-size:clamp(1.7rem,4.5vw,2.4rem);margin:.7rem 0 1rem}
+.ritual p{color:#5c564d;max-width:52ch;margin:0 auto}
+.ritual .dur{display:inline-block;margin-top:1.2rem;font-size:.75rem;letter-spacing:.35em;text-transform:uppercase;color:var(--taupe);border-top:1px solid rgba(138,122,106,.4);border-bottom:1px solid rgba(138,122,106,.4);padding:.5rem 1.4rem}
+
+/* price list — quiet table */
+.prices{margin-top:3rem;border-top:1px solid rgba(58,58,53,.25)}
+.prow{display:flex;justify-content:space-between;align-items:baseline;gap:1.5rem;padding:1.3rem .2rem;border-bottom:1px solid rgba(58,58,53,.15)}
+.prow .n{font-family:'Cormorant Garamond',serif;font-size:1.35rem}
+.prow .d{display:block;font-family:'Jost';font-size:.88rem;color:#7a7268;font-weight:300}
+.prow .p{font-family:'Cormorant Garamond',serif;font-size:1.3rem;white-space:nowrap;color:var(--taupe)}
+
+/* journal */
+.journal-entry{margin:3.5rem 0}
+.journal-entry h3{font-size:1.6rem;font-style:italic;margin-bottom:.8rem}
+.journal-entry .date{font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;color:var(--sage);margin-bottom:.8rem;display:block}
+.journal-entry p{color:#5c564d}
+
+/* visit */
+.visit{background:#efe9dc}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3rem;align-items:start}
+.visit h3{font-size:1.5rem;margin-bottom:1rem}
+.visit p{color:#5c564d;margin:.4rem 0}
+form.book{display:grid;gap:1rem;margin-top:1.4rem}
+form.book input,form.book select{font-family:'Jost';font-size:1rem;font-weight:300;background:transparent;border:none;border-bottom:1px solid var(--taupe);padding:.7rem .1rem;color:var(--slate);width:100%;border-radius:0}
+form.book input:focus,form.book select:focus{outline:none;border-bottom-color:var(--slate)}
+form.book .btn{background:transparent;cursor:pointer;font-family:'Jost'}
+.ok{display:none;border:1px solid var(--sage);padding:1rem;color:#4a5d43;font-size:.95rem;letter-spacing:.05em}
+
+footer{text-align:center;padding:3rem 1.5rem;font-size:.78rem;letter-spacing:.35em;text-transform:uppercase;color:var(--taupe)}
+
+/* slow fade reveals — generous pacing, no bounce */
+.rv{opacity:0;transition:opacity 1.6s ease}
+.rv.in{opacity:1}
+@media(max-width:680px){.visit-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1}}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-in">
+  <span class="brand">THE SALT ROOM</span>
+  <a href="#visit">Reserve</a>
+</div></nav>
+
+<header class="hero">
+  <div class="halo" aria-hidden="true"></div>
+  <p class="kicker rv">A spa-salon · Kasauli Road, Dharampur</p>
+  <h1 class="rv">Ninety minutes of <em>nothing else.</em></h1>
+  <p class="rv">Himalayan salt therapy, warm stone rituals and long unhurried hands — in a pine-scented room above the valley, founded by Meera Anand.</p>
+  <div class="cta rv"><a class="btn" href="#rituals">Begin a Ritual</a></div>
+</header>
+
+<section class="col" id="rituals">
+  <p class="eyebrow rv">The Rituals</p>
+  <h2 class="sec rv">Three. Never more.</h2>
+  <p class="sec-sub rv">We keep the menu short so the attention stays long.</p>
+
+  <div class="ritual rv">
+    <span class="num">— i —</span>
+    <h3>Salt &amp; Stone</h3>
+    <p>A ninety-minute full-body ritual: warm Himalayan salt poultices, slow stone placement along the spine, and a scalp massage with cold-pressed oils. The room is kept at a drowsy 26 degrees.</p>
+    <span class="dur">90 minutes · ₹2,400</span>
+  </div>
+  <div class="rule rv"></div>
+  <div class="ritual rv">
+    <span class="num">— ii —</span>
+    <h3>Pine Silence</h3>
+    <p>Our signature quiet treatment. No conversation unless you begin it. Warm towels, eucalyptus steam, and a sixty-minute back, neck and shoulder sequence.</p>
+    <span class="dur">60 minutes · ₹1,800</span>
+  </div>
+  <div class="rule rv"></div>
+  <div class="ritual rv">
+    <span class="num">— iii —</span>
+    <h3>Valley Morning</h3>
+    <p>Booked only before 9 AM. A salt-scrub glow, hair ritual with amla oil, and breakfast tea served on the deck as the mist lifts off the valley.</p>
+    <span class="dur">120 minutes · ₹3,200</span>
+  </div>
+</section>
+
+<section class="col" style="padding-top:0">
+  <p class="eyebrow rv">Price List</p>
+  <h2 class="sec rv">Quietly, completely priced.</h2>
+  <div class="prices rv">
+    <div class="prow"><span class="n">Salt &amp; Stone<span class="d">full-body salt &amp; warm stone ritual</span></span><span class="p">₹2,400</span></div>
+    <div class="prow"><span class="n">Pine Silence<span class="d">back, neck &amp; shoulders · no talking</span></span><span class="p">₹1,800</span></div>
+    <div class="prow"><span class="n">Valley Morning<span class="d">scrub + hair ritual + deck tea</span></span><span class="p">₹3,200</span></div>
+    <div class="prow"><span class="n">Salt Room Sit<span class="d">45 min in the halotherapy chamber</span></span><span class="p">₹900</span></div>
+    <div class="prow"><span class="n">Foot &amp; Hand<span class="d">warm salt soak + pressure work</span></span><span class="p">₹1,100</span></div>
+  </div>
+</section>
+
+<section class="col" style="padding-top:0">
+  <p class="eyebrow rv">Journal</p>
+  <h2 class="sec rv">Notes on slowness.</h2>
+  <article class="journal-entry rv">
+    <span class="date">October 2026</span>
+    <h3>Why we removed the fourth ritual.</h3>
+    <p>For a year we offered four rituals. Guests chose faster, not better. So we took one away. Nobody has asked for it back — they ask, instead, to stay ten minutes longer in the salt room. We always say yes.</p>
+  </article>
+  <article class="journal-entry rv">
+    <span class="date">September 2026</span>
+    <h3>The pine oil comes from one grove.</h3>
+    <p>A single deodar grove above Dharampur supplies our oil. When the monsoon washes the path out, we simply wait. Some months the Pine Silence smells a little different. We think that is honest.</p>
+  </article>
+</section>
+
+<section class="visit" id="visit">
+  <div class="col">
+    <p class="eyebrow rv">Visit</p>
+    <h2 class="sec rv">Above the valley.</h2>
+    <div class="visit-grid">
+      <div class="rv">
+        <h3>The Salt Room</h3>
+        <p>Kasauli Road, Dharampur<br>Himachal Pradesh 173209</p>
+        <p>Wed – Mon · 9 AM – 6 PM<br>Tuesdays the room rests.</p>
+        <p>Founder: <b>Meera Anand</b><br>+91 98160 44521</p>
+      </div>
+      <form class="book rv" id="bookForm">
+        <input type="text" placeholder="Your name" required>
+        <input type="tel" placeholder="Phone" pattern="[0-9+ ]{10,15}" required>
+        <select required>
+          <option value="">Choose a ritual…</option>
+          <option>Salt &amp; Stone — ₹2,400</option>
+          <option>Pine Silence — ₹1,800</option>
+          <option>Valley Morning — ₹3,200</option>
+          <option>Salt Room Sit — ₹900</option>
+        </select>
+        <button class="btn" type="submit">Request Reservation</button>
+        <p class="ok" id="bookOk">Received. We confirm every reservation personally, by call, within a day.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>The Salt Room · Dharampur · est. 2019</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.getElementById('bookForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('bookOk').style.display='block';});
+</script>
+</body>
+</html>
