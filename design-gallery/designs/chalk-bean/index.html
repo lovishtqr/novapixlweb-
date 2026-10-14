@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chalk &amp; Bean — Chalkboard Café, Panchkula Sector 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--board:#2e2e2e;--chalk:#f5f2ea;--mint:#9fd6a4;--dust:#1f1f1f;--pink:#e8a0a8}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--board);color:var(--chalk);font-family:'Archivo',sans-serif;overflow-x:hidden;line-height:1.65;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E")}
+h1,h2,h3,.mk{font-family:'Permanent Marker',cursive;font-weight:400}
+img,svg{max-width:100%}
+.wrap{max-width:1020px;margin:0 auto;padding:0 20px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(31,31,31,.96);border-bottom:2px dashed rgba(245,242,234,.3)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.logo{font-family:'Permanent Marker';color:var(--chalk);text-decoration:none;font-size:1.25rem;transform:rotate(-2deg);display:inline-block}
+.logo b{color:var(--mint);font-weight:400}
+nav a.cta{border:2px solid var(--mint);color:var(--mint);text-decoration:none;font-weight:800;padding:9px 20px;border-radius:4px;font-size:.85rem;transform:rotate(1.5deg)}
+nav a.cta:hover{background:var(--mint);color:var(--board)}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;text-align:center}
+.frame{position:absolute;inset:26px;border:3px solid rgba(245,242,234,.55);border-radius:6px;pointer-events:none}
+.frame::before{content:"";position:absolute;inset:10px;border:1px dashed rgba(245,242,234,.3);border-radius:4px}
+.hero .wrap{position:relative;z-index:2}
+.date{font-family:'Permanent Marker';color:var(--mint);font-size:1.1rem;transform:rotate(-2deg);display:inline-block}
+h1{font-size:clamp(2.8rem,10vw,5.6rem);line-height:1.1;margin:14px 0;transform:rotate(-1deg)}
+h1 .m{color:var(--mint)}
+.hero p.lead{max-width:560px;margin:0 auto;color:#d8d4c8;font-size:1.05rem}
+.btn{display:inline-block;background:var(--mint);color:var(--board);text-decoration:none;font-weight:800;padding:15px 36px;border-radius:4px;margin-top:26px;transform:rotate(-1deg)}
+.btn:hover{background:var(--chalk)}
+.btn.ghost{background:transparent;color:var(--chalk);border:2px solid var(--chalk);margin-left:12px}
+.btn.ghost:hover{border-color:var(--mint);color:var(--mint)}
+.chalk-art{margin:36px auto 0;max-width:560px}
+/* chalk-write strokes */
+.draw{stroke-dasharray:800;stroke-dashoffset:800}
+/* menu */
+section{padding:84px 0}
+.sec-k{font-weight:800;font-size:.76rem;letter-spacing:.26em;color:var(--mint);text-transform:uppercase;text-align:center}
+h2{font-size:clamp(1.9rem,5vw,2.9rem);text-align:center;margin:10px 0 12px;transform:rotate(-.8deg)}
+.sub{color:#c9c4b4;max-width:620px;margin:0 auto 34px;text-align:center}
+.board{background:rgba(20,20,20,.55);border:4px solid #4a3b2a;border-radius:8px;padding:34px;box-shadow:inset 0 0 60px rgba(0,0,0,.4);position:relative}
+.board::before{content:"TODAY'S BOARD";position:absolute;top:-18px;left:50%;transform:translateX(-50%) rotate(-2deg);background:var(--mint);color:var(--board);font-family:'Permanent Marker';padding:6px 22px;font-size:1rem}
+.menu-cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:8px}
+@media(max-width:640px){.menu-cols{grid-template-columns:1fr}}
+.mcol h3{font-family:'Permanent Marker';color:var(--mint);font-size:1.5rem;margin-bottom:14px;border-bottom:2px dashed rgba(245,242,234,.35);padding-bottom:8px}
+.mi{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-bottom:1px dotted rgba(245,242,234,.2)}
+.mi .nm{font-weight:600}
+.mi .nm small{display:block;color:#a9a496;font-weight:400;font-size:.82rem}
+.mi .pr{font-family:'Permanent Marker';color:var(--pink);font-size:1.15rem;white-space:nowrap}
+.board .note{text-align:center;margin-top:22px;color:#a9a496;font-size:.85rem;font-style:italic}
+/* story */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+@media(max-width:680px){.story-grid{grid-template-columns:1fr}}
+.story-grid p{color:#d8d4c8;margin-bottom:14px}
+.chalk-card{background:rgba(20,20,20,.55);border:3px solid #4a3b2a;border-radius:8px;padding:26px;transform:rotate(1.5deg)}
+.chalk-card h3{font-family:'Permanent Marker';color:var(--mint);font-size:1.4rem;margin-bottom:10px}
+.chalk-card ul{list-style:none}
+.chalk-card li{padding:7px 0;color:#d8d4c8;font-size:.93rem;border-bottom:1px dotted rgba(245,242,234,.2)}
+.chalk-card li::before{content:"› ";color:var(--mint)}
+/* events */
+.events{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.ev{background:rgba(20,20,20,.55);border:2px dashed rgba(245,242,234,.35);border-radius:8px;padding:26px;transform:rotate(-.6deg);transition:transform .25s}
+.ev:nth-child(even){transform:rotate(.8deg)}
+.ev:hover{transform:rotate(0) scale(1.02)}
+.ev .d{font-family:'Permanent Marker';color:var(--pink);font-size:1.2rem}
+.ev h3{font-size:1.15rem;margin:8px 0}
+.ev p{font-size:.9rem;color:#c9c4b4}
+.ev .free{display:inline-block;margin-top:10px;border:2px solid var(--mint);color:var(--mint);font-size:.72rem;font-weight:800;letter-spacing:.14em;padding:4px 12px;border-radius:4px;text-transform:uppercase}
+/* visit */
+.visit{text-align:center}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:28px;text-align:left}
+.vcard{background:rgba(20,20,20,.55);border:2px solid rgba(245,242,234,.25);border-radius:8px;padding:24px}
+.vcard h3{font-family:'Permanent Marker';color:var(--mint);font-size:1.25rem;margin-bottom:8px}
+.vcard p{font-size:.92rem;color:#d8d4c8}
+/* rsvp form */
+form{display:grid;gap:12px;max-width:520px;margin:30px auto 0;text-align:left}
+label{font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:#a9a496}
+input,select{background:rgba(20,20,20,.7);border:2px solid rgba(245,242,234,.35);color:var(--chalk);padding:13px;font-family:'Archivo';font-size:1rem;width:100%;border-radius:4px}
+input:focus,select:focus{outline:none;border-color:var(--mint)}
+#ok{display:none;border:2px solid var(--mint);background:rgba(159,214,164,.1);padding:16px;border-radius:6px;font-weight:600}
+footer{border-top:2px dashed rgba(245,242,234,.3);padding:24px 0;color:#a9a496;font-size:.84rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Chalk<b>&amp;</b>Bean</a>
+    <a class="cta" href="#events">Open Mic Fridays</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="frame"></div>
+  <div class="wrap">
+    <div class="date rv on" id="todayDate">— wednesday —</div>
+    <h1 class="rv on">THE MENU<br>IS <span class="m">CHALK.</span><br>THE COFFEE IS REAL.</h1>
+    <p class="lead rv on">Chalk &amp; Bean is Panchkula's chalkboard café — the entire menu is hand-lettered every morning and wiped every night. What you see on the board is what's brewing. Nothing laminated, nothing frozen.</p>
+    <div class="rv on">
+      <a class="btn" href="#menu">Read Today's Board</a>
+      <a class="btn ghost" href="#visit">Find Us</a>
+    </div>
+    <svg class="chalk-art rv on" viewBox="0 0 560 150" aria-hidden="true">
+      <g fill="none" stroke="#f5f2ea" stroke-width="4" stroke-linecap="round" class="draw" id="cupDraw">
+        <path d="M200,40 L210,120 Q211,132 224,132 L296,132 Q309,132 310,120 L320,40 Z"/>
+        <path d="M320,60 Q360,60 355,90 Q350,115 318,110"/>
+        <path d="M235,25 q8,-14 0,-24 M260,25 q-8,-14 0,-24 M285,25 q8,-14 0,-24"/>
+      </g>
+      <text x="400" y="80" fill="#9fd6a4" font-family="Permanent Marker" font-size="34" transform="rotate(-4 400 80)">fresh daily!</text>
+      <text x="400" y="115" fill="#e8a0a8" font-family="Permanent Marker" font-size="22" transform="rotate(-4 400 115)">no two days alike</text>
+    </svg>
+  </div>
+</header>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="sec-k rv">— the board —</div>
+    <h2 class="rv">Today's chalk.</h2>
+    <p class="sub rv">Rewritten every morning at 7:30. Photograph it if you love it — it'll be gone tomorrow.</p>
+    <div class="board rv">
+      <div class="menu-cols">
+        <div class="mcol">
+          <h3>~ brews ~</h3>
+          <div class="mi"><div class="nm">Monsoon Malabar AA<small>bold, low-acid, chocolatey</small></div><div class="pr">₹230</div></div>
+          <div class="mi"><div class="nm">Cortado<small>double shot, silk milk</small></div><div class="pr">₹210</div></div>
+          <div class="mi"><div class="nm">Vietnamese Iced<small>condensed milk, strong drip</small></div><div class="pr">₹240</div></div>
+          <div class="mi"><div class="nm">Chalkboard Mocha<small>cocoa nibs, sea salt</small></div><div class="pr">₹260</div></div>
+        </div>
+        <div class="mcol">
+          <h3>~ bites ~</h3>
+          <div class="mi"><div class="nm">Burnt Basque Slice<small>baked in-house, wobbly centre</small></div><div class="pr">₹280</div></div>
+          <div class="mi"><div class="nm">Masala Beans on Toast<small>sourdough, ragda-style beans</small></div><div class="pr">₹220</div></div>
+          <div class="mi"><div class="nm">Chalk-Dust Brownie<small>cocoa nib crunch, warm</small></div><div class="pr">₹200</div></div>
+          <div class="mi"><div class="nm">Peri-Peri Fries<small>board special, extra dust</small></div><div class="pr">₹180</div></div>
+        </div>
+      </div>
+      <p class="note">— board wiped &amp; rewritten tomorrow 7:30 AM —</p>
+    </div>
+  </div>
+</section>
+
+<section id="story" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-k rv">— our story —</div>
+    <h2 class="rv">A café that erases itself.</h2>
+    <div class="story-grid" style="margin-top:30px">
+      <div class="rv">
+        <p>Chalk &amp; Bean started in 2021 when founder <strong>Arjun Bhandari</strong> — a former art teacher — painted his garage wall with chalkboard paint and started serving pour-overs to neighbours.</p>
+        <p>The rule stuck: if it's worth serving, it's worth lettering by hand. Our baristas train in chalk lettering alongside latte art. The board changes with the seasons, the mood, and whatever the market had fresh that morning.</p>
+        <p>Regulars have a tradition: photograph the board, tag us, and the best shot of the month gets redrawn permanently on the "hall of foam" wall.</p>
+      </div>
+      <div class="chalk-card rv">
+        <h3>House rules</h3>
+        <ul>
+          <li>The board is law — no off-menu orders</li>
+          <li>Chalk pieces free for kids (and poets)</li>
+          <li>Laptops welcome, calls outside please</li>
+          <li>Open mic Fridays — sign up by 6 PM</li>
+          <li>Day-old bakes half price after 7 PM</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="events">
+  <div class="wrap">
+    <div class="sec-k rv">— events —</div>
+    <h2 class="rv">On the board this week.</h2>
+    <p class="sub rv">All events free with any brew. Sign-up sheets live at the counter.</p>
+    <div class="events">
+      <div class="ev rv"><div class="d">FRI · 7 PM</div><h3>Open Mic Night</h3><p>Poetry, comedy, unplugged sets. 5-minute slots, 20 performers max. Host: Rhea Malhotra.</p><span class="free">Free entry</span></div>
+      <div class="ev rv"><div class="d">SAT · 11 AM</div><h3>Latte Art Throwdown</h3><p>Baristas and brave regulars compete. Winner's art stays on the board all week.</p><span class="free">Free entry</span></div>
+      <div class="ev rv"><div class="d">SUN · 10 AM</div><h3>Slow Sunday Cupping</h3><p>Taste 4 single-origins with our head roaster. Learn to slurp properly.</p><span class="free">Free entry</span></div>
+      <div class="ev rv"><div class="d">WED · 6 PM</div><h3>Sketch &amp; Sip</h3><p>Life-drawing with chalk on the big board wall. Materials provided.</p><span class="free">Free entry</span></div>
+    </div>
+    <form class="rv" id="rsvpForm">
+      <div><label for="rname">Name</label><input id="rname" required placeholder="Kabir Anand"></div>
+      <div><label for="rphone">Phone</label><input id="rphone" required pattern="[0-9+ ]{10,15}" placeholder="98XXX XXXXX"></div>
+      <div><label for="revent">Event</label><select id="revent"><option>Open Mic Night — Fri 7 PM</option><option>Latte Art Throwdown — Sat 11 AM</option><option>Slow Sunday Cupping — Sun 10 AM</option><option>Sketch &amp; Sip — Wed 6 PM</option></select></div>
+      <button class="btn" type="submit" style="border:none;cursor:pointer;width:100%">RSVP Free</button>
+      <div id="ok">You're on the list. Show this page at the counter — your brew's on the house if you perform.</div>
+    </form>
+  </div>
+</section>
+
+<section class="visit" id="visit" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-k rv">— visit —</div>
+    <h2 class="rv">Come read the wall.</h2>
+    <div class="vgrid">
+      <div class="vcard rv"><h3>Find Us</h3><p>SCO 42, Sector 9 Market<br>Panchkula 134109<br>Look for the giant chalkboard</p></div>
+      <div class="vcard rv"><h3>Hours</h3><p>Mon–Sun · 8 AM – 10 PM<br>Board rewritten 7:30 AM<br>Open mic Fridays 7 PM</p></div>
+      <div class="vcard rv"><h3>Good to Know</h3><p>Brews ₹210–260 · Bites ₹180–280<br>Chalk pieces free for kids<br>Board photographed daily on IG</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>CHALK &amp; BEAN · SCO 42, Sector 9, Panchkula</span>
+    <span>erased &amp; rewritten daily.</span>
+  </div>
+</footer>
+
+<script>
+// today's date on the board
+const days=['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+document.getElementById('todayDate').textContent='— '+days[new Date().getDay()]+' —';
+// scroll reveals
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// chalk-write: stroke draws deterministically with scroll
+const cup=document.getElementById('cupDraw');
+function chalkWrite(){
+  const r=cup.getBoundingClientRect(),vh=innerHeight;
+  const p=Math.min(1,Math.max(0,(vh*0.85-r.top)/(vh*0.6)));
+  cup.style.strokeDashoffset=800*(1-p);
+  requestAnimationFrame(chalkWrite);
+}
+requestAnimationFrame(chalkWrite);
+// form
+document.getElementById('rsvpForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  e.target.querySelector('button').style.display='none';
+  document.getElementById('ok').style.display='block';
+});
+</script>
+</body>
+</html>

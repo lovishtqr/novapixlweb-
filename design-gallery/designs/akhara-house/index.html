@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akhara House — Desi Wrestling Fitness, Kharar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@400;600;800&family=Onest:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--mud:#5a3a1e;--mari:#e8930c;--cream:#f3e6cf;--deep:#2e1f0e;--clay:#7a4d26}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--deep);font-family:'Onest',sans-serif;overflow-x:hidden;line-height:1.7}
+h1,h2,h3,.sarp{font-family:'Sarpanch',sans-serif}
+img,svg{max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.on{opacity:1;transform:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(46,31,14,.96)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.logo{font-family:'Sarpanch';font-weight:800;color:var(--cream);text-decoration:none;font-size:1.15rem}
+.logo b{color:var(--mari)}
+nav a.cta{background:var(--mari);color:var(--deep);text-decoration:none;font-weight:800;padding:10px 20px;font-size:.85rem}
+nav a.cta:hover{background:var(--cream)}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 90px;position:relative;color:var(--cream);
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(232,147,12,.25), transparent 60%),
+    radial-gradient(ellipse 60% 45% at 20% 80%, rgba(122,77,38,.5), transparent 65%),
+    linear-gradient(180deg,#3a2612,#241708 70%,#1c1106);}
+#dust{position:absolute;inset:0;pointer-events:none}
+.hero .wrap{position:relative;z-index:2}
+.hi-kicker{font-family:'Sarpanch';color:var(--mari);font-size:1.1rem;letter-spacing:.1em}
+h1{font-size:clamp(2.6rem,9vw,5.8rem);line-height:1.08;margin:12px 0 18px;font-weight:800}
+h1 .m{color:var(--mari)}
+.hero p.lead{max-width:580px;color:#e5d3b3;font-size:1.06rem}
+.btn{display:inline-block;background:var(--mari);color:var(--deep);text-decoration:none;font-weight:800;padding:15px 34px;font-size:.95rem}
+.btn:hover{background:var(--cream)}
+.btn.ghost{background:transparent;color:var(--cream);border:2px solid var(--mari);margin-left:12px}
+.btn.ghost:hover{background:var(--mari);color:var(--deep)}
+.hero-stats{display:flex;gap:30px;margin-top:40px;flex-wrap:wrap}
+.hero-stats div strong{font-family:'Sarpanch';font-size:1.9rem;color:var(--mari);display:block}
+.hero-stats div span{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:#c9a869}
+/* gada swing divider */
+.gada-div{display:flex;justify-content:center;padding:30px 0;background:linear-gradient(180deg,#1c1106,#f3e6cf)}
+.gada{transform-origin:50% 8%;animation:swing 3.2s ease-in-out infinite}
+@keyframes swing{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+/* sections */
+section.block{padding:84px 0}
+.sec-k{font-family:'Sarpanch';color:var(--mari);font-size:1rem;letter-spacing:.12em}
+h2{font-size:clamp(1.7rem,4.8vw,2.7rem);margin:8px 0 14px;font-weight:800}
+.sub{color:#6b4f2c;max-width:620px;margin-bottom:36px}
+/* kushti roots — timeline */
+.roots{position:relative;margin-top:10px}
+.root{display:grid;grid-template-columns:80px 1fr;gap:20px;padding:24px 0;border-bottom:2px dashed #d8bf92}
+.root .yr{font-family:'Sarpanch';font-weight:800;color:var(--mud);font-size:1.3rem}
+.root h3{font-size:1.15rem;margin-bottom:6px}
+.root p{color:#6b4f2c;font-size:.95rem;max-width:640px}
+/* training cards */
+.train{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.tcard{background:#fffdf6;border:2px solid var(--mud);padding:26px;position:relative}
+.tcard::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:repeating-linear-gradient(90deg,var(--mari) 0 24px,var(--mud) 24px 48px)}
+.tcard h3{font-size:1.2rem;margin-bottom:8px}
+.tcard .time{font-family:'Sarpanch';color:var(--mari);font-weight:800;font-size:.95rem}
+.tcard p{color:#6b4f2c;font-size:.92rem;margin-top:8px}
+/* diet */
+.diet{background:var(--mud);color:var(--cream)}
+.diet h2{color:var(--cream)}
+.diet .sub{color:#d9bd8a}
+.meals{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.meal{background:rgba(243,230,207,.07);border:1px solid rgba(232,147,12,.4);padding:24px}
+.meal .t{font-family:'Sarpanch';color:var(--mari);font-weight:800;letter-spacing:.1em;font-size:.85rem}
+.meal h3{font-size:1.15rem;margin:8px 0}
+.meal p{color:#e0c99c;font-size:.92rem}
+.meal ul{list-style:none;margin-top:10px}
+.meal li{font-size:.88rem;color:#e0c99c;padding:4px 0}
+.meal li::before{content:"◆ ";color:var(--mari);font-size:.7rem}
+/* plans + join */
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.plan{background:#fffdf6;border:2px solid var(--mud);padding:28px}
+.plan.hot{background:var(--mud);color:var(--cream);border-color:var(--mari)}
+.plan.hot ul li{color:#e0c99c}
+.plan h3{font-size:1.1rem}
+.plan .price{font-family:'Sarpanch';font-weight:800;font-size:2.2rem;color:var(--mari);margin:10px 0}
+.plan .price small{font-size:.9rem;font-family:'Onest';color:#6b4f2c}
+.plan.hot .price small{color:#d9bd8a}
+.plan ul{list-style:none;margin:14px 0 20px}
+.plan li{padding:6px 0;font-size:.9rem;border-bottom:1px dashed #d8bf92}
+form{display:grid;gap:12px;max-width:540px;margin-top:26px}
+label{font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:#6b4f2c}
+input,select{background:#fffdf6;border:2px solid var(--mud);color:var(--deep);padding:13px;font-family:'Onest';font-size:1rem;width:100%}
+input:focus,select:focus{outline:none;border-color:var(--mari)}
+#ok{display:none;background:#eef6df;border:2px solid #5c8a3a;padding:16px;color:var(--deep);font-weight:600}
+footer{background:var(--deep);color:#c9a869;padding:26px 0;font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">अखाड़ा<b>HOUSE</b></a>
+    <a class="cta" href="#join">Join ₹1,200/mo</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="dust"></canvas>
+  <div class="wrap">
+    <div class="hi-kicker rv on">॥ मिट्टी का पहलवान ॥</div>
+    <h1 class="rv on">THE PIT MAKES<br>THE <span class="m">PEHLWAN.</span></h1>
+    <p class="lead rv on">Akhara House is Kharar's desi wrestling gym — a real mud pit, wooden mugdar, stone nals and gada swings. Train the way pehlwans have for 200 years, with a coach who wrestled at state level and a diet built on desi ghee, not powders.</p>
+    <div class="rv on" style="margin-top:26px">
+      <a class="btn" href="#join">Start Training</a>
+      <a class="btn ghost" href="#roots">Our Roots</a>
+    </div>
+    <div class="hero-stats rv on">
+      <div><strong>200+ yrs</strong><span>Kushti Tradition</span></div>
+      <div><strong>₹1,200</strong><span>Per Month</span></div>
+      <div><strong>5 AM</strong><span>Pit Opens Daily</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="gada-div" aria-hidden="true">
+  <svg class="gada" width="70" height="150" viewBox="0 0 70 150">
+    <rect x="31" y="0" width="8" height="100" rx="4" fill="#5a3a1e"/>
+    <circle cx="35" cy="118" r="26" fill="#e8930c"/>
+    <circle cx="35" cy="118" r="26" fill="none" stroke="#5a3a1e" stroke-width="4"/>
+    <circle cx="35" cy="118" r="10" fill="#5a3a1e"/>
+  </svg>
+</div>
+
+<section class="block" id="roots">
+  <div class="wrap">
+    <div class="sec-k rv">॥ जड़ें ॥ — KUSHTI ROOTS</div>
+    <h2 class="rv">Older than the barbell.</h2>
+    <p class="sub rv">Our head coach's lineage runs through three generations of akhara pehlwans in rural Punjab.</p>
+    <div class="roots">
+      <div class="root rv"><div class="yr">1952</div><div><h3>Ustad Ram Kishan's Akhara, Sangrur</h3><p>Our guru's guru dug his first pit with bullocks and mustard oil. The same pit rituals we follow every morning.</p></div></div>
+      <div class="root rv"><div class="yr">1989</div><div><h3>State Champion — Coach Balwinder Singh</h3><p>Gold at the Punjab State Kushti Championship. Retired undefeated at 62-0 in mud-pit bouts.</p></div></div>
+      <div class="root rv"><div class="yr">2019</div><div><h3>Akhara House Opens, Kharar</h3><p>A proper red-mud pit in the city — turmeric-treated earth, open sky, and training open to everyone, men and women.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="training" style="background:#efe0c2">
+  <div class="wrap">
+    <div class="sec-k rv">॥ अभ्यास ॥ — TRAINING</div>
+    <h2 class="rv">The daily dangal of discipline.</h2>
+    <p class="sub rv">Four sessions a day. Mud-pit bouts every Sunday morning — spectators welcome.</p>
+    <div class="train">
+      <div class="tcard rv"><div class="time">5:00 – 7:00 AM</div><h3>Pit Session</h3><p>Mud-pit kushti drills, bodyweight vyayam, and rope climbing. The earth is your equipment.</p></div>
+      <div class="tcard rv"><div class="time">7:00 – 8:30 AM</div><h3>Mugdar &amp; Gada</h3><p>Wooden club and mace swinging — shoulder mobility and grip forged over hundreds of reps.</p></div>
+      <div class="tcard rv"><div class="time">5:00 – 7:00 PM</div><h3>Nal &amp; Stone</h3><p>Stone weight lifting: the traditional nal, sumo-style deadlifts, and carries across the yard.</p></div>
+      <div class="tcard rv"><div class="time">SUN 7:00 AM</div><h3>Sunday Dangal</h3><p>Friendly bouts in the pit. Win or learn — the whole akhara cheers either way.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block diet" id="diet">
+  <div class="wrap">
+    <div class="sec-k rv" style="color:var(--mari)">॥ आहार ॥ — DESI DIET</div>
+    <h2 class="rv">Ghee, not whey.</h2>
+    <p class="sub rv">Every member gets a personalised desi diet plan. Built from the pehlwan's kitchen, priced for real life.</p>
+    <div class="meals">
+      <div class="meal rv"><div class="t">SUBAH</div><h3>Morning Fuel</h3><p>Badam milk with kesar, soaked almonds, and 2 desi-ghee parathas after pit session.</p><ul><li>1 litre milk / day target</li><li>50g desi ghee / day</li><li>Seasonal fruit</li></ul></div>
+      <div class="meal rv"><div class="t">DOPAHAR</div><h3>Midday Power</h3><p>Dal, 4 rotis, sabzi, curd and salad. Simple, heavy, honest — the way akharas eat.</p><ul><li>Protein from dal + dahi</li><li>Chaas with roasted jeera</li><li>No packaged food</li></ul></div>
+      <div class="meal rv"><div class="t">SHAAM</div><h3>Evening Recovery</h3><p>Chana, peanuts and jaggery post-training. Warm haldi milk before sleep.</p><ul><li>Soaked chana 100g</li><li>Gur + moongfali</li><li>Haldi doodh at night</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="join">
+  <div class="wrap">
+    <div class="sec-k rv">॥ शामिल हों ॥ — JOIN</div>
+    <h2 class="rv">Step into the pit.</h2>
+    <p class="sub rv">First mud session free. After that, one simple price.</p>
+    <div class="plans">
+      <div class="plan rv"><h3>Monthly</h3><div class="price">₹1,200<small> /month</small></div><ul><li>All 4 daily sessions</li><li>Sunday dangal</li><li>Desi diet plan</li></ul><a class="btn" href="#joinform">Join Monthly</a></div>
+      <div class="plan hot rv"><h3>Quarterly</h3><div class="price">₹3,000<small> /3 months</small></div><ul><li>Everything in Monthly</li><li>Personal mugdar set</li><li>Monthly body check</li></ul><a class="btn" href="#joinform">Join Quarterly</a></div>
+      <div class="plan rv"><h3>Annual</h3><div class="price">₹11,000<small> /year</small></div><ul><li>Everything in Quarterly</li><li>Akhara kurta + langot kit</li><li>Dangal entry priority</li></ul><a class="btn" href="#joinform">Join Annual</a></div>
+    </div>
+    <form class="rv" id="joinform">
+      <div><label for="jname">Name</label><input id="jname" required placeholder="Harman Singh"></div>
+      <div><label for="jphone">Phone</label><input id="jphone" required pattern="[0-9+ ]{10,15}" placeholder="98XXX XXXXX"></div>
+      <button class="btn" type="submit">Book Free Pit Session</button>
+      <div id="ok">Dangal! Coach Balwinder will call you to fix your first 5 AM pit session. Eat light the night before.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>AKHARA HOUSE · Chandigarh Road, Kharar · Pit opens 5 AM daily</span>
+    <span>मिट्टी, पसीना, सम्मान</span>
+  </div>
+</footer>
+
+<script>
+// scroll reveals
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// dust particles rising over the pit (deterministic, canvas)
+const cv=document.getElementById('dust'),ctx=cv.getContext('2d');
+let W,H,parts=[];
+function size(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;}
+size();addEventListener('resize',size);
+for(let i=0;i<70;i++)parts.push({x:Math.random(),y:Math.random(),r:1+Math.random()*3,s:.0004+Math.random()*.0012,o:.15+Math.random()*.4,ph:Math.random()*6.28});
+let t=0;
+function dust(){
+  t+=0.016;
+  ctx.clearRect(0,0,W,H);
+  for(const p of parts){
+    p.y-=p.s; if(p.y<0){p.y=1;p.x=Math.random();}
+    const sway=Math.sin(t*1.4+p.ph)*24;          // deterministic drift
+    ctx.beginPath();
+    ctx.arc(p.x*W+sway,p.y*H,p.r,0,6.28);
+    ctx.fillStyle=`rgba(232,147,12,${p.o})`;
+    ctx.fill();
+  }
+  requestAnimationFrame(dust);
+}
+requestAnimationFrame(dust);
+document.getElementById('joinform').addEventListener('submit',e=>{
+  e.preventDefault();
+  e.target.querySelector('button').style.display='none';
+  document.getElementById('ok').style.display='block';
+});
+</script>
+</body>
+</html>
