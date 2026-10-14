@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOLT SALON — salon.exe v3.0 | Sector 34, Chandigarh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#00e5cc;--bg:#0b0f14;--paper:#f0f4f3;--dim:#5c6b7a}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Hanken Grotesk',sans-serif;background:var(--bg);color:var(--paper);overflow-x:hidden}
+h1,h2,h3,.mono{font-family:'Chakra Petch',monospace}
+img,svg{max-width:100%}
+a{color:inherit}
+/* scanlines */
+.scan{position:fixed;inset:0;pointer-events:none;z-index:90;
+ background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px);opacity:.5}
+.scanline{position:fixed;left:0;right:0;height:120px;z-index:91;pointer-events:none;
+ background:linear-gradient(180deg,transparent,rgba(0,229,204,.08),transparent);animation:sweep 7s linear infinite}
+@keyframes sweep{from{top:-15%}to{top:110%}}
+/* boot overlay */
+#boot{position:fixed;inset:0;background:#05070a;z-index:200;display:flex;align-items:center;justify-content:center;transition:opacity .6s}
+#boot.off{opacity:0;pointer-events:none}
+#bootlog{font-family:'Chakra Petch';color:var(--teal);font-size:.95rem;line-height:1.9;max-width:520px;padding:1.4rem;width:90%}
+/* nav */
+nav{position:sticky;top:0;z-index:60;background:rgba(11,15,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,229,204,.3);display:flex;justify-content:space-between;align-items:center;padding:.8rem 1.4rem;flex-wrap:wrap;gap:.6rem}
+.brand{font-family:'Chakra Petch';font-weight:700;font-size:1.2rem;letter-spacing:.1em}
+.brand b{color:var(--teal)}
+.navlinks{display:flex;gap:1.2rem;flex-wrap:wrap}
+.navlinks a{text-decoration:none;font-size:.85rem;letter-spacing:.12em;font-weight:600;color:var(--dim)}
+.navlinks a:hover{color:var(--teal)}
+/* hero */
+.hero{padding:clamp(4rem,10vw,7rem) 1.4rem;position:relative;border-bottom:1px solid rgba(0,229,204,.25)}
+.hero-inner{max-width:1050px;margin:0 auto}
+.term-tag{font-family:'Chakra Petch';color:var(--teal);font-size:.9rem;letter-spacing:.15em;margin-bottom:1rem}
+h1{font-size:clamp(2.6rem,8vw,5.8rem);line-height:1.05;font-weight:700}
+h1 .t{color:var(--teal);text-shadow:0 0 24px rgba(0,229,204,.6)}
+.cursor{display:inline-block;width:.6em;height:1em;background:var(--teal);vertical-align:-.1em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero p{max-width:36rem;color:var(--dim);margin-top:1rem;font-size:1.1rem}
+.hero p b{color:var(--paper)}
+.btn{display:inline-block;margin-top:1.8rem;font-family:'Chakra Petch';font-weight:700;letter-spacing:.12em;background:var(--teal);color:#04211d;padding:.9rem 2.2rem;text-decoration:none;border:none;cursor:pointer;font-size:1rem;transition:box-shadow .2s,transform .2s}
+.btn:hover{box-shadow:0 0 28px rgba(0,229,204,.55);transform:translateY(-2px)}
+/* sections */
+section{padding:clamp(3rem,7vw,5rem) 1.4rem;border-bottom:1px solid rgba(0,229,204,.15)}
+.wrap{max-width:1050px;margin:0 auto}
+.sec-tag{font-family:'Chakra Petch';color:var(--teal);letter-spacing:.3em;font-size:.8rem;margin-bottom:.6rem}
+h2{font-size:clamp(1.8rem,5vw,2.8rem);margin-bottom:2rem}
+h2::before{content:"> ";color:var(--teal)}
+/* services.exe terminal */
+.terminal{background:#05070a;border:1px solid rgba(0,229,204,.4);box-shadow:0 0 40px rgba(0,229,204,.08);border-radius:8px;overflow:hidden}
+.term-bar{display:flex;gap:.5rem;padding:.7rem 1rem;border-bottom:1px solid rgba(0,229,204,.25)}
+.term-bar i{width:11px;height:11px;border-radius:50%;background:#2a3440}
+.term-bar i:first-child{background:var(--teal)}
+.term-body{padding:1.4rem;font-family:'Chakra Petch';font-size:.95rem}
+.svc-line{display:grid;grid-template-columns:1fr auto;gap:1rem;padding:.85rem .4rem;border-bottom:1px dashed rgba(0,229,204,.2);cursor:pointer;transition:background .15s}
+.svc-line:hover{background:rgba(0,229,204,.07)}
+.svc-line .cmd{color:var(--teal)}
+.svc-line .desc{color:var(--dim);font-size:.85rem;margin-top:.2rem}
+.svc-line .pr{color:var(--paper);font-weight:700;white-space:nowrap}
+#svc-detail{margin-top:1rem;color:var(--paper);min-height:3.2rem;font-family:'Chakra Petch'}
+/* color lab */
+.lab{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem}
+.cell{border:1px solid rgba(0,229,204,.3);padding:1.4rem;position:relative;overflow:hidden;transition:border .2s,transform .2s;background:#0e141b}
+.cell:hover{border-color:var(--teal);transform:translateY(-4px)}
+.cell .glow{height:70px;margin-bottom:1rem;border:1px solid rgba(255,255,255,.15)}
+.cell h3{font-size:1.15rem;margin-bottom:.4rem}
+.cell p{color:var(--dim);font-size:.9rem}
+.cell .pr{font-family:'Chakra Petch';color:var(--teal);font-weight:700;margin-top:.7rem;display:block}
+/* gallery: neon wireframes */
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
+.frame{border:1px solid rgba(0,229,204,.3);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;position:relative;background:#0e141b;overflow:hidden}
+.frame svg{width:70%;transition:transform .4s}
+.frame:hover svg{transform:scale(1.12) rotate(2deg)}
+.frame figcaption{position:absolute;bottom:0;left:0;right:0;background:rgba(5,7,10,.85);font-family:'Chakra Petch';font-size:.8rem;letter-spacing:.1em;padding:.5rem .8rem;color:var(--teal)}
+/* book form */
+form.book{max-width:620px;background:#0e141b;border:1px solid rgba(0,229,204,.35);padding:clamp(1.4rem,4vw,2.4rem);border-radius:8px}
+label{display:block;font-family:'Chakra Petch';font-size:.8rem;letter-spacing:.2em;color:var(--teal);margin:1rem 0 .4rem}
+input,select{width:100%;background:#05070a;border:1px solid #2a3440;color:var(--paper);padding:.85rem;font-family:'Chakra Petch';font-size:1rem}
+input:focus,select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 12px rgba(0,229,204,.25)}
+#okmsg{display:none;margin-top:1.2rem;border:1px solid var(--teal);color:var(--teal);padding:1.1rem;font-family:'Chakra Petch'}
+footer{padding:2rem 1.4rem;text-align:center;color:var(--dim);font-family:'Chakra Petch';font-size:.85rem}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .5s,transform .5s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:560px){.svc-line{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="scan"></div><div class="scanline"></div>
+<div id="boot"><div id="bootlog"></div></div>
+
+<nav>
+  <div class="brand">VOLT<b>SALON</b></div>
+  <div class="navlinks"><a href="#services">services.exe</a><a href="#color">color_lab</a><a href="#gallery">gallery</a><a href="#book">book</a></div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="term-tag">salon.exe v3.0 — sector 34, chandigarh</p>
+    <h1><span class="scramble" data-text="FUTURE-PROOF">FUTURE-PROOF</span><br><span class="t">YOUR HAIR</span><span class="cursor"></span></h1>
+    <p>Volt Salon runs on precision: <b>cyber color ₹4,499</b>, chrome fades, UV-reactive tones. Book in 40 seconds. Walk out upgraded.</p>
+    <a class="btn" href="#book">INITIALIZE BOOKING</a>
+  </div>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <p class="sec-tag">01 // SERVICES.EXE</p>
+    <h2 class="scramble" data-text="SELECT MODULE">SELECT MODULE</h2>
+    <div class="terminal reveal">
+      <div class="term-bar"><i></i><i></i><i></i></div>
+      <div class="term-body">
+        <div class="svc-line" data-d="Precision fade, zero-gap blend, chrome line-up. Runtime: 45 min."><span><span class="cmd">$ run fade_chrome</span><div class="desc">chrome fade · hot-lather finish</div></span><span class="pr">₹549</span></div>
+        <div class="svc-line" data-d="Full-spectrum vivid color with bond repair. UV-reactive options. Runtime: 2.5 hrs."><span><span class="cmd">$ run cyber_color</span><div class="desc">cyber color · bond repair included</div></span><span class="pr">₹4,499</span></div>
+        <div class="svc-line" data-d="Keratin smooth protocol, frizz eliminated for 12 weeks. Runtime: 90 min."><span><span class="cmd">$ run smooth_protocol</span><div class="desc">keratin smooth · 12-week result</div></span><span class="pr">₹3,999</span></div>
+        <div class="svc-line" data-d="Precision bob/lob, dry-cut to your bone structure. Runtime: 40 min."><span><span class="cmd">$ run cut_precision</span><div class="desc">architectural cut · dry-cut finish</div></span><span class="pr">₹899</span></div>
+        <div id="svc-detail">$ hover a module to inspect…</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="color">
+  <div class="wrap">
+    <p class="sec-tag">02 // COLOR_LAB</p>
+    <h2 class="scramble" data-text="PIGMENT MATRIX">PIGMENT MATRIX</h2>
+    <div class="lab">
+      <div class="cell reveal"><div class="glow" style="background:#00e5cc;box-shadow:0 0 24px #00e5cc"></div><h3>Volt Teal</h3><p>Signature neon-teal melt. Glows under club light.</p><span class="pr">₹4,499</span></div>
+      <div class="cell reveal"><div class="glow" style="background:#ff2e88;box-shadow:0 0 24px #ff2e88"></div><h3>Neon Magenta</h3><p>High-voltage pink with violet shadow root.</p><span class="pr">₹4,299</span></div>
+      <div class="cell reveal"><div class="glow" style="background:#7a2bff;box-shadow:0 0 24px #7a2bff"></div><h3>Ultraviolet</h3><p>Deep violet that reads black indoors, electric outside.</p><span class="pr">₹4,699</span></div>
+      <div class="cell reveal"><div class="glow" style="background:#c8ff2e;box-shadow:0 0 24px #c8ff2e"></div><h3>Acid Lime</h3><p>Not for the faint of heart. Neither are you.</p><span class="pr">₹4,499</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <p class="sec-tag">03 // RENDER_GALLERY</p>
+    <h2 class="scramble" data-text="OUTPUT LOG">OUTPUT LOG</h2>
+    <div class="gal">
+      <figure class="frame reveal"><svg viewBox="0 0 100 120"><circle cx="50" cy="42" r="26" fill="none" stroke="#00e5cc" stroke-width="2"/><path d="M24 42 Q50 8 76 42 L70 90 Q50 70 30 90 Z" fill="none" stroke="#00e5cc" stroke-width="2"/><line x1="30" y1="42" x2="70" y2="42" stroke="#00e5cc" stroke-width="1" opacity=".5"/></svg><figcaption>BUILD_014 — CHROME FADE</figcaption></figure>
+      <figure class="frame reveal"><svg viewBox="0 0 100 120"><circle cx="50" cy="42" r="26" fill="none" stroke="#ff2e88" stroke-width="2"/><path d="M20 50 Q50 20 80 50 L74 100 Q50 78 26 100 Z" fill="none" stroke="#ff2e88" stroke-width="2"/></svg><figcaption>BUILD_027 — CYBER COLOR</figcaption></figure>
+      <figure class="frame reveal"><svg viewBox="0 0 100 120"><rect x="24" y="16" width="52" height="52" fill="none" stroke="#7a2bff" stroke-width="2"/><circle cx="50" cy="42" r="26" fill="none" stroke="#7a2bff" stroke-width="1" opacity=".6"/></svg><figcaption>BUILD_031 — ARCH CUT</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap">
+    <p class="sec-tag">04 // BOOK.SYS</p>
+    <h2 class="scramble" data-text="RESERVE RUNTIME">RESERVE RUNTIME</h2>
+    <form class="book reveal" id="bf">
+      <label for="bn">> USERNAME</label><input id="bn" required placeholder="your_name">
+      <label for="bp">> CONTACT</label><input id="bp" required inputmode="tel" placeholder="98XXX XXXXX">
+      <label for="bs">> MODULE</label>
+      <select id="bs"><option>fade_chrome — ₹549</option><option>cyber_color — ₹4,499</option><option>smooth_protocol — ₹3,999</option><option>cut_precision — ₹899</option></select>
+      <label for="bd">> DATE</label><input id="bd" type="date" required>
+      <div style="margin-top:1.4rem"><button class="btn" type="submit">EXECUTE BOOKING</button></div>
+      <div id="okmsg"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>VOLTSALON // SCO 210, Sector 34-A, Chandigarh // Tue–Sun 10:00–21:00 // salon.exe v3.0</p>
+</footer>
+
+<script>
+/* boot sequence */
+const lines=["> volt_salon bios v3.0","> loading pigment_matrix ... OK","> calibrating chrome_fade ... OK","> 4 modules online","> welcome, operator."];
+const log=document.getElementById('bootlog');let li=0;
+function bootStep(){
+  if(li<lines.length){log.innerHTML+=lines[li++]+"<br>";setTimeout(bootStep,320);}
+  else setTimeout(()=>document.getElementById('boot').classList.add('off'),450);
+}
+setTimeout(bootStep,250);
+/* scramble */
+const chars="!<>-_\\/[]{}—=+*^?#";
+function scramble(el){
+  const target=el.dataset.text;let frame=0;
+  const iv=setInterval(()=>{
+    el.textContent=target.split('').map((c,i)=>i<frame?c:chars[Math.floor(Math.random()*chars.length)]).join('');
+    if(++frame>target.length)clearInterval(iv);
+  },40);
+}
+const sio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){scramble(e.target);sio.unobserve(e.target)}}),{threshold:.4});
+document.querySelectorAll('.scramble').forEach(el=>sio.observe(el));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.svc-line').forEach(l=>l.addEventListener('mouseenter',()=>{
+  document.getElementById('svc-detail').textContent="$ inspect: "+l.dataset.d;
+}));
+document.getElementById('bf').addEventListener('submit',e=>{
+  e.preventDefault();
+  const m=document.getElementById('okmsg');m.style.display='block';
+  m.textContent="> booking confirmed. "+document.getElementById('bs').value+" on "+document.getElementById('bd').value+" for "+document.getElementById('bn').value+". confirmation SMS → "+document.getElementById('bp').value;
+});
+</script>
+</body>
+</html>

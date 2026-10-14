@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silk Route — Hair-Spa Rituals · Chandigarh to Silk in Four Stations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--sand:#e9dcc3;--wood:#6b4f35;--cream:#f8f3e8;--ink:#2e241a;--rust:#a05c2c}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'Public Sans',sans-serif;overflow-x:hidden;line-height:1.65}
+h1,h2,h3,.display{font-family:'Marcellus',serif;font-weight:400;line-height:1.15}
+.wrap{width:min(1100px,92%);margin:0 auto}
+section{padding:clamp(60px,8vw,110px) 0}
+nav{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--cream)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:13px 0}
+.brand{font-family:'Marcellus',serif;font-size:1.3rem;color:var(--sand);text-decoration:none;letter-spacing:.06em}
+nav ul{display:flex;gap:24px;list-style:none}
+nav a{color:var(--sand);text-decoration:none;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
+nav a:hover{color:#fff}
+.btn{display:inline-block;background:var(--wood);color:var(--cream);padding:15px 36px;border-radius:4px;text-decoration:none;font-weight:700;letter-spacing:.05em;border:0;cursor:pointer;transition:background .25s,transform .25s}
+.btn:hover{background:var(--ink);transform:translateY(-2px)}
+/* HERO — departure board */
+.hero{background:var(--ink);color:var(--cream);min-height:88vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.board{border:2px solid var(--sand);border-radius:10px;padding:clamp(24px,4vw,54px);position:relative;z-index:1;background:rgba(46,36,26,.6)}
+.board .dest{font-size:.8rem;letter-spacing:.4em;color:var(--sand);text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.4rem);color:var(--cream);margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--sand)}
+.hero p{max-width:52ch;color:#d8cbb0;font-size:1.08rem;margin-bottom:30px}
+.dep-line{display:flex;gap:14px;align-items:center;margin-top:26px;flex-wrap:wrap;font-size:.85rem;letter-spacing:.12em;color:var(--sand)}
+.dep-line .dot{width:9px;height:9px;border-radius:50%;background:var(--sand);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.25}}
+/* THE ROUTE — stations on a drawn line; draw progress = pure fn of scroll */
+.route{position:relative;background:var(--sand)}
+.route-track{position:relative;max-width:760px;margin:0 auto;padding:20px 0 10px}
+#line{position:absolute;left:50%;top:0;bottom:0;width:4px;transform:translateX(-50%)}
+.station{position:relative;display:grid;grid-template-columns:1fr 120px 1fr;gap:0;align-items:center;margin:0;padding:44px 0}
+.station .node{grid-column:2;justify-self:center;width:64px;height:64px;border-radius:50%;background:var(--cream);border:3px solid var(--wood);display:flex;align-items:center;justify-content:center;font-family:'Marcellus',serif;font-size:1.3rem;color:var(--wood);z-index:2;transition:background .5s,color .5s,transform .5s}
+.station.lit .node{background:var(--wood);color:var(--cream);transform:scale(1.12)}
+.station .card{background:var(--cream);border:1px solid rgba(107,79,53,.3);border-radius:12px;padding:26px;box-shadow:0 10px 30px rgba(46,36,26,.12)}
+.station .card h3{font-size:1.5rem;margin-bottom:6px;color:var(--ink)}
+.station .card .t{font-size:.78rem;letter-spacing:.24em;color:var(--rust);text-transform:uppercase;font-weight:700}
+.station:nth-child(odd) .card{grid-column:1;grid-row:1;text-align:right}
+.station:nth-child(even) .card{grid-column:3;grid-row:1}
+/* rituals price list */
+.plist{max-width:820px;margin:0 auto}
+.prow{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:20px 4px;border-bottom:1px solid rgba(107,79,53,.3)}
+.prow b{font-family:'Marcellus',serif;font-size:1.3rem;font-weight:400}
+.prow span.desc{display:block;font-size:.92rem;color:#5c4c38;font-weight:400}
+.prow .pr{font-family:'Marcellus',serif;font-size:1.35rem;color:var(--wood);white-space:nowrap}
+/* traveller's log */
+.log{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.note{background:#fffdf6;border:1px solid rgba(107,79,53,.25);border-radius:6px;padding:28px;position:relative}
+.note::before{content:"“";font-family:'Marcellus',serif;font-size:3rem;color:var(--sand);position:absolute;top:6px;left:16px}
+.note p{font-style:italic;margin:18px 0 14px}
+.note b{font-size:.85rem;letter-spacing:.08em;color:var(--wood)}
+.sample{font-size:.75rem;color:#8a7a5f;margin-top:26px;font-style:italic}
+/* booking */
+.book{background:var(--ink);color:var(--cream)}
+.book h2{color:var(--sand)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:720px;margin-top:28px}
+.full{grid-column:1/-1}
+label{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);display:block;margin-bottom:6px}
+input,select{background:#3a2e20;border:1px solid rgba(233,220,195,.4);color:var(--cream);border-radius:6px;padding:14px;font-family:'Public Sans',sans-serif;font-size:1rem;width:100%}
+input:focus,select:focus{outline:2px solid var(--sand)}
+.confirm{display:none;max-width:720px;margin-top:20px;border:1px solid var(--sand);border-radius:8px;padding:20px;background:rgba(233,220,195,.08)}
+footer{background:#241c12;color:#b9a67f;text-align:center;padding:30px;font-size:.88rem}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:760px){
+  nav ul{display:none}
+  .station{grid-template-columns:56px 1fr}
+  .station .node{grid-column:1;width:52px;height:52px}
+  .station .card{grid-column:2;grid-row:1;text-align:left!important}
+  #line{left:28px}
+  .log{grid-template-columns:1fr}
+  form{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="#top">SILK ROUTE</a>
+<ul><li><a href="#route">The Route</a></li><li><a href="#rituals">Rituals</a></li><li><a href="#log">Log</a></li><li><a href="#book">Book</a></li></ul></div></nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="board">
+      <p class="dest">Departures · SCO 77, Sector 22-D, Chandigarh</p>
+      <h1>Chandigarh to silk, <em>in four stations.</em></h1>
+      <p>Silk Route is a hair-spa house built like a journey: every ritual is a station, every station draws the route further toward silk. Board at the wash basin; alight with hair that moves like water.</p>
+      <a class="btn" href="#book">Reserve Your Journey</a>
+      <div class="dep-line"><span class="dot"></span><span>NEXT DEPARTURE — HEAD MASSAGE JOURNEY · TODAY 4:30 PM · 2 BERTHS LEFT</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="route" id="route">
+  <div class="wrap">
+    <h2 class="display reveal" style="text-align:center;font-size:clamp(2rem,4.4vw,3.2rem);margin-bottom:8px">The Route</h2>
+    <p class="reveal" style="text-align:center;color:#5c4c38;max-width:56ch;margin:0 auto 10px">Scroll — the line draws itself beneath you, and each station lights up as you arrive.</p>
+    <div class="route-track" id="track">
+      <svg id="line" viewBox="0 0 4 100" preserveAspectRatio="none" style="height:100%"><line id="drawline" x1="2" y1="0" x2="2" y2="100" stroke="#6b4f35" stroke-width="4" stroke-dasharray="9 7"/></svg>
+      <div class="station" data-s="1"><div class="node">I</div><div class="card reveal"><p class="t">Station I · 15 min</p><h3>The Cleansing Wash</h3><p>Double cleanse with sandalwood shampoo, cool rinse, scalp exfoliation. Every journey starts with a clear road.</p></div></div>
+      <div class="station" data-s="2"><div class="node">II</div><div class="card reveal"><p class="t">Station II · 20 min</p><h3>Steam &amp; Masque Halt</h3><p>Warm-towel steam opens the cuticle while a keratin masque soaks in. Tea is served; phones are parked.</p></div></div>
+      <div class="station" data-s="3"><div class="node">III</div><div class="card reveal"><p class="t">Station III · 25 min</p><h3>The Silk Passage</h3><p>Keratin silk ritual — sealed strand by strand with the flat-iron pass, then cooled to lock the shine.</p></div></div>
+      <div class="station" data-s="4"><div class="node">IV</div><div class="card reveal"><p class="t">Station IV · 10 min</p><h3>Arrival: The Finish</h3><p>Argan mist, soft blowout, and a silk scarf wrap for the ride home. You have arrived.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="rituals">
+  <div class="wrap">
+    <h2 class="display reveal" style="font-size:clamp(2rem,4.4vw,3.2rem);margin-bottom:6px">Rituals &amp; Fares</h2>
+    <p class="reveal" style="color:#5c4c38;margin-bottom:26px;max-width:60ch">Priced per journey, not per minute. Every fare includes the full four-station route unless noted.</p>
+    <div class="plist reveal">
+      <div class="prow"><div><b>Keratin Silk Ritual</b><span class="desc">Full four-station journey · frizz erased for 3–4 months</span></div><span class="pr">₹3,499</span></div>
+      <div class="prow"><div><b>Head Massage Journey</b><span class="desc">Stations I + II with a 25-min champi detour · pure bliss</span></div><span class="pr">₹899</span></div>
+      <div class="prow"><div><b>Sandalwood Spa Soak</b><span class="desc">Deep-conditioning halt · dry, thirsty hair</span></div><span class="pr">₹1,299</span></div>
+      <div class="prow"><div><b>Bridal Silk Express</b><span class="desc">Wedding-morning station run · updo-ready silk</span></div><span class="pr">₹2,199</span></div>
+      <div class="prow"><div><b>Little Travellers (under 12)</b><span class="desc">Gentle two-station route · no heat, no tears</span></div><span class="pr">₹599</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="log" style="background:var(--sand)">
+  <div class="wrap">
+    <h2 class="display reveal" style="font-size:clamp(2rem,4.4vw,3.2rem);margin-bottom:26px">Traveller's Log</h2>
+    <div class="log">
+      <div class="note reveal"><p>My frizz survived two monsoons. It did not survive the Silk Passage. I keep touching my own hair in meetings.</p><b>RITIKA S. · SECTOR 21</b></div>
+      <div class="note reveal"><p>The champi detour should be illegal. I fell asleep at Station II and woke up a new person.</p><b>GURLEEN K. · MOHALI</b></div>
+      <div class="note reveal"><p>Booked the bridal express at 7 AM on my wedding day. The scarf wrap survived the pheras. So did I.</p><b>ANANYA M. · PANCHKULA</b></div>
+    </div>
+    <p class="sample">Sample guest notes — written for this demo, not real reviews.</p>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <h2 class="display reveal" style="font-size:clamp(2rem,4.4vw,3.2rem)">Book Your Berth</h2>
+    <p class="reveal" style="color:#d8cbb0;margin-top:8px">SCO 77, Sector 22-D, Chandigarh · 10 AM – 8 PM, all days · +91 172 400 2211</p>
+    <form id="bform" class="reveal" novalidate>
+      <div><label for="nm">Name</label><input id="nm" required placeholder="Simran Gill"></div>
+      <div><label for="ph">Phone</label><input id="ph" required inputmode="tel" placeholder="+91 98XXX XXXXX"></div>
+      <div><label for="dt">Travel date</label><input id="dt" type="date" required></div>
+      <div><label for="rt">Ritual</label><select id="rt"><option>Keratin Silk Ritual — ₹3,499</option><option>Head Massage Journey — ₹899</option><option>Sandalwood Spa Soak — ₹1,299</option><option>Bridal Silk Express — ₹2,199</option></select></div>
+      <div class="full"><button class="btn" type="submit" style="background:var(--sand);color:var(--ink)">Confirm Reservation</button></div>
+    </form>
+    <div class="confirm" id="confirm" role="status"></div>
+  </div>
+</section>
+
+<footer>Silk Route Hair-Spa · SCO 77, Sector 22-D, Chandigarh · All journeys end in silk.</footer>
+
+<script>
+// Route line draw + station lighting: pure functions of scroll progress through #track
+var track=document.getElementById('track'),dl=document.getElementById('drawline');
+var stations=Array.prototype.slice.call(document.querySelectorAll('.station'));
+function prog(){
+  var r=track.getBoundingClientRect(),vh=innerHeight;
+  var total=r.height+vh, done=Math.min(Math.max(vh-r.top,0),total);
+  return done/total;
+}
+function onScroll(){
+  var p=prog();
+  dl.setAttribute('y2',Math.max(0,Math.min(100,p*100)));
+  stations.forEach(function(st){
+    var sr=st.getBoundingClientRect();
+    st.classList.toggle('lit',(sr.top+sr.height/2)<innerHeight*0.62);
+  });
+}
+var t=false;
+addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(function(){onScroll();t=false;});}},{passive:true});
+onScroll();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+document.getElementById('bform').addEventListener('submit',function(e){
+  e.preventDefault();
+  var nm=document.getElementById('nm').value.trim(),ph=document.getElementById('ph').value.trim(),dt=document.getElementById('dt').value;
+  var c=document.getElementById('confirm');
+  if(!nm||!ph||!dt){c.style.display='block';c.textContent='Please add your name, phone and travel date.';return;}
+  c.style.display='block';
+  c.innerHTML='<b style="color:#e9dcc3">'+nm+', berth confirmed.</b> '+document.getElementById('rt').value.split(' — ')[0]+' on '+dt+'. We will SMS '+ph+' your boarding pass shortly.';
+});
+</script>
+</body>
+</html>
