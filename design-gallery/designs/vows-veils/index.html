@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vows &amp; Veils — Bridal Lounge · One Bride at a Time · Jalandhar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--blush:#f9e8e4;--wine:#a34a5e;--peach:#e8b4a0;--ink:#3a2a2e;--rose:#c98a7a}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--blush);color:var(--ink);font-family:'Barlow',sans-serif;overflow-x:hidden;line-height:1.7}
+h1,h2,h3,.script{font-family:'Great Vibes',cursive;font-weight:400;line-height:1.15}
+.wrap{width:min(1080px,92%);margin:0 auto;position:relative;z-index:2}
+section{padding:clamp(64px,9vw,120px) 0;position:relative}
+/* veil layers: translucent sheets drifting at different parallax speeds */
+.veil{position:fixed;left:-10%;width:120%;pointer-events:none;z-index:1;opacity:.5}
+#veil1{top:-6%;height:44vh;background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(232,180,160,.25) 70%,transparent);border-radius:0 0 50% 50%/0 0 100% 100%}
+#veil2{top:22%;height:52vh;background:linear-gradient(180deg,transparent,rgba(255,255,255,.7) 40%,rgba(201,138,122,.2) 75%,transparent);border-radius:50%}
+#veil3{top:58%;height:48vh;background:linear-gradient(180deg,transparent,rgba(232,180,160,.3) 55%,rgba(255,255,255,.6));border-radius:50% 50% 0 0/100% 100% 0 0}
+.petal{position:fixed;top:-40px;z-index:1;pointer-events:none;border-radius:60% 40% 60% 40%;background:var(--peach);opacity:.8;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(110vh) rotate(340deg)}}
+nav{position:sticky;top:0;z-index:50;background:rgba(249,232,228,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(163,74,94,.25)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+.brand{font-family:'Great Vibes',cursive;font-size:1.9rem;color:var(--wine);text-decoration:none}
+nav ul{display:flex;gap:24px;list-style:none}
+nav a.nl{color:var(--ink);text-decoration:none;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+nav a.nl:hover{color:var(--wine)}
+.btn{display:inline-block;background:var(--wine);color:#fff;padding:16px 46px;border-radius:999px;text-decoration:none;font-weight:600;letter-spacing:.05em;cursor:pointer;border:0;transition:transform .25s,box-shadow .25s;font-size:1rem}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(163,74,94,.35)}
+/* HERO */
+.hero{min-height:92vh;display:flex;align-items:center;text-align:center}
+.hero .eyebrow{letter-spacing:.4em;font-size:.78rem;text-transform:uppercase;color:var(--wine);font-weight:600;margin-bottom:18px}
+.hero h1{font-size:clamp(3.4rem,9vw,7rem);color:var(--wine);margin-bottom:16px}
+.hero p{max-width:54ch;margin:0 auto 32px;font-size:1.12rem;color:#5c464b}
+.hero .promise{display:inline-block;margin-top:26px;border:1px solid var(--wine);border-radius:999px;padding:10px 26px;color:var(--wine);font-weight:600;letter-spacing:.06em;background:rgba(255,255,255,.5)}
+/* timeline — the bridal journey */
+.journey{max-width:720px;margin:0 auto;position:relative}
+.journey::before{content:"";position:absolute;left:19px;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,var(--peach),var(--wine))}
+.step{position:relative;padding:0 0 44px 64px}
+.step .knot{position:absolute;left:8px;top:4px;width:24px;height:24px;border-radius:50%;background:var(--blush);border:3px solid var(--wine)}
+.step h3{font-size:2rem;color:var(--wine);margin-bottom:6px}
+.step .when{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--rose);font-weight:600}
+.step p{color:#5c464b;max-width:52ch}
+/* packages */
+.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pkg{background:rgba(255,255,255,.65);backdrop-filter:blur(6px);border:1px solid rgba(163,74,94,.3);border-radius:22px;padding:36px 28px;text-align:center}
+.pkg.hl{border:2px solid var(--wine);background:#fff}
+.pkg h3{font-size:2.2rem;color:var(--wine);margin-bottom:6px}
+.pkg .pr{font-family:'Great Vibes',cursive;font-size:2.8rem;color:var(--ink);margin:10px 0}
+.pkg ul{list-style:none;margin:18px 0 24px;text-align:left}
+.pkg li{padding:8px 0;border-bottom:1px dashed rgba(163,74,94,.3);font-size:.93rem}
+.pkg li::before{content:"♥ ";color:var(--wine)}
+/* brides */
+.brides{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.bride{background:rgba(255,255,255,.6);border-radius:20px;padding:28px;border:1px solid rgba(163,74,94,.2)}
+.bride .init{width:64px;height:64px;border-radius:50%;background:var(--wine);color:#fff;font-family:'Great Vibes',cursive;font-size:1.8rem;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.bride p{font-style:italic;color:#5c464b;margin-bottom:12px}
+.bride b{font-size:.85rem;letter-spacing:.08em;color:var(--wine)}
+.sample{font-size:.78rem;color:#8a6f74;font-style:italic;margin-top:22px;text-align:center}
+/* booking */
+.book{background:rgba(163,74,94,.08);border-top:1px solid rgba(163,74,94,.25)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:700px;margin:28px auto 0}
+.full{grid-column:1/-1}
+label{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--wine);font-weight:600;display:block;margin-bottom:6px}
+input,select,textarea{background:rgba(255,255,255,.8);border:1px solid rgba(163,74,94,.4);border-radius:14px;padding:13px;font-family:'Barlow',sans-serif;font-size:1rem;width:100%}
+.confirm{display:none;max-width:700px;margin:18px auto 0;background:#fff;border:1px solid var(--wine);border-radius:14px;padding:20px}
+footer{text-align:center;padding:30px;color:#8a6f74;font-size:.88rem;position:relative;z-index:2}
+.sec-t{font-size:clamp(2.6rem,6vw,4.4rem);color:var(--wine);text-align:center;margin-bottom:8px}
+.sec-s{text-align:center;color:#5c464b;max-width:58ch;margin:0 auto 40px}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:760px){nav ul{display:none}.pkgs,.brides{grid-template-columns:1fr}form{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}.petal,.veil{display:none}}
+</style>
+</head>
+<body>
+<div class="veil" id="veil1"></div><div class="veil" id="veil2"></div><div class="veil" id="veil3"></div>
+<div id="petals" aria-hidden="true"></div>
+
+<nav><div class="wrap"><a class="brand" href="#top">Vows &amp; Veils</a>
+<ul><li><a class="nl" href="#journey">Journey</a></li><li><a class="nl" href="#packages">Packages</a></li><li><a class="nl" href="#brides">Brides</a></li><li><a class="nl" href="#book">Book</a></li></ul></div></nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">Bridal Lounge · Jalandhar</p>
+    <h1>One bride<br>at a time.</h1>
+    <p>Vows &amp; Veils takes a single bridal booking per day. No rushing between chairs, no shared artists — from your first trial to the final dupatta pin, the whole lounge is yours.</p>
+    <a class="btn" href="#book">Reserve Your Day</a><br>
+    <span class="promise">Only one bridal per day · 2026 dates filling</span>
+  </div>
+</header>
+
+<section id="journey">
+  <div class="wrap">
+    <h2 class="sec-t reveal">The Bridal Journey</h2>
+    <p class="sec-s reveal">Four chapters, written around your wedding date.</p>
+    <div class="journey">
+      <div class="step reveal"><span class="knot"></span><p class="when">2–3 months before</p><h3>The First Veil</h3><p>Trial day — full bridal look, hairstyle rehearsal and a skin plan that starts that very evening.</p></div>
+      <div class="step reveal"><span class="knot"></span><p class="when">Pre-bridal weeks</p><h3>The Unveiling</h3><p>Pre-bridal rituals from ₹9,999 — clean-ups, body polishing and glow facials on a calm schedule.</p></div>
+      <div class="step reveal"><span class="knot"></span><p class="when">The morning of</p><h3>The Vow Hour</h3><p>We arrive at 5 AM. Makeup, hair, draping — finished a full hour before the baraat.</p></div>
+      <div class="step reveal"><span class="knot"></span><p class="when">Through the pheras</p><h3>Held, All Night</h3><p>An artist stays on call till vidaai for touch-ups. You will not check a mirror once.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="packages" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="sec-t reveal">Packages</h2>
+    <p class="sec-s reveal">Priced for the whole journey — never per lipstick.</p>
+    <div class="pkgs">
+      <div class="pkg reveal"><h3>Pre-Bridal Glow</h3><div class="pr">₹9,999</div><ul><li>4 glow facials, spaced monthly</li><li>Full-body polishing session</li><li>Hair spa + bridal haircut</li><li>Skin plan with our aesthetician</li></ul><a class="btn" href="#book" data-svc="Pre-Bridal Glow — ₹9,999">Choose</a></div>
+      <div class="pkg hl reveal"><h3>Full Bridal</h3><div class="pr">₹18,999</div><ul><li>HD/airbrush bridal makeup</li><li>Bridal hairstyle + extensions</li><li>Saree / lehenga draping</li><li>On-call artist till vidaai</li></ul><a class="btn" href="#book" data-svc="Full Bridal — ₹18,999">Choose</a></div>
+      <div class="pkg reveal"><h3>Family of the Bride</h3><div class="pr">₹4,999 <span style="font-size:1.2rem">/ person</span></div><ul><li>Party makeup + hairstyling</li><li>Draping assistance</li><li>Group slot, same morning</li><li>Min. 3 guests</li></ul><a class="btn" href="#book" data-svc="Family of the Bride — ₹4,999 pp">Choose</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="brides" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="sec-t reveal">Brides' Stories</h2>
+    <p class="sec-s reveal">Notes slipped to us after the vidaai.</p>
+    <div class="brides">
+      <div class="bride reveal"><div class="init">S</div><p>They finished at 8 for a 10 AM pheras. I ate breakfast sitting down. On my wedding day. That has never happened to anyone.</p><b>SIMRAN · DEC 2025 BRIDE</b></div>
+      <div class="bride reveal"><div class="init">A</div><p>My mother cried when the dupatta was pinned. Then she asked for the artist's number for my sister.</p><b>AKANKSHA · FEB 2026 BRIDE</b></div>
+      <div class="bride reveal"><div class="init">R</div><p>The trial looked so good my fiancé asked why we were waiting two more months.</p><b>RITU · NOV 2025 BRIDE</b></div>
+    </div>
+    <p class="sample">Sample guest notes — written for this demo, not real reviews.</p>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <h2 class="sec-t reveal">Reserve Your Day</h2>
+    <p class="sec-s reveal">12, Model Town, Jalandhar · One bridal per day — dates are first-confirmed, first-held.</p>
+    <form id="bform" class="reveal" novalidate>
+      <div><label for="nm">Bride's name</label><input id="nm" required placeholder="Harleen Kaur"></div>
+      <div><label for="ph">Phone</label><input id="ph" required inputmode="tel" placeholder="+91 98XXX XXXXX"></div>
+      <div><label for="dt">Wedding date</label><input id="dt" type="date" required></div>
+      <div><label for="sv">Package</label><select id="sv"><option>Full Bridal — ₹18,999</option><option>Pre-Bridal Glow — ₹9,999</option><option>Family of the Bride — ₹4,999 pp</option></select></div>
+      <div class="full"><button class="btn" type="submit" style="width:100%">Hold My Date</button></div>
+    </form>
+    <div class="confirm" id="confirm" role="status"></div>
+  </div>
+</section>
+
+<footer>Vows &amp; Veils · 12, Model Town, Jalandhar · +91 181 466 7788 · One bride at a time, always.</footer>
+
+<script>
+// petal drift (deterministic-ish, seeded positions)
+(function(){
+  var box=document.getElementById('petals');
+  for(var i=0;i<26;i++){
+    var p=document.createElement('span');p.className='petal';
+    var s=(Math.random()*10+8).toFixed(0);
+    p.style.cssText='left:'+(Math.random()*100)+'%;width:'+s+'px;height:'+(s*0.8)+'px;animation-duration:'+(Math.random()*7+8).toFixed(1)+'s;animation-delay:-'+(Math.random()*12).toFixed(1)+'s';
+    box.appendChild(p);
+  }
+})();
+// veils parallax — pure functions of scrollY (seek(scroll))
+var v1=document.getElementById('veil1'),v2=document.getElementById('veil2'),v3=document.getElementById('veil3');
+function onScroll(){
+  var y=scrollY;
+  v1.style.transform='translateY('+(y*0.08)+'px)';
+  v2.style.transform='translateY('+(y*0.16)+'px)';
+  v3.style.transform='translateY('+(y*0.26)+'px)';
+}
+var t=false;
+addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(function(){onScroll();t=false;});}},{passive:true});
+onScroll();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+document.querySelectorAll('[data-svc]').forEach(function(a){a.addEventListener('click',function(){
+  var sel=document.getElementById('sv');for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===a.dataset.svc){sel.selectedIndex=i;break;}}
+});});
+document.getElementById('bform').addEventListener('submit',function(e){
+  e.preventDefault();
+  var nm=document.getElementById('nm').value.trim(),ph=document.getElementById('ph').value.trim(),dt=document.getElementById('dt').value;
+  var c=document.getElementById('confirm');
+  if(!nm||!ph||!dt){c.style.display='block';c.textContent='Please share the bride\'s name, a phone number and the wedding date.';return;}
+  c.style.display='block';
+  c.innerHTML='<b style="color:#a34a5e">'+nm+', your date is pencilled in.</b> '+document.getElementById('sv').value.split(' — ')[0]+' for '+dt+'. We will call '+ph+' within a day to hold it — one bride at a time, and that bride is you.';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slow Mornings — a journal cafe in Sector 8, Chandigarh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Noto+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f8f4ea;--oat:#e8ddc9;--sepia:#6b5b45;--ink:#3a322a;--tape:#d9b36a;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--oat);color:var(--ink);font-family:'Noto Sans',sans-serif;overflow-x:hidden;
+  background-image:radial-gradient(#d9cbaeff 1px,transparent 1px);background-size:26px 26px;}
+h1,h2,.hand{font-family:'Caveat',cursive}
+section{padding:88px 20px;max-width:900px;margin:0 auto;position:relative}
+.page{max-width:960px;margin:0 auto;position:relative}
+
+/* --- journal sheet --- */
+.sheet{background:var(--paper);margin:26px 14px;padding:56px 34px;border-radius:3px;
+  box-shadow:0 14px 30px rgba(58,50,42,.16);position:relative;overflow:hidden;
+  background-image:linear-gradient(transparent 31px,rgba(107,91,69,.16) 31px);
+  background-size:100% 32px;line-height:32px}
+.sheet::before{content:"";position:absolute;top:0;bottom:0;left:64px;width:2px;background:rgba(190,120,90,.5)}
+.tape{position:absolute;width:120px;height:34px;background:rgba(217,179,106,.75);top:-14px;left:50%;
+  transform:translateX(-50%) rotate(-4deg);box-shadow:0 2px 5px rgba(0,0,0,.15);
+  clip-path:polygon(3% 0,97% 4%,100% 96%,0 100%);opacity:0;transition:opacity .8s}
+.reveal.in .tape{opacity:1}
+header.sheet-head{text-align:center;padding-top:70px}
+.eyebrow{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--sepia);font-weight:700}
+h1{font-size:clamp(52px,11vw,96px);line-height:1;color:var(--ink);transform:rotate(-2deg);margin:18px 0 8px}
+h1 .under{position:relative;display:inline-block}
+h1 .under::after{content:"";position:absolute;left:-2%;right:-2%;bottom:6px;height:.32em;background:rgba(217,179,106,.45);z-index:-1;transform:skew(-12deg)}
+.sub{font-size:17px;color:var(--sepia);max-width:520px;margin:14px auto;line-height:1.7}
+.rule{width:120px;height:2px;background:var(--sepia);margin:26px auto;position:relative}
+.rule::after{content:"";position:absolute;left:50%;top:-4px;width:10px;height:10px;background:var(--paper);
+  border:2px solid var(--sepia);transform:translateX(-50%) rotate(45deg)}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);font-family:'Noto Sans';font-weight:700;
+  padding:15px 38px;border-radius:40px;text-decoration:none;font-size:15px;letter-spacing:.04em;
+  border:2px solid var(--ink);transition:transform .25s,background .25s,color .25s;cursor:pointer}
+.btn:hover{transform:rotate(-2deg) scale(1.04);background:transparent;color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.margin-note{position:absolute;font-family:'Caveat';font-size:21px;color:var(--sepia);transform:rotate(6deg);
+  max-width:170px;line-height:1.25;opacity:0;transition:opacity 1s .3s}
+.reveal.in .margin-note{opacity:1}
+
+/* --- page turn animation --- */
+.page-turn{perspective:1600px}
+.turner{transform-origin:left center;transition:transform 1.1s cubic-bezier(.7,0,.3,1);position:relative}
+.reveal.in .turner{transform:rotateY(-14deg)}
+.turner::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 55%,rgba(58,50,42,.18));pointer-events:none}
+
+/* --- ritual timeline --- */
+.ritual-step{display:flex;gap:22px;align-items:flex-start;padding:26px 0;border-bottom:1.5px dashed rgba(107,91,69,.45)}
+.ritual-step:last-child{border:none}
+.time{font-family:'Caveat';font-size:30px;color:var(--sepia);min-width:110px}
+.ritual-step h3{font-family:'Caveat';font-size:30px;margin-bottom:4px}
+.ritual-step p{line-height:1.7;font-size:15px}
+
+/* --- menu --- */
+.menu-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:18px 4px;
+  border-bottom:1px dotted var(--sepia);line-height:1.5}
+.menu-row .nm{font-weight:700;font-size:17px}
+.menu-row .ds{font-size:13.5px;color:var(--sepia);font-style:italic}
+.menu-row .pr{font-family:'Caveat';font-size:27px;white-space:nowrap}
+h2.sec{font-size:clamp(40px,8vw,62px);text-align:center;margin-bottom:8px;transform:rotate(-1deg)}
+h2.sec+ p.lead{text-align:center;color:var(--sepia);margin-bottom:36px;font-size:16px}
+
+/* --- journal prompts (flip cards) --- */
+.prompts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:30px}
+.prompt{background:var(--paper);border:1px solid rgba(107,91,69,.35);border-radius:4px;padding:26px 22px;
+  min-height:190px;cursor:pointer;position:relative;transition:transform .35s;box-shadow:0 6px 16px rgba(58,50,42,.1)}
+.prompt::before{content:"";position:absolute;top:-12px;left:50%;transform:translateX(-50%) rotate(3deg);
+  width:86px;height:24px;background:rgba(217,179,106,.8);clip-path:polygon(4% 0,96% 6%,100% 94%,0 100%)}
+.prompt:hover{transform:translateY(-6px) rotate(1deg)}
+.prompt .hand{font-size:24px;line-height:1.35}
+.prompt small{display:block;margin-top:12px;color:var(--sepia);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+
+/* --- visit --- */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:30px}
+.visit-grid div{background:rgba(248,244,234,.7);border:1px solid rgba(107,91,69,.3);padding:24px;border-radius:4px;line-height:1.7}
+.visit-grid strong{display:block;font-family:'Caveat';font-size:26px;margin-bottom:6px}
+footer{text-align:center;padding:44px 20px;color:var(--sepia);font-size:13px;line-height:2}
+
+/* --- reveal --- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* doodle svgs */
+.doodle{position:absolute;opacity:.5;pointer-events:none}
+@media(max-width:640px){
+  .visit-grid{grid-template-columns:1fr}
+  .sheet{padding:44px 22px;margin:18px 8px}
+  .sheet::before{left:34px}
+  .margin-note{display:none}
+  .time{min-width:84px;font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<div class="page page-turn">
+  <header class="sheet reveal" id="top">
+    <div class="tape"></div>
+    <svg class="doodle" style="top:90px;right:40px" width="70" height="70" viewBox="0 0 70 70"><path d="M10 55 Q35 10 60 50" fill="none" stroke="#6b5b45" stroke-width="2.5" stroke-dasharray="6 4"/><circle cx="60" cy="50" r="4" fill="#6b5b45"/></svg>
+    <p class="eyebrow">A journal cafe · Sector 8, Chandigarh</p>
+    <h1>Mornings worth <span class="under">writing</span> down.</h1>
+    <p class="sub">Slow Mornings is a cafe built around one radical idea: sit with your coffee and your thoughts. No laptops before 11. Pen and paper provided. The slow bar pours; you do the thinking.</p>
+    <div class="rule"></div>
+    <a class="btn" href="#ritual">Read today's page</a>
+    <p class="hand margin-note" style="top:200px;right:-8px">est. 2019 —<br>still unhurried</p>
+  </header>
+</div>
+
+<div class="page page-turn">
+<section class="sheet reveal turner" id="ritual">
+  <div class="tape"></div>
+  <p class="eyebrow" style="text-align:center">The ritual</p>
+  <h2 class="sec">How a slow morning goes</h2>
+  <p class="lead">Four small ceremonies. No rush between them.</p>
+  <div class="ritual-step">
+    <div class="time">7:30</div>
+    <div><h3>The first pour</h3><p>The slow bar opens with a single-origin pour-over of the day — Coorg or Chikmagalur, ground at 7 AM sharp. First cup is for the smell.</p></div>
+  </div>
+  <div class="ritual-step">
+    <div class="time">8:15</div>
+    <div><h3>Pen to paper</h3><p>Borrow a fountain pen and one of our house journals. Three pages, no editing. Staff will never read over your shoulder — house rule.</p></div>
+  </div>
+  <div class="ritual-step">
+    <div class="time">9:40</div>
+    <div><h3>Second cup, slower</h3><p>Cortado or filter kaapi, served in ceramic with a shortbread thumbprint. Conversation allowed now — quietly.</p></div>
+  </div>
+  <div class="ritual-step">
+    <div class="time">11:00</div>
+    <div><h3>The world returns</h3><p>Laptops open, phones unmuted, the day begins. You leave with ink on your fingers and a page you didn't know you needed.</p></div>
+  </div>
+</section>
+</div>
+
+<div class="page page-turn">
+<section class="sheet reveal turner" id="menu">
+  <div class="tape"></div>
+  <p class="eyebrow" style="text-align:center">The menu</p>
+  <h2 class="sec">Short menu, long pours</h2>
+  <p class="lead">Everything is made to be sipped slowly. Prices include all the journaling stationery you can use.</p>
+  <div class="menu-row"><div><div class="nm">Pour-over of the day</div><div class="ds">single-origin, ground at 7 AM</div></div><div class="pr">₹180</div></div>
+  <div class="menu-row"><div><div class="nm">Filter kaapi, slow-brewed</div><div class="ds">with jaggery, in a dabara set</div></div><div class="pr">₹140</div></div>
+  <div class="menu-row"><div><div class="nm">Cortado</div><div class="ds">double ristretto, silk milk</div></div><div class="pr">₹200</div></div>
+  <div class="menu-row"><div><div class="nm">Masala chai, clay kulhad</div><div class="ds">crushed ginger, slow simmer</div></div><div class="pr">₹90</div></div>
+  <div class="menu-row"><div><div class="nm">Shortbread thumbprint</div><div class="ds">baked in-house at dawn</div></div><div class="pr">₹110</div></div>
+  <div class="menu-row"><div><div class="nm">Banana-walnut loaf</div><div class="ds">toasted, salted butter</div></div><div class="pr">₹130</div></div>
+  <div class="menu-row"><div><div class="nm">The full morning</div><div class="ds">any two drinks + any bake, pen &amp; journal included</div></div><div class="pr">₹349</div></div>
+  <div style="text-align:center;margin-top:34px"><a class="btn ghost" href="#visit">Come for breakfast</a></div>
+</section>
+</div>
+
+<div class="page page-turn">
+<section class="sheet reveal turner" id="prompts">
+  <div class="tape"></div>
+  <p class="eyebrow" style="text-align:center">Journaling Sundays</p>
+  <h2 class="sec">This week's prompts</h2>
+  <p class="lead">Every Sunday at 9 AM we gather, pick a prompt, and write for 40 quiet minutes. Free with any drink.</p>
+  <div class="prompts">
+    <div class="prompt"><span class="hand">"Write the letter you never sent — and decide if it still needs sending."</span><small>Sunday · 9 AM</small></div>
+    <div class="prompt"><span class="hand">"Describe your perfect ordinary Tuesday in exhausting detail."</span><small>Sunday · 9 AM</small></div>
+    <div class="prompt"><span class="hand">"What did 16-year-old you get right that you've forgotten?"</span><small>Sunday · 9 AM</small></div>
+    <div class="prompt"><span class="hand">"List 10 small things that went right this week. Ink, no backspace."</span><small>Sunday · 9 AM</small></div>
+  </div>
+</section>
+</div>
+
+<div class="page page-turn">
+<section class="sheet reveal turner" id="visit">
+  <div class="tape"></div>
+  <p class="eyebrow" style="text-align:center">Visit</p>
+  <h2 class="sec">Find your corner</h2>
+  <p class="lead">Window seats go first. Arrive early, leave late.</p>
+  <div class="visit-grid">
+    <div><strong>Where</strong>SCO 214, First Floor, Sector 8-C,<br>Chandigarh 160008<br>Above the old bookshop — follow the smell of filter coffee.</div>
+    <div><strong>When</strong>Mon–Sun · 7:30 AM – 1 PM<br>No laptops before 11 AM<br>Journaling Sundays · 9 AM<br><br>+91 172 466 8890</div>
+  </div>
+  <div style="text-align:center;margin-top:34px"><a class="btn" href="#top">Back to page one</a></div>
+</section>
+</div>
+
+<footer>Slow Mornings · Sector 8, Chandigarh · "no laptops before 11" since 2019</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
