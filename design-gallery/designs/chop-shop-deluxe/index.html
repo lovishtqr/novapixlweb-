@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chop Shop Deluxe — No Boring Hair | Mohali 3B2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#ff4d00; --ink:#111111; --paper:#f5f0e8;
+  --shadow:8px 8px 0 var(--ink);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Cairo',sans-serif;overflow-x:hidden;line-height:1.5}
+h1,h2,h3,.slab{font-family:'Alfa Slab One',serif;font-weight:400;letter-spacing:.01em}
+img,svg{max-width:100%}
+a{color:inherit}
+/* ---- ticker ---- */
+.ticker{background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;border-block:3px solid var(--ink)}
+.ticker-track{display:inline-block;padding:.6rem 0;animation:tick 18s linear infinite;font-weight:800;letter-spacing:.15em;font-size:.85rem}
+.ticker-track span{margin:0 1.5rem}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* ---- nav ---- */
+nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink);display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.2rem;flex-wrap:wrap;gap:.6rem}
+.logo{background:var(--orange);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:.25rem .7rem;font-family:'Alfa Slab One',serif;transform:rotate(-2deg);font-size:1.05rem}
+.navlinks{display:flex;gap:.5rem;flex-wrap:wrap}
+.navlinks a{border:3px solid var(--ink);padding:.3rem .8rem;font-weight:800;text-decoration:none;background:#fff;box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.navlinks a:hover{transform:translate(-2px,-2px) rotate(-1deg);box-shadow:6px 6px 0 var(--ink);background:var(--orange)}
+/* ---- hero ---- */
+.hero{padding:clamp(3rem,8vw,6rem) 1.2rem;position:relative;border-bottom:3px solid var(--ink);overflow:hidden}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative}
+.kicker{display:inline-block;background:var(--ink);color:var(--paper);font-weight:800;padding:.35rem .9rem;transform:rotate(-2deg);letter-spacing:.2em;font-size:.8rem;margin-bottom:1.2rem}
+h1{font-size:clamp(2.8rem,9vw,6.5rem);line-height:.95;text-transform:uppercase}
+h1 .out{color:transparent;-webkit-text-stroke:3px var(--ink)}
+h1 .boom{color:var(--orange);-webkit-text-stroke:3px var(--ink);text-shadow:4px 4px 0 var(--ink)}
+.hero-sub{font-size:clamp(1rem,2.4vw,1.3rem);font-weight:700;max-width:34rem;margin-top:1.2rem}
+.cta-row{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}
+.btn{font-family:'Alfa Slab One',serif;font-size:1.1rem;border:3px solid var(--ink);padding:.85rem 1.8rem;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .15s,box-shadow .15s;background:var(--orange);color:var(--ink);box-shadow:var(--shadow)}
+.btn.ghost{background:#fff}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--ink)}
+.btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+.sticker{position:absolute;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);font-weight:800;padding:.5rem .9rem;background:#fff;z-index:2}
+.st1{top:6%;right:4%;transform:rotate(6deg);background:var(--orange)}
+.st2{bottom:10%;right:12%;transform:rotate(-5deg)}
+.hero-scissors{position:absolute;right:2%;bottom:-10px;width:clamp(120px,20vw,220px);transform:rotate(12deg);opacity:.9}
+/* ---- sections ---- */
+section{padding:clamp(3rem,7vw,5rem) 1.2rem;border-bottom:3px solid var(--ink)}
+.wrap{max-width:1100px;margin:0 auto}
+.sec-head{display:flex;align-items:center;gap:1rem;margin-bottom:2.2rem;flex-wrap:wrap}
+.sec-num{background:var(--ink);color:var(--orange);font-family:'Alfa Slab One',serif;padding:.4rem .8rem;font-size:1.2rem;transform:rotate(-3deg)}
+h2{font-size:clamp(1.8rem,5vw,3rem);text-transform:uppercase}
+/* cuts menu */
+.cut-row{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;background:#fff;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:1.1rem 1.4rem;margin-bottom:1.1rem;transition:transform .15s,box-shadow .15s}
+.cut-row:hover{transform:translate(-3px,-3px) rotate(-.4deg);box-shadow:9px 9px 0 var(--ink)}
+.cut-row h3{font-size:1.35rem;text-transform:uppercase}
+.cut-row p{font-weight:600;color:#444}
+.price{background:var(--orange);border:3px solid var(--ink);font-family:'Alfa Slab One',serif;padding:.4rem .9rem;font-size:1.25rem;white-space:nowrap;transform:rotate(2deg)}
+.tag{display:inline-block;background:var(--ink);color:var(--paper);font-size:.72rem;font-weight:800;letter-spacing:.12em;padding:.15rem .6rem;margin-top:.4rem}
+/* color lab */
+.lab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.2rem;margin-bottom:2rem}
+.swatch{border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);background:#fff;padding:.6rem;cursor:pointer;text-align:center;transition:transform .15s}
+.swatch:hover{transform:rotate(-2deg) scale(1.04)}
+.swatch .chip{height:90px;border:3px solid var(--ink);margin-bottom:.6rem}
+.swatch b{font-size:.95rem}
+.swatch small{display:block;font-weight:600;color:#555}
+#preview{border:3px solid var(--ink);box-shadow:var(--shadow);background:#fff;padding:1.4rem;display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap}
+#prev-chip{width:110px;height:110px;border:3px solid var(--ink);flex:none}
+#preview h3{text-transform:uppercase;font-size:1.3rem}
+/* crew */
+.crew-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem}
+.member{border:3px solid var(--ink);box-shadow:var(--shadow);background:#fff;transition:transform .18s}
+.member:hover{transform:rotate(1.5deg) translateY(-6px)}
+.avatar{height:150px;border-bottom:3px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Alfa Slab One',serif;font-size:3rem;color:#fff}
+.member .info{padding:1rem}
+.member .info h3{text-transform:uppercase;font-size:1.15rem}
+/* booking */
+form.book{border:3px solid var(--ink);box-shadow:var(--shadow);background:#fff;padding:clamp(1.2rem,4vw,2.4rem);max-width:640px}
+label{font-weight:800;display:block;margin:.9rem 0 .35rem;text-transform:uppercase;font-size:.85rem;letter-spacing:.06em}
+input,select{width:100%;border:3px solid var(--ink);padding:.75rem;font-family:'Cairo',sans-serif;font-weight:600;font-size:1rem;background:var(--paper)}
+input:focus,select:focus{outline:3px solid var(--orange)}
+#confirm{display:none;margin-top:1.2rem;border:3px solid var(--ink);background:var(--orange);padding:1.2rem;font-weight:800;box-shadow:5px 5px 0 var(--ink)}
+footer{background:var(--ink);color:var(--paper);padding:2rem 1.2rem;text-align:center}
+footer b{color:var(--orange)}
+.reveal{opacity:0;transform:translateY(28px) rotate(.6deg);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.9,.3,1.2)}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:560px){.sticker{display:none}.cut-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="ticker" aria-hidden="true"><div class="ticker-track" id="tick"></div></div>
+<nav>
+  <div class="logo">CHOP SHOP DELUXE</div>
+  <div class="navlinks">
+    <a href="#cuts">Cuts</a><a href="#color">Color Lab</a><a href="#crew">Crew</a><a href="#book">Book</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="sticker st1">EST. LOUD 2019</div>
+  <div class="sticker st2">WALK-INS OK</div>
+  <svg class="hero-scissors" viewBox="0 0 100 100" aria-hidden="true"><circle cx="28" cy="72" r="9" fill="none" stroke="#111" stroke-width="5"/><circle cx="28" cy="30" r="9" fill="none" stroke="#111" stroke-width="5"/><line x1="34" y1="66" x2="90" y2="22" stroke="#ff4d00" stroke-width="6"/><line x1="34" y1="36" x2="90" y2="80" stroke="#111" stroke-width="6"/></svg>
+  <div class="hero-inner">
+    <span class="kicker">MOHALI 3B2 · BOLD CUTS ONLY</span>
+    <h1>NO <span class="out">BORING</span><br><span class="boom">HAIR.</span> EVER.</h1>
+    <p class="hero-sub">Undercuts with attitude, vivid color that hurts feelings (in a good way), and fades so sharp they should be illegal. Chop Shop Deluxe is where Mohali gets loud.</p>
+    <div class="cta-row">
+      <a class="btn" href="#book">BOOK A CHAIR</a>
+      <a class="btn ghost" href="#cuts">SEE THE CUTS</a>
+    </div>
+  </div>
+</header>
+
+<section id="cuts">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">01</span><h2>The Cuts Menu</h2></div>
+    <div class="cut-row reveal"><div><h3>Undercut Designs</h3><p>Geometric lines, zigzags, or your initials carved into the fade. Re-line every 2 weeks.</p><span class="tag">MOST REQUESTED</span></div><div class="price">₹599</div></div>
+    <div class="cut-row reveal"><div><h3>Skin Fade Deluxe</h3><p>Zero-blend fade, hot-lather neckline, straight-razor finish. 45 minutes of precision.</p></div><div class="price">₹449</div></div>
+    <div class="cut-row reveal"><div><h3>Mullet Revival</h3><p>Business up front, chaos at the back. Layered, textured, unapologetic.</p><span class="tag">COMEBACK CUT</span></div><div class="price">₹549</div></div>
+    <div class="cut-row reveal"><div><h3>Buzz + Design</h3><p>Full buzz with a razor-etched design. In and out in 20 minutes.</p></div><div class="price">₹349</div></div>
+  </div>
+</section>
+
+<section id="color" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">02</span><h2>The Color Lab</h2></div>
+    <p class="reveal" style="font-weight:700;margin-bottom:1.6rem;max-width:36rem">Vivid color from ₹3,999. Tap a swatch to preview your next personality.</p>
+    <div class="lab-grid">
+      <div class="swatch reveal" data-c="#ff4d00" data-n="Safety Orange Melt" data-p="₹3,999"><div class="chip" style="background:#ff4d00"></div><b>Safety Orange</b><small>full head vivid</small></div>
+      <div class="swatch reveal" data-c="#d4006a" data-n="Riot Pink" data-p="₹4,299"><div class="chip" style="background:#d4006a"></div><b>Riot Pink</b><small>full head vivid</small></div>
+      <div class="swatch reveal" data-c="#7a00ff" data-n="Ultraviolet" data-p="₹4,499"><div class="chip" style="background:#7a00ff"></div><b>Ultraviolet</b><small>full head vivid</small></div>
+      <div class="swatch reveal" data-c="#00c853" data-n="Slime Green" data-p="₹3,999"><div class="chip" style="background:#00c853"></div><b>Slime Green</b><small>full head vivid</small></div>
+      <div class="swatch reveal" data-c="#111111" data-n="Jet Blackout" data-p="₹2,499"><div class="chip" style="background:#111"></div><b>Jet Blackout</b><small>gloss black</small></div>
+      <div class="swatch reveal" data-c="#f5f0e8" data-n="Platinum Blast" data-p="₹5,499"><div class="chip" style="background:#f5f0e8"></div><b>Platinum Blast</b><small>double process</small></div>
+    </div>
+    <div id="preview" class="reveal">
+      <div id="prev-chip" style="background:#ff4d00"></div>
+      <div><h3 id="prev-name">Safety Orange Melt</h3><p style="font-weight:700">Vivid color · <span id="prev-price">₹3,999</span> · patch test free</p>
+      <a class="btn" href="#book" style="margin-top:.8rem;font-size:.9rem;padding:.6rem 1.2rem">BOOK THIS SHADE</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="crew">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">03</span><h2>The Crew</h2></div>
+    <div class="crew-grid">
+      <div class="member reveal"><div class="avatar" style="background:#ff4d00">RJ</div><div class="info"><h3>RJ "Razor" Khanna</h3><p style="font-weight:600">Founder · fade architect · 9 yrs. Did 40 fades in one wedding week.</p></div></div>
+      <div class="member reveal"><div class="avatar" style="background:#111">SP</div><div class="info"><h3>Simran "Ink" Paul</h3><p style="font-weight:600">Color chemist · vivid specialist. If it glows, she mixed it.</p></div></div>
+      <div class="member reveal"><div class="avatar" style="background:#ff4d00">DV</div><div class="info"><h3>Dev "Design" Verma</h3><p style="font-weight:600">Razor art · undercut patterns. Freehand, no stencils.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="book" style="background:var(--orange)">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">04</span><h2>Book a Chair</h2></div>
+    <form class="book reveal" id="bookForm">
+      <label for="n">Name</label><input id="n" required placeholder="Your name">
+      <label for="p">Phone</label><input id="p" required inputmode="tel" placeholder="98XXX XXXXX">
+      <label for="s">Service</label>
+      <select id="s"><option>Undercut Designs — ₹599</option><option>Skin Fade Deluxe — ₹449</option><option>Mullet Revival — ₹549</option><option>Buzz + Design — ₹349</option><option>Vivid Color — from ₹3,999</option></select>
+      <label for="d">Date</label><input id="d" type="date" required>
+      <button class="btn" type="submit" style="margin-top:1.2rem;width:100%">LOCK MY SLOT</button>
+      <div id="confirm"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p><b>CHOP SHOP DELUXE</b> · SCO 112, Phase 3B2, Mohali · Open Tue–Sun, 10 AM–9 PM</p>
+  <p style="margin-top:.5rem;font-weight:600">No boring hair since 2019.</p>
+</footer>
+
+<script>
+const items=["NO BORING HAIR","UNDERCUT DESIGNS ₹599","VIVID COLOR FROM ₹3,999","MOHALI 3B2","WALK-INS WELCOME "];
+document.getElementById('tick').innerHTML=(items.map(t=>"<span>"+t+"</span>").join("")).repeat(4);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.swatch').forEach(sw=>sw.addEventListener('click',()=>{
+  document.getElementById('prev-chip').style.background=sw.dataset.c;
+  document.getElementById('prev-name').textContent=sw.dataset.n;
+  document.getElementById('prev-price').textContent=sw.dataset.p;
+  document.getElementById('preview').scrollIntoView({behavior:'smooth',block:'center'});
+}));
+document.getElementById('bookForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const c=document.getElementById('confirm');
+  c.style.display='block';
+  c.innerHTML="SLOT LOCKED. "+document.getElementById('n').value.split(' ')[0].toUpperCase()+", see you on "+document.getElementById('d').value+" for "+document.getElementById('s').value.split(' — ')[0].toUpperCase()+". We will call "+document.getElementById('p').value+" to confirm.";
+  c.scrollIntoView({behavior:'smooth',block:'center'});
+});
+</script>
+</body>
+</html>

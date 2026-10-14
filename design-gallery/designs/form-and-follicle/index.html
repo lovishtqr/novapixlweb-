@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form &amp; Follicle — Less, Better | Panchkula Sector 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bone:#ece8df;--ink:#2a2a28;--grey:#a3a097}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Urbanist',sans-serif;background:var(--bone);color:var(--ink);overflow-x:hidden;font-weight:400}
+h1,h2{font-family:'Sora',sans-serif;font-weight:300;letter-spacing:-.02em}
+img,svg{max-width:100%}
+a{color:inherit}
+/* fixed minimal nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 1.6rem;mix-blend-mode:difference;color:#fff}
+.brand{font-family:'Sora';font-size:.95rem;letter-spacing:.06em}
+.dots{display:flex;gap:.7rem}
+.dots a{width:10px;height:10px;border:1px solid #fff;border-radius:50%;display:block;transition:background .3s}
+.dots a.on{background:#fff}
+/* five full screens */
+.screen{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem 1.6rem;position:relative}
+.screen .k{font-size:.75rem;letter-spacing:.45em;color:var(--grey);margin-bottom:1.6rem;font-weight:500}
+.screen h1,.screen h2{font-size:clamp(2.6rem,9vw,5.5rem);line-height:1.1}
+.screen .line{width:1px;height:64px;background:var(--grey);margin:2rem auto;opacity:.6}
+.screen p{max-width:30rem;color:#5c5a55;font-weight:300;font-size:1.08rem;line-height:1.8}
+.price{font-family:'Sora';font-size:1.6rem;margin-top:1.4rem;font-weight:400}
+.price small{font-size:.95rem;color:var(--grey)}
+.s2{background:#e2ddd2}
+.s4{background:#e2ddd2}
+.next{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);font-size:.7rem;letter-spacing:.4em;color:var(--grey);text-decoration:none}
+.next::after{content:"";display:block;width:1px;height:26px;background:var(--grey);margin:.6rem auto 0}
+/* book screen form */
+form{margin-top:2rem;width:min(100%,380px);text-align:left}
+label{display:block;font-size:.7rem;letter-spacing:.35em;color:var(--grey);margin:1.1rem 0 .4rem;font-weight:500}
+input,select{width:100%;background:transparent;border:none;border-bottom:1px solid var(--grey);padding:.7rem 0;font-family:'Urbanist';font-size:1.05rem;color:var(--ink)}
+input:focus,select:focus{outline:none;border-bottom-color:var(--ink)}
+button{background:var(--ink);color:var(--bone);border:none;font-family:'Sora';font-size:.95rem;letter-spacing:.1em;padding:1rem;width:100%;margin-top:2rem;cursor:pointer;transition:opacity .2s}
+button:hover{opacity:.85}
+#ok{display:none;margin-top:1.4rem;font-size:.95rem;color:#5c5a55;text-align:center;line-height:1.7}
+footer{padding:1.6rem;text-align:center;font-size:.8rem;letter-spacing:.2em;color:var(--grey)}
+/* single-element fade: nothing else moves */
+.fade{opacity:0;transition:opacity 1.4s ease}
+.fade.in{opacity:1}
+@media(max-width:560px){.screen{padding:4.5rem 1.2rem}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="brand">FORM &amp; FOLLICLE</div>
+  <div class="dots">
+    <a href="#s1" class="on" aria-label="hero"></a><a href="#s2" aria-label="cut"></a><a href="#s3" aria-label="color"></a><a href="#s4" aria-label="care"></a><a href="#s5" aria-label="book"></a>
+  </div>
+</nav>
+
+<section class="screen s1" id="s1">
+  <div class="fade"><p class="k">PANCHKULA · SECTOR 8</p>
+  <h1>Less,<br>better.</h1>
+  <div class="line"></div>
+  <p>A salon reduced to what matters. Five screens. Three services. One chair, one client, one hour.</p></div>
+  <a class="next" href="#s2">SCROLL</a>
+</section>
+
+<section class="screen s2" id="s2">
+  <div class="fade"><p class="k">01</p>
+  <h2>Cut.</h2>
+  <div class="line"></div>
+  <p>One cut, done properly. Consultation, precision cut, finish. Sixty minutes. No upsell, no noise.</p>
+  <p class="price">₹1,100 <small>/ 60 min</small></p></div>
+  <a class="next" href="#s3">SCROLL</a>
+</section>
+
+<section class="screen s3" id="s3">
+  <div class="fade"><p class="k">02</p>
+  <h2>Color.</h2>
+  <div class="line"></div>
+  <p>Single-process color or gloss. Mixed to your skin tone, applied without drama, rinsed without damage.</p>
+  <p class="price">₹2,800 <small>/ 90 min</small></p></div>
+  <a class="next" href="#s4">SCROLL</a>
+</section>
+
+<section class="screen s4" id="s4">
+  <div class="fade"><p class="k">03</p>
+  <h2>Care.</h2>
+  <div class="line"></div>
+  <p>A quiet treatment: cleanse, mask, scalp massage. Leave with hair that behaves and a head that doesn't ache.</p>
+  <p class="price">₹900 <small>/ 45 min</small></p></div>
+  <a class="next" href="#s5">SCROLL</a>
+</section>
+
+<section class="screen s5" id="s5">
+  <div class="fade" style="width:100%;display:flex;flex-direction:column;align-items:center"><p class="k">04</p>
+  <h2>Book.</h2>
+  <div class="line"></div>
+  <form id="bf">
+    <label for="bn">NAME</label><input id="bn" required>
+    <label for="bp">PHONE</label><input id="bp" required inputmode="tel">
+    <label for="bs">SERVICE</label>
+    <select id="bs"><option>Cut — ₹1,100</option><option>Color — ₹2,800</option><option>Care — ₹900</option></select>
+    <label for="bd">DATE</label><input id="bd" type="date" required>
+    <button type="submit">RESERVE</button>
+    <div id="ok"></div>
+  </form></div>
+</section>
+
+<footer>FORM &amp; FOLLICLE · SCO 12, SECTOR 8, PANCHKULA · WED–MON · 10–7</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in')}}),{threshold:.3});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+const dots=[...document.querySelectorAll('.dots a')];
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){dots.forEach(d=>d.classList.toggle('on',d.getAttribute('href')==='#'+e.target.id))}}),{threshold:.5});
+document.querySelectorAll('.screen').forEach(el=>so.observe(el));
+document.getElementById('bf').addEventListener('submit',e=>{
+  e.preventDefault();
+  const ok=document.getElementById('ok');ok.style.display='block';
+  ok.textContent=document.getElementById('bn').value.split(' ')[0]+", your "+document.getElementById('bs').value.split(' — ')[0].toLowerCase()+" on "+document.getElementById('bd').value+" is held. We will confirm on "+document.getElementById('bp').value+".";
+});
+</script>
+</body>
+</html>
