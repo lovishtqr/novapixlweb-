@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Beard Foundry — Beard Bar, Zirakpur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--leather:#2b2119;--brass:#b08954;--parch:#efe6d4;--coal:#171310;--ease:cubic-bezier(.2,.9,.25,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--leather);color:var(--parch);font-family:'IBM Plex Sans',sans-serif;overflow-x:hidden;line-height:1.6}
+h1,h2,h3,.rye{font-family:'Rye',serif;font-weight:400;line-height:1.15;letter-spacing:.02em}
+img,svg{max-width:100%;display:block}
+::selection{background:var(--brass);color:var(--coal)}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:clamp(3.5rem,9vh,6rem) clamp(1.2rem,4vw,2.5rem)}
+
+/* riveted panel frame */
+.panel{border:3px solid var(--brass);position:relative;background:linear-gradient(180deg,#332920,#241c14)}
+.rivets{position:absolute;inset:8px;pointer-events:none}
+.rivets i{position:absolute;width:10px;height:10px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e8c98a,var(--brass) 60%,#6b4e2a)}
+.rivets i:nth-child(1){top:0;left:0}.rivets i:nth-child(2){top:0;right:0}
+.rivets i:nth-child(3){bottom:0;left:0}.rivets i:nth-child(4){bottom:0;right:0}
+
+/* rivet-line divider draws */
+.rivline{height:4px;margin:0 auto;max-width:1160px;background:repeating-linear-gradient(90deg,var(--brass) 0 14px,transparent 14px 26px);transform:scaleX(0);transform-origin:left;transition:transform 1.4s var(--ease)}
+.rivline.in{transform:scaleX(1)}
+
+nav{position:sticky;top:0;z-index:50;background:var(--coal);border-bottom:3px solid var(--brass)}
+.nav-in{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:.85rem clamp(1.2rem,4vw,2.5rem)}
+.brand{font-family:'Rye';font-size:1.35rem;color:var(--brass)}
+.nav-in a{font-weight:600;font-size:.88rem;text-decoration:none;color:var(--parch);border:2px solid var(--brass);padding:.45rem 1.2rem;transition:.25s}
+.nav-in a:hover{background:var(--brass);color:var(--coal)}
+
+/* hero */
+.hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:clamp(4.5rem,10vh,7rem) clamp(1.5rem,5vw,4rem) 3rem;position:relative;z-index:2}
+.hero-left::before{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(0deg,transparent 0 46px,rgba(176,137,84,.12) 46px 48px),
+  repeating-linear-gradient(90deg,transparent 0 46px,rgba(176,137,84,.12) 46px 48px);pointer-events:none}
+.stamp{display:inline-block;align-self:flex-start;border:4px double var(--brass);color:var(--brass);font-family:'Rye';font-size:1rem;padding:.6rem 1.4rem;transform:rotate(-6deg);margin-bottom:1.6rem;letter-spacing:.08em}
+.hero h1{font-size:clamp(2.8rem,8vw,6rem);color:var(--parch)}
+.hero h1 .b{color:var(--brass)}
+.hero p{margin:1.4rem 0 2.2rem;max-width:44ch;color:rgba(239,230,212,.72);font-size:1.08rem}
+.btn{display:inline-block;background:var(--brass);color:var(--coal);font-weight:700;text-decoration:none;padding:1rem 2.4rem;font-size:1rem;transition:.25s;border:3px solid var(--brass)}
+.btn:hover{background:transparent;color:var(--brass);transform:translateY(-3px)}
+.hero-right{position:relative;background:radial-gradient(80% 70% at 50% 40%,#3d2f20,#1c1510 75%);display:grid;place-items:center;overflow:hidden;min-height:44vh}
+.anvil{width:min(64%,340px);aspect-ratio:1;position:relative}
+.anvil svg{width:100%;height:100%;filter:drop-shadow(0 24px 30px rgba(0,0,0,.5))}
+.sparks i{position:absolute;width:6px;height:6px;border-radius:50%;background:#ffcf6e;opacity:0;animation:spark 2.6s ease-in infinite}
+.sparks i:nth-child(1){left:46%;top:30%}.sparks i:nth-child(2){left:52%;top:34%;animation-delay:.7s}
+.sparks i:nth-child(3){left:48%;top:28%;animation-delay:1.4s}.sparks i:nth-child(4){left:54%;top:32%;animation-delay:2s}
+@keyframes spark{0%{opacity:0;transform:translate(0,0) scale(1)}15%{opacity:1}100%{opacity:0;transform:translate(var(--dx,30px),-90px) scale(.3)}}
+.sparks i:nth-child(1){--dx:-34px}.sparks i:nth-child(2){--dx:40px}.sparks i:nth-child(3){--dx:-20px}.sparks i:nth-child(4){--dx:26px}
+.hero-badge{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%) rotate(-3deg);background:var(--brass);color:var(--coal);font-weight:700;font-size:.8rem;letter-spacing:.18em;padding:.5rem 1.3rem;text-transform:uppercase;white-space:nowrap}
+
+/* stamp slam badges */
+.sec-head{text-align:center;margin-bottom:2.4rem}
+.sec-head .stamp2{display:inline-block;border:4px double var(--brass);color:var(--brass);font-family:'Rye';padding:.55rem 1.5rem;transform:rotate(3deg) scale(2);opacity:0;margin-bottom:1.2rem}
+.sec-head .stamp2.slam{animation:slam .55s cubic-bezier(.2,1.4,.3,1) forwards}
+@keyframes slam{to{transform:rotate(3deg) scale(1);opacity:1}}
+.sec-head h2{font-size:clamp(2.1rem,5.5vw,3.6rem)}
+
+/* the craft */
+.craft-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:1.3rem}
+.craft{padding:2rem 1.7rem}
+.craft h3{font-family:'Rye';font-size:1.35rem;color:var(--brass);margin-bottom:.7rem}
+.craft p{font-size:.96rem;color:rgba(239,230,212,.72)}
+.craft .t{margin-top:1rem;display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);border-top:2px solid var(--brass);padding-top:.5rem}
+
+/* price board — chalk on steel */
+.board{max-width:820px;margin:0 auto;background:#1d1712;border:3px solid var(--brass);padding:clamp(1.6rem,4vw,3rem);position:relative}
+.board h3{font-family:'Rye';text-align:center;color:var(--brass);font-size:1.7rem;margin-bottom:1.6rem;letter-spacing:.06em}
+.brow2{display:grid;grid-template-columns:1fr auto;gap:.4rem 1.4rem;padding:1rem .3rem;border-bottom:1px dashed rgba(176,137,84,.4);align-items:baseline}
+.brow2 .n{font-weight:600;font-size:1.08rem}
+.brow2 .n small{display:block;font-weight:400;font-size:.85rem;color:rgba(239,230,212,.55)}
+.brow2 .p{font-family:'Rye';color:var(--brass);font-size:1.4rem;white-space:nowrap}
+.brow2 a{grid-column:1/-1;font-size:.82rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);text-decoration:none;justify-self:start}
+.brow2 a:hover{text-decoration:underline}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:1rem}
+.gtile{aspect-ratio:1;background:var(--g);border:3px solid var(--brass);position:relative;overflow:hidden;transition:transform .3s var(--ease)}
+.gtile:hover{transform:scale(1.03) rotate(.8deg)}
+.gtile span{position:absolute;bottom:0;left:0;right:0;background:rgba(23,19,16,.85);color:var(--brass);font-weight:600;font-size:.82rem;padding:.5rem .8rem}
+
+/* booking */
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.master{background:linear-gradient(160deg,#332920,#1e1610);border:3px solid var(--brass);padding:1.8rem;position:relative}
+.master .seal{width:92px;height:92px;border:3px double var(--brass);border-radius:50%;display:grid;place-items:center;font-family:'Rye';color:var(--brass);font-size:.85rem;text-align:center;transform:rotate(-8deg);margin-bottom:1.2rem;line-height:1.3}
+.master h3{font-family:'Rye';font-size:1.5rem;color:var(--brass);margin-bottom:.6rem}
+.master p{color:rgba(239,230,212,.75);font-size:.96rem}
+form.book{display:grid;gap:1rem;background:#1d1712;border:3px solid var(--brass);padding:1.8rem}
+form.book input,form.book select{font-family:inherit;font-size:1rem;background:#241c14;border:2px solid rgba(176,137,84,.5);color:var(--parch);padding:.9rem 1rem;width:100%}
+form.book input:focus,form.book select:focus{outline:none;border-color:var(--brass)}
+form.book .btn{border:3px solid var(--brass);cursor:pointer;text-align:center;font-family:'IBM Plex Sans'}
+.ok{display:none;border:2px solid var(--brass);color:var(--brass);padding:1rem;font-weight:600}
+footer{background:var(--coal);text-align:center;padding:2rem;color:rgba(239,230,212,.5);font-size:.85rem;letter-spacing:.14em}
+footer b{color:var(--brass);font-family:'Rye'}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.book-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1}.sec-head .stamp2{opacity:1;transform:rotate(3deg)}}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-in">
+  <span class="brand">The Beard Foundry</span>
+  <a href="#booking">Book a Stool</a>
+</div></nav>
+
+<header class="hero">
+  <div class="hero-left">
+    <span class="stamp rv">EST. 2016 · ZIRAKPUR</span>
+    <h1 class="rv">Forged beards of <span class="b">Zirakpur.</span></h1>
+    <p class="rv">A beard bar run like a workshop: hot-towel shaves, beard architecture and coloring, hammered out one stool at a time by Gurpreet "Foundry" Singh.</p>
+    <div class="rv"><a class="btn" href="#booking">Take a Stool</a></div>
+  </div>
+  <div class="hero-right rv" aria-hidden="true">
+    <div class="anvil">
+      <svg viewBox="0 0 200 200">
+        <path d="M30 120 L60 120 L60 150 L140 150 L140 120 L170 112 L170 92 L120 92 L110 60 L70 60 L60 92 L30 92 Z" fill="#4a3a26" stroke="#b08954" stroke-width="3"/>
+        <rect x="86" y="150" width="28" height="30" fill="#3a2c1c" stroke="#b08954" stroke-width="3"/>
+        <path d="M100 40 L108 70 L92 70 Z" fill="#b08954"/>
+        <circle cx="100" cy="34" r="6" fill="#e8c98a"/>
+      </svg>
+      <div class="sparks"><i></i><i></i><i></i><i></i></div>
+    </div>
+    <span class="hero-badge">Hot towel · Straight razor · No rush</span>
+  </div>
+</header>
+
+<div class="rivline" data-riv aria-hidden="true" style="margin-top:0"></div>
+
+<section class="wrap">
+  <div class="sec-head">
+    <span class="stamp2 rv" data-stamp>THE CRAFT</span>
+    <h2 class="rv">Hammered, not hurried.</h2>
+  </div>
+  <div class="craft-grid">
+    <div class="panel craft rv"><span class="rivets"><i></i><i></i><i></i><i></i></span><h3>The Forge Shave</h3><p>Three hot towels, pre-shave oil, straight razor in three passes, cold alum finish. The full forty-five.</p><span class="t">45 min · ₹449</span></div>
+    <div class="panel craft rv"><span class="rivets"><i></i><i></i><i></i><i></i></span><h3>Beard Architecture</h3><p>Growth mapped, bulk removed, lines carved with razor detail. Beard oil and hot-towel set.</p><span class="t">35 min · ₹549</span></div>
+    <div class="panel craft rv"><span class="rivets"><i></i><i></i><i></i><i></i></span><h3>Beard Coloring</h3><p>Natural-matte camouflage for greys. Matched to your hair, never shoe-polish black.</p><span class="t">30 min · ₹699</span></div>
+    <div class="panel craft rv"><span class="rivets"><i></i><i></i><i></i><i></i></span><h3>The Full Foundry</h3><p>Cut + forge shave + beard architecture. Walk in rough, walk out cast in bronze.</p><span class="t">90 min · ₹1,199</span></div>
+  </div>
+</section>
+
+<div class="rivline" data-riv aria-hidden="true"></div>
+
+<section class="wrap" style="padding-top:3.5rem">
+  <div class="sec-head">
+    <span class="stamp2" data-stamp>PRICE BOARD</span>
+    <h2 class="rv">Cast in brass.</h2>
+  </div>
+  <div class="board rv">
+    <h3>— Today's Board —</h3>
+    <div class="brow2"><span class="n">Hot-Towel Shave<small>three towels · straight razor · alum finish</small></span><span class="p">₹449</span><a href="#booking">Book →</a></div>
+    <div class="brow2"><span class="n">Beard Sculpt<small>shape · razor line-up · oil finish</small></span><span class="p">₹549</span><a href="#booking">Book →</a></div>
+    <div class="brow2"><span class="n">Beard Coloring<small>grey camouflage · natural matte</small></span><span class="p">₹699</span><a href="#booking">Book →</a></div>
+    <div class="brow2"><span class="n">Head Shave<small>hot towel prep · soothing balm</small></span><span class="p">₹349</span><a href="#booking">Book →</a></div>
+    <div class="brow2" style="border:none"><span class="n">The Full Foundry<small>cut + shave + beard architecture</small></span><span class="p">₹1,199</span><a href="#booking">Book →</a></div>
+  </div>
+</section>
+
+<div class="rivline" data-riv aria-hidden="true"></div>
+
+<section class="wrap" style="padding-top:3.5rem">
+  <div class="sec-head">
+    <span class="stamp2" data-stamp>THE WALL</span>
+    <h2 class="rv">Fresh from the anvil.</h2>
+  </div>
+  <div class="gal rv">
+    <div class="gtile" style="--g:linear-gradient(150deg,#4a3a26,#241c14)"><span>Forge shave finish</span></div>
+    <div class="gtile" style="--g:radial-gradient(circle at 40% 30%,#5a4630,#1e1610)"><span>Boxed beard, sharp lines</span></div>
+    <div class="gtile" style="--g:linear-gradient(200deg,#3d2f20,#171310)"><span>Grey blend, natural</span></div>
+    <div class="gtile" style="--g:conic-gradient(from 180deg,#332920,#4a3a26,#332920)"><span>Full foundry cut</span></div>
+  </div>
+</section>
+
+<div class="rivline" data-riv aria-hidden="true"></div>
+
+<section class="wrap" id="booking" style="padding-top:3.5rem">
+  <div class="sec-head">
+    <span class="stamp2" data-stamp>BOOKING</span>
+    <h2 class="rv">Claim your stool.</h2>
+  </div>
+  <div class="book-grid">
+    <div class="master rv">
+      <div class="seal">MASTER<br>BARBER<br>★</div>
+      <h3>Gurpreet "Foundry" Singh</h3>
+      <p>Twelve years behind the chair, six running the Foundry. Trained in traditional ustra shaving; keeps his razors sharper than his opinions.<br><br>The Beard Foundry · Shop 7, VIP Road, Zirakpur<br>Open 10 AM – 9 PM · Sundays till 6 PM</p>
+    </div>
+    <form class="book rv" id="bookForm">
+      <input type="text" placeholder="Your name" required>
+      <input type="tel" placeholder="Phone" pattern="[0-9+ ]{10,15}" required>
+      <select required><option value="">Choose a service…</option><option>Hot-Towel Shave — ₹449</option><option>Beard Sculpt — ₹549</option><option>Beard Coloring — ₹699</option><option>The Full Foundry — ₹1,199</option></select>
+      <button class="btn" type="submit">Book My Stool</button>
+      <p class="ok" id="bookOk">Stool reserved. Arrive 5 minutes early — the towels wait for no one.</p>
+    </form>
+  </div>
+</section>
+
+<footer><b>THE BEARD FOUNDRY</b> · VIP ROAD, ZIRAKPUR · HAMMERED, NOT HURRIED</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){
+  e.target.classList.add('in');
+  e.target.querySelectorAll('[data-stamp]').forEach(s=>s.classList.add('slam'));
+  if(e.target.hasAttribute('data-stamp'))e.target.classList.add('slam');
+  io.unobserve(e.target)}}),{threshold:.2});
+document.querySelectorAll('.rv,[data-riv]').forEach(el=>io.observe(el));
+document.querySelectorAll('.sec-head').forEach(h=>{const s=h.querySelector('[data-stamp]');if(s){const o2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){s.classList.add('slam');o2.disconnect()}}),{threshold:.4});o2.observe(h)}});
+document.getElementById('bookForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('bookOk').style.display='block';});
+</script>
+</body>
+</html>
