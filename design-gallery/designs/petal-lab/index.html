@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petal Lab — Nail Art Bar, Sector 35 Chandigarh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#ffd9e8;--cream:#fff9f2;--berry:#d6336c;--cocoa:#33302c;--ease:cubic-bezier(.34,1.56,.64,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--cream);color:var(--cocoa);font-family:'Nunito Sans',sans-serif;overflow-x:hidden;line-height:1.6}
+h1,h2,h3,.disp{font-family:'Baloo 2',cursive;line-height:1.05;letter-spacing:-.01em}
+img,svg{max-width:100%;display:block}
+::selection{background:var(--berry);color:#fff}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:clamp(3rem,8vh,5.5rem) clamp(1.1rem,4vw,2.5rem)}
+
+/* cursor blob */
+.blob{position:fixed;width:340px;height:340px;border-radius:50%;pointer-events:none;z-index:0;
+  background:radial-gradient(circle,rgba(214,51,108,.16),transparent 65%);transform:translate(-50%,-50%);left:-500px;top:-500px}
+
+/* nav stickers */
+nav{position:sticky;top:0;z-index:40;background:rgba(255,249,242,.92);backdrop-filter:blur(10px);border-bottom:3px dashed var(--berry)}
+.nav-in{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:.8rem clamp(1.1rem,4vw,2.5rem)}
+.logo{font-family:'Baloo 2';font-size:1.6rem;font-weight:800;color:var(--berry);transform:rotate(-3deg);display:inline-block;background:var(--pink);padding:.1rem .8rem;border-radius:999px;border:2px solid var(--berry)}
+.nav-links{display:flex;gap:.6rem;flex-wrap:wrap}
+.nav-links a{text-decoration:none;font-weight:700;font-size:.95rem;background:#fff;border:2px solid var(--cocoa);border-radius:999px;padding:.35rem 1rem;transform:rotate(1.5deg);transition:transform .25s var(--ease)}
+.nav-links a:nth-child(even){transform:rotate(-2deg)}
+.nav-links a:hover{transform:rotate(0) scale(1.08);background:var(--pink)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:clamp(3rem,9vh,6rem) 0 clamp(4rem,10vh,7rem)}
+.hero-grid{max-width:1180px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem);display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;position:relative;z-index:2}
+.kicker{display:inline-block;background:var(--berry);color:#fff;font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1.1rem;border-radius:999px;transform:rotate(-2deg);margin-bottom:1.2rem}
+.hero h1{font-size:clamp(2.8rem,8.5vw,6rem);font-weight:800}
+.hero h1 .hl{color:var(--berry);position:relative;display:inline-block}
+.hero h1 .hl svg{position:absolute;left:-4%;bottom:-.18em;width:108%;height:.42em}
+.hero p.lead{font-size:1.15rem;max-width:44ch;margin:1.2rem 0 1.8rem;font-weight:600;color:#5c564e}
+.cta-row{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn{font-family:'Baloo 2';font-weight:700;font-size:1.15rem;text-decoration:none;background:var(--berry);color:#fff;padding:.85rem 2rem;border-radius:999px;border:3px solid var(--cocoa);box-shadow:4px 4px 0 var(--cocoa);transition:transform .2s var(--ease),box-shadow .2s;display:inline-block}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--cocoa)}
+.btn.alt{background:#fff;color:var(--berry)}
+.hero-art{position:relative;height:min(64vw,460px)}
+.nail{position:absolute;width:34%;aspect-ratio:3/4.6;border-radius:48% 48% 46% 46%/38% 38% 60% 60%;border:3px solid var(--cocoa);box-shadow:6px 6px 0 rgba(51,48,44,.18)}
+.n1{left:6%;top:4%;background:linear-gradient(160deg,#ff9ebb,#d6336c);transform:rotate(-10deg)}
+.n2{left:36%;top:0;background:linear-gradient(160deg,#ffe3ee,#ffd9e8);transform:rotate(6deg)}
+.n3{left:64%;top:10%;background:repeating-linear-gradient(45deg,#d6336c 0 12px,#fff 12px 24px);transform:rotate(-4deg)}
+.nail i{position:absolute;inset:22% 30% auto;height:26%;border-radius:50%;background:rgba(255,255,255,.5);filter:blur(2px)}
+.stk{position:absolute;font-family:'Baloo 2';font-weight:800;background:#fff;border:2.5px solid var(--cocoa);border-radius:14px;padding:.3rem .9rem;box-shadow:3px 3px 0 var(--cocoa);animation:floaty 5s ease-in-out infinite}
+.stk.s1{left:0;bottom:8%;transform:rotate(-8deg);color:var(--berry)}
+.stk.s2{right:2%;top:52%;animation-delay:-2.5s;transform:rotate(5deg);background:var(--pink)}
+@keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -16px}}
+
+/* section titles */
+.sec-head{text-align:center;margin-bottom:2.2rem}
+.sec-head .badge{display:inline-block;background:var(--pink);border:2px solid var(--berry);color:var(--berry);font-family:'Baloo 2';font-weight:800;padding:.25rem 1.2rem;border-radius:999px;transform:rotate(-2deg);margin-bottom:.9rem}
+.sec-head h2{font-size:clamp(2rem,5.5vw,3.4rem);font-weight:800}
+
+/* tabs */
+.tabs{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.tabs button{font-family:'Baloo 2';font-weight:700;font-size:1.05rem;background:#fff;border:2.5px solid var(--cocoa);border-radius:999px;padding:.5rem 1.5rem;cursor:pointer;transition:.25s var(--ease)}
+.tabs button[aria-selected="true"]{background:var(--berry);color:#fff;transform:rotate(-2deg) scale(1.06);box-shadow:3px 3px 0 var(--cocoa)}
+.panels{max-width:960px;margin:0 auto}
+.panel{display:none;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:1.1rem}
+.panel.on{display:grid}
+.set{background:#fff;border:3px solid var(--cocoa);border-radius:22px;padding:1.4rem;position:relative;transition:transform .25s var(--ease)}
+.set:hover{transform:rotate(-1deg) translateY(-5px)}
+.set .swatch{height:86px;border-radius:14px;border:2.5px solid var(--cocoa);margin-bottom:1rem}
+.set h3{font-size:1.35rem}
+.set p{font-size:.95rem;color:#6b655c;min-height:3.4em}
+.set .row{display:flex;justify-content:space-between;align-items:center;margin-top:.8rem}
+.set .pr{font-family:'Baloo 2';font-weight:800;font-size:1.5rem;color:var(--berry)}
+.set button{background:var(--pink);border:2px solid var(--cocoa);border-radius:999px;font-family:'Baloo 2';font-weight:700;padding:.35rem 1.1rem;cursor:pointer;transition:.2s}
+.set button:hover{background:var(--berry);color:#fff}
+.set .tag{position:absolute;top:-14px;right:14px;background:var(--cocoa);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .8rem;border-radius:999px;transform:rotate(4deg)}
+
+/* gallery wall */
+.wall{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(160px,100%),1fr));gap:1rem}
+.nailcard{aspect-ratio:1;border-radius:26px;border:3px solid var(--cocoa);position:relative;overflow:hidden;cursor:pointer;transition:transform .3s var(--ease)}
+.nailcard:hover{transform:scale(1.05) rotate(-2deg)}
+.nailcard span{position:absolute;bottom:.6rem;left:.8rem;right:.8rem;font-family:'Baloo 2';font-weight:700;font-size:.95rem;background:rgba(255,255,255,.92);border-radius:999px;padding:.15rem .8rem;text-align:center}
+
+/* booking */
+.bookwrap{background:var(--pink);border-top:3px dashed var(--berry);border-bottom:3px dashed var(--berry)}
+.bookgrid{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+.artist{background:#fff;border:3px solid var(--cocoa);border-radius:24px;padding:1.6rem;transform:rotate(1deg);box-shadow:5px 5px 0 rgba(51,48,44,.15)}
+.artist .av{width:74px;height:74px;border-radius:50%;border:3px solid var(--cocoa);background:conic-gradient(from 40deg,#ff9ebb,#d6336c,#ffd9e8,#ff9ebb);margin-bottom:.8rem}
+.artist h3{font-size:1.5rem}.artist p{color:#6b655c}
+form.book{background:#fff;border:3px solid var(--cocoa);border-radius:24px;padding:1.6rem;display:grid;gap:.9rem;transform:rotate(-1deg)}
+form.book input,form.book select{font-family:inherit;font-size:1rem;padding:.85rem 1rem;border:2.5px solid var(--cocoa);border-radius:14px;width:100%;background:var(--cream)}
+form.book input:focus,form.book select:focus{outline:none;border-color:var(--berry)}
+.ok{display:none;background:#e9f7ee;border:2.5px solid #2e7d4f;border-radius:14px;padding:.9rem;font-weight:700;color:#1f5c37}
+footer{text-align:center;padding:2rem 1rem;font-weight:700;color:#8a8378;font-size:.9rem}
+.rv{opacity:0;transform:translateY(30px) scale(.98);transition:opacity .7s ease,transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:820px){.hero-grid,.bookgrid{grid-template-columns:1fr}.hero-art{height:64vw;max-height:380px}.nav-links a:nth-child(n+3){display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="blob" id="blob" aria-hidden="true"></div>
+
+<nav><div class="nav-in">
+  <span class="logo">Petal Lab</span>
+  <div class="nav-links"><a href="#menu">Sets</a><a href="#wall">Wall</a><a href="#book">Book</a></div>
+</div></nav>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div>
+      <span class="kicker rv">Nail Art Bar · Sector 35, Chandigarh</span>
+      <h1 class="rv">Tiny canvases.<br><span class="hl">Big opinions.<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M2 14 C60 4 140 4 198 12" stroke="#d6336c" stroke-width="7" fill="none" stroke-linecap="round"/></svg></span></h1>
+      <p class="lead rv">Petal Lab is Chandigarh's hand-painted nail bar — every set drawn freehand by Sana Kapoor, no stickers pretending to be art.</p>
+      <div class="cta-row rv"><a class="btn" href="#book">Book a Set</a><a class="btn alt" href="#menu">See the Menu</a></div>
+    </div>
+    <div class="hero-art rv" aria-hidden="true">
+      <div class="nail n1"><i></i></div><div class="nail n2"><i></i></div><div class="nail n3"><i></i></div>
+      <span class="stk s1">from ₹899</span><span class="stk s2">100% hand-painted</span>
+    </div>
+  </div>
+</header>
+
+<section class="wrap" id="menu">
+  <div class="sec-head rv">
+    <span class="badge">The Menu of Sets</span>
+    <h2>Pick a lane, painter.</h2>
+  </div>
+  <div class="tabs rv" role="tablist">
+    <button role="tab" aria-selected="true" data-t="p0">Hand-Painted Art</button>
+    <button role="tab" aria-selected="false" data-t="p1">Gel Extensions</button>
+    <button role="tab" aria-selected="false" data-t="p2">Bridal Nails</button>
+  </div>
+  <div class="panels rv">
+    <div class="panel on" id="p0">
+      <div class="set"><span class="tag">Bestseller</span><div class="swatch" style="background:linear-gradient(135deg,#ff9ebb 40%,#fff 40% 60%,#d6336c 60%)"></div><h3>Cherry Doodle Set</h3><p>Hand-drawn cherries, bows and polka mischief on almond tips.</p><div class="row"><span class="pr">₹899</span><button data-s="Cherry Doodle — ₹899">Pick</button></div></div>
+      <div class="set"><div class="swatch" style="background:radial-gradient(circle at 30% 30%,#ffe3ee,#d6336c)"></div><h3>Blush Aura</h3><p>Soft airbrushed aura in rose and lilac. Your "clean girl" era.</p><div class="row"><span class="pr">₹1,099</span><button data-s="Blush Aura — ₹1,099">Pick</button></div></div>
+      <div class="set"><div class="swatch" style="background:repeating-linear-gradient(115deg,#33302c 0 10px,#ffd9e8 10px 20px)"></div><h3>Zebra Sass</h3><p>Monochrome zebra stripes with one hot-pink accent nail.</p><div class="row"><span class="pr">₹999</span><button data-s="Zebra Sass — ₹999">Pick</button></div></div>
+    </div>
+    <div class="panel" id="p1">
+      <div class="set"><div class="swatch" style="background:linear-gradient(180deg,#fff5,#fff0),linear-gradient(135deg,#ffd9e8,#fff)"></div><h3>Glass Coffin</h3><p>Clear-look gel extensions, medium coffin, glass shine topcoat.</p><div class="row"><span class="pr">₹1,499</span><button data-s="Glass Coffin — ₹1,499">Pick</button></div></div>
+      <div class="set"><span class="tag">New</span><div class="swatch" style="background:linear-gradient(135deg,#d6336c,#7a1f42)"></div><h3>Berry Chrome</h3><p>Deep berry gel with mirror chrome rub. Photos don't do it justice.</p><div class="row"><span class="pr">₹1,699</span><button data-s="Berry Chrome — ₹1,699">Pick</button></div></div>
+      <div class="set"><div class="swatch" style="background:linear-gradient(135deg,#ffe3ee 50%,#ff9ebb 50%)"></div><h3>French, But Fun</h3><p>Classic French tips with a wavy, colorful smile line.</p><div class="row"><span class="pr">₹1,599</span><button data-s="French, But Fun — ₹1,599">Pick</button></div></div>
+    </div>
+    <div class="panel" id="p2">
+      <div class="set"><div class="swatch" style="background:radial-gradient(circle at 50% 20%,#fff,#ffd9e8 70%)"></div><h3>Heer Bridal</h3><p>Milky base, gold foil flecks, delicate lace-line art. Matches everything.</p><div class="row"><span class="pr">₹2,199</span><button data-s="Heer Bridal — ₹2,199">Pick</button></div></div>
+      <div class="set"><div class="swatch" style="background:linear-gradient(135deg,#fff,#ffe3ee 60%,#d6336c)"></div><h3>Anand Karaj Minimal</h3><p>Sheer nude with micro-floral art. Understated, photogenic.</p><div class="row"><span class="pr">₹1,899</span><button data-s="Anand Karaj Minimal — ₹1,899">Pick</button></div></div>
+      <div class="set"><div class="swatch" style="background:conic-gradient(from 0deg,#d6336c,#ff9ebb,#ffd9e8,#d6336c)"></div><h3>Sangeet maximalist</h3><p>Every nail a different party: glitter, chrome, 3D bows.</p><div class="row"><span class="pr">₹2,499</span><button data-s="Sangeet Maximalist — ₹2,499">Pick</button></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="wall" style="padding-top:0">
+  <div class="sec-head rv">
+    <span class="badge">The Gallery Wall</span>
+    <h2>Fresh off the table.</h2>
+  </div>
+  <div class="wall rv">
+    <div class="nailcard" style="background:linear-gradient(140deg,#ff9ebb,#d6336c)"><span>Cherry Doodle</span></div>
+    <div class="nailcard" style="background:radial-gradient(circle at 40% 30%,#ffe3ee,#ff9ebb)"><span>Blush Aura</span></div>
+    <div class="nailcard" style="background:repeating-linear-gradient(45deg,#33302c 0 14px,#ffd9e8 14px 28px)"><span>Zebra Sass</span></div>
+    <div class="nailcard" style="background:linear-gradient(160deg,#fff,#ffd9e8 55%,#d6336c)"><span>Heer Bridal</span></div>
+    <div class="nailcard" style="background:conic-gradient(from 90deg,#ff9ebb,#ffd9e8,#d6336c,#ff9ebb)"><span>Sangeet Set</span></div>
+    <div class="nailcard" style="background:linear-gradient(120deg,#d6336c,#7a1f42)"><span>Berry Chrome</span></div>
+  </div>
+</section>
+
+<section class="bookwrap" id="book">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="badge">Booking</span>
+      <h2>Reserve your chair, cutie.</h2>
+    </div>
+    <div class="bookgrid">
+      <div class="artist rv">
+        <div class="av" aria-hidden="true"></div>
+        <h3>Sana Kapoor</h3>
+        <p>Founder &amp; hand-paint artist. 6 years, 4,000+ sets, zero stick-ons.<br><br>Petal Lab, SCO 214, Sector 35-C, Chandigarh<br>Open 11 AM – 8 PM · Tuesdays off</p>
+      </div>
+      <form class="book rv" id="bookForm">
+        <input type="text" id="fName" placeholder="Your name" required>
+        <input type="tel" id="fPhone" placeholder="Phone number" pattern="[0-9+ ]{10,15}" required>
+        <select id="fSet" required>
+          <option value="">Choose your set…</option>
+          <option>Cherry Doodle — ₹899</option><option>Blush Aura — ₹1,099</option><option>Zebra Sass — ₹999</option>
+          <option>Glass Coffin — ₹1,499</option><option>Berry Chrome — ₹1,699</option>
+          <option>Heer Bridal — ₹2,199</option><option>Anand Karaj Minimal — ₹1,899</option>
+        </select>
+        <button class="btn" type="submit" style="border:3px solid var(--cocoa)">Book My Set</button>
+        <p class="ok" id="bookOk">Locked in! Sana will WhatsApp you within the hour to confirm your slot.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>PETAL LAB · SCO 214, Sector 35-C, Chandigarh · hand-painted, always</footer>
+
+<script>
+// cursor-follow blob (lerped, deterministic)
+const blob=document.getElementById('blob');
+let bx=-500,by=-500,tx2=-500,ty2=-500;
+addEventListener('pointermove',e=>{tx2=e.clientX;ty2=e.clientY},{passive:true});
+(function loop(){bx+=(tx2-bx)*.08;by+=(ty2-by)*.08;blob.style.left=bx+'px';blob.style.top=by+'px';requestAnimationFrame(loop)})();
+// reveals
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// tabs
+const tabs=[...document.querySelectorAll('.tabs button')];
+tabs.forEach(t=>t.addEventListener('click',()=>{
+  tabs.forEach(x=>x.setAttribute('aria-selected','false'));t.setAttribute('aria-selected','true');
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.getElementById(t.dataset.t).classList.add('on');
+}));
+// "Pick" buttons prefill the booking select
+document.querySelectorAll('[data-s]').forEach(b=>b.addEventListener('click',()=>{
+  const sel=document.getElementById('fSet');
+  [...sel.options].forEach(o=>{if(o.text===b.dataset.s)sel.value=o.text});
+  document.getElementById('book').scrollIntoView({behavior:'smooth'});
+}));
+document.getElementById('bookForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('bookOk').style.display='block';});
+</script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mehndi &amp; Moon — Bridal Mehndi, Written in Moonlight · Ludhiana &amp; Chandigarh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bark:#3d2b1f; --gold:#e8b04b; --clay:#7a4a2b; --cream:#f7ecd9;
+  --night:#2a1d14; --gold-deep:#b07f2c;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bark);color:var(--cream);font-family:'DM Sans',sans-serif;overflow-x:hidden;line-height:1.6}
+h1,h2,h3,.display{font-family:'Rozha One',serif;font-weight:400;line-height:1.12;letter-spacing:.01em}
+img,svg{max-width:100%}
+.wrap{width:min(1120px,92%);margin:0 auto}
+section{padding:clamp(64px,9vw,120px) 0;position:relative}
+/* stars */
+#stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+.star{position:absolute;background:var(--cream);border-radius:50%;opacity:.7;animation:tw 3.4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15;transform:scale(.8)}50%{opacity:.85;transform:scale(1.15)}}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(42,29,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(232,176,75,.25)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{font-family:'Rozha One',serif;font-size:1.35rem;color:var(--gold);text-decoration:none}
+.brand small{display:block;font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.32em;color:var(--cream);text-transform:uppercase}
+nav ul{display:flex;gap:26px;list-style:none}
+nav a.nl{color:var(--cream);text-decoration:none;font-size:.86rem;letter-spacing:.08em;text-transform:uppercase;position:relative}
+nav a.nl::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--gold);transition:width .3s}
+nav a.nl:hover::after{width:100%}
+.btn{display:inline-block;background:var(--gold);color:var(--night);font-weight:700;text-decoration:none;padding:15px 38px;border-radius:999px;letter-spacing:.04em;border:0;cursor:pointer;font-size:1rem;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(232,176,75,.35)}
+/* hero */
+.hero{min-height:92vh;display:flex;align-items:center;z-index:1;background:radial-gradient(1200px 600px at 80% 10%,rgba(122,74,43,.55),transparent 60%)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;position:relative;z-index:1}
+.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.34em;font-size:.78rem;margin-bottom:18px}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p.lead{font-size:1.12rem;max-width:44ch;color:#e9dcc3;margin-bottom:32px}
+.hero-meta{display:flex;gap:28px;margin-top:34px;flex-wrap:wrap}
+.hero-meta div b{display:block;font-family:'Rozha One',serif;font-size:1.5rem;color:var(--gold)}
+.hero-meta div span{font-size:.82rem;letter-spacing:.06em;color:#d9c9ab}
+.moon-art{position:relative;justify-self:center}
+.moon{width:min(340px,72vw);aspect-ratio:1;filter:drop-shadow(0 0 60px rgba(232,176,75,.35))}
+.henna-ring{position:absolute;inset:-26px;animation:spin 90s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* henna divider: stroke draws as a pure function of scroll */
+.henna-div{width:min(1120px,92%);margin:0 auto;overflow:hidden}
+.henna-div svg{display:block;width:100%;height:44px}
+.henna-div path{fill:none;stroke:var(--gold);stroke-width:2}
+/* portfolio */
+.sec-title{font-size:clamp(2rem,4.4vw,3.2rem);margin-bottom:10px}
+.sec-sub{color:#d9c9ab;max-width:60ch;margin-bottom:38px}
+.filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+.fbtn{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:10px 24px;border-radius:999px;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;letter-spacing:.05em;transition:all .25s}
+.fbtn.active,.fbtn:hover{background:var(--gold);color:var(--night)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.mcard{background:var(--night);border:1px solid rgba(232,176,75,.28);border-radius:18px;overflow:hidden;transition:transform .3s,opacity .4s}
+.mcard:hover{transform:translateY(-6px)}
+.mcard.hide{display:none}
+.mcard .art{background:var(--clay);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+.mcard .art svg{width:62%;height:auto}
+.mcard .cap{padding:20px}
+.mcard .cap b{font-family:'Rozha One',serif;font-size:1.15rem;color:var(--gold);display:block;margin-bottom:4px}
+.mcard .cap span{font-size:.88rem;color:#d9c9ab}
+.tag{display:inline-block;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--night);background:var(--gold);border-radius:999px;padding:4px 12px;margin-bottom:10px;font-weight:700}
+/* packages */
+.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.pkg{background:linear-gradient(180deg,rgba(122,74,43,.35),rgba(42,29,20,.6));border:1px solid rgba(232,176,75,.4);border-radius:20px;padding:38px 30px;text-align:center;position:relative}
+.pkg.featured{border:2px solid var(--gold);transform:scale(1.04)}
+.pkg h3{font-size:1.6rem;color:var(--gold);margin-bottom:8px}
+.pkg .price{font-family:'Rozha One',serif;font-size:2.6rem;color:var(--cream);margin:14px 0}
+.pkg .price small{font-size:1rem;font-family:'DM Sans',sans-serif;color:#d9c9ab}
+.pkg ul{list-style:none;margin:20px 0 26px;text-align:left}
+.pkg li{padding:9px 0;border-bottom:1px dashed rgba(232,176,75,.25);font-size:.95rem;color:#efe3c8}
+.pkg li::before{content:"✦ ";color:var(--gold)}
+/* artists */
+.artists{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.artist{text-align:center;background:var(--night);border-radius:20px;padding:36px 22px;border:1px solid rgba(232,176,75,.22)}
+.face{width:110px;height:110px;margin:0 auto 18px;border-radius:50%;border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Rozha One',serif;font-size:2rem;color:var(--gold);background:radial-gradient(circle at 35% 30%,var(--clay),var(--bark))}
+.artist b{font-family:'Rozha One',serif;font-size:1.25rem;color:var(--cream);display:block}
+.artist span{color:var(--gold);font-size:.9rem;letter-spacing:.06em}
+/* booking */
+.book{background:var(--night);border-top:1px solid rgba(232,176,75,.3)}
+form.bookform{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:760px;margin-top:30px}
+form.bookform .full{grid-column:1/-1}
+label{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px}
+input,select,textarea{background:var(--bark);border:1px solid rgba(232,176,75,.4);border-radius:12px;color:var(--cream);padding:14px 16px;font-family:'DM Sans',sans-serif;font-size:1rem;width:100%}
+input:focus,select:focus{outline:2px solid var(--gold)}
+.confirm{background:rgba(232,176,75,.12);border:1px solid var(--gold);border-radius:14px;padding:22px;margin-top:22px;display:none;max-width:760px}
+footer{border-top:1px solid rgba(232,176,75,.25);padding:34px 0;text-align:center;font-size:.9rem}
+footer{color:#cbb58f}
+/* moon phase widget: phase is a pure function of scroll progress */
+#moonphase{position:fixed;right:18px;bottom:18px;z-index:60;width:76px;text-align:center}
+#moonphase .disc{width:64px;height:64px;border-radius:50%;margin:0 auto;background:var(--gold);position:relative;overflow:hidden;box-shadow:0 0 24px rgba(232,176,75,.5)}
+#moonphase .shadow{position:absolute;top:0;bottom:0;width:100%;background:var(--night);border-radius:50%}
+#moonphase small{display:block;color:var(--gold);font-size:.62rem;letter-spacing:.2em;margin-top:6px;text-transform:uppercase}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:760px){
+  .hero-grid,.grid3,.pkgs,.artists{grid-template-columns:1fr}
+  form.bookform{grid-template-columns:1fr}
+  nav ul{display:none}
+  .pkg.featured{transform:none}
+  #moonphase{width:58px;right:10px;bottom:10px}
+  #moonphase .disc{width:48px;height:48px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<div id="stars" aria-hidden="true"></div>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Mehndi &amp; Moon<small>Bridal Henna Atelier</small></a>
+    <ul>
+      <li><a class="nl" href="#portfolio">Portfolio</a></li>
+      <li><a class="nl" href="#packages">Packages</a></li>
+      <li><a class="nl" href="#artists">Artists</a></li>
+      <li><a class="nl" href="#booking">Book</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Ludhiana · Chandigarh · Home Service</p>
+      <h1>Bridal mehndi, <em>written in moonlight.</em></h1>
+      <p class="lead">Mehndi &amp; Moon is a night-shift bridal henna atelier. We arrive as the moon rises, paint till the stain sets deep, and leave your hands carrying the whole sky — bridal, Arabic and minimal styles, at your home or our Sector 34 studio.</p>
+      <a class="btn" href="#booking">Book Your Trial</a>
+      <div class="hero-meta">
+        <div><b>1,200+</b><span>brides adorned</span></div>
+        <div><b>₹5,100</b><span>full bridal, onwards</span></div>
+        <div><b>4.9★</b><span>guest rating</span></div>
+      </div>
+    </div>
+    <div class="moon-art" aria-hidden="true">
+      <svg class="henna-ring" viewBox="0 0 400 400">
+        <circle cx="200" cy="200" r="186" fill="none" stroke="#e8b04b" stroke-width="2" stroke-dasharray="6 10"/>
+        <circle cx="200" cy="200" r="168" fill="none" stroke="#e8b04b" stroke-width="1" stroke-dasharray="2 8"/>
+        <g fill="none" stroke="#e8b04b" stroke-width="2">
+          <path d="M200 14 c 14 20 14 34 0 48 c -14 -14 -14 -28 0 -48"/>
+          <path d="M200 386 c 14 -20 14 -34 0 -48 c -14 14 -14 28 0 48"/>
+          <path d="M14 200 c 20 -14 34 -14 48 0 c -14 14 -28 14 -48 0"/>
+          <path d="M386 200 c -20 14 -34 14 -48 0 c 14 -14 28 -14 48 0"/>
+        </g>
+      </svg>
+      <svg class="moon" viewBox="0 0 200 200">
+        <defs>
+          <mask id="cmask"><rect width="200" height="200" fill="white"/><circle id="cshadow" cx="150" cy="100" r="72" fill="black"/></mask>
+        </defs>
+        <circle cx="100" cy="100" r="72" fill="#e8b04b" mask="url(#cmask)"/>
+        <circle cx="100" cy="100" r="72" fill="none" stroke="#f7ecd9" stroke-width="3"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<div class="henna-div" aria-hidden="true">
+  <svg viewBox="0 0 1120 44" preserveAspectRatio="none"><path id="hennaPath1" d="M0 22 Q 70 2 140 22 T 280 22 T 420 22 T 560 22 T 700 22 T 840 22 T 980 22 T 1120 22 M560 6 c 8 8 8 24 0 32 c -8 -8 -8 -24 0 -32"/></svg>
+</div>
+
+<section id="portfolio">
+  <div class="wrap">
+    <h2 class="sec-title reveal">The Portfolio</h2>
+    <p class="sec-sub reveal">Every motif below is drawn freehand — no stencils, no stamps. Filter by style to see what the night holds.</p>
+    <div class="filters reveal" role="tablist" aria-label="Filter portfolio">
+      <button class="fbtn active" data-f="all" role="tab" aria-selected="true">All</button>
+      <button class="fbtn" data-f="bridal" role="tab" aria-selected="false">Bridal</button>
+      <button class="fbtn" data-f="arabic" role="tab" aria-selected="false">Arabic</button>
+      <button class="fbtn" data-f="minimal" role="tab" aria-selected="false">Minimal</button>
+    </div>
+    <div class="grid3" id="pcards">
+      <div class="mcard reveal" data-cat="bridal"><div class="art"><svg viewBox="0 0 200 150"><g fill="none" stroke="#f7ecd9" stroke-width="2"><circle cx="100" cy="75" r="46"/><circle cx="100" cy="75" r="30"/><circle cx="100" cy="75" r="12" fill="#f7ecd9"/><path d="M100 29 l6 14 M100 121 l-6 -14 M54 75 l14 -6 M146 75 l-14 6 M68 43 l12 8 M132 107 l-12 -8 M132 43 l-12 8 M68 107 l12 -8"/></g></svg></div><div class="cap"><span class="tag">Bridal</span><b>Raat Rani Full-Hand</b><span>Dulhan set with peacock + jaali, elbow-length · ₹5,100</span></div></div>
+      <div class="mcard reveal" data-cat="arabic"><div class="art"><svg viewBox="0 0 200 150"><g fill="none" stroke="#f7ecd9" stroke-width="2"><path d="M20 100 Q 70 20 120 80 T 185 60"/><path d="M30 115 Q 80 45 130 95"/><circle cx="150" cy="45" r="8" fill="#f7ecd9"/><circle cx="45" cy="60" r="5" fill="#f7ecd9"/></g></svg></div><div class="cap"><span class="tag">Arabic</span><b>Desert Vine Trail</b><span>Bold trailing florals, wrist to elbow · ₹2,800</span></div></div>
+      <div class="mcard reveal" data-cat="minimal"><div class="art"><svg viewBox="0 0 200 150"><g fill="none" stroke="#f7ecd9" stroke-width="2"><circle cx="100" cy="75" r="20"/><path d="M100 55 v-18 M100 95 v18 M80 75 h-18 M120 75 h18"/><circle cx="100" cy="75" r="5" fill="#f7ecd9"/></g></svg></div><div class="cap"><span class="tag">Minimal</span><b>Chand Bindiya</b><span>Single moon-motif, back of hand · ₹900</span></div></div>
+      <div class="mcard reveal" data-cat="bridal"><div class="art"><svg viewBox="0 0 200 150"><g fill="none" stroke="#f7ecd9" stroke-width="2"><rect x="60" y="35" width="80" height="80" rx="8"/><circle cx="100" cy="75" r="24"/><path d="M100 51 v-10 M100 99 v10 M76 75 h-10 M124 75 h10"/></g></svg></div><div class="cap"><span class="tag">Bridal</span><b>Sheesh Mahal Frame</b><span>Mirror-arch bridal panel with initials · ₹5,600</span></div></div>
+      <div class="mcard reveal" data-cat="arabic"><div class="art"><svg viewBox="0 0 200 150"><g fill="none" stroke="#f7ecd9" stroke-width="2"><path d="M15 75 C 60 20, 90 130, 140 75 S 170 40, 188 70"/><path d="M60 100 c 6 -12 18 -12 22 0 c -6 8 -16 8 -22 0"/><path d="M120 50 c 6 -12 18 -12 22 0 c -6 8 -16 8 -22 0"/></g></svg></div><div class="cap"><span class="tag">Arabic</span><b>Gulf Swirl Duo</b><span>Matching pair, engagement ready · ₹2,100</span></div></div>
+      <div class="mcard reveal" data-cat="minimal"><div class="art"><svg viewBox="0 0 200 150"><g fill="none" stroke="#f7ecd9" stroke-width="2"><path d="M60 75 q 20 -34 40 0 q 20 34 40 0"/><circle cx="100" cy="75" r="6" fill="#f7ecd9"/></g></svg></div><div class="cap"><span class="tag">Minimal</span><b>Mehtab Wave</b><span>Single flowing line + moon dot · ₹700</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="henna-div" aria-hidden="true">
+  <svg viewBox="0 0 1120 44" preserveAspectRatio="none"><path id="hennaPath2" d="M0 22 Q 70 42 140 22 T 280 22 T 420 22 T 560 22 T 700 22 T 840 22 T 980 22 T 1120 22 M560 38 c 8 -8 8 -24 0 -32 c -8 8 -8 24 0 32"/></svg>
+</div>
+
+<section id="packages">
+  <div class="wrap">
+    <h2 class="sec-title reveal">Packages</h2>
+    <p class="sec-sub reveal">Organic henna, clove-sealed for a deep maroon stain. Home service across Ludhiana &amp; Chandigarh at no extra travel cost within the city.</p>
+    <div class="pkgs">
+      <div class="pkg reveal"><h3>Engagement</h3><div class="price">₹2,100<small> / both hands</small></div><ul><li>Arabic or minimal trails</li><li>Feet touch-up included</li><li>2-hour sitting</li><li>Aftercare balm kit</li></ul><a class="btn" href="#booking" data-svc="Engagement — ₹2,100">Choose</a></div>
+      <div class="pkg featured reveal"><h3>Full Bridal</h3><div class="price">₹5,100<small> / hands + feet</small></div><ul><li>Elbow-length bridal jaali</li><li>Peacock &amp; portrait motifs</li><li>4–5 hour sitting, unhurried</li><li>Bridal aftercare + touch-up visit</li></ul><a class="btn" href="#booking" data-svc="Full Bridal — ₹5,100">Choose</a></div>
+      <div class="pkg reveal"><h3>Family / Sangeet</h3><div class="price">₹899<small> / per person</small></div><ul><li>Min. 6 guests, at your venue</li><li>Quick festive motifs</li><li>Sangeet-night slots</li><li>Group stain-check next day</li></ul><a class="btn" href="#booking" data-svc="Family / Sangeet — ₹899 pp">Choose</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="artists">
+  <div class="wrap">
+    <h2 class="sec-title reveal">The Night Artists</h2>
+    <p class="sec-sub reveal">Three hands, one moon. Every artist is trained in-house for six months before touching a bridal sitting.</p>
+    <div class="artists">
+      <div class="artist reveal"><div class="face">FK</div><b>Fiza Khan</b><span>Founder · Bridal Specialist</span><p style="margin-top:10px;font-size:.9rem;color:#d9c9ab">8 years, 900+ brides. Portrait mehndi is her signature.</p></div>
+      <div class="artist reveal"><div class="face">AR</div><b>Ayesha Raza</b><span>Arabic &amp; Gulf Styles</span><p style="margin-top:10px;font-size:.9rem;color:#d9c9ab">Bold trails, zero smudge. Sangeet-night sprinter.</p></div>
+      <div class="artist reveal"><div class="face">NF</div><b>Noor Fatima</b><span>Minimal &amp; Contemporary</span><p style="margin-top:10px;font-size:.9rem;color:#d9c9ab">Single-line moons, geometric bands, modern brides.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="booking" class="book">
+  <div class="wrap">
+    <h2 class="sec-title reveal">Book Your Sitting</h2>
+    <p class="sec-sub reveal">Studio: SCO 112, Sector 34-A, Chandigarh · Open 10 AM – 9 PM · Home service in Ludhiana &amp; Chandigarh. We reply within 2 hours.</p>
+    <form class="bookform reveal" id="bform" novalidate>
+      <div><label for="nm">Your name</label><input id="nm" required placeholder="Aisha Sharma"></div>
+      <div><label for="ph">Phone</label><input id="ph" required inputmode="tel" placeholder="+91 98XXX XXXXX"></div>
+      <div><label for="dt">Preferred date</label><input id="dt" type="date" required></div>
+      <div><label for="sv">Service</label><select id="sv"><option>Full Bridal — ₹5,100</option><option>Engagement — ₹2,100</option><option>Family / Sangeet — ₹899 pp</option><option>Minimal single motif — from ₹700</option></select></div>
+      <div class="full"><label for="nt">Notes (venue, home service?)</label><textarea id="nt" rows="3" placeholder="Home service, Model Town Ludhiana…"></textarea></div>
+      <div class="full"><button class="btn" type="submit">Request Booking</button></div>
+    </form>
+    <div class="confirm" id="confirm" role="status"></div>
+  </div>
+</section>
+
+<footer>Mehndi &amp; Moon · SCO 112, Sector 34-A, Chandigarh · +91 98140 22334 · Painted under a real moon, every night.</footer>
+
+<div id="moonphase" aria-hidden="true"><div class="disc"><div class="shadow" id="mshadow"></div></div><small>Moon phase</small></div>
+
+<script>
+// twinkling stars
+(function(){
+  var box=document.getElementById('stars');
+  for(var i=0;i<90;i++){
+    var s=document.createElement('span');s.className='star';
+    var sz=(Math.random()*2+1).toFixed(1);
+    s.style.cssText='left:'+(Math.random()*100)+'%;top:'+(Math.random()*100)+'%;width:'+sz+'px;height:'+sz+'px;animation-delay:'+(Math.random()*3.4).toFixed(2)+'s';
+    box.appendChild(s);
+  }
+})();
+// scroll-linked: moon phase + henna draw-on are pure functions of scrollY (seek(t) → seek(scroll))
+var hp1=document.getElementById('hennaPath1'),hp2=document.getElementById('hennaPath2'),msh=document.getElementById('mshadow');
+var L1=hp1.getTotalLength(),L2=hp2.getTotalLength();
+hp1.style.strokeDasharray=L1;hp2.style.strokeDasharray=L2;
+var phases=['New Moon','Waxing Crescent','First Quarter','Waxing Gibbous','Full Moon','Waning Gibbous','Last Quarter','Waning Crescent'];
+function onScroll(){
+  var max=document.documentElement.scrollHeight-innerHeight;
+  var p=max>0?Math.min(1,Math.max(0,scrollY/max)):0;
+  // henna borders draw on as you approach them
+  hp1.style.strokeDashoffset=L1*(1-Math.min(1,p*2.2));
+  hp2.style.strokeDashoffset=L2*(1-Math.min(1,Math.max(0,(p-.35)*2.2)));
+  // moon phase widget
+  var idx=Math.min(7,Math.floor(p*8));
+  msh.style.left=((1-p)*110-55)+'%';
+  document.querySelector('#moonphase small').textContent=phases[idx];
+  requestAnimationFrame(tick);
+}
+var ticking=false;
+function tick(){ticking=false;}
+addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll);}},{passive:true});
+onScroll();
+// reveals
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+// portfolio filter
+var btns=document.querySelectorAll('.fbtn'),cards=document.querySelectorAll('#pcards .mcard');
+btns.forEach(function(b){b.addEventListener('click',function(){
+  btns.forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false');});
+  b.classList.add('active');b.setAttribute('aria-selected','true');
+  var f=b.dataset.f;
+  cards.forEach(function(c){c.classList.toggle('hide',f!=='all'&&c.dataset.cat!==f);});
+});});
+// package choose → prefill booking select
+document.querySelectorAll('[data-svc]').forEach(function(a){a.addEventListener('click',function(){
+  var sel=document.getElementById('sv'),v=a.dataset.svc;
+  for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===v){sel.selectedIndex=i;break;}}
+});});
+// booking
+document.getElementById('bform').addEventListener('submit',function(e){
+  e.preventDefault();
+  var nm=document.getElementById('nm').value.trim(),ph=document.getElementById('ph').value.trim(),dt=document.getElementById('dt').value;
+  var c=document.getElementById('confirm');
+  if(!nm||!ph||!dt){c.style.display='block';c.textContent='Please fill your name, phone and preferred date.';return;}
+  var sv=document.getElementById('sv').value;
+  c.style.display='block';
+  c.innerHTML='<b style="color:#e8b04b">Shukriya, '+nm+'.</b> Your '+sv+' request for '+dt+' is noted. Fiza will call '+ph+' within 2 hours to confirm your sitting.';
+});
+</script>
+</body>
+</html>
