@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kinetic Lab — Functional Training, Zirakpur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Schibsted+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--graphite:#232323;--volt:#c6f52e;--paper:#e8e8e8;--line:#3a3a3a;--blue:#7fa8c9}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--graphite);color:var(--paper);font-family:'Schibsted Grotesk',sans-serif;overflow-x:hidden;line-height:1.65;
+  background-image:
+    linear-gradient(rgba(232,232,232,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,232,232,.045) 1px, transparent 1px),
+    linear-gradient(rgba(232,232,232,.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,232,232,.02) 1px, transparent 1px);
+  background-size:120px 120px,120px 120px,24px 24px,24px 24px;
+}
+h1,h2,h3,.disp{font-family:'Michroma',sans-serif;font-weight:400}
+img,svg{max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.on{opacity:1;transform:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(35,35,35,.95);border-bottom:1px dashed var(--volt)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.logo{font-family:'Michroma';color:var(--paper);text-decoration:none;font-size:.95rem;letter-spacing:.06em}
+.logo b{color:var(--volt);font-weight:400}
+nav a.cta{border:1px solid var(--volt);color:var(--volt);text-decoration:none;font-weight:600;font-size:.82rem;padding:9px 18px;text-transform:uppercase;letter-spacing:.1em}
+nav a.cta:hover{background:var(--volt);color:var(--graphite)}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 70px;position:relative}
+.spec-tag{font-family:'Michroma';font-size:.72rem;color:var(--blue);letter-spacing:.2em;border:1px dashed var(--blue);display:inline-block;padding:7px 14px;margin-bottom:20px}
+h1{font-size:clamp(1.9rem,6.5vw,3.9rem);line-height:1.25;margin-bottom:18px}
+h1 .v{color:var(--volt)}
+.hero p.lead{max-width:560px;color:#c8c8c8;font-size:1.05rem}
+.btn{display:inline-block;background:var(--volt);color:var(--graphite);text-decoration:none;font-weight:800;text-transform:uppercase;letter-spacing:.08em;padding:15px 32px;font-size:.92rem}
+.btn:hover{background:var(--paper)}
+.btn.ghost{background:transparent;color:var(--paper);border:1px solid var(--line);margin-left:12px}
+.btn.ghost:hover{border-color:var(--volt);color:var(--volt)}
+/* annotation svg: measurement callouts pop on scroll */
+.blueprint{margin:44px 0 0;border:1px solid var(--line);background:rgba(20,20,20,.5);padding:10px}
+.blueprint svg{width:100%;height:auto;display:block}
+.callout{opacity:0;transition:opacity .5s}
+.callout.on{opacity:1}
+.draw-line{stroke-dasharray:600;stroke-dashoffset:600}
+/* spec strip */
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:1px solid var(--line);margin-top:40px}
+.spec{padding:18px;border-right:1px solid var(--line)}
+.spec:last-child{border-right:none}
+.spec .k{font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:#999}
+.spec .v{font-family:'Michroma';font-size:1.15rem;color:var(--volt);margin-top:6px}
+/* sections */
+section{padding:88px 0;border-top:1px solid var(--line)}
+.sec-id{font-family:'Michroma';font-size:.75rem;color:var(--volt);letter-spacing:.24em;margin-bottom:12px}
+h2{font-size:clamp(1.5rem,4.4vw,2.4rem);margin-bottom:14px;line-height:1.3}
+.sec-sub{color:#bdbdbd;max-width:600px;margin-bottom:36px}
+/* assessments */
+.assess{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border:1px solid var(--line)}
+.a{padding:26px;border-right:1px solid var(--line);position:relative}
+.a:last-child{border-right:none}
+@media(max-width:700px){.a{border-right:none;border-bottom:1px solid var(--line)}}
+.a .no{font-family:'Michroma';color:var(--volt);font-size:.8rem;letter-spacing:.2em}
+.a h3{font-size:1.02rem;margin:10px 0 8px}
+.a p{color:#bdbdbd;font-size:.92rem}
+.a .price{font-family:'Michroma';color:var(--paper);margin-top:12px;font-size:1.05rem}
+/* programs as measurement rows */
+.prog{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:20px;border:1px solid var(--line);margin-bottom:12px;background:rgba(20,20,20,.45);flex-wrap:wrap}
+.prog h3{font-size:1rem}
+.prog .meta{color:#999;font-size:.85rem}
+.prog .dur{font-family:'Michroma';color:var(--volt);font-size:.85rem}
+/* equipment grid */
+.equip{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.eq{border:1px solid var(--line);padding:22px;background:rgba(20,20,20,.45);position:relative}
+.eq .dim{position:absolute;top:10px;right:12px;font-size:.68rem;color:var(--blue);font-family:'Michroma'}
+.eq h3{font-size:.95rem;margin-bottom:8px}
+.eq p{color:#bdbdbd;font-size:.88rem}
+.eq .count{font-family:'Michroma';color:var(--volt);font-size:1.4rem;margin-top:10px}
+/* membership */
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.plan{border:1px solid var(--line);padding:28px;background:rgba(20,20,20,.5)}
+.plan.feat{border:1px solid var(--volt);background:rgba(198,245,46,.05)}
+.plan h3{font-size:1rem;margin-bottom:6px}
+.plan .price{font-family:'Michroma';font-size:2rem;color:var(--volt);margin:10px 0}
+.plan .price small{font-size:.9rem;font-family:'Schibsted Grotesk';color:#999}
+.plan ul{list-style:none;margin:14px 0 20px}
+.plan li{padding:6px 0;font-size:.9rem;color:#c8c8c8;border-bottom:1px dashed #3a3a3a}
+.plan li::before{content:"+ ";color:var(--volt)}
+/* booking form */
+form{display:grid;gap:12px;max-width:540px;margin-top:24px}
+label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:#999}
+input,select{background:#1b1b1b;border:1px solid var(--line);color:var(--paper);padding:13px;font-family:'Schibsted Grotesk';font-size:1rem;width:100%}
+input:focus,select:focus{outline:none;border-color:var(--volt)}
+#ok{display:none;border:1px solid var(--volt);background:rgba(198,245,46,.08);padding:16px;color:var(--paper)}
+footer{border-top:1px solid var(--line);padding:26px 0;color:#888;font-size:.84rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">KINETIC<b>LAB</b></a>
+    <a class="cta" href="#join">Book Screening</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="spec-tag rv on">DWG-KL-001 · FUNCTIONAL TRAINING FACILITY</div>
+    <h1 class="rv on">TRAIN THE <span class="v">MOVEMENT</span>,<br>NOT THE MUSCLE.</h1>
+    <p class="lead rv on">Kinetic Lab is Zirakpur's movement-first training floor. Every member starts with a measured screening — joint angles, asymmetries, baselines — and trains on a program drawn like an engineering plan. Nothing random. Nothing decorative.</p>
+    <div class="rv on" style="margin-top:26px">
+      <a class="btn" href="#join">Book Movement Screening</a>
+      <a class="btn ghost" href="#assess">The Method</a>
+    </div>
+    <div class="blueprint rv on">
+      <svg viewBox="0 0 900 320" aria-label="Blueprint of a human squat with measurement annotations">
+        <g stroke="#7fa8c9" stroke-width="2" fill="none" class="draw-line" id="bpLines">
+          <line x1="120" y1="280" x2="780" y2="280"/>
+          <line x1="120" y1="280" x2="120" y2="60"/>
+          <line x1="780" y1="280" x2="780" y2="60"/>
+        </g>
+        <!-- squat figure -->
+        <g stroke="#e8e8e8" stroke-width="6" fill="none" stroke-linecap="round">
+          <circle cx="450" cy="70" r="22"/>
+          <line x1="450" y1="92" x2="450" y2="180"/>
+          <line x1="450" y1="110" x2="380" y2="150"/>
+          <line x1="450" y1="110" x2="520" y2="150"/>
+          <line x1="450" y1="180" x2="400" y2="250"/>
+          <line x1="450" y1="180" x2="500" y2="250"/>
+        </g>
+        <!-- barbell -->
+        <line x1="330" y1="150" x2="570" y2="150" stroke="#c6f52e" stroke-width="8"/>
+        <g class="callout" data-c="1">
+          <line x1="450" y1="70" x2="620" y2="40" stroke="#c6f52e" stroke-width="1.5"/>
+          <rect x="620" y="24" width="170" height="34" fill="#232323" stroke="#c6f52e"/>
+          <text x="632" y="47" fill="#c6f52e" font-family="Michroma" font-size="13">HIP ANGLE 92°</text>
+        </g>
+        <g class="callout" data-c="2">
+          <line x1="500" y1="250" x2="660" y2="280" stroke="#c6f52e" stroke-width="1.5"/>
+          <rect x="660" y="262" width="180" height="34" fill="#232323" stroke="#c6f52e"/>
+          <text x="672" y="285" fill="#c6f52e" font-family="Michroma" font-size="13">KNEE TRACK +2 CM</text>
+        </g>
+        <g class="callout" data-c="3">
+          <line x1="380" y1="150" x2="200" y2="120" stroke="#c6f52e" stroke-width="1.5"/>
+          <rect x="60" y="102" width="142" height="34" fill="#232323" stroke="#c6f52e"/>
+          <text x="70" y="125" fill="#c6f52e" font-family="Michroma" font-size="13">BRACE OK</text>
+        </g>
+      </svg>
+    </div>
+    <div class="specs rv on">
+      <div class="spec"><div class="k">Floor area</div><div class="v">6,000 sq ft</div></div>
+      <div class="spec"><div class="k">Screening</div><div class="v">₹499</div></div>
+      <div class="spec"><div class="k">Quarterly</div><div class="v">₹4,999</div></div>
+      <div class="spec"><div class="k">Batch size</div><div class="v">Max 8</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="assess">
+  <div class="wrap">
+    <div class="sec-id rv">SEC. 01 — ASSESSMENTS</div>
+    <h2 class="rv">Measured before trained.</h2>
+    <p class="sec-sub rv">Nobody touches a barbell here before the lab signs off. Three diagnostics, one blueprint.</p>
+    <div class="assess rv">
+      <div class="a"><div class="no">A/01</div><h3>Movement Screening</h3><p>Overhead squat, hinge, lunge and shoulder mobility filmed and scored on a 40-point matrix.</p><div class="price">₹499 · 45 min</div></div>
+      <div class="a"><div class="no">A/02</div><h3>Strength Baseline</h3><p>Trap-bar deadlift, goblet squat and carry tests to set your exact starting loads.</p><div class="price">Included in screening</div></div>
+      <div class="a"><div class="no">A/03</div><h3>Quarterly Re-test</h3><p>Same tests, every 12 weeks. The numbers either moved or the program changes.</p><div class="price">Free for members</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="wrap">
+    <div class="sec-id rv">SEC. 02 — PROGRAMS</div>
+    <h2 class="rv">Training tracks.</h2>
+    <p class="sec-sub rv">Progressions are plotted, not guessed. Each track runs in 8-week drawing sets.</p>
+    <div class="rv">
+      <div class="prog"><div><h3>Foundation 01 — Hinge &amp; Carry</h3><div class="meta">Beginners · joint prep + loaded carries</div></div><div class="dur">8 WKS · 3×/WK</div></div>
+      <div class="prog"><div><h3>Foundation 02 — Squat &amp; Press</h3><div class="meta">Goblet squat, push-up and landmine press progressions</div></div><div class="dur">8 WKS · 3×/WK</div></div>
+      <div class="prog"><div><h3>Athletic — Sprint &amp; Power</h3><div class="meta">Sleds, med-ball throws, acceleration mechanics</div></div><div class="dur">8 WKS · 4×/WK</div></div>
+      <div class="prog"><div><h3>Longevity — Move for Life</h3><div class="meta">40+ track: balance, bone loading, get-up strength</div></div><div class="dur">ONGOING · 3×/WK</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="equipment">
+  <div class="wrap">
+    <div class="sec-id rv">SEC. 03 — EQUIPMENT</div>
+    <h2 class="rv">The apparatus.</h2>
+    <p class="sec-sub rv">Every tool chosen for a movement pattern. Counted, not collected.</p>
+    <div class="equip rv">
+      <div class="eq"><div class="dim">2.2 M</div><h3>Turf Sprint Lane</h3><p>Sled pushes and farmer's carries.</p><div class="count">01</div></div>
+      <div class="eq"><div class="dim">KG 4–40</div><h3>Kettlebell Wall</h3><p>Competition bells, 2 kg steps.</p><div class="count">36</div></div>
+      <div class="eq"><div class="dim">360°</div><h3>Landmine Stations</h3><p>Rotational power work.</p><div class="count">06</div></div>
+      <div class="eq"><div class="dim">0–60 KG</div><h3>Sled Fleet</h3><p>Push, pull and drag sleds.</p><div class="count">08</div></div>
+      <div class="eq"><div class="dim">12 FT</div><h3>Climbing Rope</h3><p>Upper-body pulling strength.</p><div class="count">02</div></div>
+      <div class="eq"><div class="dim">—</div><h3>Assault Bikes</h3><p>Engine intervals, watt-measured.</p><div class="count">10</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="join">
+  <div class="wrap">
+    <div class="sec-id rv">SEC. 04 — MEMBERSHIP</div>
+    <h2 class="rv">Join the lab.</h2>
+    <p class="sec-sub rv">Screening first, membership after. Quarterly ₹4,999 · Monthly ₹1,999 · Annual ₹17,999.</p>
+    <div class="plans rv">
+      <div class="plan"><h3>Monthly</h3><div class="price">₹1,999<small> /mo</small></div><ul><li>All training tracks</li><li>Quarterly re-test</li><li>Max-8 batches</li></ul></div>
+      <div class="plan feat"><h3>Quarterly</h3><div class="price">₹4,999<small> /3 mo</small></div><ul><li>All training tracks</li><li>Monthly 1:1 technique review</li><li>Guest pass × 2</li></ul></div>
+      <div class="plan"><h3>Annual</h3><div class="price">₹17,999<small> /yr</small></div><ul><li>Everything in Quarterly</li><li>2 physiotherapy consults</li><li>Lab tee + notebook</li></ul></div>
+    </div>
+    <form class="rv" id="joinForm">
+      <div><label for="jname">Name</label><input id="jname" required placeholder="Gurleen Singh"></div>
+      <div><label for="jphone">Phone</label><input id="jphone" required pattern="[0-9+ ]{10,15}" placeholder="98XXX XXXXX"></div>
+      <button class="btn" type="submit">Book Screening — ₹499</button>
+      <div id="ok">Screening request logged. The lab will call to slot your 45-minute assessment — wear flexible clothing, arrive 10 min early.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>KINETIC LAB · 2nd Floor, High Street, Zirakpur · 6 AM – 9 PM</span>
+    <span>DWG-KL-001 · REV C</span>
+  </div>
+</footer>
+
+<script>
+// scroll reveals
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// blueprint line draw: deterministic function of section scroll progress
+const bp=document.getElementById('bpLines');
+const callouts=[...document.querySelectorAll('.callout')];
+function blueprint(){
+  const r=bp.getBoundingClientRect(),vh=innerHeight;
+  const p=Math.min(1,Math.max(0,(vh-r.top)/(vh*0.9))); // 0→1 entering viewport
+  bp.style.strokeDashoffset=600*(1-p);
+  callouts.forEach((c,i)=>{
+    const th=0.45+i*0.18;
+    c.classList.toggle('on',p>th);
+  });
+  requestAnimationFrame(blueprint);
+}
+requestAnimationFrame(blueprint);
+document.getElementById('joinForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  e.target.querySelector('button').style.display='none';
+  document.getElementById('ok').style.display='block';
+});
+</script>
+</body>
+</html>

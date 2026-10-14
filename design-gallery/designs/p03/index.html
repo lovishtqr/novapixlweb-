@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Still Water — A Spa for the Sound of Nothing · Chandigarh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Dongle:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--grey:#9aa0a3;--paper:#f4f5f4;--ink:#3c4043;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:'Dongle',sans-serif;font-weight:300;
+  font-size:clamp(1.3rem,2.4vw,1.6rem);line-height:1.55;overflow-x:hidden;}
+h1,h2,h3{font-family:'Poiret One',cursive;font-weight:400;letter-spacing:.08em;line-height:1.2;}
+::selection{background:var(--grey);color:#fff;}
+/* the single ripple: deterministic function of scroll, fixed behind everything */
+#ripple{position:fixed;inset:0;z-index:0;pointer-events:none;display:flex;align-items:center;justify-content:center;}
+#ripple svg{width:120vmin;height:120vmin;opacity:.5;will-change:transform;}
+#ripple circle{fill:none;stroke:var(--grey);stroke-width:1;}
+main{position:relative;z-index:1;}
+.wrap{max-width:620px;margin:0 auto;padding:0 24px;}
+section{padding:clamp(90px,14vh,160px) 0;}
+header.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+.hero .eyebrow{font-size:1.1rem;letter-spacing:.5em;text-transform:uppercase;color:var(--grey);margin-bottom:28px;}
+h1{font-size:clamp(3.4rem,11vw,6.5rem);margin-bottom:22px;}
+.hero p.lede{font-size:clamp(1.4rem,3vw,1.8rem);color:var(--grey);max-width:22ch;margin-bottom:44px;}
+.btn{display:inline-block;font-family:'Dongle',sans-serif;font-weight:500;font-size:1.35rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--paper);background:var(--ink);border:1px solid var(--ink);padding:16px 46px;text-decoration:none;cursor:pointer;transition:all .35s ease;}
+.btn:hover{background:transparent;color:var(--ink);}
+.scroll-hint{margin-top:70px;font-size:1.05rem;letter-spacing:.4em;color:var(--grey);text-transform:uppercase;animation:hint 3.2s ease-in-out infinite;}
+@keyframes hint{0%,100%{opacity:.35;transform:translateY(0)}50%{opacity:1;transform:translateY(8px)}}
+h2{font-size:clamp(2rem,6vw,3rem);margin-bottom:34px;text-align:center;}
+.rule{width:56px;height:1px;background:var(--grey);margin:0 auto 40px;}
+.prose p{margin-bottom:26px;text-align:center;}
+/* treatments: hairline rows, no cards */
+.trow{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:30px 4px;border-top:1px solid var(--grey);}
+.trow:last-child{border-bottom:1px solid var(--grey);}
+.trow .tname{font-family:'Poiret One',cursive;font-size:clamp(1.5rem,4.5vw,2rem);letter-spacing:.05em;}
+.trow .tdesc{font-size:1.15rem;color:var(--grey);}
+.trow .tprice{font-size:1.6rem;font-weight:500;white-space:nowrap;}
+.trow .tmin{font-size:1.05rem;color:var(--grey);display:block;text-align:right;}
+/* silence policy */
+.policy{list-style:none;margin-top:10px;}
+.policy li{padding:22px 4px;border-top:1px solid var(--grey);display:flex;gap:20px;align-items:baseline;}
+.policy li:last-child{border-bottom:1px solid var(--grey);}
+.policy .n{font-family:'Poiret One',cursive;color:var(--grey);font-size:1.3rem;min-width:44px;}
+/* booking */
+form.book{margin-top:20px;}
+.field{margin-bottom:26px;}
+.field label{display:block;font-size:1.05rem;letter-spacing:.28em;text-transform:uppercase;color:var(--grey);margin-bottom:8px;}
+.field input,.field select{width:100%;font-family:'Dongle',sans-serif;font-size:1.5rem;font-weight:300;background:transparent;border:none;border-bottom:1px solid var(--grey);color:var(--ink);padding:10px 2px;outline:none;}
+.field input:focus,.field select:focus{border-bottom-color:var(--ink);}
+form.book .btn{width:100%;margin-top:10px;}
+#confirm{display:none;margin-top:30px;padding:28px;border:1px solid var(--grey);text-align:center;font-size:1.4rem;}
+footer{padding:60px 0 80px;text-align:center;color:var(--grey);font-size:1.15rem;letter-spacing:.06em;}
+footer .addr{margin-top:8px;}
+/* slow fade reveals — nothing bouncy */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 1.6s ease,transform 1.6s ease;}
+.reveal.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.scroll-hint{animation:none}}
+</style>
+</head>
+<body>
+<div id="ripple" aria-hidden="true">
+  <svg viewBox="0 0 400 400"><circle cx="200" cy="200" r="40"/><circle cx="200" cy="200" r="80"/><circle cx="200" cy="200" r="120"/><circle cx="200" cy="200" r="160"/><circle cx="200" cy="200" r="195"/></svg>
+</div>
+<main>
+<header class="hero wrap">
+  <div class="eyebrow reveal">Chandigarh · Est. 2019</div>
+  <h1 class="reveal">Still Water</h1>
+  <p class="lede reveal">a spa for the sound of nothing</p>
+  <a class="btn reveal" href="#booking">Book a deep rest</a>
+  <div class="scroll-hint">scroll slowly</div>
+</header>
+
+<section id="stillness" class="wrap">
+  <h2 class="reveal">Stillness, scheduled</h2><div class="rule reveal"></div>
+  <div class="prose reveal">
+    <p>Most spas sell you noise with nicer lighting. Still Water sells you the opposite: ninety minutes where nobody speaks, nothing pings, and the loudest thing in the room is water finding its level.</p>
+    <p>One therapist. One room. One ripple at a time. When you leave, the city feels turned down by half — that part is free.</p>
+  </div>
+</section>
+
+<section id="treatments" class="wrap">
+  <h2 class="reveal">Three treatments. No more.</h2><div class="rule reveal"></div>
+  <div class="reveal">
+    <div class="trow"><div><div class="tname">Deep Rest</div><div class="tdesc">90 minutes of slow, silent bodywork on a heated stone bed</div></div><div><span class="tprice">₹2,800</span><span class="tmin">90 min</span></div></div>
+    <div class="trow"><div><div class="tname">Float &amp; Fade</div><div class="tdesc">weightless salt float in a lightless pod, then warm tea</div></div><div><span class="tprice">₹1,900</span><span class="tmin">60 min</span></div></div>
+    <div class="trow"><div><div class="tname">Stone Silence</div><div class="tdesc">warm basalt stones placed, then left — the stones do the talking</div></div><div><span class="tprice">₹2,400</span><span class="tmin">75 min</span></div></div>
+  </div>
+</section>
+
+<section id="silence" class="wrap">
+  <h2 class="reveal">The silence policy</h2><div class="rule reveal"></div>
+  <ul class="policy reveal">
+    <li><span class="n">i.</span><span>Two of our five rooms are <strong>no-talking zones</strong> — therapists communicate with a hand on your shoulder and nothing else.</span></li>
+    <li><span class="n">ii.</span><span>Phones sleep in cedar lockers at the door. They will not be missed.</span></li>
+    <li><span class="n">iii.</span><span>The corridor is whisper-only. Laughter is permitted in the garden, at full volume.</span></li>
+    <li><span class="n">iv.</span><span>After your session, sit with your tea as long as you like. Rushing is the only thing we charge extra for — in disapproval.</span></li>
+  </ul>
+</section>
+
+<section id="booking" class="wrap">
+  <h2 class="reveal">Book your quiet</h2><div class="rule reveal"></div>
+  <form class="book reveal" id="bookForm">
+    <div class="field"><label for="bname">Your name</label><input id="bname" required placeholder="Meera Kapoor"></div>
+    <div class="field"><label for="bphone">Phone</label><input id="bphone" required inputmode="tel" placeholder="+91 98XXX XXXXX"></div>
+    <div class="field"><label for="btrt">Treatment</label>
+      <select id="btrt"><option>Deep Rest — ₹2,800 · 90 min</option><option>Float &amp; Fade — ₹1,900 · 60 min</option><option>Stone Silence — ₹2,400 · 75 min</option></select></div>
+    <div class="field"><label for="bdate">Preferred day</label><input id="bdate" type="date" required></div>
+    <button class="btn" type="submit">Request booking</button>
+    <div id="confirm" role="status"></div>
+  </form>
+</section>
+
+<footer class="wrap">
+  <div>Still Water</div>
+  <div class="addr">SCO 214, Sector 35-C, Chandigarh · open 10 AM – 8 PM, Tue–Sun<br>call 0172-46XXXXX — or just walk in quietly</div>
+</footer>
+</main>
+<script>
+// deterministic scroll animation: ripple scale is a pure function of scroll progress (motion-design: every frame = seek(t))
+const rippleSvg = document.querySelector('#ripple svg');
+function render(t){
+  const max = document.documentElement.scrollHeight - innerHeight;
+  const p = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+  const s = 1 + p * 5;                       // one ripple, expanding as you descend
+  rippleSvg.style.transform = 'scale(' + s.toFixed(4) + ')';
+  rippleSvg.style.opacity = (0.55 - p * 0.3).toFixed(3);
+}
+let ticking = false;
+addEventListener('scroll', () => { if(!ticking){ ticking = true; requestAnimationFrame(() => { render(); ticking = false; }); } }, {passive:true});
+render();
+// slow fades
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }), {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+// booking
+document.getElementById('bookForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const n = document.getElementById('bname').value.trim();
+  const t = document.getElementById('btrt').value.split(' — ')[0];
+  const d = document.getElementById('bdate').value;
+  const c = document.getElementById('confirm');
+  c.style.display = 'block';
+  c.innerHTML = 'Thank you, ' + n + '. Your request for <strong>' + t + '</strong> on <strong>' + d + '</strong> is noted.<br>We will call to confirm — quietly.';
+});
+</script>
+</body>
+</html>
