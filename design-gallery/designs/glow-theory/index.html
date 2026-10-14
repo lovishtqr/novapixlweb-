@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow Theory — Skin Clinic Salon, Sector 9 Chandigarh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--porc:#f4f7f4;--jade:#3f6b5e;--mint:#cfe0d6;--pine:#22302b;--ease:cubic-bezier(.2,.8,.25,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--porc);color:var(--pine);font-family:'Lato',sans-serif;overflow-x:hidden;line-height:1.65;font-weight:400}
+h1,h2,h3,.prata{font-family:'Prata',serif;font-weight:400;line-height:1.18}
+img,svg{max-width:100%;display:block}
+::selection{background:var(--jade);color:#fff}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:clamp(3.5rem,9vh,6rem) clamp(1.2rem,4vw,2.5rem)}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(244,247,244,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--mint)}
+.nav-in{max-width:1140px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:.9rem clamp(1.2rem,4vw,2.5rem)}
+.brand{font-family:'Prata';font-size:1.35rem;color:var(--jade)}
+.brand small{font-family:'Lato';font-size:.68rem;letter-spacing:.3em;color:#7a8a82;display:block;font-weight:700}
+.nav-in a.cta{font-weight:700;font-size:.88rem;text-decoration:none;background:var(--jade);color:#fff;padding:.6rem 1.5rem;border-radius:8px;transition:.25s}
+.nav-in a.cta:hover{background:var(--pine)}
+
+/* hero: clinical clean with data strip */
+.hero{max-width:1140px;margin:0 auto;padding:clamp(4rem,10vh,6.5rem) clamp(1.2rem,4vw,2.5rem) 2rem;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:.6rem;background:var(--mint);color:var(--jade);font-weight:700;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;padding:.5rem 1.1rem;border-radius:999px;margin-bottom:1.4rem}
+.kicker::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--jade);animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.5);opacity:.6}}
+.hero h1{font-size:clamp(2.6rem,7vw,4.9rem);color:var(--pine)}
+.hero h1 em{font-style:normal;color:var(--jade)}
+.hero p.lead{margin:1.3rem 0 2rem;font-size:1.1rem;color:#4a5a52;max-width:46ch}
+.btn{display:inline-block;background:var(--jade);color:#fff;font-weight:700;text-decoration:none;padding:1rem 2.3rem;border-radius:8px;transition:.25s}
+.btn:hover{background:var(--pine);transform:translateY(-2px)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.4rem}
+.stat{background:#fff;border:1px solid var(--mint);border-radius:12px;padding:1.1rem .8rem;text-align:center}
+.stat .n{font-family:'Prata';font-size:clamp(1.5rem,3.5vw,2.2rem);color:var(--jade)}
+.stat .l{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#7a8a82;font-weight:700;margin-top:.3rem}
+.hero-card{background:#fff;border:1px solid var(--mint);border-radius:18px;padding:1.8rem;box-shadow:0 24px 50px rgba(63,107,94,.12)}
+.hero-card h3{font-size:1.25rem;margin-bottom:.4rem;color:var(--jade)}
+.hero-card p{font-size:.93rem;color:#4a5a52}
+.hero-card .scan{margin-top:1.2rem;background:var(--porc);border:1px dashed var(--jade);border-radius:12px;padding:1.2rem;display:flex;gap:1rem;align-items:center}
+.hero-card .scan .ring{width:56px;height:56px;flex:none;border-radius:50%;border:4px solid var(--mint);border-top-color:var(--jade);animation:spin 1.6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* concerns tabs */
+.sec-head{margin-bottom:2rem}
+.sec-head h2{font-size:clamp(2.1rem,5.5vw,3.4rem);color:var(--pine)}
+.sec-head p{color:#4a5a52;max-width:58ch;margin-top:.6rem}
+.tabs{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.tabs button{font-family:'Lato';font-weight:700;font-size:.95rem;background:#fff;border:1.5px solid var(--mint);color:var(--pine);border-radius:999px;padding:.65rem 1.6rem;cursor:pointer;transition:.25s}
+.tabs button[aria-selected="true"]{background:var(--jade);border-color:var(--jade);color:#fff}
+.panel{display:none;background:#fff;border:1px solid var(--mint);border-radius:16px;padding:clamp(1.6rem,4vw,2.6rem)}
+.panel.on{display:grid;grid-template-columns:1fr 1fr;gap:2rem;animation:fadein .45s var(--ease)}
+@keyframes fadein{from{opacity:0;transform:translateY(12px)}}
+.panel h3{font-size:1.5rem;color:var(--jade);margin-bottom:.7rem}
+.panel p{color:#4a5a52;font-size:.98rem}
+.panel ul{list-style:none;margin-top:1rem}
+.panel li{padding:.45rem 0 .45rem 1.7rem;position:relative;font-size:.95rem;color:#4a5a52}
+.panel li::before{content:"✓";position:absolute;left:0;color:var(--jade);font-weight:900}
+.panel .proto{background:var(--porc);border-radius:12px;padding:1.4rem}
+.panel .proto .step{display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--mint);font-size:.93rem}
+.panel .proto .step:last-child{border:none}
+.panel .proto .step b{color:var(--jade)}
+
+/* treatments */
+.treat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:1.2rem;margin-top:2rem}
+.treat{background:#fff;border:1px solid var(--mint);border-radius:16px;padding:1.7rem 1.5rem;transition:transform .3s var(--ease),box-shadow .3s}
+.treat:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(63,107,94,.14)}
+.treat .code{font-size:.7rem;font-weight:900;letter-spacing:.28em;color:var(--jade)}
+.treat h3{font-size:1.35rem;margin:.5rem 0}
+.treat p{font-size:.93rem;color:#4a5a52;min-height:3.4em}
+.treat .row{display:flex;justify-content:space-between;align-items:center;margin-top:1rem}
+.treat .pr{font-family:'Prata';font-size:1.5rem;color:var(--jade)}
+.treat a{font-weight:700;font-size:.88rem;color:var(--jade);text-decoration:none;border-bottom:2px solid var(--mint)}
+.treat a:hover{border-color:var(--jade)}
+
+/* before/after slider */
+.ba{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--mint);margin-top:2rem;user-select:none;touch-action:pan-y}
+.ba .after{position:absolute;inset:0;background:linear-gradient(140deg,#e9f2ec,#cfe0d6)}
+.ba .before{position:absolute;inset:0;background:linear-gradient(140deg,#d8cfc2,#b9ac97);width:50%;overflow:hidden;border-right:3px solid #fff}
+.ba .lbl{position:absolute;top:1rem;font-size:.72rem;font-weight:900;letter-spacing:.24em;background:rgba(34,48,43,.75);color:#fff;padding:.35rem .9rem;border-radius:999px}
+.ba .lbl.b{left:1rem}.ba .lbl.a{right:1rem}
+.ba .face{position:absolute;inset:0;display:grid;place-items:center;font-family:'Prata';font-size:clamp(1.4rem,4vw,2.2rem);color:rgba(34,48,43,.35)}
+.ba input[type=range]{position:absolute;inset:0;width:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba-cap{display:flex;justify-content:space-between;margin-top:.8rem;font-size:.85rem;color:#7a8a82}
+
+/* consult booking */
+.consult{background:var(--pine);color:#eef3ef;border-radius:24px;padding:clamp(2.5rem,6vw,4.5rem) clamp(1.5rem,5vw,3.5rem);display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.consult h2{font-size:clamp(2rem,5vw,3rem);color:#fff;margin-bottom:1rem}
+.consult h2 em{font-style:normal;color:var(--mint)}
+.consult p{color:rgba(238,243,239,.72)}
+form.book{display:grid;gap:1rem;margin-top:1.5rem}
+form.book input,form.book select{font-family:inherit;font-size:1rem;background:rgba(255,255,255,.07);border:1px solid rgba(207,224,214,.4);color:#fff;padding:.95rem 1.1rem;border-radius:10px;width:100%}
+form.book input::placeholder{color:rgba(238,243,239,.5)}
+form.book select option{color:#22302b}
+form.book input:focus,form.book select:focus{outline:none;border-color:var(--mint)}
+form.book .btn{border:none;cursor:pointer;background:var(--mint);color:var(--pine)}
+form.book .btn:hover{background:#fff}
+.ok{display:none;background:rgba(207,224,214,.14);border:1px solid var(--mint);border-radius:10px;padding:1rem;color:var(--mint);font-weight:600}
+.trust{margin-top:1.8rem;display:grid;gap:.9rem}
+.trust div{display:flex;gap:.8rem;align-items:flex-start;font-size:.93rem;color:rgba(238,243,239,.8)}
+.trust svg{flex:none;margin-top:.2rem}
+footer{text-align:center;padding:2rem;font-size:.82rem;color:#7a8a82;letter-spacing:.06em}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){.hero,.consult,.panel.on{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1}}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-in">
+  <span class="brand">Glow Theory<small>SKIN CLINIC SALON</small></span>
+  <a class="cta" href="#consult">Book Consult</a>
+</div></nav>
+
+<header class="hero">
+  <div>
+    <span class="kicker rv">Dermat-supervised · Sector 9, Chandigarh</span>
+    <h1 class="rv">Skin, measured <em>honestly.</em></h1>
+    <p class="lead rv">A skin clinic inside a salon: every treatment starts with a digital skin analysis, and every result is photographed, tracked and shown to you — no miracles promised, only data.</p>
+    <div class="rv"><a class="btn" href="#concerns">Find Your Treatment</a></div>
+    <div class="stats rv">
+      <div class="stat"><div class="n"><span data-count="4800">0</span>+</div><div class="l">Treatments done</div></div>
+      <div class="stat"><div class="n"><span data-count="94">0</span>%</div><div class="l">Would rebook</div></div>
+      <div class="stat"><div class="n"><span data-count="12">0</span></div><div class="l">Protocols</div></div>
+    </div>
+  </div>
+  <div class="hero-card rv">
+    <h3>The Skin Analysis</h3>
+    <p>14-point digital scan — hydration, sebum, pigmentation depth, barrier health — before we recommend a single rupee of treatment.</p>
+    <div class="scan"><span class="ring" aria-hidden="true"></span><p><b>Free</b> with every first consult.<br>Takes 12 minutes.</p></div>
+  </div>
+</header>
+
+<section class="wrap" id="concerns">
+  <div class="sec-head rv">
+    <h2>Start from your concern.</h2>
+    <p>Three protocols, built with our supervising dermatologist. Pick the one that sounds like your mirror.</p>
+  </div>
+  <div class="tabs rv" role="tablist">
+    <button role="tab" aria-selected="true" data-t="c0">Acne &amp; Congestion</button>
+    <button role="tab" aria-selected="false" data-t="c1">Pigmentation</button>
+    <button role="tab" aria-selected="false" data-t="c2">Ageing &amp; Firmness</button>
+  </div>
+  <div class="panel on rv" id="c0">
+    <div><h3>Clear-Skin Protocol</h3><p>For active breakouts, blackheads and post-acne marks. We calm first, extract second, and rebuild the barrier third — never all at once.</p>
+      <ul><li>Salicylic deep-cleanse facial</li><li>Manual extraction under magnification</li><li>LED blue-light session</li><li>Barrier-repair home plan</li></ul></div>
+    <div class="proto"><div class="step"><span>Session 1–2</span><b>Calm + cleanse</b></div><div class="step"><span>Session 3–4</span><b>Extract + treat</b></div><div class="step"><span>Session 5–6</span><b>Rebuild + maintain</b></div><div class="step"><span>6 sessions</span><b>₹9,999</b></div></div>
+  </div>
+  <div class="panel" id="c1">
+    <div><h3>Even-Tone Protocol</h3><p>For melasma, sun spots and uneven tone. Pigment sits at different depths — the scan tells us which layer we're treating.</p>
+      <ul><li>Brightening hydrafacial</li><li>Targeted chemical peels</li><li>Tranexamic mesotherapy (dermatologist)</li><li>SPF discipline coaching</li></ul></div>
+    <div class="proto"><div class="step"><span>Session 1–2</span><b>Surface pigment</b></div><div class="step"><span>Session 3–5</span><b>Dermal pigment</b></div><div class="step"><span>Session 6</span><b>Lock-in + SPF plan</b></div><div class="step"><span>6 sessions</span><b>₹12,999</b></div></div>
+  </div>
+  <div class="panel" id="c2">
+    <div><h3>Firm-Skin Protocol</h3><p>For fine lines, laxity and dullness. Collagen stimulation with realistic timelines — visible change at 8–12 weeks.</p>
+      <ul><li>Radiofrequency tightening</li><li>Peptide infusion facial</li><li>Microneedling (dermatologist)</li><li>At-home retinoid ramp-up</li></ul></div>
+    <div class="proto"><div class="step"><span>Weeks 1–4</span><b>Stimulate</b></div><div class="step"><span>Weeks 5–8</span><b>Rebuild</b></div><div class="step"><span>Weeks 9–12</span><b>Refine</b></div><div class="step"><span>12 weeks</span><b>₹18,999</b></div></div>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:0">
+  <div class="sec-head rv">
+    <h2>Single treatments.</h2>
+    <p>Not ready for a protocol? Book one session, see the scan change.</p>
+  </div>
+  <div class="treat-grid">
+    <div class="treat rv"><span class="code">GT-01</span><h3>Signature Hydrafacial</h3><p>Cleanse, exfoliate, extract, infuse — the 60-minute reset for dull skin.</p><div class="row"><span class="pr">₹2,999</span><a href="#consult">Book →</a></div></div>
+    <div class="treat rv"><span class="code">GT-02</span><h3>Chemical Peel</h3><p>Dermatologist-graded peel matched to your concern and downtime.</p><div class="row"><span class="pr">₹1,799</span><a href="#consult">Book →</a></div></div>
+    <div class="treat rv"><span class="code">GT-03</span><h3>LED Light Therapy</h3><p>20 minutes under medical-grade LEDs — red for repair, blue for acne.</p><div class="row"><span class="pr">₹999</span><a href="#consult">Book →</a></div></div>
+    <div class="treat rv"><span class="code">GT-04</span><h3>Digital Skin Analysis</h3><p>The 14-point scan, with a printed report and honest recommendations.</p><div class="row"><span class="pr">Free*</span><a href="#consult">Book →</a></div></div>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:0">
+  <div class="sec-head rv">
+    <h2>Results, side by side.</h2>
+    <p>Drag the handle. Real client, 6 sessions of the Even-Tone Protocol, 10 weeks apart. (Illustrative render — full case photos shown in-clinic.)</p>
+  </div>
+  <div class="ba rv" id="ba">
+    <div class="after"><div class="face">week 10 · even tone</div></div>
+    <div class="before" id="baBefore"><div class="face" style="width:200%">week 0 · baseline</div></div>
+    <span class="lbl b">BEFORE</span><span class="lbl a">AFTER</span>
+    <input type="range" id="baRange" min="0" max="100" value="50" aria-label="Compare before and after">
+  </div>
+  <div class="ba-cap"><span>← drag to compare</span><span>Even-Tone Protocol · 6 sessions</span></div>
+</section>
+
+<section class="wrap" id="consult">
+  <div class="consult rv">
+    <div>
+      <h2>Book a <em>consult.</em></h2>
+      <p>₹499, adjusted against your first treatment. Includes the full 14-point skin analysis and a written plan — yours to keep even if you never come back.</p>
+      <div class="trust">
+        <div><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="none" stroke="#cfe0d6" stroke-width="2"/><path d="M6 9.5 L8.2 11.5 L12 6.5" stroke="#cfe0d6" stroke-width="2" fill="none"/></svg><span>Supervised by Dr. Anjali Rao, MD Dermatology</span></div>
+        <div><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="none" stroke="#cfe0d6" stroke-width="2"/><path d="M6 9.5 L8.2 11.5 L12 6.5" stroke="#cfe0d6" stroke-width="2" fill="none"/></svg><span>No package pressure — single sessions always available</span></div>
+        <div><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="none" stroke="#cfe0d6" stroke-width="2"/><path d="M6 9.5 L8.2 11.5 L12 6.5" stroke="#cfe0d6" stroke-width="2" fill="none"/></svg><span>SCO 209, Sector 9-D, Chandigarh · Mon–Sat, 10 AM – 7 PM</span></div>
+      </div>
+    </div>
+    <form class="book" id="bookForm">
+      <input type="text" placeholder="Your name" required>
+      <input type="tel" placeholder="Phone" pattern="[0-9+ ]{10,15}" required>
+      <select required><option value="">Concern…</option><option>Acne &amp; congestion</option><option>Pigmentation</option><option>Ageing &amp; firmness</option><option>Just the free skin analysis</option></select>
+      <input type="date" id="cDate" required>
+      <button class="btn" type="submit">Request Consult — ₹499</button>
+      <p class="ok" id="bookOk">Consult requested. Our front desk will call to confirm your slot and scan time.</p>
+    </form>
+  </div>
+</section>
+
+<footer>GLOW THEORY · SCO 209, Sector 9-D, Chandigarh · skin, measured honestly</footer>
+
+<script>
+document.getElementById('cDate').min=new Date().toISOString().split('T')[0];
+// reveals
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// tabs
+const tabs=[...document.querySelectorAll('.tabs button')];
+tabs.forEach(t=>t.addEventListener('click',()=>{
+  tabs.forEach(x=>x.setAttribute('aria-selected','false'));t.setAttribute('aria-selected','true');
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.getElementById(t.dataset.t).classList.add('on');
+}));
+// before/after slider
+const baBefore=document.getElementById('baBefore'),baRange=document.getElementById('baRange');
+baRange.addEventListener('input',()=>{baBefore.style.width=baRange.value+'%';});
+// animated stat counters (rAF, fixed 1400ms, easeOutCubic)
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;cio.unobserve(e.target);
+  const el=e.target,target=+el.dataset.count,t0=performance.now(),D=1400;
+  (function f(t){const p=Math.min((t-t0)/D,1),v=target*(1-Math.pow(1-p,3));
+    el.textContent=Math.round(v).toLocaleString('en-IN');if(p<1)requestAnimationFrame(f)})(t0);
+}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+document.getElementById('bookForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('bookOk').style.display='block';});
+</script>
+</body>
+</html>

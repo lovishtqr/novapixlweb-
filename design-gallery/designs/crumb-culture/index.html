@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crumb Culture — Artisan Bakery, Mohali Phase 7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chewy&family=Assistant:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--crust:#a9714b;--paper:#f8f1e5;--bark:#5b3a22;--wheat:#e8c98a;--ink:#3a2a18}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Assistant',sans-serif;overflow-x:hidden;line-height:1.65;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cg fill='%23a9714b' opacity='0.05'%3E%3Ccircle cx='40' cy='60' r='3'/%3E%3Ccircle cx='120' cy='150' r='4'/%3E%3Ccircle cx='220' cy='80' r='3'/%3E%3Ccircle cx='80' cy='230' r='5'/%3E%3Ccircle cx='260' cy='200' r='3'/%3E%3Ccircle cx='180' cy='270' r='4'/%3E%3C/g%3E%3C/svg%3E")}
+h1,h2,h3,.chw{font-family:'Chewy',serif;font-weight:400;letter-spacing:.01em}
+img,svg{max-width:100%}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.on{opacity:1;transform:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(91,58,34,.97)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.logo{font-family:'Chewy';color:var(--paper);text-decoration:none;font-size:1.3rem}
+.logo b{color:var(--wheat);font-weight:400}
+nav a.cta{background:var(--wheat);color:var(--bark);text-decoration:none;font-weight:800;padding:10px 22px;border-radius:6px;font-size:.85rem;transform:rotate(-2deg)}
+nav a.cta:hover{background:#fff;transform:rotate(0)}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative}
+.stamp{position:absolute;font-family:'Chewy';color:var(--crust);border:4px solid var(--crust);border-radius:10px;padding:10px 22px;font-size:1.1rem;transform:rotate(-12deg);opacity:.85;text-transform:uppercase;letter-spacing:.06em}
+.stamp.s1{top:16%;right:8%}.stamp.s2{bottom:14%;left:6%;transform:rotate(9deg)}
+@media(max-width:640px){.stamp{display:none}}
+.tag{display:inline-block;background:var(--bark);color:var(--paper);font-weight:800;font-size:.76rem;letter-spacing:.22em;padding:8px 18px;border-radius:6px;text-transform:uppercase;transform:rotate(-1.5deg)}
+h1{font-size:clamp(2.8rem,10vw,5.8rem);color:var(--bark);line-height:1.05;margin:16px 0}
+h1 .c{color:var(--crust)}
+.hero p.lead{max-width:560px;font-size:1.06rem;color:#6b4e30}
+.btn{display:inline-block;background:var(--crust);color:#fff;text-decoration:none;font-weight:800;padding:15px 34px;border-radius:8px;transform:rotate(-1deg)}
+.btn:hover{background:var(--bark);transform:rotate(0)}
+.btn.ghost{background:transparent;color:var(--bark);border:2px solid var(--bark);margin-left:12px}
+.btn.ghost:hover{background:var(--bark);color:#fff}
+.hero-meta{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.hm{background:#fffdf6;border:2px dashed var(--crust);border-radius:8px;padding:12px 20px;text-align:center}
+.hm strong{font-family:'Chewy';font-size:1.4rem;color:var(--bark);display:block}
+.hm span{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:#8a6b45}
+/* stamp slam animation */
+@keyframes slam{0%{transform:scale(3) rotate(-20deg);opacity:0}60%{transform:scale(.95) rotate(-11deg);opacity:1}100%{transform:scale(1) rotate(-12deg)}}
+.stamp-hit{animation:slam .45s cubic-bezier(.2,.9,.3,1.2) both}
+/* menu */
+section{padding:88px 0}
+.sec-k{font-weight:800;font-size:.78rem;letter-spacing:.26em;color:var(--crust);text-transform:uppercase}
+h2{font-size:clamp(1.9rem,5vw,2.9rem);color:var(--bark);margin:10px 0 12px}
+.sub{color:#7a5f3c;max-width:620px;margin-bottom:30px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.tab{background:transparent;border:2px solid var(--crust);color:var(--bark);font-weight:800;padding:10px 22px;border-radius:999px;cursor:pointer;font-family:'Assistant'}
+.tab.active{background:var(--crust);color:#fff}
+.bakes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.bake{background:#fffdf6;border-radius:14px;padding:24px;position:relative;border:1px solid #e5d3b3;transition:transform .25s;display:none}
+.bake.show{display:block;animation:pop .35s ease}
+@keyframes pop{from{transform:scale(.92);opacity:0}}
+.bake:hover{transform:translateY(-5px)}
+.bake .lbl{position:absolute;top:-11px;left:18px;background:var(--crust);color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.12em;padding:4px 12px;border-radius:999px;text-transform:uppercase;transform:rotate(-3deg)}
+.bake .art{height:110px;border-radius:10px;margin-bottom:14px;position:relative;overflow:hidden}
+.art.bread{background:linear-gradient(135deg,#c98f56,#8a5a28)}
+.art.crois{background:linear-gradient(135deg,#e8c98a,#b07a3a)}
+.art.cake{background:linear-gradient(135deg,#8a5a3a,#5b3a22)}
+.art.cookie{background:linear-gradient(135deg,#d9a86c,#7a4d26)}
+.art::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0 12px,rgba(255,255,255,.12) 12px 14px)}
+.bake h3{font-size:1.35rem;color:var(--bark)}
+.bake p{font-size:.9rem;color:#7a5f3c;margin:6px 0 10px}
+.bake .row{display:flex;justify-content:space-between;align-items:center}
+.bake .price{font-family:'Chewy';font-size:1.5rem;color:var(--crust)}
+.bake button{background:var(--bark);color:#fff;border:none;font-weight:800;padding:9px 18px;border-radius:8px;cursor:pointer;font-family:'Assistant'}
+.bake button:hover{background:var(--crust)}
+/* oven process */
+.oven{background:var(--bark);color:var(--paper)}
+.oven h2{color:var(--paper)}
+.oven .sub{color:#d9bd8f}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-top:10px}
+.step{padding:26px;border-left:2px dashed rgba(232,201,138,.5);position:relative}
+.step:first-child{border-left:none}
+@media(max-width:700px){.step{border-left:none;border-top:2px dashed rgba(232,201,138,.5)}}
+.step .n{font-family:'Chewy';font-size:2.4rem;color:var(--wheat)}
+.step h3{font-size:1.15rem;margin:8px 0}
+.step p{font-size:.9rem;color:#e3cda0}
+.step .t{font-weight:800;color:var(--wheat);font-size:.85rem;margin-top:8px}
+/* order */
+.orderbox{background:#fffdf6;border:3px solid var(--bark);border-radius:18px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:680px){.orderbox{grid-template-columns:1fr}}
+.orderbox h3{font-family:'Chewy';font-size:1.5rem;color:var(--bark);margin-bottom:10px}
+#cartlist{list-style:none;margin:12px 0}
+#cartlist li{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #d9bd8f;font-size:.92rem}
+#carttotal{font-family:'Chewy';font-size:1.6rem;color:var(--crust);margin:10px 0}
+form{display:grid;gap:12px}
+label{font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:#7a5f3c}
+input,select{background:#fff;border:2px solid #d9bd8f;padding:12px;font-family:'Assistant';font-size:1rem;width:100%;border-radius:8px;color:var(--ink)}
+input:focus,select:focus{outline:none;border-color:var(--crust)}
+#ok{display:none;background:#eef6df;border:2px solid #5c8a3a;padding:16px;border-radius:8px;font-weight:600}
+/* visit */
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.vcard{background:#fffdf6;border:2px solid #e5d3b3;border-radius:14px;padding:24px}
+.vcard h3{font-family:'Chewy';color:var(--crust);font-size:1.25rem;margin-bottom:8px}
+.vcard p{font-size:.92rem;color:#6b4e30}
+footer{background:var(--bark);color:#d9bd8f;padding:24px 0;font-size:.84rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Crumb<b>Culture</b></a>
+    <a class="cta" href="#order">Order Bakes</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="stamp s1">Baked 6 AM daily</div>
+  <div class="stamp s2">No preservatives</div>
+  <div class="wrap">
+    <span class="tag rv on">Artisan Bakery · Mohali Phase 7</span>
+    <h1 class="rv on">GOOD CRUMB<br><span class="c">TAKES ITS TIME.</span></h1>
+    <p class="lead rv on">Crumb Culture is a slow bakery — 48-hour sourdough, croissants laminated over three days, and everything out of the deck oven by 6 AM. If it's not fresh, it's not on the shelf.</p>
+    <div class="rv on" style="margin-top:26px">
+      <a class="btn" href="#order">Order for Pickup</a>
+      <a class="btn ghost" href="#bakes">Today's Bakes</a>
+    </div>
+    <div class="hero-meta rv on">
+      <div class="hm"><strong>48 hr</strong><span>Sourdough ferment</span></div>
+      <div class="hm"><strong>6 AM</strong><span>Oven opens daily</span></div>
+      <div class="hm"><strong>₹180</strong><span>Butter croissant</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="bakes">
+  <div class="wrap">
+    <div class="sec-k rv">Today's Bakes</div>
+    <h2 class="rv">Out of the oven.</h2>
+    <p class="sub rv">Baked this morning at 6 AM. When a tray sells out, it's gone till tomorrow — we don't bake twice.</p>
+    <div class="tabs rv">
+      <button class="tab active" data-cat="all">Everything</button>
+      <button class="tab" data-cat="bread">Breads</button>
+      <button class="tab" data-cat="vienn">Viennoiserie</button>
+      <button class="tab" data-cat="sweet">Sweet</button>
+    </div>
+    <div class="bakes rv" id="bakeGrid">
+      <div class="bake show" data-cat="bread"><span class="lbl">Signature</span><div class="art bread"></div><h3>Country Sourdough</h3><p>48-hour ferment, stone-milled atta blend, blistered crust.</p><div class="row"><span class="price">₹350</span><button data-add="Country Sourdough — ₹350" data-price="350">Add</button></div></div>
+      <div class="bake show" data-cat="vienn"><div class="art crois"></div><h3>Butter Croissant</h3><p>27 layers, French butter, three-day lamination.</p><div class="row"><span class="price">₹180</span><button data-add="Butter Croissant — ₹180" data-price="180">Add</button></div></div>
+      <div class="bake show" data-cat="vienn"><div class="art crois"></div><h3>Almond Croissant</h3><p>Twice-baked with frangipane and toasted flakes.</p><div class="row"><span class="price">₹220</span><button data-add="Almond Croissant — ₹220" data-price="220">Add</button></div></div>
+      <div class="bake show" data-cat="bread"><div class="art bread"></div><h3>Multigrain Loaf</h3><p>Seven grains, jaggery-kissed, sandwich-perfect crumb.</p><div class="row"><span class="price">₹280</span><button data-add="Multigrain Loaf — ₹280" data-price="280">Add</button></div></div>
+      <div class="bake show" data-cat="sweet"><span class="lbl">Weekend</span><div class="art cake"></div><h3>Basque Cheesecake</h3><p>Burnt top, molten centre. Sold by the slice, gone by noon.</p><div class="row"><span class="price">₹320</span><button data-add="Basque Cheesecake — ₹320" data-price="320">Add</button></div></div>
+      <div class="bake show" data-cat="sweet"><div class="art cookie"></div><h3>Sea-Salt Choc Chip</h3><p>Brown butter, dark chunks, flaky salt. Box of four.</p><div class="row"><span class="price">₹260</span><button data-add="Sea-Salt Cookies (4) — ₹260" data-price="260">Add</button></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="oven" id="process">
+  <div class="wrap">
+    <div class="sec-k rv" style="color:var(--wheat)">The Oven</div>
+    <h2 class="rv">Slow is the whole point.</h2>
+    <p class="sub rv">Our day starts at 3 AM. Here's what happens before you smell anything.</p>
+    <div class="steps">
+      <div class="step rv"><div class="n">01</div><h3>Feed the starter</h3><p>"Bubbles", our 6-year-old levain, gets fed stone-milled flour and warm water.</p><div class="t">3:00 AM</div></div>
+      <div class="step rv"><div class="n">02</div><h3>Shape &amp; score</h3><p>Yesterday's fermented dough is shaped by hand and scored with the lame.</p><div class="t">4:30 AM</div></div>
+      <div class="step rv"><div class="n">03</div><h3>Deck oven bake</h3><p>Stone deck at 250°C, steam for the first 20 minutes for that blistered crust.</p><div class="t">5:15 AM</div></div>
+      <div class="step rv"><div class="n">04</div><h3>Cool &amp; shelf</h3><p>Full cool-down on racks — slicing hot bread ruins the crumb, so we wait.</p><div class="t">6:00 AM</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="order">
+  <div class="wrap">
+    <div class="sec-k rv">Order</div>
+    <h2 class="rv">Reserve today's bake.</h2>
+    <p class="sub rv">Pay at pickup. Orders close when the trays empty — usually by 1 PM.</p>
+    <div class="orderbox rv">
+      <div>
+        <h3>Your Box</h3>
+        <ul id="cartlist"><li style="color:#8a6b45">Empty — add bakes from the menu above.</li></ul>
+        <div id="carttotal">Total: ₹0</div>
+      </div>
+      <form id="orderForm">
+        <div><label for="oname">Name</label><input id="oname" required placeholder="Mehak Arora"></div>
+        <div><label for="ophone">Phone</label><input id="ophone" required pattern="[0-9+ ]{10,15}" placeholder="98XXX XXXXX"></div>
+        <div><label for="otime">Pickup slot</label><select id="otime"><option>Today 8–10 AM</option><option>Today 10 AM–12 PM</option><option>Today 12–2 PM</option></select></div>
+        <button class="btn" type="submit" style="border:none;cursor:pointer">Place Pickup Order</button>
+        <div id="ok">Order noted. We'll confirm by SMS within 15 minutes — pay at the counter on pickup.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="visit" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-k rv">Visit</div>
+    <h2 class="rv">Smell it from the street.</h2>
+    <div class="vgrid" style="margin-top:24px">
+      <div class="vcard rv"><h3>Find Us</h3><p>SCO 77, Phase 7 Market<br>Mohali 160061<br>Corner shop, smell the butter</p></div>
+      <div class="vcard rv"><h3>Hours</h3><p>Tue–Sun · 7 AM – 8 PM<br>Oven opens 6 AM · Mondays closed<br>(the starter rests too)</p></div>
+      <div class="vcard rv"><h3>Good to Know</h3><p>Sourdough pre-orders by 8 PM<br>Whole cakes need 24 hrs notice<br>Day-old bread half price after 6 PM</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>CRUMB CULTURE · SCO 77, Phase 7, Mohali</span>
+    <span>Baked 6 AM daily.</span>
+  </div>
+</footer>
+
+<script>
+// scroll reveals + stamp slam on hero stamps
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.querySelectorAll('.stamp').forEach((s,i)=>setTimeout(()=>s.classList.add('stamp-hit'),500+i*400));
+// category tabs
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  const c=b.dataset.cat;
+  document.querySelectorAll('.bake').forEach(bk=>{
+    bk.classList.toggle('show',c==='all'||bk.dataset.cat===c);
+  });
+}));
+// cart
+const cart=[];
+const list=document.getElementById('cartlist'),total=document.getElementById('carttotal');
+function renderCart(){
+  if(!cart.length){list.innerHTML='<li style="color:#8a6b45">Empty — add bakes from the menu above.</li>';total.textContent='Total: ₹0';return;}
+  list.innerHTML=cart.map(i=>`<li><span>${i.name}</span><span>₹${i.price}</span></li>`).join('');
+  total.textContent='Total: ₹'+cart.reduce((a,i)=>a+i.price,0);
+}
+document.querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>{
+  cart.push({name:b.dataset.add,price:+b.dataset.price});
+  renderCart();
+  b.textContent='Added!';setTimeout(()=>b.textContent='Add',900);
+}));
+document.getElementById('orderForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  if(!cart.length){alert('Add at least one bake to your box first.');return;}
+  e.target.querySelector('button').style.display='none';
+  document.getElementById('ok').style.display='block';
+});
+</script>
+</body>
+</html>
