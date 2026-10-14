@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dapper Deck — aye, sharp looks · Sector 9, Chandigarh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1c2a3a;--navy-deep:#12202e;--gold:#c9a24b;--cream:#ece5d3;--ink:#2a2620}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;color:var(--ink);overflow-x:hidden;
+  background:
+    repeating-linear-gradient(0deg,rgba(28,42,58,.05) 0 3px,transparent 3px 90px),
+    linear-gradient(#e6dfcc,#dcd3b8);
+  background-color:#e2d9c0}
+h1,h2,.display{font-family:'Pirata One',cursive;font-weight:400}
+section{padding:90px 22px;max-width:1040px;margin:0 auto;position:relative}
+.eyebrow{font-size:12px;letter-spacing:.4em;text-transform:uppercase;font-weight:700;color:#8a6f35}
+
+/* rope divider */
+.rope{height:26px;margin:0 auto;max-width:900px;
+  background:repeating-linear-gradient(45deg,#a8894a 0 12px,#8a6f35 12px 24px,-45deg,#a8894a 24px 36px,#8a6f35 36px 48px);
+  border-radius:13px;box-shadow:inset 0 3px 6px rgba(0,0,0,.35),0 4px 10px rgba(0,0,0,.2);
+  transform-origin:center;animation:sway 5s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-.5deg)}50%{transform:rotate(.5deg)}}
+
+/* hero */
+.hero{background:linear-gradient(180deg,var(--navy-deep),var(--navy));color:var(--cream);text-align:center;
+  padding:110px 22px 90px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 45% at 50% 30%,rgba(201,162,75,.14),transparent 70%)}
+.hero h1{font-size:clamp(64px,13vw,130px);line-height:1;color:var(--gold);position:relative;z-index:2;
+  text-shadow:0 4px 0 rgba(0,0,0,.5)}
+.hero .sub{max-width:560px;margin:20px auto 0;font-size:17px;line-height:1.7;color:#d8cfb8;position:relative;z-index:2}
+.anchor{width:110px;height:110px;margin:0 auto 18px;position:relative;z-index:2;animation:bob 4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+.btn{display:inline-block;background:var(--gold);color:var(--navy-deep);font-weight:700;padding:15px 42px;
+  text-decoration:none;font-size:16px;letter-spacing:.05em;border-radius:4px;border:2px solid var(--gold);
+  margin-top:28px;transition:transform .2s,background .2s,color .2s;cursor:pointer;position:relative;z-index:2}
+.btn:hover{transform:translateY(-3px);background:transparent;color:var(--gold)}
+.btn.dark{background:var(--navy);border-color:var(--navy);color:var(--cream)}
+.btn.dark:hover{background:transparent;color:var(--navy)}
+
+/* crew cuts — plank cards */
+.planks{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;margin-top:38px}
+.plank{background:linear-gradient(180deg,#f0e9d5,#e2d7ba);border:2px solid #8a6f35;border-radius:6px;padding:28px 22px;
+  text-align:center;position:relative;box-shadow:0 10px 24px rgba(28,42,58,.18);transition:transform .25s}
+.plank:hover{transform:translateY(-6px) rotate(.6deg)}
+.plank::before,.plank::after{content:"";position:absolute;left:14px;right:14px;height:2px;background:rgba(138,111,53,.4)}
+.plank::before{top:10px}.plank::after{bottom:10px}
+.plank h3{font-size:36px;color:var(--navy);margin:8px 0 6px}
+.plank p{font-size:14px;line-height:1.65;color:#4a4438}
+.plank .pr{font-family:'Pirata One';font-size:30px;color:#8a6f35;display:block;margin-top:10px}
+
+/* treasure prices — map */
+.map{background:#f4eedd;border:3px solid #8a6f35;border-radius:10px;padding:44px 34px;margin-top:36px;position:relative;
+  background-image:radial-gradient(rgba(138,111,53,.25) 1px,transparent 1px);background-size:30px 30px}
+.map .row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 6px;
+  border-bottom:2px dashed rgba(138,111,53,.5);font-size:16px}
+.map .row:last-child{border:none}
+.map .xmark{font-family:'Pirata One';font-size:34px;color:#a3342a;opacity:0;transform:scale(.4);
+  transition:opacity .3s,transform .35s cubic-bezier(.2,2.2,.4,1);display:inline-block;min-width:44px;text-align:center}
+.map .row.in .xmark{opacity:1;transform:scale(1) rotate(-8deg)}
+.map .amt{font-family:'Pirata One';font-size:30px;color:var(--navy);white-space:nowrap}
+
+/* gallery — portholes */
+.ports{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px;margin-top:38px}
+.port{aspect-ratio:1;border:10px solid var(--navy);border-radius:50%;overflow:hidden;position:relative;
+  box-shadow:0 12px 30px rgba(28,42,58,.3);transition:transform .3s}
+.port:hover{transform:scale(1.05)}
+.port div{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--cream)}
+.port .display{font-size:30px}
+.port small{font-size:11px;letter-spacing:.25em;text-transform:uppercase}
+
+/* treasure-map booking */
+.treasure{background:var(--navy);color:var(--cream);border-radius:12px;padding:52px 36px;margin-top:36px;
+  display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.treasure h2{color:var(--gold)}
+.treasure label{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:16px 0 6px;font-weight:700}
+.treasure select,.treasure input{width:100%;background:var(--navy-deep);border:1.5px solid var(--gold);color:var(--cream);
+  padding:12px 14px;font-family:'Open Sans';font-size:15px;border-radius:4px}
+#treasureMsg{margin-top:16px;font-family:'Pirata One';font-size:28px;color:var(--gold);min-height:38px}
+
+h2.sec{font-size:clamp(48px,9vw,78px);color:var(--navy);text-align:center;margin:14px 0 6px}
+p.lead{text-align:center;max-width:620px;margin:0 auto 8px;font-size:16px;line-height:1.7;color:#4a4438}
+footer{background:var(--navy-deep);color:#9aa4b0;text-align:center;padding:40px 20px;font-size:13px;line-height:2}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:720px){.treasure{grid-template-columns:1fr}.rope{margin:0 12px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="anchor" viewBox="0 0 110 110" aria-hidden="true">
+    <circle cx="55" cy="18" r="10" fill="none" stroke="#c9a24b" stroke-width="6"/>
+    <path d="M55 28 V92 M28 44 h54" stroke="#c9a24b" stroke-width="6" stroke-linecap="round"/>
+    <path d="M22 70 Q22 96 55 96 Q88 96 88 70" fill="none" stroke="#c9a24b" stroke-width="6" stroke-linecap="round"/>
+    <path d="M22 70 l-8 10 M22 70 l8 10 M88 70 l-8 10 M88 70 l8 10" stroke="#c9a24b" stroke-width="5" stroke-linecap="round"/>
+  </svg>
+  <p class="eyebrow" style="color:var(--gold)">The Dapper Deck · Sector 9, Chandigarh</p>
+  <h1>Aye, sharp looks!</h1>
+  <p class="sub">A barbershop run like a tight ship. Climb aboard, take a seat on the deck, and leave looking like the captain of your own story. No mutinies, only makeovers.</p>
+  <a class="btn" href="#booking">Board the deck</a>
+</header>
+
+<div class="rope" style="margin-top:34px"></div>
+
+<section id="cuts">
+  <p class="eyebrow" style="text-align:center">Crew cuts</p>
+  <h2 class="sec">Every sailor's style, charted</h2>
+  <p class="lead">Four signature cuts, each named for a rank aboard. Pick your station.</p>
+  <div class="planks reveal">
+    <div class="plank"><h3>The Captain</h3><p>Classic side part, scissor-finished, pomade shine. Commands every room.</p><span class="pr">₹499</span></div>
+    <div class="plank"><h3>The First Mate</h3><p>Textured crop with a clean taper. Reliable, sharp, never out of place.</p><span class="pr">₹449</span></div>
+    <div class="plank"><h3>The Lookout</h3><p>Skin fade, high and tight. For those who like the horizon clear.</p><span class="pr">₹449</span></div>
+    <div class="plank"><h3>The Cabin Boy</h3><p>Kids' cut with patience and lollipops. Under-12s only, giggles free.</p><span class="pr">₹299</span></div>
+  </div>
+</section>
+
+<div class="rope"></div>
+
+<section id="prices">
+  <p class="eyebrow" style="text-align:center">Treasure prices</p>
+  <h2 class="sec">X marks the price</h2>
+  <p class="lead">Scroll and every treasure reveals itself. No hidden doubloons.</p>
+  <div class="map reveal" id="priceMap">
+    <div class="row"><span class="xmark">✕</span><span><b>The Captain's Cut</b> — signature scissor cut, hot-lather neckline</span><span class="amt">₹499</span></div>
+    <div class="row"><span class="xmark">✕</span><span><b>Deckhand's Beard</b> — shape, line-up, hot towel, oil finish</span><span class="amt">₹349</span></div>
+    <div class="row"><span class="xmark">✕</span><span><b>Full Voyage</b> — cut + shave + head massage, 75 minutes</span><span class="amt">₹999</span></div>
+    <div class="row"><span class="xmark">✕</span><span><b>Stormy Grey Cover</b> — natural grey blending, no one will know</span><span class="amt">₹899</span></div>
+    <div class="row"><span class="xmark">✕</span><span><b>Ship's Cat Nap</b> — 20-min head &amp; shoulder massage</span><span class="amt">₹249</span></div>
+  </div>
+</section>
+
+<div class="rope"></div>
+
+<section id="gallery">
+  <p class="eyebrow" style="text-align:center">The logbook</p>
+  <h2 class="sec">Through the portholes</h2>
+  <p class="lead">Recent voyages, as seen from the deck.</p>
+  <div class="ports reveal">
+    <div class="port"><div style="background:linear-gradient(135deg,#1c2a3a,#3a5a78)"><span class="display">The Captain</span><small>before → after</small></div></div>
+    <div class="port"><div style="background:linear-gradient(135deg,#8a6f35,#c9a24b)"><span class="display">The Lookout</span><small>skin fade</small></div></div>
+    <div class="port"><div style="background:linear-gradient(135deg,#3a2c1a,#6b5230)"><span class="display">Deckhand</span><small>beard sculpt</small></div></div>
+    <div class="port"><div style="background:linear-gradient(135deg,#12202e,#1c2a3a)"><span class="display">Full Voyage</span><small>75 min</small></div></div>
+  </div>
+</section>
+
+<div class="rope"></div>
+
+<section id="booking">
+  <p class="eyebrow" style="text-align:center">Booking</p>
+  <h2 class="sec">Claim your bunk</h2>
+  <p class="lead">The deck docks at Sector 9 daily, 10 AM – 9 PM. Reserve below.</p>
+  <div class="treasure reveal">
+    <div>
+      <h2 class="display" style="font-size:52px">The treasure map</h2>
+      <p style="line-height:1.8;margin-top:12px;color:#d8cfb8">SCO 45, Sector 9-D, Chandigarh 160009<br>Look for the brass anchor on the door.<br><br>Walk-ins welcome when the flag is up.<br>+91 172 505 7788</p>
+    </div>
+    <div>
+      <label for="tname">Sailor's name</label><input id="tname" type="text" placeholder="e.g. Vikram Singh" maxlength="40">
+      <label for="tservice">Voyage</label>
+      <select id="tservice"><option>The Captain's Cut — ₹499</option><option>Deckhand's Beard — ₹349</option><option>Full Voyage — ₹999</option><option>Stormy Grey Cover — ₹899</option></select>
+      <label for="tday">Day</label>
+      <select id="tday"><option>Today</option><option>Tomorrow</option><option>This Saturday</option><option>This Sunday</option></select>
+      <button class="btn" style="width:100%" onclick="board()">Set sail</button>
+      <div id="treasureMsg" aria-live="polite"></div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:30px"><a class="btn dark" href="#cuts">Back to the cuts</a></div>
+</section>
+
+<footer>The Dapper Deck · Sector 9, Chandigarh · "Aye, sharp looks" since 2016<br>Closed Mondays — even sailors rest.</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const mapIo=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){document.querySelectorAll('#priceMap .row').forEach((r,i)=>setTimeout(()=>r.classList.add('in'),i*220));mapIo.disconnect()}
+}),{threshold:.3});
+mapIo.observe(document.getElementById('priceMap'));
+function board(){
+  const n=document.getElementById('tname').value.trim()||'sailor';
+  document.getElementById('treasureMsg').textContent='Anchors aweigh, '+n+'! Your bunk is reserved.';
+}
+</script>
+</body>
+</html>

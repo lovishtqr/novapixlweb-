@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sixty Ways to Say Hello — The Storefront Pattern Library</title>
+<meta name="description" content="60 live storefront design studies: salons, gyms, cafes, barbershops, spas and tattoo studios.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0b09;
+    --bg2:#131109;
+    --ink:#f2ede2;
+    --ink-dim:#a89e8b;
+    --line:#2a251c;
+    --accent:#e0492b;      /* vermilion */
+    --gold:#d9a441;
+    --card:#151310;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{overflow-x:hidden}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Space Grotesk',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  ::selection{background:var(--accent);color:#fff}
+
+  /* ---------- brand bar ---------- */
+  .brand{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px clamp(20px,4vw,56px);
+    border-bottom:1px solid var(--line);
+    position:relative;z-index:5;
+  }
+  .brand .mark{display:flex;align-items:center;gap:12px;font-family:'Syne',sans-serif;font-weight:800;letter-spacing:.02em}
+  .brand .mark .sq{width:26px;height:26px;background:var(--accent);border-radius:6px;position:relative;flex:none}
+  .brand .mark .sq::after{content:"";position:absolute;inset:6px;border:2px solid #0c0b09;border-radius:3px}
+  .brand .meta{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;min-height:86vh;display:flex;align-items:center;overflow:hidden}
+  #field{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(120% 90% at 50% 110%, rgba(224,73,43,.10), transparent 60%);
+  }
+  .hero-inner{
+    position:relative;z-index:2;width:100%;
+    padding:clamp(60px,10vh,120px) clamp(20px,6vw,90px);
+    max-width:1400px;margin:0 auto;
+  }
+  .kicker{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);
+    border:1px solid #3a2f1c;border-radius:999px;padding:8px 18px;background:rgba(20,16,8,.55);
+    margin-bottom:28px;
+  }
+  .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+  h1{
+    font-family:'Syne',sans-serif;font-weight:800;
+    font-size:clamp(44px,8.5vw,118px);
+    line-height:.98;letter-spacing:-.015em;
+    max-width:14ch;
+  }
+  h1 .em{color:var(--accent)}
+  h1 .stroke{color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .lede{
+    margin-top:26px;max-width:56ch;color:var(--ink-dim);
+    font-size:clamp(15px,1.6vw,19px);
+  }
+  .hero-stats{display:flex;flex-wrap:wrap;gap:14px 44px;margin-top:44px}
+  .stat{display:flex;flex-direction:column}
+  .stat b{font-family:'Syne',sans-serif;font-size:clamp(26px,3vw,40px);font-weight:800;color:var(--ink)}
+  .stat b i{font-style:normal;color:var(--accent)}
+  .stat span{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-dim)}
+  .scroll-cue{
+    position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;
+    font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+  }
+  .scroll-cue .line{width:1px;height:44px;background:linear-gradient(var(--gold),transparent);animation:cue 2s ease-in-out infinite}
+  @keyframes cue{0%,100%{transform:scaleY(.4);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+
+  /* entrance */
+  .rise{opacity:0;transform:translateY(34px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .d1{animation-delay:.10s}.d2{animation-delay:.22s}.d3{animation-delay:.36s}.d4{animation-delay:.52s}.d5{animation-delay:.68s}
+
+  /* ---------- filter bar ---------- */
+  .filters{
+    position:sticky;top:0;z-index:50;
+    background:rgba(12,11,9,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:14px clamp(20px,4vw,56px);
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  }
+  .filters .label{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-dim);margin-right:8px}
+  .fbtn{
+    font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:500;
+    color:var(--ink-dim);background:transparent;border:1px solid var(--line);
+    border-radius:999px;padding:9px 18px;cursor:pointer;
+    transition:color .25s,border-color .25s,background .25s,transform .15s;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .fbtn .n{font-size:11px;color:var(--ink-dim);background:#221d14;border-radius:999px;padding:2px 8px;transition:inherit}
+  .fbtn:hover{color:var(--ink);border-color:#4a4130;transform:translateY(-1px)}
+  .fbtn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+  .fbtn.active .n{background:rgba(255,255,255,.22);color:#fff}
+  #count{margin-left:auto;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim)}
+
+  /* ---------- grid ---------- */
+  .grid-wrap{padding:clamp(28px,4vw,60px) clamp(20px,4vw,56px) 80px;max-width:1600px;margin:0 auto}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px}
+
+  .card{
+    display:block;text-decoration:none;color:inherit;background:var(--card);
+    border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+    position:relative;
+    transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .35s ease,border-color .3s,box-shadow .3s;
+  }
+  .card:hover{transform:translateY(-6px);border-color:#4a3c26;box-shadow:0 24px 60px -18px rgba(224,73,43,.28)}
+  .card.hide{display:none}
+  .card.leaving{opacity:0;transform:scale(.94);pointer-events:none}
+  .card.entering{opacity:0;transform:scale(.94) translateY(14px)}
+  .card.pre{opacity:0;transform:translateY(26px)}
+  .card.in{opacity:1;transform:none}
+
+  .thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0a0908;border-bottom:1px solid var(--line)}
+  .thumb iframe{
+    position:absolute;top:0;left:0;width:1280px;height:800px;border:0;
+    transform-origin:0 0;pointer-events:none;background:#0a0908;
+  }
+  .thumb .live{
+    position:absolute;top:10px;right:10px;z-index:2;
+    font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+    background:rgba(10,9,8,.78);color:var(--gold);
+    border:1px solid #3a2f1c;border-radius:999px;padding:5px 12px;
+    display:inline-flex;align-items:center;gap:7px;
+  }
+  .thumb .live::before{content:"";width:6px;height:6px;border-radius:50%;background:#7ee08a;box-shadow:0 0 8px #7ee08a}
+
+  .meta{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px}
+  .meta .num{
+    position:absolute;top:12px;left:12px;z-index:2;
+    font-family:'Syne',sans-serif;font-weight:800;font-size:13px;
+    background:rgba(10,9,8,.78);border:1px solid var(--line);color:var(--ink);
+    border-radius:8px;padding:4px 10px;
+  }
+  .meta .name{font-family:'Syne',sans-serif;font-weight:700;font-size:21px;letter-spacing:-.01em}
+  .meta .sub{font-size:13px;color:var(--ink-dim)}
+  .meta .row{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+  .tag{
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--gold);border:1px solid #3a2f1c;border-radius:999px;padding:4px 12px;
+  }
+  .dots{display:inline-flex;gap:6px}
+  .dots i{width:14px;height:14px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:block}
+
+  .open-hint{
+    display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);
+    font-size:12px;letter-spacing:.08em;color:var(--ink-dim);
+    transition:color .25s;
+  }
+  .card:hover .open-hint{color:var(--accent)}
+  .open-hint svg{width:13px;height:13px;flex:none}
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:34px clamp(20px,4vw,56px);
+    display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
+    color:var(--ink-dim);font-size:13px;
+  }
+  footer .fmark{font-family:'Syne',sans-serif;font-weight:800;color:var(--ink)}
+  footer .fmark i{font-style:normal;color:var(--accent)}
+
+  @media (max-width:520px){
+    .grid{grid-template-columns:1fr;gap:20px}
+    #count{width:100%;margin-left:0;margin-top:4px}
+    .filters .label{width:100%}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .rise{animation:none;opacity:1;transform:none}
+    .card{transition:none}
+    .scroll-cue .line{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="brand">
+  <div class="mark"><span class="sq"></span>STYLEFRAME</div>
+  <div class="meta">Pattern Library · v1</div>
+</header>
+
+<section class="hero">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <span class="kicker rise d1"><span class="dot"></span>The storefront pattern library</span>
+    <h1 class="rise d2">Sixty ways<br>to say <span class="stroke">hello</span><span class="em">.</span></h1>
+    <p class="lede rise d3">Sixty live design studies for real-world storefronts — salons, gyms, cafes, barbershops, spas and tattoo studios. Every card is a working page: hover to peek, click to walk in.</p>
+    <div class="hero-stats rise d4">
+      <div class="stat"><b>60<i>.</i></b><span>designs</span></div>
+      <div class="stat"><b>07<i>.</i></b><span>categories</span></div>
+      <div class="stat"><b>100<i>%</i></b><span>self-contained</span></div>
+    </div>
+  </div>
+  <div class="scroll-cue rise d5"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<nav class="filters" id="filters" aria-label="Filter designs by category">
+  <span class="label">Filter</span>
+  <!-- buttons injected by JS -->
+  <span id="count">Showing 60 of 60</span>
+</nav>
+
+<main class="grid-wrap">
+  <div class="grid" id="grid"><!-- cards injected by JS --></div>
+</main>
+
+<footer>
+  <div><span class="fmark">STYLEFRAME<i>.</i></span> &nbsp;Sixty ways to say hello — built as one self-contained page.</div>
+  <div>Click any card to open the full design in a new tab.</div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============ DATA — 60 designs, roster order ============ */
+  var D = [
+    /* salons s01-s30 */
+    ["velvet-vermilion","Velvet & Vermilion","salon","bridal couture studio",["#5f1f24","#faf6f0","#c9826a","#2b2120"]],
+    ["iron-ink","Iron & Ink","salon","men's grooming lounge",["#161616","#e8a33d","#ece7dd","#2a2a2a"]],
+    ["petal-lab","Petal Lab","salon","nail art bar",["#ffd9e8","#fff9f2","#d6336c","#33302c"]],
+    ["the-salt-room","The Salt Room","salon","luxury spa-salon",["#f7f4ee","#8a7a6a","#9caf88","#3a3a35"]],
+    ["chrome-cuts","Chrome Cuts","salon","gen-z unisex",["#0d0d0d","#d4ff3f","#f5f5f0"]],
+    ["marigold-house","Marigold House","salon","heritage bridal",["#e8930c","#8c2b1b","#fdf3e3","#3a2415"]],
+    ["noir-lash","Noir Lash","salon","lash & brow atelier",["#101012","#d9c39a","#f5efe4","#2a2a2e"]],
+    ["curl-theory","Curl Theory","salon","curly hair studio",["#7a4a21","#f7ecdd","#d9a05b","#2e2118"]],
+    ["the-beard-foundry","The Beard Foundry","salon","beard bar",["#2b2119","#b08954","#efe6d4","#171310"]],
+    ["glow-theory","Glow Theory","salon","skin clinic salon",["#f4f7f4","#3f6b5e","#cfe0d6","#22302b"]],
+    ["mehndi-moon","Mehndi & Moon","salon","bridal mehndi",["#3d2b1f","#e8b04b","#7a4a2b","#f7ecd9"]],
+    ["silk-route","Silk Route","salon","hair-spa rituals",["#e9dcc3","#6b4f35","#f8f3e8","#2e241a"]],
+    ["poppy-pin","Poppy & Pin","salon","vintage pin-up salon",["#c1272d","#f6e7d7","#2e2a26","#e9a13b"]],
+    ["grey-room","The Grey Room","salon","silver-hair studio",["#8e99a3","#f2f3f5","#3c4148","#d7dde3"]],
+    ["honey-hive","Honey & Hive","salon","waxing studio",["#e8a93d","#fff6e6","#7a4a12","#2e2418"]],
+    ["ivory-comb","Ivory Comb","salon","luxury unisex",["#f8f5ee","#2e2a26","#b3965e","#e5dcc8"]],
+    ["fade-factory","Fade Factory","salon","barber-style unisex",["#111111","#ccff00","#f2f2f2"]],
+    ["rouge-room","Rouge Room","salon","makeup studio",["#7a1f2b","#f6e9e4","#d98a8a","#241a1a"]],
+    ["vows-veils","Vows & Veils","salon","bridal lounge",["#f9e8e4","#a34a5e","#e8b4a0","#3a2a2e"]],
+    ["gilded-age","Gilded Age","salon","premium heritage",["#8a6d2f","#1e1a14","#e8d9b0","#f4ecd8"]],
+    ["chop-shop-deluxe","Chop Shop Deluxe","salon","bold cuts",["#ff4d00","#111111","#f5f0e8"]],
+    ["line-and-lather","Line & Lather","salon","classic barbershop-salon",["#b3282d","#f4f1ea","#1f2937","#d9d4c7"]],
+    ["buzz-and-co","Buzz & Co.","salon","express salon",["#f5c518","#141414","#f4f4f4"]],
+    ["volt-salon","Volt Salon","salon","futuristic unisex",["#00e5cc","#0b0f14","#f0f4f3"]],
+    ["orbit-hair","Orbit Hair","salon","avant-garde studio",["#0e0e12","#c8ff2e","#eceff1"]],
+    ["atelier-nu","Atelier Nu","salon","art-house salon",["#1a1a1a","#f4f1ea","#e0492b"]],
+    ["form-and-follicle","Form & Follicle","salon","minimal salon",["#ece8df","#2a2a28","#a3a097"]],
+    ["the-daily-trim","The Daily Trim","salon","neighborhood salon",["#f3ead8","#4a3b2a","#c17f3e"]],
+    ["roots-and-remedy","Roots & Remedy","salon","ayurvedic hair care",["#d99a2b","#3f5a36","#f6efdd"]],
+    ["willow-and-wisp","Willow & Wisp","salon","boutique blowout bar",["#dfe5d8","#4a5548","#f4f2ea","#a3b18a"]],
+    /* gyms g01-g06 */
+    ["iron-temple","Iron Temple","gym","hardcore",["#8c1c1c","#141414","#e8e2d4"]],
+    ["pulse-arena","Pulse Arena","gym","HIIT studio",["#f7b500","#1a1a1a","#f2f2f2"]],
+    ["kinetic-lab","Kinetic Lab","gym","functional training",["#232323","#c6f52e","#e8e8e8"]],
+    ["apex-protocol","Apex Protocol","gym","24/7 strength club",["#1f3a5f","#d8dee6","#0e141c"]],
+    ["akhara-house","Akhara House","gym","desi wrestling fitness",["#5a3a1e","#e8930c","#f3e6cf"]],
+    ["yatra-fitness","Yatra Fitness","gym","outdoor bootcamp",["#8a6d4b","#f0e8d8","#33402a"]],
+    /* cafes c01-c06 */
+    ["gully-chai","Gully Chai","cafe","cutting-chai",["#7a4a1f","#f6eeda","#d9a441","#2e2013"]],
+    ["crumb-culture","Crumb Culture","cafe","bakery",["#a9714b","#f8f1e5","#5b3a22","#e8c98a"]],
+    ["daily-grind","Daily Grind","cafe","coffee roasters",["#2b1d16","#c68b4e","#f5ead9","#120d08"]],
+    ["chalk-bean","Chalk & Bean","cafe","chalkboard",["#2e2e2e","#f5f2ea","#9fd6a4"]],
+    ["slow-mornings","Slow Mornings","cafe","journal cafe",["#e8ddc9","#6b5b45","#f8f4ea","#3a322a"]],
+    ["wandering-cup","The Wandering Cup","cafe","travel cafe",["#14524f","#f2ede2","#d9a441"]],
+    /* barbershops b01-b06 */
+    ["smoke-and-shears","Smoke & Shears","barbershop","vintage",["#3a322b","#d9c9a8","#171310","#8a7a5e"]],
+    ["dapper-deck","The Dapper Deck","barbershop","nautical",["#1c2a3a","#c9a24b","#ece5d3"]],
+    ["maharaja-cuts","Maharaja Cuts","barbershop","royal",["#5e1f27","#d4a24e","#f2e8d5","#241418"]],
+    ["bandido-blade","Bandido Blade","barbershop","desert-western",["#b5651d","#f0e2c8","#4a2e18"]],
+    ["butcher-and-blade","Butcher & Blade","barbershop","butcher-shop",["#8c2f2f","#e8e0d0","#2a2a2a","#c9a86a"]],
+    ["velvet-razor","The Velvet Razor","barbershop","speakeasy",["#1e3a2f","#d4af6a","#efe7d3"]],
+    /* spas p01-p06 */
+    ["aria-wellness","Aria Wellness","spa","italianate",["#5b6b3f","#f6f3ea","#2e2e24","#c9c2a8"]],
+    ["quiet-hour","The Quiet Hour","spa","roman bath",["#d9cfbc","#4a4438","#f4f0e6","#8a7f6a"]],
+    ["p03","Still Water","spa","minimalist",["#9aa0a3","#f4f5f4","#3c4043"]],
+    ["p04","Hammam House","spa","turkish hammam",["#a87f3d","#2b2118","#e9dcc0"]],
+    ["p05","Cedar & Stone","spa","forest",["#2e3a2e","#d8cfae","#141a14"]],
+    ["p06","Casa Calma","spa","balinese garden",["#e5d3ae","#4f6b5a","#f7f2e7"]],
+    /* tattoos t01-t06 */
+    ["t01","Blackletter Brotherhood","tattoo","blackwork",["#0d0d0d","#e8e4da","#6b6b6b"]],
+    ["t02","Riot Ink","tattoo","punk",["#c1121f","#f2ede4","#1a1a1a"]],
+    ["t03","Iron & Oath","tattoo","heavy metal",["#8a4a2b","#e9e0cf","#2a2018"]],
+    ["t04","Crypt Cult","tattoo","horror",["#2a2a35","#b8b0a0","#0f0f12"]],
+    ["t05","Venom & Velvet","tattoo","dark ornamental",["#3f5a2e","#0f0f0d","#d9cfae"]],
+    ["t06","Freakshow Electric","tattoo","new-school color",["#e8ff47","#141414","#ff5c8a","#f2f2f2"]]
+  ];
+
+  var CATS = [
+    ["all","All"],["salon","Salon"],["gym","Gym"],["cafe","Cafe"],
+    ["barbershop","Barbershop"],["spa","Spa"],["tattoo","Tattoo"]
+  ];
+
+  var grid = document.getElementById('grid');
+  var filtersEl = document.getElementById('filters');
+  var countEl = document.getElementById('count');
+  var counts = {};
+  D.forEach(function(d){ counts[d[2]] = (counts[d[2]]||0)+1; });
+  counts.all = D.length;
+
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+  /* ============ build filter buttons ============ */
+  CATS.forEach(function(c){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'fbtn' + (c[0]==='all' ? ' active' : '');
+    b.setAttribute('data-f', c[0]);
+    b.innerHTML = esc(c[1]) + '<span class="n">' + (counts[c[0]]||0) + '</span>';
+    b.addEventListener('click', function(){ applyFilter(c[0], b); });
+    filtersEl.insertBefore(b, countEl);
+  });
+
+  /* ============ build cards ============ */
+  var arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg>';
+  D.forEach(function(d, i){
+    var slug=d[0], name=d[1], cat=d[2], sub=d[3], pal=d[4];
+    var num = ('0'+(i+1)).slice(-2);
+    var dots = pal.map(function(c){ return '<i style="background:'+c+'"></i>'; }).join('');
+    var a = document.createElement('a');
+    a.className = 'card pre';
+    a.setAttribute('data-cat', cat);
+    a.href = 'designs/' + slug + '/';
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.innerHTML =
+      '<span class="num">'+num+'</span>' +
+      '<span class="thumb"><span class="live">Live</span>' +
+        '<iframe loading="lazy" src="designs/'+slug+'/" title="'+esc(name)+' — live preview" tabindex="-1" aria-hidden="true"></iframe>' +
+      '</span>' +
+      '<span class="meta">' +
+        '<span class="name">'+esc(name)+'</span>' +
+        '<span class="sub">'+esc(sub)+'</span>' +
+        '<span class="row"><span class="tag">'+esc(cat)+'</span><span class="dots">'+dots+'</span></span>' +
+        '<span class="open-hint">'+arrow+' Open full design</span>' +
+      '</span>';
+    grid.appendChild(a);
+  });
+
+  /* scale iframes to thumbnail width */
+  function fitThumbs(){
+    var thumbs = grid.querySelectorAll('.thumb');
+    for (var i=0;i<thumbs.length;i++){
+      var t = thumbs[i], f = t.querySelector('iframe');
+      if (f && t.clientWidth) f.style.transform = 'scale(' + (t.clientWidth/1280) + ')';
+    }
+  }
+  var rzT;
+  window.addEventListener('resize', function(){ clearTimeout(rzT); rzT=setTimeout(fitThumbs,120); });
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(fitThumbs); }
+  fitThumbs();
+  setTimeout(fitThumbs, 600);
+
+  /* entrance reveal on scroll */
+  var io;
+  if ('IntersectionObserver' in window){
+    io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          e.target.classList.remove('pre');
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, {rootMargin:'0px 0px -40px 0px', threshold:.05});
+    Array.prototype.forEach.call(grid.children, function(c){ io.observe(c); });
+  } else {
+    Array.prototype.forEach.call(grid.children, function(c){ c.classList.remove('pre'); c.classList.add('in'); });
+  }
+
+  /* ============ FLIP-style filtering ============ */
+  var current = 'all';
+  var animating = false;
+
+  function applyFilter(cat, btn){
+    if (cat === current || animating) return;
+    current = cat;
+    animating = true;
+
+    var btns = filtersEl.querySelectorAll('.fbtn');
+    for (var i=0;i<btns.length;i++) btns[i].classList.toggle('active', btns[i]===btn);
+
+    var cards = Array.prototype.slice.call(grid.children);
+    var show = [], hide = [];
+    cards.forEach(function(c){
+      var match = (cat==='all' || c.getAttribute('data-cat')===cat);
+      if (match) show.push(c); else hide.push(c);
+    });
+
+    /* record positions of cards that stay visible */
+    var first = {};
+    show.forEach(function(c){ first[c.href] = c.getBoundingClientRect(); });
+
+    /* fade out the ones leaving */
+    hide.forEach(function(c){ c.classList.add('leaving'); });
+
+    var shown = show.length;
+    countEl.textContent = 'Showing ' + shown + ' of ' + D.length;
+
+    setTimeout(function(){
+      hide.forEach(function(c){ c.classList.remove('leaving'); c.classList.add('hide'); });
+
+      /* newly appearing cards start small */
+      var entering = [];
+      show.forEach(function(c){
+        if (c.classList.contains('hide')){ c.classList.remove('hide'); c.classList.add('entering'); entering.push(c); }
+      });
+
+      /* FLIP: invert + play for moved cards */
+      show.forEach(function(c){
+        var f = first[c.href], l = c.getBoundingClientRect();
+        if (!f) return;
+        var dx = f.left - l.left, dy = f.top - l.top;
+        if (dx || dy){
+          c.style.transition = 'none';
+          c.style.transform = 'translate(' + dx + 'px,' + dy + 'px)';
+          void c.offsetWidth;
+          c.style.transition = '';
+          c.style.transform = '';
+        }
+      });
+
+      /* play the entrance */
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          entering.forEach(function(c, i){
+            c.style.transitionDelay = (Math.min(i,11)*28) + 'ms';
+            c.classList.remove('entering');
+            c.classList.add('in');
+          });
+          fitThumbs();
+          setTimeout(function(){
+            entering.forEach(function(c){ c.style.transitionDelay=''; });
+            animating = false;
+          }, 700);
+        });
+      });
+    }, 280);
+  }
+
+  /* ============ hero particle field with 3D parallax ============ */
+  var cv = document.getElementById('field');
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (cv && !reduced){
+    var ctx = cv.getContext('2d');
+    var W=0, H=0, DPR = Math.min(window.devicePixelRatio||1, 2);
+    var P=[], mx=0, my=0, tx=0, ty=0, running=true;
+
+    function size(){
+      W = cv.offsetWidth; H = cv.offsetHeight;
+      cv.width = W*DPR; cv.height = H*DPR;
+      ctx.setTransform(DPR,0,0,DPR,0,0);
+    }
+    function seed(){
+      P = [];
+      var n = Math.min(130, Math.floor(W*H/14000));
+      for (var i=0;i<n;i++){
+        P.push({
+          x: Math.random()*W, y: Math.random()*H,
+          z: .25 + Math.random()*.75,                 /* depth */
+          r: .8 + Math.random()*2.2,
+          vx: (.12 + Math.random()*.3) * (Math.random()<.5?-1:1),
+          vy: (.06 + Math.random()*.18) * (Math.random()<.5?-1:1),
+          hue: Math.random() < .72 ? '217,164,65' : (Math.random()<.5 ? '224,73,43' : '242,237,226')
+        });
+      }
+    }
+    size(); seed();
+    window.addEventListener('resize', function(){ size(); seed(); });
+
+    var hero = cv.parentElement;
+    hero.addEventListener('mousemove', function(e){
+      var r = hero.getBoundingClientRect();
+      tx = (e.clientX - r.left)/r.width - .5;
+      ty = (e.clientY - r.top)/r.height - .5;
+    });
+    hero.addEventListener('mouseleave', function(){ tx=0; ty=0; });
+    document.addEventListener('visibilitychange', function(){ running = !document.hidden; if (running) tick(); });
+
+    function tick(){
+      if (!running) return;
+      mx += (tx-mx)*.045; my += (ty-my)*.045;
+      ctx.clearRect(0,0,W,H);
+
+      var i, j, p;
+      for (i=0;i<P.length;i++){
+        p = P[i];
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < -20) p.x = W+20; if (p.x > W+20) p.x = -20;
+        if (p.y < -20) p.y = H+20; if (p.y > H+20) p.y = -20;
+        var px = p.x + mx*90*p.z, py = p.y + my*60*p.z;
+        ctx.beginPath();
+        ctx.arc(px, py, p.r*p.z, 0, 6.2832);
+        ctx.fillStyle = 'rgba(' + p.hue + ',' + (.28 + p.z*.55) + ')';
+        ctx.fill();
+      }
+      /* hairline links — warm, faint */
+      for (i=0;i<P.length;i++){
+        for (j=i+1;j<P.length;j++){
+          var a=P[i], b=P[j];
+          var ax=a.x+mx*90*a.z, ay=a.y+my*60*a.z;
+          var bx=b.x+mx*90*b.z, by=b.y+my*60*b.z;
+          var dx=ax-bx, dy=ay-by, d2=dx*dx+dy*dy;
+          if (d2 < 130*130){
+            var o = (1 - Math.sqrt(d2)/130) * .14 * Math.min(a.z,b.z);
+            ctx.strokeStyle = 'rgba(217,164,65,' + o.toFixed(3) + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(ax,ay); ctx.lineTo(bx,by); ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+    tick();
+  }
+})();
+</script>
+</body>
+</html>

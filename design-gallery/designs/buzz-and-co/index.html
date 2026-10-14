@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buzz &amp; Co. — The 20-Minute Salon | IT Park, Chandigarh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--y:#f5c518;--ink:#141414;--paper:#f4f4f4}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Fira Sans',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
+h1,h2,h3{font-family:'Teko',sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1}
+img,svg{max-width:100%}
+a{color:inherit}
+/* scroll progress bar */
+#progress{position:fixed;top:0;left:0;height:8px;background:var(--y);width:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+/* nav */
+nav{position:sticky;top:0;z-index:60;background:var(--ink);color:var(--paper);display:flex;justify-content:space-between;align-items:center;padding:.7rem 1.4rem;flex-wrap:wrap;gap:.6rem}
+.brand{font-family:'Teko';font-size:1.6rem;letter-spacing:.06em}
+.brand b{color:var(--y)}
+.navlinks{display:flex;gap:1.1rem;flex-wrap:wrap}
+.navlinks a{text-decoration:none;font-weight:600;font-size:.85rem;letter-spacing:.08em}
+.navlinks a:hover{color:var(--y)}
+/* hero */
+.hero{background:var(--ink);color:var(--paper);padding:clamp(3.5rem,9vw,6.5rem) 1.4rem;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 90px,rgba(245,197,24,.07) 90px 92px);pointer-events:none}
+.hero-inner{max-width:1050px;margin:0 auto;position:relative}
+.badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--y);color:var(--ink);font-weight:700;font-size:.85rem;padding:.4rem 1rem;border-radius:99px;margin-bottom:1.2rem}
+.badge .dot{width:10px;height:10px;border-radius:50%;background:#1d9e4b;animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.25}}
+h1{font-size:clamp(3.2rem,10vw,7rem)}
+h1 .y{color:var(--y)}
+.hero p{font-size:1.15rem;max-width:36rem;margin-top:.8rem;color:#cfcfcf}
+.cta-row{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}
+.btn{font-family:'Teko';font-size:1.35rem;letter-spacing:.08em;background:var(--y);color:var(--ink);border:none;padding:.7rem 2.2rem;cursor:pointer;text-decoration:none;transition:transform .15s;display:inline-block}
+.btn:hover{transform:skewX(-6deg) scale(1.04)}
+.btn.ghost{background:transparent;color:var(--paper);border:2px solid var(--y)}
+.stats{display:flex;gap:2.2rem;margin-top:2.4rem;flex-wrap:wrap}
+.stat b{font-family:'Teko';font-size:2.6rem;color:var(--y);display:block;line-height:1}
+.stat span{font-size:.85rem;font-weight:600;color:#bdbdbd}
+/* speed lanes */
+section{padding:clamp(3rem,7vw,5rem) 1.4rem}
+.wrap{max-width:1050px;margin:0 auto}
+.sec-k{font-family:'Teko';font-size:1.1rem;letter-spacing:.3em;color:#8a7a00;margin-bottom:.4rem}
+h2{font-size:clamp(2.2rem,6vw,3.6rem);margin-bottom:2rem}
+.lane{background:#fff;border-left:10px solid var(--y);box-shadow:0 4px 18px rgba(0,0,0,.08);padding:1.4rem 1.6rem;margin-bottom:1rem;display:grid;grid-template-columns:auto 1fr auto;gap:1.4rem;align-items:center;transition:transform .18s}
+.lane:hover{transform:translateX(8px)}
+.lane .t{font-family:'Teko';font-size:2.4rem;background:var(--ink);color:var(--y);width:76px;height:76px;display:flex;align-items:center;justify-content:center;border-radius:12px;flex:none}
+.lane h3{font-size:1.6rem}
+.lane p{font-size:.95rem;color:#555}
+.lane .p{font-family:'Teko';font-size:2rem;color:var(--ink);white-space:nowrap}
+/* queue */
+.queue-sec{background:var(--ink);color:var(--paper)}
+#queue-list{display:flex;flex-direction:column;gap:.6rem;max-width:640px}
+.qrow{display:flex;justify-content:space-between;align-items:center;background:#1f1f1f;border:1px solid #333;padding:.9rem 1.2rem;border-radius:10px;font-weight:600}
+.qrow.now{background:var(--y);color:var(--ink);border:none;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(245,197,24,.15)}}
+.qrow.done{opacity:.45}
+.qtag{font-size:.75rem;font-weight:700;letter-spacing:.1em}
+/* price table */
+table{width:100%;border-collapse:collapse;background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.08)}
+th,td{padding:1rem 1.2rem;text-align:left;border-bottom:1px solid #e3e3e3}
+th{font-family:'Teko';font-size:1.2rem;letter-spacing:.1em;background:var(--ink);color:var(--y)}
+td:last-child{font-family:'Teko';font-size:1.5rem}
+/* booking steps */
+.steps{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.step{flex:1;min-width:120px;text-align:center;padding:.7rem;background:#e4e4e4;font-family:'Teko';font-size:1.15rem;letter-spacing:.06em;border-radius:8px;transition:background .2s}
+.step.on{background:var(--ink);color:var(--y)}
+.step.done{background:var(--y);color:var(--ink)}
+.pane{display:none;background:#fff;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.1);padding:clamp(1.4rem,4vw,2.4rem);max-width:640px;animation:slidein .3s ease}
+.pane.on{display:block}
+@keyframes slidein{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+.opt{display:block;border:2px solid #ddd;border-radius:10px;padding:.9rem 1.1rem;margin-bottom:.7rem;cursor:pointer;font-weight:600;transition:border .15s,background .15s}
+.opt:hover,.opt.sel{border-color:var(--ink);background:#fff8dc}
+.opt b{font-family:'Teko';font-size:1.3rem;float:right}
+label{font-weight:700;display:block;margin:.9rem 0 .35rem;font-size:.9rem}
+input{width:100%;padding:.8rem;border:2px solid #ddd;border-radius:8px;font-family:'Fira Sans';font-size:1rem}
+input:focus{outline:none;border-color:var(--ink)}
+#done-msg{background:#e9f9ee;border:2px solid #1d9e4b;border-radius:10px;padding:1.2rem;font-weight:600;display:none;margin-top:1rem}
+footer{background:var(--ink);color:#9a9a9a;padding:2rem 1.4rem;text-align:center}
+footer b{color:var(--y);font-family:'Teko';font-size:1.3rem;letter-spacing:.06em}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .4s,transform .4s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:560px){.lane{grid-template-columns:auto 1fr}.lane .p{grid-column:2}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<nav>
+  <div class="brand">BUZZ <b>&amp; CO.</b></div>
+  <div class="navlinks"><a href="#menu">20-Min Menu</a><a href="#queue">Live Queue</a><a href="#prices">Prices</a><a href="#book">Book Slot</a></div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="badge"><span class="dot"></span> 3 CHAIRS FREE RIGHT NOW</span>
+    <h1>IN. OUT.<br><span class="y">DONE IN 20.</span></h1>
+    <p>Buzz &amp; Co. is Chandigarh's express salon for people with meetings to catch. One service, one timer, zero waiting-room small talk. Lunch-break slots at IT Park.</p>
+    <div class="cta-row">
+      <a class="btn" href="#book">GRAB A SLOT</a>
+      <a class="btn ghost" href="#queue">SEE LIVE QUEUE</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>18<span style="font-size:1.4rem">min</span></b><span>avg. visit time</span></div>
+      <div class="stat"><b>4.8</b><span>rating · 2,300+ reviews</span></div>
+      <div class="stat"><b>20<span style="font-size:1.4rem">min</span></b><span>guaranteed or 20% off</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="menu">
+  <div class="wrap">
+    <p class="sec-k reveal">01 — FAST LANE</p>
+    <h2 class="reveal">The 20-Minute Menu</h2>
+    <div class="lane reveal"><div class="t">20'</div><div><h3>Express Cut</h3><p>Consult in 60 seconds, cut in 18. Finished with a cold-towel neckline.</p></div><div class="p">₹349</div></div>
+    <div class="lane reveal"><div class="t">15'</div><div><h3>Buzz &amp; Go</h3><p>One guard, clean edges, done. The fastest chair in the tricity.</p></div><div class="p">₹249</div></div>
+    <div class="lane reveal"><div class="t">20'</div><div><h3>Beard Express</h3><p>Shape, line-up, hot-towel finish. Walk out sharper than you walked in.</p></div><div class="p">₹299</div></div>
+    <div class="lane reveal"><div class="t">25'</div><div><h3>Lunch-Break Glow</h3><p>Express clean-up + de-tan. Back at your desk before the standup ends.</p></div><div class="p">₹599</div></div>
+  </div>
+</section>
+
+<section id="queue" class="queue-sec">
+  <div class="wrap">
+    <p class="sec-k reveal">02 — LIVE</p>
+    <h2 class="reveal" style="color:#fff">The Queue, Right Now</h2>
+    <p class="reveal" style="color:#bdbdbd;margin-bottom:1.4rem;max-width:34rem">Simulated live board — book a slot and skip the wait entirely.</p>
+    <div id="queue-list" class="reveal"></div>
+  </div>
+</section>
+
+<section id="prices">
+  <div class="wrap">
+    <p class="sec-k reveal">03 — PRICE BOARD</p>
+    <h2 class="reveal">Flat Prices, No Surprises</h2>
+    <table class="reveal">
+      <tr><th>SERVICE</th><th>TIME</th><th>PRICE</th></tr>
+      <tr><td>Express Cut</td><td>20 min</td><td>₹349</td></tr>
+      <tr><td>Buzz &amp; Go</td><td>15 min</td><td>₹249</td></tr>
+      <tr><td>Beard Express</td><td>20 min</td><td>₹299</td></tr>
+      <tr><td>Lunch-Break Glow</td><td>25 min</td><td>₹599</td></tr>
+      <tr><td>Kids Express (under 10)</td><td>15 min</td><td>₹199</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="book" style="background:#ececec">
+  <div class="wrap">
+    <p class="sec-k reveal">04 — BOOK IN 30 SECONDS</p>
+    <h2 class="reveal">Grab a Slot</h2>
+    <div class="steps reveal">
+      <div class="step on" data-i="0">1 · SERVICE</div><div class="step" data-i="1">2 · SLOT</div><div class="step" data-i="2">3 · DETAILS</div>
+    </div>
+    <div class="pane on reveal" id="pane0">
+      <label class="opt"><input type="radio" name="svc" value="Express Cut — ₹349" checked style="width:auto"> Express Cut <b>₹349</b></label>
+      <label class="opt"><input type="radio" name="svc" value="Buzz & Go — ₹249" style="width:auto"> Buzz &amp; Go <b>₹249</b></label>
+      <label class="opt"><input type="radio" name="svc" value="Beard Express — ₹299" style="width:auto"> Beard Express <b>₹299</b></label>
+      <label class="opt"><input type="radio" name="svc" value="Lunch-Break Glow — ₹599" style="width:auto"> Lunch-Break Glow <b>₹599</b></label>
+      <button class="btn" onclick="go(1)">NEXT →</button>
+    </div>
+    <div class="pane" id="pane1">
+      <label class="opt"><input type="radio" name="slot" value="Today 1:00 PM" checked style="width:auto"> Today · 1:00 PM <b>3 chairs</b></label>
+      <label class="opt"><input type="radio" name="slot" value="Today 2:30 PM" style="width:auto"> Today · 2:30 PM <b>2 chairs</b></label>
+      <label class="opt"><input type="radio" name="slot" value="Tomorrow 11:00 AM" style="width:auto"> Tomorrow · 11:00 AM <b>5 chairs</b></label>
+      <button class="btn" onclick="go(2)">NEXT →</button>
+    </div>
+    <div class="pane" id="pane2">
+      <label for="qn">NAME</label><input id="qn" placeholder="Your name">
+      <label for="qp">PHONE</label><input id="qp" inputmode="tel" placeholder="98XXX XXXXX">
+      <div style="margin-top:1.2rem"><button class="btn" onclick="finish()">CONFIRM SLOT</button></div>
+      <div id="done-msg"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><b>BUZZ &amp; CO.</b></p>
+  <p style="margin-top:.4rem">Plot 7, IT Park Road, Chandigarh · Mon–Sat 10 AM–8 PM · Sun 11 AM–6 PM</p>
+</footer>
+
+<script>
+addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progress').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+/* simulated live queue */
+const names=["Arjun M.","Sana K.","Rohit B.","Ishaan V.","Priya S.","Kabir T."];
+let serving=0;
+function renderQ(){
+  const box=document.getElementById('queue-list');box.innerHTML="";
+  names.forEach((n,i)=>{
+    const d=document.createElement('div');
+    d.className='qrow'+(i===serving?' now':(i<serving?' done':''));
+    d.innerHTML="<span>#"+(14+i)+" · "+n+"</span><span class='qtag'>"+(i===serving?"IN CHAIR · ~"+(18-i*3)+" MIN LEFT":(i<serving?"DONE":"WAITING"))+"</span>";
+    box.appendChild(d);
+  });
+}
+renderQ();setInterval(()=>{serving=(serving+1)%names.length;renderQ()},9000);
+function go(i){
+  document.querySelectorAll('.pane').forEach(p=>p.classList.remove('on'));
+  document.getElementById('pane'+i).classList.add('on');
+  document.querySelectorAll('.step').forEach((s,j)=>{s.classList.toggle('on',j===i);s.classList.toggle('done',j<i)});
+  document.getElementById('pane'+i).scrollIntoView({behavior:'smooth',block:'center'});
+}
+function finish(){
+  const svc=document.querySelector('input[name=svc]:checked').value;
+  const slot=document.querySelector('input[name=slot]:checked').value;
+  const n=document.getElementById('qn').value.trim()||"guest";
+  const m=document.getElementById('done-msg');m.style.display='block';
+  m.innerHTML="Locked in, "+n+". "+svc+" · "+slot+". Show this screen at the counter — no waiting, straight to the chair.";
+}
+document.querySelectorAll('.opt').forEach(o=>o.addEventListener('click',()=>{
+  o.parentElement.querySelectorAll('.opt').forEach(x=>x.classList.remove('sel'));o.classList.add('sel');
+}));
+</script>
+</body>
+</html>
