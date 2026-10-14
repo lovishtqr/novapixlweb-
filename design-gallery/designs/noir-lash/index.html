@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noir Lash — Lash &amp; Brow Atelier, Sector 17 Chandigarh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--noir:#101012;--champ:#d9c39a;--cream:#f5efe4;--ash:#2a2a2e;--ease:cubic-bezier(.25,.7,.2,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--noir);color:var(--cream);font-family:'Work Sans',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.7;letter-spacing:.02em}
+h1,h2,h3,.cz{font-family:'Cinzel',serif;font-weight:500;line-height:1.2;letter-spacing:.06em}
+img,svg{max-width:100%;display:block}
+::selection{background:var(--champ);color:var(--noir)}
+a{color:inherit}
+.wrap{max-width:860px;margin:0 auto;padding:clamp(4rem,10vh,7rem) clamp(1.3rem,5vw,2.5rem);text-align:center;position:relative;z-index:2}
+
+/* spotlight follows cursor */
+.spot{position:fixed;inset:0;pointer-events:none;z-index:1;
+  background:radial-gradient(420px circle at var(--sx,50%) var(--sy,30%),rgba(217,195,154,.10),transparent 65%)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(16,16,18,.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(217,195,154,.25)}
+.nav-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:1rem clamp(1.3rem,5vw,2.5rem)}
+.brand{font-family:'Cinzel';letter-spacing:.28em;font-size:.95rem;color:var(--champ)}
+.nav-in a{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;color:var(--cream)}
+.nav-in a:hover{color:var(--champ)}
+
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;padding:7rem 1.5rem 4rem;z-index:2}
+.eye{width:150px;height:150px;margin:0 auto 2rem;position:relative}
+.eye svg{width:100%;height:100%}
+.hero .kicker{font-size:.7rem;letter-spacing:.55em;text-transform:uppercase;color:var(--champ);margin-bottom:1.6rem}
+.hero h1{font-size:clamp(2.4rem,8vw,5rem);max-width:16ch}
+.hero h1 em{font-style:normal;color:var(--champ)}
+.hero p{margin:1.6rem auto 0;max-width:48ch;color:rgba(245,239,228,.65);font-weight:300}
+.btn{display:inline-block;margin-top:2.4rem;border:1px solid var(--champ);color:var(--champ);text-decoration:none;padding:1.05rem 3rem;font-size:.78rem;letter-spacing:.4em;text-transform:uppercase;transition:.4s var(--ease)}
+.btn:hover{background:var(--champ);color:var(--noir)}
+
+/* hairline dividers draw on */
+.hairline{height:1px;background:linear-gradient(90deg,transparent,var(--champ),transparent);margin:0 auto;max-width:860px;transform:scaleX(0);transition:transform 1.6s var(--ease)}
+.hairline.in{transform:scaleX(1)}
+.sec-label{font-size:.68rem;letter-spacing:.5em;text-transform:uppercase;color:var(--champ);margin-bottom:1.2rem}
+h2.sec{font-size:clamp(1.9rem,5.5vw,3rem);margin-bottom:.8rem}
+.sec-sub{color:rgba(245,239,228,.6);max-width:52ch;margin:0 auto 2.5rem;font-weight:300}
+
+/* lash menu — centered rows with prices */
+.lash-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1.5rem .5rem;border-bottom:1px solid rgba(217,195,154,.18);text-align:left;transition:background .4s}
+.lash-row:hover{background:rgba(217,195,154,.05)}
+.lash-row .n{font-family:'Cinzel';font-size:1.25rem;letter-spacing:.04em}
+.lash-row .n small{display:block;font-family:'Work Sans';font-size:.88rem;color:rgba(245,239,228,.55);letter-spacing:.02em;margin-top:.25rem;font-weight:300}
+.lash-row .p{font-family:'Cinzel';color:var(--champ);font-size:1.3rem;white-space:nowrap}
+.lash-row a{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--champ);color:var(--champ);white-space:nowrap}
+
+/* brow bar */
+.brow{background:var(--ash);border:1px solid rgba(217,195,154,.25);padding:clamp(1.8rem,5vw,3rem);margin-top:1rem}
+.brow-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:1.6rem;margin-top:1.6rem;text-align:left}
+.brow-item h3{font-size:1.05rem;color:var(--champ);margin-bottom:.4rem}
+.brow-item p{font-size:.92rem;color:rgba(245,239,228,.6)}
+.brow-item .p{font-family:'Cinzel';font-size:1.15rem;color:var(--cream);margin-top:.6rem}
+
+/* accordion */
+.acc{max-width:680px;margin:0 auto;text-align:left}
+.acc-item{border-bottom:1px solid rgba(217,195,154,.2)}
+.acc-item button{width:100%;background:none;border:none;color:var(--cream);font-family:'Cinzel';font-size:1.05rem;letter-spacing:.05em;padding:1.3rem .3rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;text-align:left}
+.acc-item button .pm{color:var(--champ);font-size:1.4rem;transition:transform .4s var(--ease)}
+.acc-item.open button .pm{transform:rotate(45deg)}
+.acc-item .body{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+.acc-item .body p{padding:0 .3rem 1.4rem;color:rgba(245,239,228,.62);font-size:.95rem}
+
+/* booking */
+form.book{max-width:560px;margin:0 auto;display:grid;gap:1.1rem;text-align:left}
+form.book label{font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;color:var(--champ)}
+form.book input,form.book select{background:transparent;border:1px solid rgba(217,195,154,.4);color:var(--cream);font-family:'Work Sans';font-size:1rem;padding:.95rem 1.1rem;width:100%}
+form.book input:focus,form.book select:focus{outline:none;border-color:var(--champ)}
+form.book select option{background:var(--noir)}
+form.book .btn{background:transparent;cursor:pointer;text-align:center;font-family:'Work Sans'}
+.ok{display:none;border:1px solid var(--champ);color:var(--champ);padding:1rem;font-size:.9rem;letter-spacing:.08em;text-align:center}
+.addr{margin-top:2.5rem;color:rgba(245,239,228,.55);font-size:.92rem;line-height:2}
+footer{border-top:1px solid rgba(217,195,154,.2);text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(217,195,154,.6);position:relative;z-index:2}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1.1s ease,transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1}}
+</style>
+</head>
+<body>
+<div class="spot" id="spot" aria-hidden="true"></div>
+
+<nav><div class="nav-in">
+  <span class="brand">NOIR LASH</span>
+  <a href="#booking">Reserve</a>
+</div></nav>
+
+<header class="hero">
+  <div class="eye rv" aria-hidden="true">
+    <svg viewBox="0 0 150 150">
+      <ellipse cx="75" cy="75" rx="62" ry="34" fill="none" stroke="#d9c39a" stroke-width="1.5"/>
+      <circle cx="75" cy="75" r="17" fill="#d9c39a" opacity=".85"/>
+      <circle cx="75" cy="75" r="7" fill="#101012"/>
+      <g stroke="#d9c39a" stroke-width="1.5" stroke-linecap="round">
+        <line x1="30" y1="52" x2="18" y2="34"/><line x1="48" y1="44" x2="40" y2="24"/>
+        <line x1="68" y1="41" x2="64" y2="20"/><line x1="90" y1="42" x2="92" y2="21"/>
+        <line x1="109" y1="48" x2="116" y2="29"/><line x1="123" y1="58" x2="134" y2="43"/>
+      </g>
+    </svg>
+  </div>
+  <p class="kicker rv">Lash &amp; Brow Atelier · Sector 17, Chandigarh</p>
+  <h1 class="rv">Lashes, measured<br>in <em>millimetres.</em></h1>
+  <p class="rv">A quiet atelier for lash extensions and brow architecture. One client at a time, classical music, and isolation tweezers that never rush.</p>
+  <div class="rv"><a class="btn" href="#booking">Book a Set</a></div>
+</header>
+
+<div class="hairline" data-line aria-hidden="true"></div>
+
+<section class="wrap" id="lashes">
+  <p class="sec-label rv">The Lash Menu</p>
+  <h2 class="sec rv">Choose your volume.</h2>
+  <p class="sec-sub rv">Every set begins with a lash mapping consult — length, curl and diameter chosen for your eye shape, never copied from a chart.</p>
+  <div class="rv">
+    <div class="lash-row"><span class="n">Classic Set<small>one extension per natural lash · the mascara look, perfected</small></span><span class="p">₹1,799</span><a href="#booking">Book</a></div>
+    <div class="lash-row"><span class="n">Hybrid Set<small>classic + handmade volume fans · texture with softness</small></span><span class="p">₹2,199</span><a href="#booking">Book</a></div>
+    <div class="lash-row"><span class="n">Volume Set<small>2D–6D fans · full, dark, unapologetic</small></span><span class="p">₹2,499</span><a href="#booking">Book</a></div>
+    <div class="lash-row"><span class="n">Mega Volume<small>up to 10D · editorial density, lash-artist grade</small></span><span class="p">₹2,999</span><a href="#booking">Book</a></div>
+    <div class="lash-row"><span class="n">Lash Lift + Tint<small>your lashes, curled and darkened · 6–8 weeks</small></span><span class="p">₹1,499</span><a href="#booking">Book</a></div>
+  </div>
+</section>
+
+<div class="hairline" data-line aria-hidden="true"></div>
+
+<section class="wrap">
+  <p class="sec-label rv">The Brow Bar</p>
+  <h2 class="sec rv">Architecture for the face.</h2>
+  <div class="brow rv">
+    <div class="brow-grid">
+      <div class="brow-item"><h3>Brow Lamination</h3><p>Brushed-up, feathered brows that hold for six weeks.</p><div class="p">₹1,299</div></div>
+      <div class="brow-item"><h3>Mapping + Shaping</h3><p>Golden-ratio mapping, tweezer-only shaping.</p><div class="p">₹499</div></div>
+      <div class="brow-item"><h3>Brow Tint</h3><p>Vegetable tint matched to your hair depth.</p><div class="p">₹399</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="hairline" data-line aria-hidden="true"></div>
+
+<section class="wrap">
+  <p class="sec-label rv">Aftercare</p>
+  <h2 class="sec rv">Keep them longer.</h2>
+  <p class="sec-sub rv">Retention is a partnership. Your half of the deal:</p>
+  <div class="acc rv">
+    <div class="acc-item"><button>First 24 hours<span class="pm">+</span></button><div class="body"><p>No water, steam, saunas or crying at emotional films. The adhesive is still curing — treat it like wet nail polish.</p></div></div>
+    <div class="acc-item"><button>Cleaning<span class="pm">+</span></button><div class="body"><p>Wash daily with the oil-free cleanser we give you. Dirty lashes fall out faster — and nobody wants that.</p></div></div>
+    <div class="acc-item"><button>Fills<span class="pm">+</span></button><div class="body"><p>Book a fill every 2–3 weeks at ₹999. After 4 weeks without a fill, it's a new set — the lash cycle waits for no one.</p></div></div>
+    <div class="acc-item"><button>What to avoid<span class="pm">+</span></button><div class="body"><p>Oil-based removers, waterproof mascara on extensions, and rubbing your eyes like you're erasing a mistake.</p></div></div>
+  </div>
+</section>
+
+<div class="hairline" data-line aria-hidden="true"></div>
+
+<section class="wrap" id="booking">
+  <p class="sec-label rv">Booking</p>
+  <h2 class="sec rv">Reserve your hour.</h2>
+  <p class="sec-sub rv">One client at a time. Please arrive without eye makeup.</p>
+  <form class="book rv" id="bookForm">
+    <label for="bName">Name</label><input id="bName" type="text" placeholder="Your name" required>
+    <label for="bPhone">Phone</label><input id="bPhone" type="tel" placeholder="Phone number" pattern="[0-9+ ]{10,15}" required>
+    <label for="bSvc">Service</label>
+    <select id="bSvc" required>
+      <option value="">Select…</option>
+      <option>Classic Set — ₹1,799</option><option>Hybrid Set — ₹2,199</option>
+      <option>Volume Set — ₹2,499</option><option>Lash Lift + Tint — ₹1,499</option>
+      <option>Brow Lamination — ₹1,299</option>
+    </select>
+    <button class="btn" type="submit">Request Appointment</button>
+    <p class="ok" id="bookOk">Request noted. We confirm every booking personally by call.</p>
+  </form>
+  <div class="addr rv">Noir Lash Atelier · SCO 141, Sector 17-E, Chandigarh<br>Tue – Sun · 11 AM – 8 PM · +91 98720 11876</div>
+</section>
+
+<footer>Noir Lash · Sector 17, Chandigarh</footer>
+
+<script>
+// spotlight follows cursor (lerped)
+const spot=document.getElementById('spot');
+let sx=innerWidth/2, sy=innerHeight*.3, gx=sx, gy=sy;
+addEventListener('pointermove',e=>{gx=e.clientX;gy=e.clientY},{passive:true});
+(function loop(){sx+=(gx-sx)*.07;sy+=(gy-sy)*.07;
+  spot.style.setProperty('--sx',sx+'px');spot.style.setProperty('--sy',sy+'px');
+  requestAnimationFrame(loop)})();
+// reveals + hairline draws
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv,.hairline').forEach(el=>io.observe(el));
+// accordion
+document.querySelectorAll('.acc-item').forEach(it=>{
+  const btn=it.querySelector('button'), body=it.querySelector('.body');
+  btn.addEventListener('click',()=>{
+    const open=it.classList.toggle('open');
+    body.style.maxHeight=open?body.scrollHeight+'px':'0px';
+  });
+});
+document.getElementById('bookForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('bookOk').style.display='block';});
+</script>
+</body>
+</html>
