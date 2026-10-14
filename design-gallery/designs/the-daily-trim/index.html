@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Daily Trim — Your Corner Salon Since 2004 | Baltana, Zirakpur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f3ead8;--brown:#4a3b2a;--caramel:#c17f3e;--board:#2f2a24}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Mulish',sans-serif;background:var(--cream);color:var(--brown);overflow-x:hidden}
+h1,h2,h3{font-family:'Zilla Slab',serif}
+img,svg{max-width:100%}
+a{color:inherit}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:var(--brown);color:var(--cream);display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.4rem;flex-wrap:wrap;gap:.6rem}
+.brand{font-family:'Zilla Slab';font-weight:700;font-size:1.3rem}
+.brand span{color:var(--caramel)}
+.navlinks{display:flex;gap:1.2rem;flex-wrap:wrap}
+.navlinks a{text-decoration:none;font-weight:600;font-size:.88rem}
+.navlinks a:hover{color:var(--caramel)}
+/* hero */
+.hero{background:var(--cream);padding:clamp(3rem,8vw,5.5rem) 1.4rem;position:relative;overflow:hidden}
+.hero-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+h1{font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.05;font-weight:700}
+h1 .c{color:var(--caramel)}
+.hero p{margin-top:1rem;font-size:1.08rem;max-width:30rem}
+.btn{display:inline-block;margin-top:1.6rem;background:var(--brown);color:var(--cream);font-family:'Zilla Slab';font-weight:600;font-size:1.05rem;padding:.9rem 2rem;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--caramel);transform:translateY(-2px)}
+.board-card{background:var(--board);color:#f5f0e6;border:10px solid #6b543c;border-radius:6px;padding:1.8rem;transform:rotate(1.5deg);box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.board-card h3{font-size:1.4rem;margin-bottom:1rem;color:var(--caramel)}
+.board-card ul{list-style:none;font-family:'Zilla Slab';font-size:1.05rem;line-height:2}
+.board-card li{display:flex;justify-content:space-between;border-bottom:1px dashed rgba(245,240,230,.3);padding:.2rem 0}
+/* chalkboard section */
+.chalk{background:var(--board);color:#f5f0e6;padding:clamp(3rem,7vw,5rem) 1.4rem;position:relative}
+.wrap{max-width:1000px;margin:0 auto}
+.chalk h2{font-size:clamp(1.9rem,5vw,3rem);margin-bottom:.6rem}
+.chalk .sub{color:#cbbfa8;margin-bottom:2.2rem;max-width:36rem}
+.chalk-svg{font-family:'Zilla Slab';font-size:clamp(1.6rem,5vw,2.6rem);fill:none;stroke:#f5f0e6;stroke-width:1.6;stroke-linecap:round}
+.chalk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem;margin-top:2rem}
+.chalk-item{border:2px dashed rgba(245,240,230,.4);border-radius:8px;padding:1.4rem;transition:border .2s,transform .2s}
+.chalk-item:hover{border-color:var(--caramel);transform:rotate(-1deg)}
+.chalk-item h3{color:var(--caramel);font-size:1.25rem;margin-bottom:.4rem}
+.chalk-item .pr{font-family:'Zilla Slab';font-size:1.5rem;margin-top:.6rem;display:block}
+/* community board */
+section{padding:clamp(3rem,7vw,5rem) 1.4rem}
+.pinboard{background:#e7d9bd;border:12px solid #8a6f4d;border-radius:4px;padding:2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.6rem;position:relative}
+.note{background:#fffdf4;padding:1.2rem;box-shadow:0 6px 14px rgba(0,0,0,.15);position:relative;transform:rotate(-2deg);cursor:pointer;transition:transform .25s;min-height:150px}
+.note:nth-child(even){transform:rotate(2deg);background:#fff8e6}
+.note:hover{transform:rotate(0) scale(1.04)}
+.note::before{content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;background:var(--caramel);box-shadow:0 3px 5px rgba(0,0,0,.3)}
+.note h4{font-family:'Zilla Slab';font-size:1.05rem;margin-bottom:.4rem}
+.note p{font-size:.88rem;color:#6a5b45}
+.note .back{display:none;font-size:.85rem;color:var(--caramel);font-weight:700;margin-top:.6rem}
+.note.flip .back{display:block}
+/* prices */
+.plist{max-width:680px;margin:0 auto}
+.prow{display:flex;justify-content:space-between;align-items:baseline;padding:1.1rem .4rem;border-bottom:2px dotted var(--caramel);font-family:'Zilla Slab';font-size:1.15rem}
+.prow .pr{font-weight:700;color:var(--brown);font-size:1.4rem}
+/* visit + form */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+label{display:block;font-weight:700;font-size:.85rem;margin:1rem 0 .35rem;letter-spacing:.05em}
+input,select{width:100%;padding:.8rem;border:2px solid var(--brown);background:#fffdf4;font-family:'Mulish';font-size:1rem;border-radius:4px}
+input:focus,select:focus{outline:2px solid var(--caramel)}
+#ok{display:none;margin-top:1.2rem;background:var(--brown);color:var(--cream);padding:1.1rem;font-weight:600;border-radius:4px}
+footer{background:var(--brown);color:#cbbfa8;padding:2rem 1.4rem;text-align:center}
+footer b{color:var(--cream);font-family:'Zilla Slab'}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .5s,transform .5s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:640px){.hero-inner{grid-template-columns:1fr}.visit-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="brand">THE DAILY <span>TRIM</span></div>
+  <div class="navlinks"><a href="#menu">Regulars' Menu</a><a href="#board">Community Board</a><a href="#prices">Prices</a><a href="#visit">Visit</a></div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Your corner salon, <span class="c">since 2004.</span></h1>
+      <p>Uncleji's cut ₹250. Family packages. Chai while you wait. The Daily Trim in Baltana is where the neighborhood gets groomed — no appointments needed, just walk in.</p>
+      <a class="btn" href="#visit">COME OVER</a>
+    </div>
+    <div class="board-card">
+      <h3>TODAY ON THE BOARD</h3>
+      <ul>
+        <li><span>Uncleji's Classic Cut</span><span>₹250</span></li>
+        <li><span>Student Cut (with ID)</span><span>₹200</span></li>
+        <li><span>Family Pack (4 cuts)</span><span>₹899</span></li>
+        <li><span>Head Massage (champi)</span><span>₹150</span></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<section class="chalk" id="menu">
+  <div class="wrap">
+    <svg viewBox="0 0 600 70" class="chalk-svg" aria-label="Regulars' menu"><text x="10" y="48" class="chalk-text">~ Regulars' Menu ~</text></svg>
+    <p class="sub">The chalk menu changes with the season — and with whatever Sharma ji from the corner shop requests.</p>
+    <div class="chalk-grid">
+      <div class="chalk-item reveal"><h3>Uncleji's Cut</h3><p>Scissor cut, side parting, the works. As it has been for 22 years.</p><span class="pr">₹250</span></div>
+      <div class="chalk-item reveal"><h3>Bhaiya Special</h3><p>Cut + beard trim + threading brows. The full reset.</p><span class="pr">₹450</span></div>
+      <div class="chalk-item reveal"><h3>Didi's Day</h3><p>Cut + blow-dry + basic clean-up. Sundays are busiest.</p><span class="pr">₹799</span></div>
+      <div class="chalk-item reveal"><h3>Chotu Cut</h3><p>Patient, quick, lollipop after. Under-8s only.</p><span class="pr">₹150</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="board">
+  <div class="wrap">
+    <h2 class="reveal" style="margin-bottom:.5rem">Community Board</h2>
+    <p class="reveal" style="margin-bottom:2rem;color:#6a5b45;max-width:36rem">Pinned by neighbors. Tap a note to read the back.</p>
+    <div class="pinboard reveal">
+      <div class="note"><h4>Ramesh Uncle</h4><p>"Best head massage in Baltana. My Sunday ritual for 10 years."</p><p class="back">— Customer since 2014</p></div>
+      <div class="note"><h4> tuition wali Aunty</h4><p>"Took my whole family for Diwali cuts. Done in 2 hours, chai included."</p><p class="back">— Family pack regular</p></div>
+      <div class="note"><h4>Vicky, Class 12</h4><p>"Got my first proper haircut here before farewell. Looked sharp."</p><p class="back">— Student cut ₹200</p></div>
+      <div class="note"><h4>LOST &amp; FOUND</h4><p>One black umbrella, left Tuesday. Ask at the counter.</p><p class="back">— Claimed? Not yet.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="prices" style="background:#e7d9bd">
+  <div class="wrap">
+    <h2 class="reveal" style="text-align:center;margin-bottom:2rem">Honest Prices</h2>
+    <div class="plist reveal">
+      <div class="prow"><span>Uncleji's Classic Cut</span><span class="pr">₹250</span></div>
+      <div class="prow"><span>Student Cut (with ID)</span><span class="pr">₹200</span></div>
+      <div class="prow"><span>Beard Trim &amp; Shape</span><span class="pr">₹150</span></div>
+      <div class="prow"><span>Champi Head Massage (20 min)</span><span class="pr">₹150</span></div>
+      <div class="prow"><span>Family Pack — 4 cuts</span><span class="pr">₹899</span></div>
+      <div class="prow"><span>Bridal Mehndi Referral</span><span class="pr">Free chai</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap">
+    <h2 class="reveal" style="margin-bottom:2rem">Visit Us</h2>
+    <div class="visit-grid">
+      <div class="reveal">
+        <p style="font-size:1.05rem;line-height:2"><b>Shop 4, Main Market, Baltana, Zirakpur</b><br>Mon–Sun · 9 AM – 9 PM<br>No appointment needed — walk in.</p>
+        <p style="margin-top:1rem;color:#6a5b45">Look for the green shutter and the smell of fresh chai. Ask anyone in the market — they'll point you here.</p>
+      </div>
+      <form class="reveal" id="bf">
+        <label for="bn">NAME</label><input id="bn" required placeholder="Your name">
+        <label for="bp">PHONE</label><input id="bp" required inputmode="tel" placeholder="98XXX XXXXX">
+        <label for="bs">SERVICE</label>
+        <select id="bs"><option>Uncleji's Cut — ₹250</option><option>Bhaiya Special — ₹450</option><option>Didi's Day — ₹799</option><option>Family Pack — ₹899</option></select>
+        <button class="btn" type="submit" style="margin-top:1.4rem;width:100%">I'M COMING OVER</button>
+        <div id="ok"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><b>THE DAILY TRIM</b> · Shop 4, Main Market, Baltana, Zirakpur · Since 2004</p>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+/* chalk-write draw animation */
+const t=document.querySelector('.chalk-text');
+if(t){const len=t.getComputedTextLength();t.style.strokeDasharray=len;t.style.strokeDashoffset=len;
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){t.style.transition='stroke-dashoffset 1.6s ease';t.style.strokeDashoffset=0;cio.disconnect()}}),{threshold:.5});
+cio.observe(t);}
+document.querySelectorAll('.note').forEach(n=>n.addEventListener('click',()=>n.classList.toggle('flip')));
+document.getElementById('bf').addEventListener('submit',e=>{
+  e.preventDefault();
+  const ok=document.getElementById('ok');ok.style.display='block';
+  ok.textContent="Arre waah, "+document.getElementById('bn').value.split(' ')[0]+"! "+document.getElementById('bs').value.split(' — ')[0]+" noted. Walk in anytime — chai will be ready.";
+});
+</script>
+</body>
+</html>

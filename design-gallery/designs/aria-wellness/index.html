@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aria Wellness — benvenuti · Morni Hills</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--olive:#5b6b3f;--olive-deep:#3d4a2a;--cream:#f6f3ea;--cream-deep:#ece5d3;--ink:#2e2e24;--stone:#c9c2a8}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'Fredoka',sans-serif;overflow-x:hidden}
+h1,h2,.display{font-family:'Italiana',serif;font-weight:400}
+section{padding:92px 22px;max-width:1040px;margin:0 auto;position:relative}
+.eyebrow{font-size:12px;letter-spacing:.45em;text-transform:uppercase;font-weight:600;color:var(--olive)}
+
+/* hero — villa courtyard */
+.hero{min-height:94vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  padding:100px 22px 90px;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#eef0e2 0%,#f6f3ea 55%,#e9e2cd 100%)}
+.cypress{position:absolute;bottom:0;height:78%;opacity:.9;animation:sway 6s ease-in-out infinite;transform-origin:bottom center}
+.cypress.c2{animation-delay:-2s}.cypress.c3{animation-delay:-4s}
+@keyframes sway{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+.hero h1{font-size:clamp(66px,14vw,132px);color:var(--olive-deep);line-height:1;position:relative;z-index:2;letter-spacing:.04em}
+.hero .it{font-style:italic;font-family:'Italiana';font-size:clamp(22px,4vw,34px);color:var(--olive);margin-top:10px;position:relative;z-index:2}
+.hero .sub{max-width:560px;margin:20px auto 0;font-size:16.5px;line-height:1.75;color:#5a5a48;position:relative;z-index:2}
+.btn{display:inline-block;background:var(--olive);color:#fff;font-weight:600;padding:15px 46px;text-decoration:none;
+  font-size:16px;letter-spacing:.06em;border:2px solid var(--olive);margin-top:30px;border-radius:40px;
+  transition:transform .25s,background .25s,color .25s;cursor:pointer;position:relative;z-index:2}
+.btn:hover{transform:translateY(-3px);background:transparent;color:var(--olive-deep)}
+.btn.ghost{background:transparent;color:var(--olive-deep)}
+.btn.ghost:hover{background:var(--olive);color:#fff}
+
+/* fountain divider with ripple */
+.fountain{max-width:700px;margin:0 auto;padding:10px 0 0;text-align:center}
+.fountain svg{width:100%;height:90px;display:block}
+.ripple{stroke:var(--olive);fill:none;stroke-width:2;opacity:0;transform-origin:center;transform-box:fill-box}
+.in .ripple{animation:rip 2.6s ease-out infinite}
+.in .ripple.r2{animation-delay:.5s}.in .ripple.r3{animation-delay:1s}
+@keyframes rip{0%{opacity:.8;transform:scale(.4)}100%{opacity:0;transform:scale(1.6)}}
+
+/* therapies */
+.therapies{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;margin-top:40px}
+.therapy{background:#fffdf6;border:1px solid var(--stone);border-radius:14px;padding:36px 28px;position:relative;
+  transition:transform .3s,box-shadow .3s;opacity:0;transform:translateY(26px)}
+.therapy.in{opacity:1;transform:none}
+.therapy:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(91,107,63,.16)}
+.therapy .leaf{width:52px;height:52px;margin-bottom:14px}
+.therapy h3{font-size:34px;color:var(--olive-deep);margin-bottom:8px}
+.therapy p{font-size:14.5px;line-height:1.7;color:#5a5a48}
+.therapy .pr{font-family:'Italiana';font-size:30px;color:var(--olive);display:block;margin-top:12px}
+.therapy .dur{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#8a8570;font-weight:600}
+
+/* rituals — numbered */
+.ritual{display:flex;gap:26px;align-items:flex-start;padding:30px 0;border-bottom:1px solid var(--stone)}
+.ritual:last-child{border:none}
+.ritual .num{font-family:'Italiana';font-size:56px;color:var(--stone);min-width:80px;line-height:1}
+.ritual h3{font-size:30px;color:var(--olive-deep);margin-bottom:6px}
+.ritual p{line-height:1.75;font-size:15px;color:#5a5a48;max-width:640px}
+
+/* day packages */
+.packages{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;margin-top:40px}
+.pkg{background:var(--olive);color:var(--cream);border-radius:16px;padding:40px 30px;position:relative;overflow:hidden;
+  transition:transform .3s}
+.pkg:hover{transform:translateY(-6px) rotate(.5deg)}
+.pkg.featured{background:var(--olive-deep);border:2px solid var(--gold,#d4af6a)}
+.pkg h3{font-size:36px;margin-bottom:6px}
+.pkg .pr{font-family:'Italiana';font-size:44px;color:#fff;display:block;margin:12px 0}
+.pkg ul{list-style:none;margin:16px 0 24px;line-height:2.1;font-size:14.5px}
+.pkg ul li::before{content:"— ";color:var(--stone)}
+.pkg .btn{background:var(--cream);border-color:var(--cream);color:var(--olive-deep)}
+.pkg .btn:hover{background:transparent;color:var(--cream)}
+
+/* booking */
+.book{background:#fffdf6;border:1px solid var(--stone);border-radius:16px;padding:50px 36px;max-width:620px;margin:40px auto 0;text-align:center}
+.book label{display:block;text-align:left;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin:16px 0 6px;font-weight:600}
+.book select,.book input{width:100%;background:#fff;border:1.5px solid var(--stone);color:var(--ink);
+  padding:13px 14px;font-family:'Fredoka';font-size:15px;border-radius:8px}
+#bookMsg{margin-top:16px;font-family:'Italiana';font-size:32px;color:var(--olive-deep);min-height:44px}
+
+h2.sec{font-size:clamp(46px,8.5vw,74px);text-align:center;color:var(--olive-deep);margin:12px 0 6px}
+p.lead{text-align:center;max-width:640px;margin:0 auto 8px;font-size:16px;line-height:1.7;color:#5a5a48}
+footer{background:var(--olive-deep);color:#d8d2b8;text-align:center;padding:42px 20px;font-size:13px;line-height:2}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:560px){section{padding:66px 16px}.ritual .num{font-size:42px;min-width:60px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="cypress" style="left:3%" width="90" height="340" viewBox="0 0 90 340"><path d="M45 340 C40 240 30 180 45 90 C52 50 48 30 45 8 C42 30 38 50 45 90 C60 180 50 240 45 340" fill="#3d4a2a"/><ellipse cx="45" cy="170" rx="26" ry="150" fill="#5b6b3f" opacity=".92"/></svg>
+  <svg class="cypress c2" style="right:5%" width="70" height="280" viewBox="0 0 90 340"><path d="M45 340 C40 240 30 180 45 90 C52 50 48 30 45 8 C42 30 38 50 45 90 C60 180 50 240 45 340" fill="#3d4a2a"/><ellipse cx="45" cy="170" rx="26" ry="150" fill="#5b6b3f" opacity=".92"/></svg>
+  <svg class="cypress c3" style="left:14%;height:52%" width="60" height="220" viewBox="0 0 90 340"><ellipse cx="45" cy="170" rx="26" ry="150" fill="#6b7a4a" opacity=".8"/></svg>
+  <p class="eyebrow">Aria Wellness · Morni Hills</p>
+  <h1>ARIA</h1>
+  <p class="it">benvenuti — the air is different up here</p>
+  <p class="sub">An Italianate wellness villa in the Morni Hills, twenty minutes above Panchkula. Cypress-lined courtyards, olive-oil rituals, and a fountain you can hear from every treatment room.</p>
+  <a class="btn" href="#booking">Reserve your ritual</a>
+</header>
+
+<div class="fountain reveal">
+  <svg viewBox="0 0 700 90" aria-hidden="true">
+    <path d="M350 10 v40 M330 50 h40 M322 50 v14 h56 v-14" stroke="#5b6b3f" stroke-width="3" fill="none"/>
+    <ellipse class="ripple r1" cx="350" cy="72" rx="60" ry="10"/>
+    <ellipse class="ripple r2" cx="350" cy="72" rx="60" ry="10"/>
+    <ellipse class="ripple r3" cx="350" cy="72" rx="60" ry="10"/>
+    <ellipse cx="350" cy="72" rx="66" ry="11" fill="none" stroke="#5b6b3f" stroke-width="2.5"/>
+  </svg>
+</div>
+
+<section id="therapies">
+  <p class="eyebrow" style="text-align:center">Therapies</p>
+  <h2 class="sec">From the villa's apothecary</h2>
+  <p class="lead">Olive oil pressed on the estate, herbs from the kitchen garden, hands trained in Tuscany and Kerala both.</p>
+  <div class="therapies">
+    <div class="therapy">
+      <svg class="leaf" viewBox="0 0 52 52"><path d="M26 4 C40 16 44 34 26 48 C8 34 12 16 26 4 Z" fill="none" stroke="#5b6b3f" stroke-width="2.5"/><path d="M26 10 V42" stroke="#5b6b3f" stroke-width="2"/></svg>
+      <div class="dur">90 min</div><h3>Tuscan Massage</h3>
+      <p>Warm olive-oil full body, slow effleurage, ending with a rosemary scalp ritual. Our signature since day one.</p><span class="pr">₹3,200</span>
+    </div>
+    <div class="therapy">
+      <svg class="leaf" viewBox="0 0 52 52"><circle cx="26" cy="26" r="18" fill="none" stroke="#5b6b3f" stroke-width="2.5"/><path d="M26 8 v36 M8 26 h36" stroke="#5b6b3f" stroke-width="2"/></svg>
+      <div class="dur">60 min</div><h3>Olive-Stone Facial</h3>
+      <p>Cold-pressed olive oil cleanse, olive-stone exfoliation, honey mask from our own hives in the valley.</p><span class="pr">₹2,400</span>
+    </div>
+    <div class="therapy">
+      <svg class="leaf" viewBox="0 0 52 52"><path d="M10 40 Q26 10 42 40" fill="none" stroke="#5b6b3f" stroke-width="2.5"/><path d="M18 40 Q26 22 34 40" fill="none" stroke="#5b6b3f" stroke-width="2"/></svg>
+      <div class="dur">75 min</div><h3>Cypress Bath Ritual</h3>
+      <p>Private outdoor tub under the cypresses, cypress-needle soak, followed by a 30-minute back massage.</p><span class="pr">₹2,800</span>
+    </div>
+  </div>
+</section>
+
+<div class="fountain reveal">
+  <svg viewBox="0 0 700 90" aria-hidden="true">
+    <ellipse class="ripple r1" cx="350" cy="45" rx="60" ry="10"/><ellipse class="ripple r2" cx="350" cy="45" rx="60" ry="10"/><ellipse class="ripple r3" cx="350" cy="45" rx="60" ry="10"/>
+    <ellipse cx="350" cy="45" rx="66" ry="11" fill="none" stroke="#5b6b3f" stroke-width="2.5"/>
+  </svg>
+</div>
+
+<section id="rituals">
+  <p class="eyebrow" style="text-align:center">Rituals</p>
+  <h2 class="sec">A day at the villa</h2>
+  <p class="lead">Arrive by ten, leave by dusk. The fountain keeps time.</p>
+  <div class="reveal">
+    <div class="ritual"><div class="num">I.</div><div><h3>Arrival &amp; tisane</h3><p>Herb tea from the garden in the courtyard. Shoes off at the villa steps — the stone is warm by ten.</p></div></div>
+    <div class="ritual"><div class="num">II.</div><div><h3>The treatment</h3><p>Your chosen therapy in a room that opens onto the cypress walk. The fountain is audible throughout.</p></div></div>
+    <div class="ritual"><div class="num">III.</div><div><h3>Riposo</h3><p>Ninety minutes of nothing: a daybed, a light shawl, lunch from the villa kitchen when you wake.</p></div></div>
+  </div>
+</section>
+
+<section id="packages">
+  <p class="eyebrow" style="text-align:center">Day packages</p>
+  <h2 class="sec">Stay a little longer</h2>
+  <p class="lead">Everything above, bundled the villa way.</p>
+  <div class="packages reveal">
+    <div class="pkg"><h3>Mezzogiorno</h3><p>Half day · 10 AM – 2 PM</p><span class="pr">₹4,999</span>
+      <ul><li>One 60-min therapy</li><li>Garden tisane &amp; lunch</li><li>Courtyard riposo</li></ul>
+      <a class="btn" href="#booking">Choose Mezzogiorno</a></div>
+    <div class="pkg featured"><h3>Giornata Intera</h3><p>Full day · 10 AM – 6 PM</p><span class="pr">₹8,999</span>
+      <ul><li>Tuscan massage, 90 min</li><li>Cypress bath ritual</li><li>Villa lunch &amp; riposo</li><li>Olive oil to take home</li></ul>
+      <a class="btn" href="#booking">Choose Giornata</a></div>
+  </div>
+</section>
+
+<section id="booking">
+  <p class="eyebrow" style="text-align:center">Booking</p>
+  <h2 class="sec">Reserve your ritual</h2>
+  <p class="lead">Villa Aria, Morni Hills Road, near Tikkar Taal · Wed–Mon 10 AM – 6 PM<br>+91 98150 22334 · ciao@ariawellness.in</p>
+  <div class="book reveal">
+    <label for="aname">Your name</label><input id="aname" type="text" placeholder="e.g. Ananya Rao" maxlength="40">
+    <label for="atherapy">Therapy or package</label>
+    <select id="atherapy"><option>Tuscan Massage — ₹3,200</option><option>Olive-Stone Facial — ₹2,400</option><option>Cypress Bath Ritual — ₹2,800</option><option>Mezzogiorno half day — ₹4,999</option><option>Giornata Intera full day — ₹8,999</option></select>
+    <button class="btn" style="width:100%" onclick="prenota()">Prenota — book it</button>
+    <div id="bookMsg" aria-live="polite"></div>
+  </div>
+  <div style="text-align:center;margin-top:26px"><a class="btn ghost" href="#therapies">Back to therapies</a></div>
+</section>
+
+<footer>Aria Wellness · Morni Hills · "benvenuti" since 2017<br>Olive oil pressed on the estate. Closed Tuesdays.</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal,.therapy').forEach(el=>io.observe(el));
+function prenota(){
+  const n=document.getElementById('aname').value.trim()||'amico';
+  document.getElementById('bookMsg').textContent='Grazie, '+n+'. The villa awaits your arrival.';
+}
+</script>
+</body>
+</html>

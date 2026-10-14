@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gilded Age — Premium Heritage Salon · Since 1987, Groomed in Gold · Sector 26, Chandigarh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#8a6d2f;--noir:#1e1a14;--sand:#e8d9b0;--ivory:#f4ecd8;--goldlt:#c9a94f}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--noir);color:var(--ivory);font-family:'Cabin',sans-serif;overflow-x:hidden;line-height:1.7}
+h1,h2,h3,.deco{font-family:'Cinzel Decorative',serif;font-weight:700;line-height:1.25}
+.wrap{width:min(1100px,92%);margin:0 auto}
+section{padding:clamp(70px,10vw,130px) 0;position:relative}
+/* deco frame */
+.deco-frame{border:1px solid var(--gold);outline:1px solid var(--gold);outline-offset:7px}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:#161209;border-bottom:1px solid var(--gold)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:13px 0}
+.brand{font-family:'Cinzel Decorative',serif;font-size:1.25rem;color:var(--sand);text-decoration:none;letter-spacing:.08em}
+nav ul{display:flex;gap:26px;list-style:none}
+nav a.nl{color:var(--sand);text-decoration:none;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase}
+nav a.nl:hover{color:var(--goldlt)}
+.btn{display:inline-block;background:var(--gold);color:#161209;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.85rem;padding:16px 44px;text-decoration:none;cursor:pointer;border:0;transition:background .3s,transform .25s}
+.btn:hover{background:var(--goldlt);transform:translateY(-2px)}
+/* HERO — sunburst */
+.hero{min-height:94vh;display:flex;align-items:center;text-align:center;overflow:hidden}
+#sunburst{position:absolute;left:50%;top:50%;width:140vmax;height:140vmax;transform:translate(-50%,-50%);opacity:.16;pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero .est{letter-spacing:.5em;font-size:.8rem;color:var(--goldlt);text-transform:uppercase;margin-bottom:22px}
+.hero h1{font-size:clamp(2.6rem,6.6vw,5.2rem);color:var(--sand);margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--goldlt)}
+.hero p{max-width:56ch;margin:0 auto 34px;color:#d8cba4;font-size:1.1rem}
+.gold-rule{width:220px;height:2px;background:var(--gold);margin:26px auto;position:relative}
+.gold-rule::before,.gold-rule::after{content:"◆";position:absolute;top:-13px;color:var(--gold);font-size:.9rem}
+.gold-rule::before{left:-16px}.gold-rule::after{right:-16px}
+/* heritage */
+.heritage{background:var(--ivory);color:var(--noir)}
+.heritage .grid2{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.heritage h2{font-size:clamp(2rem,4.6vw,3.2rem);color:var(--noir);margin-bottom:16px}
+.heritage h2 em{font-style:normal;color:var(--gold)}
+.heritage p{color:#4a3f2c;margin-bottom:14px}
+.gen3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.gen{border:1px solid var(--gold);padding:20px;text-align:center;background:#fffdf4}
+.gen b{font-family:'Cinzel Decorative',serif;font-size:1.05rem;color:var(--noir);display:block}
+.gen span{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+/* services — deco panels */
+.svcgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.svc{border:1px solid var(--gold);padding:34px 26px;text-align:center;background:rgba(138,109,47,.07);position:relative;transition:background .3s,transform .3s}
+.svc:hover{background:rgba(138,109,47,.16);transform:translateY(-6px)}
+.svc::before{content:"";position:absolute;inset:8px;border:1px solid rgba(138,109,47,.4);pointer-events:none}
+.svc svg{width:54px;height:54px;margin-bottom:16px}
+.svc h3{font-size:1.25rem;color:var(--sand);margin-bottom:8px}
+.svc .pr{font-family:'Cinzel Decorative',serif;font-size:1.5rem;color:var(--goldlt);margin-top:10px;display:block}
+.svc p{font-size:.9rem;color:#cbbd93}
+/* membership */
+.member{background:var(--ivory);color:var(--noir)}
+.mcard{max-width:760px;margin:0 auto;border:2px solid var(--gold);outline:2px solid var(--gold);outline-offset:8px;background:#fffdf4;padding:clamp(30px,5vw,54px);text-align:center}
+.mcard h2{font-size:clamp(1.9rem,4.4vw,2.8rem);margin-bottom:10px}
+.mcard .pr{font-family:'Cinzel Decorative',serif;font-size:3.2rem;color:var(--gold);margin:12px 0}
+.mcard ul{list-style:none;margin:22px 0 28px;text-align:left;max-width:480px;margin-left:auto;margin-right:auto}
+.mcard li{padding:10px 0;border-bottom:1px solid var(--sand);color:#4a3f2c}
+.mcard li::before{content:"◆ ";color:var(--gold);font-size:.8rem}
+/* visit */
+.visit{text-align:center}
+.visit h2{font-size:clamp(2rem,4.6vw,3.2rem);color:var(--sand);margin-bottom:12px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:680px;margin:30px auto 0;text-align:left}
+.full{grid-column:1/-1}
+label{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--goldlt);display:block;margin-bottom:6px}
+input,select{background:#2a2418;border:1px solid var(--gold);color:var(--ivory);padding:13px;font-family:'Cabin',sans-serif;font-size:1rem;width:100%}
+input:focus,select:focus{outline:2px solid var(--goldlt)}
+.confirm{display:none;max-width:680px;margin:18px auto 0;border:1px solid var(--gold);padding:20px;color:var(--ivory)}
+footer{border-top:1px solid var(--gold);padding:30px;text-align:center;color:#a89468;font-size:.85rem;letter-spacing:.14em}
+.sec-t{font-size:clamp(2.2rem,5vw,3.6rem);color:var(--sand);text-align:center;margin-bottom:8px}
+.sec-s{text-align:center;color:#b3a67f;max-width:58ch;margin:0 auto 44px}
+/* gold line draw divider */
+.gline{display:block;width:min(1100px,92%);margin:0 auto;height:30px}
+.gline path{fill:none;stroke:var(--gold);stroke-width:2}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:820px){nav ul{display:none}.heritage .grid2,.svcgrid{grid-template-columns:1fr}form{grid-template-columns:1fr}.gen3{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="#top">GILDED AGE</a>
+<ul><li><a class="nl" href="#heritage">Heritage</a></li><li><a class="nl" href="#services">Services</a></li><li><a class="nl" href="#member">Membership</a></li><li><a class="nl" href="#visit">Visit</a></li></ul></div></nav>
+
+<header class="hero" id="top">
+  <svg id="sunburst" viewBox="0 0 1000 1000" aria-hidden="true">
+    <g stroke="#c9a94f" stroke-width="2">
+      <g id="rays"></g>
+      <circle cx="500" cy="500" r="180" fill="none"/><circle cx="500" cy="500" r="260" fill="none" stroke-dasharray="8 10"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <p class="est">Est. 1987 · Sector 26, Chandigarh</p>
+    <h1>Since 1987,<br><em>groomed in gold.</em></h1>
+    <div class="gold-rule"></div>
+    <p>Gilded Age is a third-generation heritage salon — grandfather's shears, father's standards, and a new generation's eye. Art-deco calm, honest prices, and cuts that outlast trends.</p>
+    <a class="btn" href="#visit">Book a Chair</a>
+  </div>
+</header>
+
+<svg class="gline" viewBox="0 0 1100 30" preserveAspectRatio="none" aria-hidden="true"><path id="gpath1" d="M0 15 H1100 M550 4 v22"/></svg>
+
+<section class="heritage" id="heritage">
+  <div class="wrap">
+    <div class="grid2">
+      <div class="reveal">
+        <h2>Three generations.<br><em>One standard.</em></h2>
+        <p>In 1987, Ustad Rahim Khan opened a two-chair shop in Sector 26 with a straight razor and a reputation. His son modernised it; his granddaughter runs it today — same razor on the wall, same rule on the floor: nobody leaves until it's right.</p>
+        <p>We still do hot-towel shaves the slow way. We still remember your usual. That is the whole business model.</p>
+        <div class="gen3">
+          <div class="gen"><b>Rahim Khan</b><span>Founder · 1987</span></div>
+          <div class="gen"><b>Imran Khan</b><span>Second Chair · 2004</span></div>
+          <div class="gen"><b>Zoya Khan</b><span>Today · Master</span></div>
+        </div>
+      </div>
+      <div class="reveal deco-frame" style="padding:14px;background:#fffdf4">
+        <svg viewBox="0 0 400 300" style="display:block;width:100%"><rect width="400" height="300" fill="#1e1a14"/>
+          <g stroke="#c9a94f" stroke-width="3" fill="none">
+            <path d="M200 40 L230 120 L310 120 L245 170 L270 250 L200 200 L130 250 L155 170 L90 120 L170 120 Z"/>
+            <circle cx="200" cy="140" r="70" stroke-dasharray="6 8"/>
+          </g>
+          <text x="200" y="282" text-anchor="middle" fill="#c9a94f" font-family="Cinzel Decorative,serif" font-size="16" letter-spacing="6">EST · 1987</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="gline" viewBox="0 0 1100 30" preserveAspectRatio="none" aria-hidden="true"><path id="gpath2" d="M0 15 H1100 M550 4 v22"/></svg>
+
+<section id="services">
+  <div class="wrap">
+    <h2 class="sec-t reveal">The Gilded Menu</h2>
+    <p class="sec-s reveal">Heritage techniques, maintained like the building.</p>
+    <div class="svcgrid">
+      <div class="svc reveal"><svg viewBox="0 0 54 54"><g fill="none" stroke="#c9a94f" stroke-width="3"><circle cx="27" cy="20" r="12"/><path d="M15 48 q12 -14 24 0"/></g></svg><h3>Heritage Cut</h3><p>Scissor-only classic, finished with a hot towel. The 1987 way.</p><span class="pr">₹899</span></div>
+      <div class="svc reveal"><svg viewBox="0 0 54 54"><g fill="none" stroke="#c9a94f" stroke-width="3"><path d="M12 40 L40 12 M12 40 l-4 8 M40 12 l4 -4"/><path d="M18 44 q9 -8 18 0"/></g></svg><h3>Royal Shave</h3><p>Straight-razor shave, three hot towels, sandalwood balm.</p><span class="pr">₹699</span></div>
+      <div class="svc reveal"><svg viewBox="0 0 54 54"><g fill="none" stroke="#c9a94f" stroke-width="3"><ellipse cx="27" cy="22" rx="14" ry="10"/><path d="M13 22 h28 M27 12 v20"/></g></svg><h3>Bridal Gilding</h3><p>Groom + bride party styling for heritage weddings.</p><span class="pr">₹12,999</span></div>
+      <div class="svc reveal"><svg viewBox="0 0 54 54"><g fill="none" stroke="#c9a94f" stroke-width="3"><path d="M27 6 v42 M10 20 l34 14 M44 20 L10 34"/></g></svg><h3>Grey Camouflage</h3><p>Subtle, dignified blending — never shoe-polish black.</p><span class="pr">₹1,499</span></div>
+      <div class="svc reveal"><svg viewBox="0 0 54 54"><g fill="none" stroke="#c9a94f" stroke-width="3"><path d="M14 38 q13 -22 26 0"/><circle cx="27" cy="18" r="5"/></g></svg><h3>Head Massage</h3><p>Champi with warm almond oil, 30 unhurried minutes.</p><span class="pr">₹599</span></div>
+      <div class="svc reveal"><svg viewBox="0 0 54 54"><g fill="none" stroke="#c9a94f" stroke-width="3"><rect x="12" y="14" width="30" height="26" rx="2"/><path d="M12 24 h30"/></g></svg><h3>The Young Heir</h3><p>First proper cut for young gentlemen, certificate included.</p><span class="pr">₹499</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="member" id="member">
+  <div class="wrap">
+    <div class="mcard reveal">
+      <p style="letter-spacing:.4em;font-size:.78rem;color:var(--gold);font-weight:700">MEMBERSHIP</p>
+      <h2>The Quarterly Grooming Plan</h2>
+      <p style="color:#4a3f2c">For regulars who never want to think about booking again.</p>
+      <div class="pr">₹7,999<span style="font-size:1.1rem;font-family:'Cabin',sans-serif"> / quarter</span></div>
+      <ul>
+        <li>One heritage cut + royal shave every month (3 total)</li>
+        <li>Priority booking — your chair held every 4th Saturday</li>
+        <li>Complimentary head massage with each visit</li>
+        <li>10% off bridal gilding for family weddings</li>
+      </ul>
+      <a class="btn" href="#visit" data-plan="Quarterly Grooming Plan — ₹7,999">Become a Member</a>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <h2 class="reveal">Visit the House</h2>
+    <p class="reveal" style="color:#b3a67f">SCO 3, Sector 26, Chandigarh · Tue–Sun, 10 AM – 8 PM · +91 172 279 8899</p>
+    <form id="bform" class="reveal" novalidate>
+      <div><label for="nm">Name</label><input id="nm" required placeholder="Vikram Mehta"></div>
+      <div><label for="ph">Phone</label><input id="ph" required inputmode="tel" placeholder="+91 98XXX XXXXX"></div>
+      <div><label for="dt">Date</label><input id="dt" type="date" required></div>
+      <div><label for="sv">Service</label><select id="sv"><option>Heritage Cut — ₹899</option><option>Royal Shave — ₹699</option><option>Quarterly Grooming Plan — ₹7,999</option><option>Bridal Gilding — ₹12,999</option></select></div>
+      <div class="full"><button class="btn" type="submit" style="width:100%">Request an Appointment</button></div>
+    </form>
+    <div class="confirm" id="confirm" role="status"></div>
+  </div>
+</section>
+
+<footer>GILDED AGE · SCO 3, SECTOR 26, CHANDIGARH · SINCE 1987</footer>
+
+<script>
+// build sunburst rays deterministically
+(function(){
+  var g=document.getElementById('rays'),s='';
+  for(var i=0;i<48;i++){var a=i*Math.PI/24;
+    s+='<line x1="500" y1="500" x2="'+(500+Math.cos(a)*480).toFixed(1)+'" y2="'+(500+Math.sin(a)*480).toFixed(1)+'"/>';}
+  g.innerHTML=s;
+})();
+// sunburst rotation + gold line draws: pure functions of scrollY
+var sun=document.getElementById('sunburst');
+var gp1=document.getElementById('gpath1'),gp2=document.getElementById('gpath2');
+var gl1=gp1.getTotalLength(),gl2=gp2.getTotalLength();
+gp1.style.strokeDasharray=gl1;gp2.style.strokeDasharray=gl2;
+function onScroll(){
+  sun.style.transform='translate(-50%,-50%) rotate('+(scrollY*0.03)+'deg)';
+  var max=document.documentElement.scrollHeight-innerHeight,p=max>0?scrollY/max:0;
+  gp1.style.strokeDashoffset=gl1*(1-Math.min(1,p*2.4));
+  gp2.style.strokeDashoffset=gl2*(1-Math.min(1,Math.max(0,(p-.4)*2.4)));
+}
+var t=false;
+addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(function(){onScroll();t=false;});}},{passive:true});
+onScroll();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+document.querySelectorAll('[data-plan]').forEach(function(a){a.addEventListener('click',function(){
+  var sel=document.getElementById('sv');for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===a.dataset.plan){sel.selectedIndex=i;break;}}
+});});
+document.getElementById('bform').addEventListener('submit',function(e){
+  e.preventDefault();
+  var nm=document.getElementById('nm').value.trim(),ph=document.getElementById('ph').value.trim(),dt=document.getElementById('dt').value;
+  var c=document.getElementById('confirm');
+  if(!nm||!ph||!dt){c.style.display='block';c.textContent='Kindly provide your name, phone and preferred date.';return;}
+  c.style.display='block';
+  c.innerHTML='With pleasure, '+nm+'. Your request for '+document.getElementById('sv').value.split(' — ')[0]+' on '+dt+' is received. The house will telephone '+ph+' to confirm.';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHROME CUTS — Gen-Z Unisex Salon, Chandigarh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--blk:#0d0d0d;--volt:#d4ff3f;--paper:#f5f5f0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--blk);color:var(--paper);font-family:'Space Mono',monospace;overflow-x:hidden;line-height:1.55}
+h1,h2,h3,.black{font-family:'Archivo Black',sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:-.01em}
+img,svg{max-width:100%;display:block}
+::selection{background:var(--volt);color:var(--blk)}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:clamp(3rem,8vh,5.5rem) clamp(1rem,4vw,2.5rem)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:.7rem clamp(1rem,4vw,2.5rem);background:var(--blk);border-bottom:3px solid var(--volt)}
+nav .logo{font-family:'Archivo Black';font-size:1.15rem;color:var(--volt)}
+.stk-nav{display:flex;gap:.5rem}
+.stk-nav a{text-decoration:none;font-size:.78rem;font-weight:700;background:var(--volt);color:var(--blk);padding:.35rem .8rem;transform:rotate(-2deg);transition:.2s}
+.stk-nav a:nth-child(2){transform:rotate(1.5deg);background:var(--paper)}
+.stk-nav a:hover{transform:rotate(0) scale(1.1)}
+
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:6rem 0 3rem;position:relative;overflow:hidden}
+.hero .giant{font-size:clamp(3.2rem,13vw,11rem);padding:0 clamp(1rem,4vw,2.5rem);position:relative;z-index:2}
+.glitch{position:relative;display:inline-block;color:var(--paper)}
+.glitch:hover::before,.glitch:hover::after{content:attr(data-t);position:absolute;left:0;top:0;width:100%;overflow:hidden}
+.glitch:hover::before{color:var(--volt);transform:translate(-4px,-3px);clip-path:inset(10% 0 55% 0);animation:gl1 .35s steps(2) infinite}
+.glitch:hover::after{color:#ff3f8f;transform:translate(4px,3px);clip-path:inset(60% 0 5% 0);animation:gl2 .3s steps(2) infinite}
+@keyframes gl1{50%{clip-path:inset(40% 0 20% 0);transform:translate(3px,2px)}}
+@keyframes gl2{50%{clip-path:inset(5% 0 70% 0);transform:translate(-3px,-2px)}}
+.hero .giant .volt{color:var(--volt)}
+.hero-sub{padding:1.4rem clamp(1rem,4vw,2.5rem) 0;display:flex;gap:2rem;flex-wrap:wrap;align-items:center;z-index:2;position:relative}
+.hero-sub p{max-width:46ch;font-size:1rem;color:rgba(245,245,240,.75)}
+.btn{font-family:'Archivo Black';text-decoration:none;background:var(--volt);color:var(--blk);padding:1rem 2.2rem;font-size:1rem;display:inline-block;transform:rotate(-1.5deg);transition:.2s;border:3px solid var(--volt)}
+.btn:hover{transform:rotate(0);background:transparent;color:var(--volt)}
+.hero-bg{position:absolute;inset:0;z-index:1;opacity:.5;
+  background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(212,255,63,.05) 3px 4px),
+  radial-gradient(70% 60% at 80% 20%,rgba(212,255,63,.14),transparent 60%)}
+
+/* ticker */
+.ticker{background:var(--volt);color:var(--blk);overflow:hidden;white-space:nowrap;border-top:3px solid var(--blk)}
+.ticker .lane{display:inline-block;padding:.55rem 0;animation:tick 18s linear infinite;font-family:'Archivo Black';font-size:1.1rem}
+.ticker .lane span{margin:0 1.2rem}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* price table — mono */
+h2.sec{font-size:clamp(2.2rem,7vw,4.8rem);margin-bottom:1.8rem}
+h2.sec .v{color:var(--volt)}
+table.price{width:100%;border-collapse:collapse;font-size:clamp(.95rem,2.4vw,1.15rem)}
+table.price th{text-align:left;font-size:.75rem;letter-spacing:.3em;color:var(--volt);padding:.8rem .6rem;border-bottom:3px solid var(--volt)}
+table.price td{padding:1.05rem .6rem;border-bottom:1px dashed rgba(245,245,240,.3);vertical-align:top}
+table.price tr{transition:background .2s}
+table.price tr:hover{background:rgba(212,255,63,.07)}
+table.price td:last-child,table.price th:last-child{text-align:right;white-space:nowrap;color:var(--volt);font-weight:700}
+table.price .note{display:block;font-size:.8rem;color:rgba(245,245,240,.55)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:1rem;margin-top:1rem}
+.gcard{border:3px solid var(--paper);position:relative;overflow:hidden;aspect-ratio:4/5;background:#161616;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s;transform-style:preserve-3d}
+.gcard:hover{border-color:var(--volt)}
+.gcard .art{position:absolute;inset:0;background:var(--g)}
+.gcard .cap{position:absolute;left:0;right:0;bottom:0;background:var(--volt);color:var(--blk);font-weight:700;font-size:.85rem;padding:.5rem .8rem;transform:translateY(100%);transition:transform .3s}
+.gcard:hover .cap{transform:none}
+
+/* booking */
+.book-sec{border-top:3px solid var(--volt)}
+form.book{max-width:680px;display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+form.book input,form.book select{font-family:'Space Mono';font-size:1rem;background:#111;border:2px solid rgba(245,245,240,.35);color:var(--paper);padding:.95rem;width:100%}
+form.book input:focus,form.book select:focus{outline:none;border-color:var(--volt)}
+form.book .full{grid-column:1/-1}
+form.book .btn{border:3px solid var(--volt);cursor:pointer;font-family:'Archivo Black';text-align:center}
+.walkin{margin-top:1.6rem;border:2px dashed var(--volt);padding:1rem 1.3rem;max-width:680px;font-size:.95rem}
+.walkin b{color:var(--volt)}
+.ok{display:none;grid-column:1/-1;background:#14200a;border:2px solid var(--volt);color:var(--volt);padding:1rem;font-weight:700}
+footer{border-top:3px solid var(--volt);padding:1.8rem 1rem;text-align:center;font-size:.85rem;color:rgba(245,245,240,.6);letter-spacing:.1em}
+footer b{color:var(--volt);font-family:'Archivo Black'}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:560px){form.book{grid-template-columns:1fr}.stk-nav a:last-child{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="logo">CHROME_CUTS</span>
+  <div class="stk-nav"><a href="#prices">PRICES</a><a href="#gal">WORK</a><a href="#book">BOOK</a></div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <h1 class="giant rv"><span class="glitch" data-t="WALK IN.">WALK IN.</span><br><span class="volt glitch" data-t="WALK OUT">WALK OUT</span><br><span class="glitch" data-t="DIFFERENT.">DIFFERENT.</span></h1>
+  <div class="hero-sub rv">
+    <p>Gen-Z unisex salon on Elante Mall road. No appointments needed, no aunties judging your undercut. Cuts from ₹399. Loud music, louder hair.</p>
+    <a class="btn" href="#book">BOOK A CHAIR</a>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true"><div class="lane">
+  <span>WALK-INS WELCOME</span>✕<span>CUTS ₹399</span>✕<span>BUZZ CUT ₹249</span>✕<span>COLOR MELT ₹2,999</span>✕<span>OPEN TILL 10 PM</span>✕
+  <span>WALK-INS WELCOME</span>✕<span>CUTS ₹399</span>✕<span>BUZZ CUT ₹249</span>✕<span>COLOR MELT ₹2,999</span>✕<span>OPEN TILL 10 PM</span>✕
+</div></div>
+
+<section class="wrap" id="prices">
+  <h2 class="sec rv">PRICE<span class="v">.LIST</span></h2>
+  <table class="price rv">
+    <thead><tr><th>SERVICE</th><th>TIME</th><th>PRICE</th></tr></thead>
+    <tbody>
+      <tr><td>Signature Cut<span class="note">consult + wash + cut + style</span></td><td>40 min</td><td>₹399</td></tr>
+      <tr><td>Buzz Cut<span class="note">one guard, zero regrets</span></td><td>15 min</td><td>₹249</td></tr>
+      <tr><td>Skin Fade<span class="note">zero to hero gradient</span></td><td>35 min</td><td>₹449</td></tr>
+      <tr><td>Color Melt<span class="note">lived-in balayage blend</span></td><td>2.5 hrs</td><td>₹2,999</td></tr>
+      <tr><td>Vivid Color<span class="note">bleach + fashion shade</span></td><td>3 hrs</td><td>₹3,499</td></tr>
+      <tr><td>Undercut Design<span class="note">lines, zigzags, your call</span></td><td>30 min</td><td>₹599</td></tr>
+      <tr><td>Beard Sculpt<span class="note">shape + razor line-up</span></td><td>25 min</td><td>₹349</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="wrap" id="gal" style="padding-top:0">
+  <h2 class="sec rv">FRESH<span class="v">_CUTS</span></h2>
+  <div class="gal">
+    <div class="gcard rv" data-tilt><div class="art" style="--g:linear-gradient(150deg,#d4ff3f33,#0d0d0d),repeating-linear-gradient(90deg,#1c1c1c 0 18px,#242424 18px 36px)"></div><div class="cap">SKIN FADE · ₹449</div></div>
+    <div class="gcard rv" data-tilt><div class="art" style="--g:radial-gradient(circle at 50% 30%,#d4ff3f55,#0d0d0d 70%)"></div><div class="cap">VOLT HIGHLIGHTS · ₹2,499</div></div>
+    <div class="gcard rv" data-tilt><div class="art" style="--g:linear-gradient(200deg,#2a2a2a,#0d0d0d),repeating-linear-gradient(0deg,transparent 0 22px,#d4ff3f22 22px 24px)"></div><div class="cap">BUZZ + DESIGN · ₹599</div></div>
+    <div class="gcard rv" data-tilt><div class="art" style="--g:conic-gradient(from 200deg,#1a1a1a,#2e2e2e,#1a1a1a)"></div><div class="cap">TEXTURED CROP · ₹399</div></div>
+  </div>
+</section>
+
+<section class="wrap book-sec" id="book">
+  <h2 class="sec rv">GET_A<span class="v">_SEAT</span></h2>
+  <form class="book rv" id="bookForm">
+    <input type="text" placeholder="name" required>
+    <input type="tel" placeholder="phone" pattern="[0-9+ ]{10,15}" required>
+    <select required><option value="">service…</option><option>Cut — ₹399</option><option>Buzz Cut — ₹249</option><option>Skin Fade — ₹449</option><option>Color Melt — ₹2,999</option><option>Undercut Design — ₹599</option></select>
+    <select required><option value="">when…</option><option>Today — walk in</option><option>Tomorrow 12–4</option><option>Tomorrow 4–8</option><option>Weekend</option></select>
+    <button class="btn full" type="submit">LOCK IT IN →</button>
+    <p class="ok" id="bookOk">> seat reserved. screenshot this page &amp; show it at the counter.</p>
+  </form>
+  <div class="walkin rv"><b>WALK-INS:</b> just show up — Elante Mall road, Chandigarh. Average wait 12 minutes. Open till 10 PM, all days.</div>
+</section>
+
+<footer><b>CHROME CUTS</b> · ELANTE MALL ROAD, CHANDIGARH · WALK-INS WELCOME</footer>
+
+<script>
+// reveals
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// tilt on cards (lerped rAF per card)
+document.querySelectorAll('[data-tilt]').forEach(card=>{
+  let rx=0,ry=0,trx=0,try_=0,raf=null;
+  card.addEventListener('pointermove',e=>{
+    const r=card.getBoundingClientRect();
+    trx=((e.clientY-r.top)/r.height-.5)*-14; try_=((e.clientX-r.left)/r.width-.5)*14;
+    if(!raf) spin();
+  });
+  card.addEventListener('pointerleave',()=>{trx=0;try_=0;if(!raf)spin();});
+  function spin(){rx+=(trx-rx)*.18;ry+=(try_-ry)*.18;
+    card.style.transform=`perspective(700px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg)`;
+    if(Math.abs(trx-rx)>.05||Math.abs(try_-ry)>.05){raf=requestAnimationFrame(spin)}else{raf=null;card.style.transform='';}}
+});
+document.getElementById('bookForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('bookOk').style.display='block';});
+</script>
+</body>
+</html>

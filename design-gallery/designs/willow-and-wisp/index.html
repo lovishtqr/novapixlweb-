@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Willow &amp; Wisp — Boutique Blowout Bar | Sector 17, Chandigarh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--mist:#dfe5d8;--pine:#4a5548;--paper:#f4f2ea;--sage:#a3b18a}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Instrument Sans',sans-serif;background:var(--paper);color:var(--pine);overflow-x:hidden}
+h1,h2,h3{font-family:'Lora',serif;font-weight:500}
+img,svg{max-width:100%}
+a{color:inherit}
+/* drifting mist */
+.mist{position:fixed;inset:0;pointer-events:none;z-index:5;
+ background:radial-gradient(ellipse 60% 30% at 20% 30%,rgba(223,229,216,.5),transparent),
+            radial-gradient(ellipse 50% 25% at 80% 70%,rgba(163,177,138,.35),transparent);
+ animation:mistdrift 24s ease-in-out infinite alternate}
+@keyframes mistdrift{from{transform:translateX(-3%)}to{transform:translateX(3%)}}
+/* nav */
+nav{position:sticky;top:0;z-index:60;background:rgba(244,242,234,.88);backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:1rem 1.6rem;flex-wrap:wrap;gap:.6rem;border-bottom:1px solid rgba(74,85,72,.15)}
+.brand{font-family:'Lora';font-size:1.3rem;font-style:italic}
+.brand b{font-style:normal;color:var(--sage)}
+.navlinks{display:flex;gap:1.3rem;flex-wrap:wrap}
+.navlinks a{text-decoration:none;font-size:.88rem;font-weight:500}
+.navlinks a:hover{color:var(--sage)}
+/* floating panels */
+.panel{background:rgba(255,255,255,.72);backdrop-filter:blur(6px);border:1px solid rgba(74,85,72,.14);border-radius:22px;box-shadow:0 18px 50px rgba(74,85,72,.12);animation:floaty 7s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+/* hero */
+.hero{min-height:92vh;display:flex;align-items:center;justify-content:center;padding:3rem 1.4rem;position:relative;z-index:6}
+.hero-panel{max-width:720px;text-align:center;padding:clamp(2.4rem,6vw,4rem) clamp(1.6rem,5vw,3.5rem);animation-delay:.4s}
+.hero-panel .k{font-size:.75rem;letter-spacing:.4em;color:var(--sage);font-weight:600;margin-bottom:1.4rem}
+h1{font-size:clamp(2.7rem,8vw,5.2rem);line-height:1.1}
+h1 em{font-style:italic;color:var(--sage)}
+.hero-panel p{margin-top:1.2rem;font-size:1.1rem;color:#6a7568;max-width:32rem;margin-inline:auto}
+.btn{display:inline-block;margin-top:2rem;background:var(--pine);color:var(--paper);font-size:.95rem;font-weight:600;letter-spacing:.06em;padding:1rem 2.4rem;border-radius:99px;text-decoration:none;border:none;cursor:pointer;transition:background .25s,transform .25s}
+.btn:hover{background:var(--sage);transform:translateY(-3px)}
+/* sections */
+section{padding:clamp(3.5rem,8vw,5.5rem) 1.4rem;position:relative;z-index:6}
+.wrap{max-width:1020px;margin:0 auto}
+.sec-k{font-size:.75rem;letter-spacing:.4em;color:var(--sage);font-weight:600;margin-bottom:.8rem}
+h2{font-size:clamp(2rem,5vw,3.1rem);margin-bottom:1rem}
+.lead{color:#6a7568;max-width:36rem;margin-bottom:2.4rem;font-size:1.05rem}
+/* blowout menu tabs */
+.tabs{display:flex;gap:.7rem;margin-bottom:2rem;flex-wrap:wrap}
+.tab{border:1px solid rgba(74,85,72,.3);background:rgba(255,255,255,.6);border-radius:99px;padding:.65rem 1.5rem;font-family:'Instrument Sans';font-weight:600;font-size:.9rem;cursor:pointer;transition:all .2s;color:var(--pine)}
+.tab.on{background:var(--pine);color:var(--paper);border-color:var(--pine)}
+.menu-panels{position:relative}
+.mpanel{display:none;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.3rem;animation:mistin .7s ease}
+.mpanel.on{display:grid}
+@keyframes mistin{from{opacity:0;filter:blur(6px)}to{opacity:1;filter:blur(0)}}
+.style{background:rgba(255,255,255,.75);border:1px solid rgba(74,85,72,.14);border-radius:18px;padding:1.6rem;transition:transform .25s}
+.style:hover{transform:translateY(-6px)}
+.style h3{font-size:1.3rem;font-style:italic;margin-bottom:.4rem}
+.style p{font-size:.92rem;color:#6a7568}
+.style .pr{font-family:'Lora';font-size:1.5rem;margin-top:.8rem;display:block;color:var(--pine)}
+.style .dur{font-size:.78rem;letter-spacing:.15em;color:var(--sage);font-weight:600}
+/* memberships */
+.mem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem}
+.mem{padding:2.2rem;border-radius:22px;animation-delay:1.2s}
+.mem.hl{background:var(--pine);color:var(--paper)}
+.mem.hl p{color:#c9d2c2}
+.mem h3{font-size:1.5rem;margin-bottom:.5rem}
+.mem p{font-size:.95rem;color:#6a7568;margin-bottom:1.2rem}
+.mem .pr{font-family:'Lora';font-size:2.2rem}
+.mem .per{font-size:.85rem;opacity:.75}
+.mem ul{list-style:none;margin:1.2rem 0;font-size:.92rem;line-height:2}
+.mem ul li::before{content:"— ";color:var(--sage)}
+.mem button{width:100%;border:none;border-radius:99px;padding:.9rem;font-family:'Instrument Sans';font-weight:600;font-size:.95rem;cursor:pointer;background:var(--pine);color:var(--paper)}
+.mem.hl button{background:var(--paper);color:var(--pine)}
+.mem button:hover{opacity:.88}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem}
+.gframe{border-radius:18px;overflow:hidden;aspect-ratio:3/4;background:var(--mist);display:flex;align-items:center;justify-content:center;animation-delay:2s}
+.gframe svg{width:65%}
+.gframe figcaption{position:absolute}
+/* booking */
+.book-panel{max-width:640px;margin:0 auto;padding:clamp(2rem,6vw,3.2rem);animation-delay:.8s}
+label{display:block;font-size:.78rem;letter-spacing:.25em;font-weight:600;color:var(--sage);margin:1.1rem 0 .4rem}
+input,select{width:100%;background:rgba(255,255,255,.8);border:1px solid rgba(74,85,72,.25);border-radius:12px;padding:.9rem;font-family:'Instrument Sans';font-size:1rem;color:var(--pine)}
+input:focus,select:focus{outline:2px solid var(--sage)}
+#ok{display:none;margin-top:1.2rem;background:rgba(163,177,138,.25);border:1px solid var(--sage);border-radius:12px;padding:1.1rem;font-size:.95rem}
+footer{padding:2.2rem 1.4rem;text-align:center;color:#8a9484;font-size:.9rem;position:relative;z-index:6}
+footer b{font-family:'Lora';font-style:italic;color:var(--pine);font-size:1.1rem}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.panel,.mist{animation:none}}
+</style>
+</head>
+<body>
+<div class="mist" aria-hidden="true"></div>
+<nav>
+  <div class="brand">Willow <b>&amp;</b> Wisp</div>
+  <div class="navlinks"><a href="#menu">Blowouts</a><a href="#members">Memberships</a><a href="#gallery">Gallery</a><a href="#book">Book</a></div>
+</nav>
+
+<header class="hero">
+  <div class="panel hero-panel">
+    <p class="k">BOUTIQUE BLOWOUT BAR · SECTOR 17</p>
+    <h1>Hair, <em>lighter than air.</em></h1>
+    <p>Willow &amp; Wisp is Chandigarh's blowout bar — signature blowout ₹899, mist-soft finishes, and parties where everyone leaves floating. No cuts, no color. Just perfect hair days.</p>
+    <a class="btn" href="#book">BOOK A BLOWOUT</a>
+  </div>
+</header>
+
+<section id="menu">
+  <div class="wrap">
+    <p class="sec-k reveal">01 — THE MENU</p>
+    <h2 class="reveal">Blowouts, by Mood</h2>
+    <p class="lead reveal">Every blowout includes a botanical rinse and a silk-finish serum. Pick your mood — we handle the weather.</p>
+    <div class="tabs reveal">
+      <button class="tab on" data-t="everyday">Everyday</button>
+      <button class="tab" data-t="evening">Evening</button>
+      <button class="tab" data-t="bridal">Bridal Party</button>
+    </div>
+    <div class="menu-panels reveal">
+      <div class="mpanel on" id="t-everyday">
+        <div class="style"><span class="dur">45 MIN</span><h3>The Signature</h3><p>Smooth, bouncy, camera-ready. Our most-loved blowout.</p><span class="pr">₹899</span></div>
+        <div class="style"><span class="dur">30 MIN</span><h3>The Quick Wisp</h3><p>Refresh and re-style, day-two hair made new again.</p><span class="pr">₹599</span></div>
+        <div class="style"><span class="dur">50 MIN</span><h3>The Willow Wave</h3><p>Soft, loose waves with movement that lasts two days.</p><span class="pr">₹1,099</span></div>
+      </div>
+      <div class="mpanel" id="t-evening">
+        <div class="style"><span class="dur">60 MIN</span><h3>The Gala</h3><p>High-shine, sculpted volume. Red-carpet energy.</p><span class="pr">₹1,499</span></div>
+        <div class="style"><span class="dur">60 MIN</span><h3>The Velvet Updo</h3><p>Pinned, polished, photograph-proof all night.</p><span class="pr">₹1,799</span></div>
+      </div>
+      <div class="mpanel" id="t-bridal">
+        <div class="style"><span class="dur">HALF DAY</span><h3>Bar Party — 4 guests</h3><p>Blowouts for the bride + 3, with sparkling refreshments.</p><span class="pr">₹4,999</span></div>
+        <div class="style"><span class="dur">FULL DAY</span><h3>Bar Party — 8 guests</h3><p>The full bridal morning: blowouts, updos, and calm.</p><span class="pr">₹8,999</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="members" style="padding-top:0">
+  <div class="wrap">
+    <p class="sec-k reveal">02 — MEMBERSHIPS</p>
+    <h2 class="reveal">Never a Bad Hair Day</h2>
+    <p class="lead reveal">Monthly plans for the blowout-obsessed. Pause anytime.</p>
+    <div class="mem-grid">
+      <div class="panel mem reveal"><h3>Wisp</h3><p>For the occasional perfect-hair day.</p><span class="pr">₹1,599</span> <span class="per">/ month</span><ul><li>2 signature blowouts</li><li>Priority booking</li><li>10% off products</li></ul><button data-m="Wisp — ₹1,599/mo">CHOOSE WISP</button></div>
+      <div class="panel mem hl reveal"><h3>Willow</h3><p>For the weekly ritual.</p><span class="pr">₹2,999</span> <span class="per">/ month</span><ul><li>4 signature blowouts</li><li>Same-day booking</li><li>Free bar parties (2/yr)</li><li>15% off products</li></ul><button data-m="Willow — ₹2,999/mo">CHOOSE WILLOW</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <p class="sec-k reveal">03 — GALLERY</p>
+    <h2 class="reveal">Fresh from the Bar</h2>
+    <div class="gal">
+      <div class="panel gframe reveal"><svg viewBox="0 0 100 120"><circle cx="50" cy="40" r="24" fill="none" stroke="#4a5548" stroke-width="2"/><path d="M26 40 Q50 16 74 40 Q74 90 60 110 Q50 100 40 110 Q26 90 26 40" fill="none" stroke="#a3b18a" stroke-width="2"/></svg></div>
+      <div class="panel gframe reveal"><svg viewBox="0 0 100 120"><circle cx="50" cy="40" r="24" fill="none" stroke="#4a5548" stroke-width="2"/><path d="M30 30 Q50 50 70 30 M30 50 Q50 70 70 50" fill="none" stroke="#a3b18a" stroke-width="2"/></svg></div>
+      <div class="panel gframe reveal"><svg viewBox="0 0 100 120"><circle cx="50" cy="40" r="24" fill="none" stroke="#4a5548" stroke-width="2"/><path d="M50 16 L50 110 M30 60 L70 60" stroke="#a3b18a" stroke-width="1.5" opacity=".7"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<section id="book" style="padding-top:0">
+  <div class="wrap">
+    <p class="sec-k reveal" style="text-align:center">04 — FLOAT IN</p>
+    <h2 class="reveal" style="text-align:center">Book Your Blowout</h2>
+    <div class="panel book-panel reveal">
+      <form id="bf">
+        <label for="bn">NAME</label><input id="bn" required placeholder="Your name">
+        <label for="bp">PHONE</label><input id="bp" required inputmode="tel" placeholder="98XXX XXXXX">
+        <label for="bs">STYLE</label>
+        <select id="bs"><option>The Signature — ₹899</option><option>The Quick Wisp — ₹599</option><option>The Willow Wave — ₹1,099</option><option>The Gala — ₹1,499</option><option>Bar Party (4) — ₹4,999</option></select>
+        <label for="bd">DATE</label><input id="bd" type="date" required>
+        <div style="text-align:center;margin-top:1.6rem"><button class="btn" type="submit">RESERVE MY CHAIR</button></div>
+        <div id="ok"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><b>Willow &amp; Wisp</b></p>
+  <p style="margin-top:.4rem">SCO 301, Sector 17-E, Chandigarh · Tue–Sun, 10 AM–8 PM</p>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));t.classList.add('on');
+  document.querySelectorAll('.mpanel').forEach(p=>p.classList.remove('on'));
+  document.getElementById('t-'+t.dataset.t).classList.add('on');
+}));
+document.querySelectorAll('.mem button').forEach(b=>b.addEventListener('click',()=>{
+  const s=document.getElementById('bs');
+  const opt=document.createElement('option');opt.textContent="Membership: "+b.dataset.m;opt.selected=true;s.appendChild(opt);
+  document.getElementById('book').scrollIntoView({behavior:'smooth'});
+}));
+document.getElementById('bf').addEventListener('submit',e=>{
+  e.preventDefault();
+  const ok=document.getElementById('ok');ok.style.display='block';
+  ok.textContent="Floating confirmed, "+document.getElementById('bn').value.split(' ')[0]+". "+document.getElementById('bs').value+" on "+document.getElementById('bd').value+". We will text "+document.getElementById('bp').value+" to confirm.";
+});
+</script>
+</body>
+</html>
