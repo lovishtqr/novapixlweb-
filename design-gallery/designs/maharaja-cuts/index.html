@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maharaja Cuts — groomed like royalty · Patiala</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ewert&family=Raleway:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--maroon:#5e1f27;--maroon-deep:#3d141b;--gold:#d4a24e;--gold-soft:#e8c88a;--cream:#f2e8d5;--ink:#241418}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'Raleway',sans-serif;overflow-x:hidden}
+h1,h2,.display{font-family:'Ewert',cursive;font-weight:400}
+section{padding:92px 22px;max-width:1060px;margin:0 auto;position:relative}
+.eyebrow{font-size:12px;letter-spacing:.42em;text-transform:uppercase;font-weight:700;color:#9a6b28}
+
+/* palace arch masks */
+.arch{border-radius:200px 200px 8px 8px;overflow:hidden;border:6px solid var(--gold);
+  box-shadow:0 24px 60px rgba(94,31,39,.3)}
+
+/* hero */
+.hero{background:linear-gradient(180deg,var(--maroon-deep),var(--maroon));color:var(--cream);text-align:center;
+  padding:60px 22px 100px;position:relative;overflow:hidden}
+.hero .arch{width:min(340px,72vw);aspect-ratio:3/4;margin:34px auto 0;position:relative;z-index:2}
+.arch-inner{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 50% 30%,#7a2b35,#3d141b);color:var(--gold-soft);padding:20px;text-align:center}
+.hero h1{font-size:clamp(58px,12vw,118px);line-height:1.05;color:var(--gold-soft);position:relative;z-index:2;
+  text-shadow:0 4px 0 rgba(0,0,0,.4);margin-top:30px}
+.hero .sub{max-width:560px;margin:20px auto 0;font-size:16.5px;line-height:1.75;color:#e5d3b5;position:relative;z-index:2}
+.crown{width:120px;margin:0 auto;display:block;position:relative;z-index:2}
+.btn{display:inline-block;background:var(--gold);color:var(--maroon-deep);font-weight:700;padding:15px 44px;
+  text-decoration:none;font-size:16px;letter-spacing:.06em;border:2px solid var(--gold);margin-top:30px;
+  transition:transform .2s,background .2s,color .2s;cursor:pointer;position:relative;z-index:2}
+.btn:hover{transform:translateY(-3px);background:transparent;color:var(--gold)}
+.btn.dark{background:var(--maroon);border-color:var(--maroon);color:var(--cream)}
+.btn.dark:hover{background:transparent;color:var(--maroon)}
+
+/* filigree draw-on */
+.filigree{width:100%;max-width:640px;margin:26px auto;display:block}
+.filigree path{stroke:var(--gold);stroke-width:2.5;fill:none;stroke-dasharray:900;stroke-dashoffset:900;
+  transition:stroke-dashoffset 2.2s ease}
+.in .filigree path{stroke-dashoffset:0}
+.on-dark .filigree path{stroke:var(--gold-soft)}
+
+/* rituals */
+.rituals{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;margin-top:40px}
+.ritual{border:2px solid var(--gold);border-radius:160px 160px 10px 10px;padding:44px 26px 34px;text-align:center;
+  background:#faf3e2;position:relative;opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.ritual.in{opacity:1;transform:none}
+.ritual h3{font-size:34px;color:var(--maroon);margin:12px 0 8px;line-height:1.15}
+.ritual p{font-size:14.5px;line-height:1.7;color:#4a3a32}
+.ritual .no{font-family:'Ewert';font-size:26px;color:#9a6b28}
+
+/* durbar prices */
+.durbar{background:linear-gradient(180deg,var(--maroon),var(--maroon-deep));border-radius:14px;color:var(--cream);
+  padding:60px 40px;margin-top:40px;border:3px solid var(--gold);position:relative}
+.durbar h2{color:var(--gold-soft)}
+.durbar .row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:18px 4px;
+  border-bottom:1px solid rgba(212,162,78,.35)}
+.durbar .row:last-child{border:none}
+.durbar .nm{font-weight:700;font-size:17px}
+.durbar .ds{font-size:13.5px;color:#cdb691;font-style:italic}
+.durbar .pr{font-family:'Ewert';font-size:30px;color:var(--gold);white-space:nowrap}
+
+/* gallery arches */
+.arches{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px;margin-top:40px}
+.arches .arch{aspect-ratio:3/4;border-width:5px;transition:transform .3s}
+.arches .arch:hover{transform:translateY(-8px)}
+.arches .arch div{width:100%;height:100%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:22px;
+  color:var(--cream)}
+.arches .display{font-size:30px;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+
+/* booking */
+.book{background:#faf3e2;border:2px solid var(--gold);border-radius:12px;padding:50px 38px;max-width:620px;margin:40px auto 0;text-align:center}
+.book label{display:block;text-align:left;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#9a6b28;margin:18px 0 6px;font-weight:700}
+.book select,.book input{width:100%;background:#fff;border:1.5px solid var(--gold);color:var(--ink);
+  padding:13px 14px;font-family:'Raleway';font-size:15px;border-radius:4px}
+#bookMsg{margin-top:18px;font-family:'Ewert';font-size:30px;color:var(--maroon);min-height:42px}
+
+h2.sec{font-size:clamp(46px,8.5vw,74px);text-align:center;color:var(--maroon);margin:12px 0 6px;line-height:1.1}
+p.lead{text-align:center;max-width:620px;margin:0 auto 8px;font-size:16px;line-height:1.7;color:#5a4638}
+footer{background:var(--maroon-deep);color:#cdb691;text-align:center;padding:42px 20px;font-size:13px;line-height:2}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:560px){.durbar{padding:40px 22px}section{padding:70px 16px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="crown" viewBox="0 0 120 70" aria-hidden="true">
+    <path d="M10 58 L18 20 L38 40 L60 12 L82 40 L102 20 L110 58 Z" fill="none" stroke="#d4a24e" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="18" cy="20" r="6" fill="#d4a24e"/><circle cx="60" cy="12" r="7" fill="#d4a24e"/><circle cx="102" cy="20" r="6" fill="#d4a24e"/>
+    <rect x="10" y="58" width="100" height="8" fill="#d4a24e"/>
+  </svg>
+  <p class="eyebrow" style="color:var(--gold-soft)">Maharaja Cuts · Patiala</p>
+  <h1>Groomed like<br>royalty.</h1>
+  <div class="arch">
+    <div class="arch-inner">
+      <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="34" r="16" fill="none" stroke="#d4a24e" stroke-width="3"/><path d="M24 62 q16 -12 32 0" fill="none" stroke="#d4a24e" stroke-width="3"/><path d="M40 18 v-8 M28 24 l-6 -6 M52 24 l6 -6" stroke="#d4a24e" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <p class="display" style="font-size:28px;margin-top:10px">The Royal<br>Shave ₹899</p>
+    </div>
+  </div>
+  <p class="sub">In the city of kings, a barbershop should feel like a durbar. Velvet chairs, brass basins, attar in the air — and a shave fit for the Patiala you carry in your name.</p>
+  <a class="btn" href="#booking">Request an audience</a>
+</header>
+
+<section class="reveal on-dark" id="rituals" style="max-width:1060px">
+  <p class="eyebrow" style="text-align:center">Royal rituals</p>
+  <h2 class="sec">Three ceremonies of the chair</h2>
+  <svg class="filigree" viewBox="0 0 640 60" aria-hidden="true">
+    <path d="M10 30 C120 5 200 55 320 30 C440 5 520 55 630 30"/>
+    <path d="M320 8 c-8 8 -8 36 0 44 c8 -8 8 -36 0 -44 Z"/>
+    <path d="M150 30 c-6 6 -6 20 0 26 c6 -6 6 -20 0 -26 Z M490 30 c-6 6 -6 20 0 26 c6 -6 6 -20 0 -26 Z"/>
+  </svg>
+  <p class="lead">Each ritual begins with a warm towel and ends with attar on the wrist. That is non-negotiable.</p>
+  <div class="rituals">
+    <div class="ritual"><div class="no">I.</div><h3>The Durbar Cut</h3><p>Consultation like a courtier's counsel, precision scissor work, hot-lather finish on neck and sideburns, styling with house pomade.</p><p class="display" style="font-size:28px;color:var(--maroon);margin-top:10px">₹699</p></div>
+    <div class="ritual"><div class="no">II.</div><h3>The Royal Shave</h3><p>Three hot towels, sandalwood pre-shave, straight-razor passes with the grain and against, rosewater cold towel, attar seal.</p><p class="display" style="font-size:28px;color:var(--maroon);margin-top:10px">₹899</p></div>
+    <div class="ritual"><div class="no">III.</div><h3>The Coronation</h3><p>Cut, shave, royal head massage with warm almond oil, and a shoe polish while the attar settles. Ninety minutes of reign.</p><p class="display" style="font-size:28px;color:var(--maroon);margin-top:10px">₹1,499</p></div>
+  </div>
+</section>
+
+<section class="reveal" id="durbar" style="max-width:1060px">
+  <div class="durbar">
+    <p class="eyebrow" style="color:var(--gold-soft);text-align:center">Durbar prices</p>
+    <h2 class="sec" style="font-size:clamp(44px,8vw,68px)">The royal tariff</h2>
+    <svg class="filigree" viewBox="0 0 640 60" aria-hidden="true">
+      <path d="M10 30 C120 5 200 55 320 30 C440 5 520 55 630 30"/>
+      <path d="M320 8 c-8 8 -8 36 0 44 c8 -8 8 -36 0 -44 Z"/>
+    </svg>
+    <div class="row"><div><div class="nm">Durbar Cut</div><div class="ds">consultation, scissor cut, hot-lather finish</div></div><div class="pr">₹699</div></div>
+    <div class="row"><div><div class="nm">Royal Shave</div><div class="ds">three towels, straight razor, attar seal</div></div><div class="pr">₹899</div></div>
+    <div class="row"><div><div class="nm">Coronation</div><div class="ds">cut + shave + royal head massage, 90 min</div></div><div class="pr">₹1,499</div></div>
+    <div class="row"><div><div class="nm">Prince's Beard</div><div class="ds">sculpt, line-up, cedar attar oil</div></div><div class="pr">₹499</div></div>
+    <div class="row"><div><div class="nm">Young Nawab (under 12)</div><div class="ds">patient cut, sweet lassi on the house</div></div><div class="pr">₹349</div></div>
+  </div>
+</section>
+
+<section class="reveal" id="gallery" style="max-width:1060px">
+  <p class="eyebrow" style="text-align:center">The gallery</p>
+  <h2 class="sec">Portraits from the durbar</h2>
+  <p class="lead">Framed in arches, as befits the subject.</p>
+  <div class="arches">
+    <div class="arch"><div style="background:linear-gradient(180deg,rgba(61,20,27,.1),rgba(61,20,27,.85)),linear-gradient(135deg,#7a2b35,#3d141b)"><span class="display">The Durbar Cut</span></div></div>
+    <div class="arch"><div style="background:linear-gradient(180deg,rgba(61,20,27,.1),rgba(61,20,27,.85)),linear-gradient(135deg,#9a6b28,#5e3f14)"><span class="display">The Royal Shave</span></div></div>
+    <div class="arch"><div style="background:linear-gradient(180deg,rgba(61,20,27,.1),rgba(61,20,27,.85)),linear-gradient(135deg,#5e1f27,#241418)"><span class="display">The Coronation</span></div></div>
+    <div class="arch"><div style="background:linear-gradient(180deg,rgba(61,20,27,.1),rgba(61,20,27,.85)),linear-gradient(135deg,#8a5a2b,#3d2a12)"><span class="display">Prince's Beard</span></div></div>
+  </div>
+</section>
+
+<section class="reveal" id="booking" style="max-width:1060px">
+  <p class="eyebrow" style="text-align:center">Booking</p>
+  <h2 class="sec">Request an audience</h2>
+  <p class="lead">Leela Bhawan Chowk, Patiala · Tue–Sun 10 AM – 8 PM · +91 175 123 4567</p>
+  <div class="book">
+    <label for="mname">Your good name</label><input id="mname" type="text" placeholder="e.g. Yuvraj Singh" maxlength="40">
+    <label for="mritual">Ritual</label>
+    <select id="mritual"><option>The Durbar Cut — ₹699</option><option>The Royal Shave — ₹899</option><option>The Coronation — ₹1,499</option><option>Prince's Beard — ₹499</option></select>
+    <label for="mday">Day of audience</label>
+    <select id="mday"><option>Tomorrow</option><option>Day after</option><option>Saturday</option><option>Sunday</option></select>
+    <button class="btn dark" style="width:100%" onclick="aud()">Send the request</button>
+    <div id="bookMsg" aria-live="polite"></div>
+  </div>
+</section>
+
+<footer>Maharaja Cuts · Leela Bhawan, Patiala · "Groomed like royalty" since 2009<br>Walk-ins accepted; appointments reign supreme.</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal,.ritual').forEach(el=>io.observe(el));
+function aud(){
+  const n=document.getElementById('mname').value.trim()||'Your Highness';
+  document.getElementById('bookMsg').textContent='The durbar awaits, '+n+'. We shall confirm shortly.';
+}
+</script>
+</body>
+</html>

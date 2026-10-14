@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Grind — Coffee Roasters, Sector 35 Chandigarh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Catamaran:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bean:#2b1d16;--caramel:#c68b4e;--crema:#f5ead9;--night:#120d08}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--crema);color:var(--bean);font-family:'Catamaran',sans-serif;overflow-x:hidden;line-height:1.65}
+h1,h2,h3,.lg{font-family:'Luckiest Guy',serif;font-weight:400;letter-spacing:.02em}
+img,svg{max-width:100%}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.on{opacity:1;transform:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(18,13,8,.97)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.logo{font-family:'Luckiest Guy';color:var(--crema);text-decoration:none;font-size:1.25rem}
+.logo b{color:var(--caramel);font-weight:400}
+nav a.cta{background:var(--caramel);color:var(--night);text-decoration:none;font-weight:800;padding:10px 22px;border-radius:999px;font-size:.85rem}
+nav a.cta:hover{background:var(--crema)}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;background:radial-gradient(ellipse 80% 60% at 50% 0%,#3a2718,var(--night) 70%);color:var(--crema);position:relative;overflow:hidden}
+#grind{position:absolute;inset:0;pointer-events:none}
+.hero .wrap{position:relative;z-index:2;text-align:center}
+.batch{display:inline-block;border:2px dashed var(--caramel);color:var(--caramel);font-weight:800;font-size:.78rem;letter-spacing:.24em;padding:8px 20px;border-radius:6px;text-transform:uppercase}
+h1{font-size:clamp(2.8rem,10vw,6rem);line-height:1.05;margin:18px 0;color:var(--crema)}
+h1 .c{color:var(--caramel)}
+.hero p.lead{max-width:580px;margin:0 auto;color:#d9c3a3;font-size:1.06rem}
+.btn{display:inline-block;background:var(--caramel);color:var(--night);text-decoration:none;font-weight:800;padding:15px 36px;border-radius:999px;margin-top:26px}
+.btn:hover{background:var(--crema)}
+.btn.ghost{background:transparent;color:var(--crema);border:2px solid var(--caramel);margin-left:12px}
+.btn.ghost:hover{background:var(--caramel);color:var(--night)}
+.roast-stats{display:flex;gap:12px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+.rs{background:rgba(245,234,217,.07);border:1px solid rgba(198,139,78,.5);border-radius:12px;padding:14px 24px}
+.rs strong{font-family:'Luckiest Guy';font-size:1.5rem;color:var(--caramel);display:block}
+.rs span{font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:#c9a97e}
+/* roast dial */
+.dial-wrap{display:flex;justify-content:center;margin-top:44px}
+.dial{width:min(72vw,300px)}
+/* beans origins */
+section{padding:88px 0}
+.sec-k{font-weight:800;font-size:.78rem;letter-spacing:.26em;color:var(--caramel);text-transform:uppercase}
+h2{font-size:clamp(1.9rem,5vw,2.9rem);margin:10px 0 12px}
+.sub{color:#6d5a42;max-width:620px;margin-bottom:30px}
+.origins{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.origin{background:#fffdf6;border-radius:16px;padding:26px;border:1px solid #e3d0b0;position:relative;overflow:hidden}
+.origin .flag{font-size:.7rem;font-weight:800;letter-spacing:.18em;color:var(--caramel);text-transform:uppercase}
+.origin h3{font-size:1.6rem;margin:8px 0}
+.origin .notes{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.note{background:var(--crema);border:1px solid var(--caramel);color:var(--bean);font-size:.78rem;font-weight:600;padding:5px 12px;border-radius:999px}
+.origin p{font-size:.9rem;color:#6d5a42}
+.origin .roast{margin-top:12px;font-weight:800;font-size:.85rem;color:var(--bean)}
+.origin .roast b{color:var(--caramel)}
+/* roast curve chart */
+.chartbox{background:#fffdf6;border-radius:16px;border:1px solid #e3d0b0;padding:24px;margin-top:22px}
+.chartbox svg{width:100%;height:auto;display:block}
+/* brew bar */
+.brew{background:var(--bean);color:var(--crema)}
+.brew h2{color:var(--crema)}
+.brew .sub{color:#c9a97e}
+.brews{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.b{background:rgba(245,234,217,.05);border:1px solid rgba(198,139,78,.45);border-radius:14px;padding:24px;transition:transform .25s}
+.b:hover{transform:translateY(-5px)}
+.b .m{font-size:.7rem;font-weight:800;letter-spacing:.18em;color:var(--caramel);text-transform:uppercase}
+.b h3{font-size:1.4rem;margin:8px 0}
+.b p{font-size:.9rem;color:#d9c3a3}
+.b .row{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.b .price{font-family:'Luckiest Guy';font-size:1.5rem;color:var(--caramel)}
+.b .grind{font-size:.78rem;color:#c9a97e}
+/* subscriptions */
+.subs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.sub-card{background:#fffdf6;border:2px solid var(--bean);border-radius:16px;padding:28px;position:relative}
+.sub-card.hot{border-color:var(--caramel);box-shadow:0 12px 32px rgba(198,139,78,.25)}
+.sub-card .flag{position:absolute;top:-13px;left:20px;background:var(--caramel);color:var(--night);font-size:.7rem;font-weight:800;letter-spacing:.12em;padding:5px 14px;border-radius:999px;text-transform:uppercase}
+.sub-card h3{font-size:1.4rem;margin-bottom:6px}
+.sub-card .price{font-family:'Luckiest Guy';font-size:2rem;color:var(--bean);margin:8px 0}
+.sub-card .price small{font-size:.9rem;font-family:'Catamaran';color:#6d5a42}
+.sub-card ul{list-style:none;margin:14px 0 20px}
+.sub-card li{padding:6px 0;font-size:.9rem;color:#5c4a33;border-bottom:1px dashed #e3d0b0}
+.sub-card li::before{content:"» ";color:var(--caramel)}
+/* visit */
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px}
+.vcard{background:#fffdf6;border:1px solid #e3d0b0;border-radius:14px;padding:24px}
+.vcard h3{font-family:'Luckiest Guy';color:var(--caramel);font-size:1.25rem;margin-bottom:8px}
+.vcard p{font-size:.92rem;color:#5c4a33}
+/* subscribe form */
+form{display:grid;gap:12px;max-width:540px;margin-top:26px}
+label{font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:#6d5a42}
+input,select{background:#fff;border:2px solid #d9c09a;padding:12px;font-family:'Catamaran';font-size:1rem;width:100%;border-radius:10px;color:var(--bean)}
+input:focus,select:focus{outline:none;border-color:var(--caramel)}
+#ok{display:none;background:#eef6df;border:2px solid #5c8a3a;padding:16px;border-radius:10px;font-weight:600}
+footer{background:var(--night);color:#a98f63;padding:24px 0;font-size:.84rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Daily<b>Grind</b></a>
+    <a class="cta" href="#subs">Subscribe</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="grind"></canvas>
+  <div class="wrap">
+    <span class="batch rv on">Batch #214 · Roasted 13 Oct</span>
+    <h1 class="rv on">ROASTED HERE.<br><span class="c">POURED SLOW.</span></h1>
+    <p class="lead rv on">Daily Grind is Sector 35's working roastery — a 5 kg roaster behind glass, single-origin Indian beans, and a brew bar that treats pour-over like a ritual. Roast date printed on every bag. No exceptions.</p>
+    <div class="rv on">
+      <a class="btn" href="#brew">Brew Bar Menu</a>
+      <a class="btn ghost" href="#beans">The Beans</a>
+    </div>
+    <div class="dial-wrap rv on">
+      <svg class="dial" id="roastDial" viewBox="0 0 200 200" aria-label="Roast level dial">
+        <circle cx="100" cy="100" r="88" fill="none" stroke="#3a2718" stroke-width="14"/>
+        <path d="M100,100 L100,30" stroke="#c68b4e" stroke-width="6" stroke-linecap="round" id="dialNeedle" transform="rotate(0 100 100)"/>
+        <circle cx="100" cy="100" r="12" fill="#c68b4e"/>
+        <text x="100" y="180" text-anchor="middle" fill="#c68b4e" font-family="Luckiest Guy" font-size="15" id="dialLabel">MEDIUM</text>
+        <text x="34" y="105" fill="#6d5a42" font-size="10" font-family="Catamaran" font-weight="700">LIGHT</text>
+        <text x="150" y="105" fill="#6d5a42" font-size="10" font-family="Catamaran" font-weight="700">DARK</text>
+      </svg>
+    </div>
+    <div class="roast-stats rv on">
+      <div class="rs"><strong>5 kg</strong><span>Roaster capacity</span></div>
+      <div class="rs"><strong>12</strong><span>Indian estates</span></div>
+      <div class="rs"><strong>₹220</strong><span>Pour-over</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="beans">
+  <div class="wrap">
+    <div class="sec-k rv">The Beans</div>
+    <h2 class="rv">Single-origin, traceable.</h2>
+    <p class="sub rv">Every lot lists the estate, altitude and roast date. Ask the barista to show you the roast log — it's on the wall.</p>
+    <div class="origins">
+      <div class="origin rv"><div class="flag">Karnataka · 1,200 m</div><h3>Coorg Highlands</h3><div class="notes"><span class="note">Dark chocolate</span><span class="note">Jaggery</span><span class="note">Low acid</span></div><p>Our house espresso. Washed process from the Pollibetta estate, roasted medium-dark for syrupy shots.</p><div class="roast">Roast: <b>Medium-Dark</b> · Bag ₹520 / 250g</div></div>
+      <div class="origin rv"><div class="flag">Tamil Nadu · 1,400 m</div><h3>Yercaud Peaberry</h3><div class="notes"><span class="note">Citrus</span><span class="note">Honey</span><span class="note">Bright</span></div><p>The pour-over star. Honey-processed peaberry that sings at a light-medium roast.</p><div class="roast">Roast: <b>Light-Medium</b> · Bag ₹580 / 250g</div></div>
+      <div class="origin rv"><div class="flag">Andhra · 1,100 m</div><h3>Araku Valley</h3><div class="notes"><span class="note">Cocoa</span><span class="note">Spice</span><span class="note">Full body</span></div><p>Tribal-cooperative grown, our darkest roast — built for milk drinks and moka pots.</p><div class="roast">Roast: <b>Dark</b> · Bag ₹540 / 250g</div></div>
+    </div>
+    <div class="chartbox rv">
+      <div class="sec-k" style="margin-bottom:10px">Roast profile — Coorg Highlands, Batch #214</div>
+      <svg viewBox="0 0 900 260" aria-label="Roast temperature curve">
+        <line x1="60" y1="230" x2="880" y2="230" stroke="#d9c09a" stroke-width="2"/>
+        <line x1="60" y1="230" x2="60" y2="20" stroke="#d9c09a" stroke-width="2"/>
+        <path id="roastCurve" d="M60,210 C200,190 320,150 460,110 C600,70 740,55 870,50" fill="none" stroke="#c68b4e" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="460" cy="110" r="8" fill="#2b1d16"/><text x="478" y="100" fill="#2b1d16" font-size="14" font-weight="700">First crack · 9:42</text>
+        <circle cx="870" cy="50" r="8" fill="#c68b4e"/><text x="700" y="40" fill="#2b1d16" font-size="14" font-weight="700">Drop · 204°C · 12:10</text>
+        <text x="60" y="250" fill="#6d5a42" font-size="12">0:00</text><text x="440" y="250" fill="#6d5a42" font-size="12">6:00</text><text x="830" y="250" fill="#6d5a42" font-size="12">12:00</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="brew" id="brew">
+  <div class="wrap">
+    <div class="sec-k rv" style="color:var(--caramel)">Brew Bar</div>
+    <h2 class="rv">Pick your method.</h2>
+    <p class="sub rv">Every brew lists its grind size — because grind is half the recipe.</p>
+    <div class="brews">
+      <div class="b rv"><div class="m">Pour Over · V60</div><h3>Coorg Pour-Over</h3><p>3:30 drawdown, 92°C, 1:16 ratio. The cleanest cup in the house.</p><div class="row"><span class="price">₹220</span><span class="grind">Grind: medium-fine</span></div></div>
+      <div class="b rv"><div class="m">Espresso</div><h3>Cortado</h3><p>Double ristretto with steamed milk. 120 ml of intent.</p><div class="row"><span class="price">₹200</span><span class="grind">Grind: fine</span></div></div>
+      <div class="b rv"><div class="m">Immersion</div><h3>French Press</h3><p>Yercaud peaberry, 4-minute steep. Heavy, honeyed, honest.</p><div class="row"><span class="price">₹240</span><span class="grind">Grind: coarse</span></div></div>
+      <div class="b rv"><div class="m">Stovetop</div><h3>Moka Pot</h3><p>Araku Valley dark roast, old-school pressure brew.</p><div class="row"><span class="price">₹200</span><span class="grind">Grind: fine-medium</span></div></div>
+      <div class="b rv"><div class="m">Slow</div><h3>Cold Brew</h3><p>18-hour steep, served over one big cube. Summer's answer.</p><div class="row"><span class="price">₹250</span><span class="grind">Grind: extra-coarse</span></div></div>
+      <div class="b rv"><div class="m">Milk</div><h3>Filter Kaapi</h3><p>South Indian filter coffee with frothed milk and jaggery option.</p><div class="row"><span class="price">₹160</span><span class="grind">Grind: medium</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="subs">
+  <div class="wrap">
+    <div class="sec-k rv">Subscriptions</div>
+    <h2 class="rv">Never run dry.</h2>
+    <p class="sub rv">Fresh-roasted beans at your door every fortnight, roast date on the bag. Pause anytime.</p>
+    <div class="subs">
+      <div class="sub-card rv"><h3>Taster</h3><div class="price">₹499<small> /fortnight</small></div><ul><li>250g rotating single-origin</li><li>Roast date on every bag</li><li>Brew guide card</li></ul><a class="btn" href="#subform">Start Taster</a></div>
+      <div class="sub-card hot rv"><div class="flag">Most Loved</div><h3>Daily Drinker</h3><div class="price">₹899<small> /fortnight</small></div><ul><li>500g — your chosen estate</li><li>Free grind to your brewer</li><li>Early access to micro-lots</li></ul><a class="btn" href="#subform">Start Daily Drinker</a></div>
+      <div class="sub-card rv"><h3>Roaster's Table</h3><div class="price">₹1,499<small> /fortnight</small></div><ul><li>750g across 3 origins</li><li>Monthly cupping invite</li><li>Vote on next estate</li></ul><a class="btn" href="#subform">Start Roaster's Table</a></div>
+    </div>
+    <form class="rv" id="subform">
+      <div><label for="sname">Name</label><input id="sname" required placeholder="Riya Malhotra"></div>
+      <div><label for="sphone">Phone</label><input id="sphone" required pattern="[0-9+ ]{10,15}" placeholder="98XXX XXXXX"></div>
+      <div><label for="splan">Plan</label><select id="splan"><option>Taster — ₹499/fortnight</option><option>Daily Drinker — ₹899/fortnight</option><option>Roaster's Table — ₹1,499/fortnight</option></select></div>
+      <button class="btn" type="submit" style="border:none;cursor:pointer">Start Subscription</button>
+      <div id="ok">You're on the roast list. First bag ships with the next roast (Tuesdays) — roast date printed, as always.</div>
+    </form>
+  </div>
+</section>
+
+<section id="visit" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-k rv">Visit</div>
+    <h2 class="rv">Watch the roast.</h2>
+    <div class="vgrid">
+      <div class="vcard rv"><h3>Find Us</h3><p>SCO 301, Sector 35-C<br>Chandigarh 160035<br>Glass roastery at the back</p></div>
+      <div class="vcard rv"><h3>Hours</h3><p>Mon–Sun · 8 AM – 10 PM<br>Roasting Tue &amp; Fri 10 AM<br>(smells best then)</p></div>
+      <div class="vcard rv"><h3>Good to Know</h3><p>Beans retail 250g from ₹520<br>Grind free with any bag<br>Cupping first Sunday monthly</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>DAILY GRIND · SCO 301, Sector 35-C, Chandigarh</span>
+    <span>Roast date on every bag.</span>
+  </div>
+</footer>
+
+<script>
+// scroll reveals
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// roast dial: rotates deterministically with scroll (light → dark across page)
+const needle=document.getElementById('dialNeedle'),dlabel=document.getElementById('dialLabel');
+function dial(){
+  const h=document.documentElement;
+  const p=h.scrollTop/(h.scrollHeight-h.clientHeight); // 0→1
+  const ang=-60+p*120;                                 // -60° (light) → +60° (dark)
+  needle.setAttribute('transform',`rotate(${ang.toFixed(1)} 100 100)`);
+  dlabel.textContent=p<.33?'LIGHT':p<.66?'MEDIUM':'DARK';
+  requestAnimationFrame(dial);
+}
+requestAnimationFrame(dial);
+// roast curve draws on scroll
+const curve=document.getElementById('roastCurve');
+const clen=curve.getTotalLength();
+curve.style.strokeDasharray=clen;curve.style.strokeDashoffset=clen;
+function drawCurve(){
+  const r=curve.getBoundingClientRect(),vh=innerHeight;
+  const p=Math.min(1,Math.max(0,(vh*0.9-r.top)/(vh*0.7)));
+  curve.style.strokeDashoffset=clen*(1-p);
+  requestAnimationFrame(drawCurve);
+}
+requestAnimationFrame(drawCurve);
+// grind particles
+const cv=document.getElementById('grind'),ctx=cv.getContext('2d');
+let W,H;const parts=[];
+function size(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;}
+size();addEventListener('resize',size);
+for(let i=0;i<60;i++)parts.push({x:Math.random(),y:Math.random(),r:1+Math.random()*2.5,s:.0006+Math.random()*.0014,o:.1+Math.random()*.35,ph:Math.random()*6.28});
+let t=0;
+function grind(){
+  t+=0.016;ctx.clearRect(0,0,W,H);
+  for(const p of parts){
+    p.y+=p.s;if(p.y>1){p.y=0;p.x=Math.random();}
+    const sway=Math.sin(t*1.2+p.ph)*20;
+    ctx.beginPath();ctx.arc(p.x*W+sway,p.y*H,p.r,0,6.28);
+    ctx.fillStyle=`rgba(198,139,78,${p.o})`;ctx.fill();
+  }
+  requestAnimationFrame(grind);
+}
+requestAnimationFrame(grind);
+// form
+document.getElementById('subform').addEventListener('submit',e=>{
+  e.preventDefault();
+  e.target.querySelector('button').style.display='none';
+  document.getElementById('ok').style.display='block';
+});
+</script>
+</body>
+</html>

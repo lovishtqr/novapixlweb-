@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Butcher &amp; Blade — prime cuts only · Ludhiana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ribeye+Marrow&family=Josefin+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--red:#8c2f2f;--red-deep:#5f1f1f;--paper:#e8e0d0;--paper-deep:#d9cdb2;--char:#2a2a2a;--gold:#c9a86a}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--char);font-family:'Josefin Sans',sans-serif;overflow-x:hidden;
+  background-image:repeating-linear-gradient(0deg,transparent 0 34px,rgba(140,47,47,.06) 34px 35px)}
+h1,h2,.display{font-family:'Ribeye Marrow',cursive;font-weight:400}
+section{padding:88px 22px;max-width:1040px;margin:0 auto;position:relative}
+.eyebrow{font-size:12px;letter-spacing:.4em;text-transform:uppercase;font-weight:700;color:var(--red)}
+
+/* cleaver divider */
+.cleaver-div{display:flex;align-items:center;gap:0;max-width:860px;margin:34px auto}
+.cleaver-div .line{flex:1;height:4px;background:var(--red)}
+.cleaver{width:120px;flex:none;transform-origin:center;transition:transform .5s cubic-bezier(.3,1.6,.4,1)}
+.cleaver-div.chop .cleaver{transform:rotate(-38deg) translateY(6px)}
+
+/* hero — butcher paper */
+.hero{background:var(--red-deep);color:var(--paper);text-align:center;padding:100px 22px 90px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;opacity:.12;
+  background:repeating-linear-gradient(45deg,transparent 0 18px,#000 18px 20px)}
+.hero h1{font-size:clamp(58px,12.5vw,120px);line-height:1.02;color:var(--paper);position:relative;z-index:2}
+.hero h1 span{color:var(--gold)}
+.hero .sub{max-width:560px;margin:20px auto 0;font-size:16.5px;line-height:1.75;color:#e0cfb2;position:relative;z-index:2}
+.cleaver-hero{width:130px;margin:0 auto 20px;display:block;position:relative;z-index:2;animation:hover 3.4s ease-in-out infinite}
+@keyframes hover{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-12px) rotate(4deg)}}
+.btn{display:inline-block;background:var(--paper);color:var(--red-deep);font-weight:700;padding:15px 44px;
+  text-decoration:none;font-size:16px;letter-spacing:.05em;border:2px solid var(--paper);margin-top:30px;
+  transition:transform .2s,background .2s,color .2s;cursor:pointer;position:relative;z-index:2}
+.btn:hover{transform:translateY(-3px) rotate(-1deg);background:transparent;color:var(--paper)}
+.btn.dark{background:var(--red);border-color:var(--red);color:var(--paper)}
+.btn.dark:hover{background:transparent;color:var(--red)}
+
+/* counter — butcher paper cards */
+.counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;margin-top:40px}
+.cut{background:#f4ecda;border:2px solid var(--char);padding:30px 24px;position:relative;
+  box-shadow:5px 5px 0 rgba(42,42,42,.18);transition:transform .25s;opacity:0;transform:translateY(26px)}
+.cut.in{opacity:1;transform:none}
+.cut:hover{transform:rotate(1deg) translateY(-5px)}
+.cut::before{content:"";position:absolute;top:0;left:0;right:0;height:10px;
+  background:repeating-linear-gradient(90deg,var(--red) 0 16px,var(--paper) 16px 32px)}
+.cut .tag{position:absolute;top:20px;right:-8px;background:var(--char);color:var(--paper);font-size:11px;
+  font-weight:700;letter-spacing:.12em;padding:5px 12px;transform:rotate(4deg)}
+.cut h3{font-size:32px;color:var(--red-deep);margin:14px 0 8px}
+.cut p{font-size:14.5px;line-height:1.65;color:#4a4038}
+.cut .pr{font-family:'Ribeye Marrow';font-size:30px;color:var(--red);display:block;margin-top:12px}
+
+/* chalk board */
+.chalk{background:#2a2a2a;color:#f2ede2;border-radius:10px;padding:54px 40px;margin-top:40px;position:relative;
+  border:10px solid #5a4632;box-shadow:0 20px 50px rgba(42,42,42,.35)}
+.chalk h2{color:#f2ede2}
+.chalk .row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:16px 4px;
+  border-bottom:2px dashed rgba(242,237,226,.25);font-size:16.5px}
+.chalk .row:last-child{border:none}
+.chalk .nm{font-weight:700}
+.chalk .pr{font-family:'Ribeye Marrow';font-size:28px;color:var(--gold);white-space:nowrap}
+.chalk .chalk-note{font-family:'Ribeye Marrow';font-size:22px;color:#c9a86a;text-align:center;margin-top:22px;transform:rotate(-1.5deg)}
+
+/* gallery — hanging hooks */
+.hooks{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:28px;margin-top:44px}
+.hook{background:#f4ecda;border:2px solid var(--char);padding:0 0 22px;text-align:center;position:relative;
+  box-shadow:5px 5px 0 rgba(42,42,42,.15);transition:transform .3s}
+.hook:hover{transform:translateY(-6px)}
+.hook::before{content:"";position:absolute;top:-24px;left:50%;transform:translateX(-50%);width:8px;height:26px;background:var(--char);border-radius:4px}
+.hook::after{content:"";position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:26px;height:12px;
+  border:6px solid var(--char);border-bottom:none;border-radius:12px 12px 0 0}
+.hook .meat{height:150px;display:flex;align-items:center;justify-content:center;margin-top:8px}
+.hook h3{font-size:27px;color:var(--red-deep);margin-top:6px}
+.hook small{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#7a6a55;font-weight:700}
+
+/* booking */
+.book{background:#f4ecda;border:3px solid var(--char);padding:48px 34px;max-width:600px;margin:40px auto 0;
+  box-shadow:8px 8px 0 rgba(42,42,42,.18);text-align:center}
+.book label{display:block;text-align:left;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin:16px 0 6px;font-weight:700}
+.book select,.book input{width:100%;background:#fff;border:2px solid var(--char);color:var(--char);
+  padding:12px 14px;font-family:'Josefin Sans';font-size:15px}
+#bookMsg{margin-top:16px;font-family:'Ribeye Marrow';font-size:28px;color:var(--red);min-height:40px}
+
+h2.sec{font-size:clamp(44px,8.5vw,72px);text-align:center;color:var(--red-deep);margin:12px 0 6px}
+p.lead{text-align:center;max-width:620px;margin:0 auto 8px;font-size:16px;line-height:1.7;color:#4a4038}
+footer{background:var(--char);color:#b9ab90;text-align:center;padding:42px 20px;font-size:13px;line-height:2}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:560px){.chalk{padding:38px 22px;border-width:7px}section{padding:66px 16px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="cleaver-hero" viewBox="0 0 130 90" aria-hidden="true">
+    <rect x="8" y="18" width="70" height="52" rx="4" fill="#c9c9c9" stroke="#2a2a2a" stroke-width="4"/>
+    <path d="M20 32 h46 M20 44 h46 M20 56 h30" stroke="#2a2a2a" stroke-width="3" stroke-linecap="round"/>
+    <rect x="78" y="34" width="44" height="16" rx="8" fill="#4a2e18"/>
+  </svg>
+  <p class="eyebrow" style="color:var(--gold)">Butcher &amp; Blade · Ludhiana</p>
+  <h1>Prime cuts<br><span>only.</span></h1>
+  <p class="sub">We treat hair like a butcher treats meat — with respect, sharp steel, and zero waste. Butcher-paper capes, chalk-board prices, and the cleanest cut in Ludhiana.</p>
+  <a class="btn" href="#booking">Order your cut</a>
+</header>
+
+<section id="counter">
+  <p class="eyebrow" style="text-align:center">The counter</p>
+  <h2 class="sec">Fresh off the block</h2>
+  <div class="cleaver-div"><div class="line"></div>
+    <svg class="cleaver" viewBox="0 0 130 90"><rect x="8" y="18" width="70" height="52" rx="4" fill="#8c2f2f" stroke="#2a2a2a" stroke-width="4"/><rect x="78" y="34" width="44" height="16" rx="8" fill="#2a2a2a"/></svg>
+  <div class="line"></div></div>
+  <p class="lead">Four house cuts, weighed and wrapped in butcher paper.</p>
+  <div class="counter">
+    <div class="cut"><span class="tag">BESTSELLER</span><h3>The Butcher's Cut</h3><p>Our signature: scissor cut, razor texture, hot-lather edges. The full 45-minute treatment.</p><span class="pr">₹549</span></div>
+    <div class="cut"><h3>Ribeye Fade</h3><p>Marbled blend from skin to length — a fade so smooth it should be graded prime.</p><span class="pr">₹449</span></div>
+    <div class="cut"><h3>Cleaver Shave</h3><p>Straight-razor shave, two hot towels, cold finish. Sharp enough to split hairs.</p><span class="pr">₹449</span></div>
+    <div class="cut"><h3>The Offal? Never.</h3><p>We don't do rushed jobs. Every cut gets the full block: consult, cut, finish, style.</p><span class="pr">₹—</span></div>
+  </div>
+</section>
+
+<section id="prices">
+  <p class="eyebrow" style="text-align:center">Chalk prices</p>
+  <h2 class="sec">Written in chalk, kept in steel</h2>
+  <p class="lead">The board by the door. What it says is what you pay.</p>
+  <div class="chalk reveal">
+    <h2 class="sec display" style="font-size:clamp(40px,7vw,60px);margin-bottom:16px">Today's board</h2>
+    <div class="row"><span class="nm">Butcher's cut</span><span class="pr">₹549</span></div>
+    <div class="row"><span class="nm">Ribeye fade</span><span class="pr">₹449</span></div>
+    <div class="row"><span class="nm">Cleaver shave</span><span class="pr">₹449</span></div>
+    <div class="row"><span class="nm">Beard trim &amp; line</span><span class="pr">₹299</span></div>
+    <div class="row"><span class="nm">Cut + shave, the whole hog</span><span class="pr">₹899</span></div>
+    <div class="chalk-note">~ butcher-paper capes on every chair ~</div>
+  </div>
+</section>
+
+<section id="gallery">
+  <p class="eyebrow" style="text-align:center">The display case</p>
+  <h2 class="sec">Hanging in the window</h2>
+  <p class="lead">Recent work, fresh off the block.</p>
+  <div class="hooks reveal">
+    <div class="hook"><div class="meat" style="background:linear-gradient(135deg,#8c2f2f,#5f1f1f)"><span class="display" style="color:#f4ecda;font-size:28px">Butcher's Cut</span></div><h3>No. 42</h3><small>signature</small></div>
+    <div class="hook"><div class="meat" style="background:linear-gradient(135deg,#2a2a2a,#4a4a4a)"><span class="display" style="color:#f4ecda;font-size:28px">Ribeye Fade</span></div><h3>No. 17</h3><small>skin fade</small></div>
+    <div class="hook"><div class="meat" style="background:linear-gradient(135deg,#c9a86a,#8a6f35)"><span class="display" style="color:#2a2a2a;font-size:28px">Cleaver Shave</span></div><h3>No. 08</h3><small>straight razor</small></div>
+  </div>
+</section>
+
+<section id="booking">
+  <p class="eyebrow" style="text-align:center">Booking</p>
+  <h2 class="sec">Place your order</h2>
+  <p class="lead">Model Town, Ludhiana · Mon–Sat 10 AM – 8:30 PM · +91 161 456 7890</p>
+  <div class="book reveal">
+    <label for="btname">Name on the ticket</label><input id="btname" type="text" placeholder="e.g. Harman Gill" maxlength="40">
+    <label for="btcut">Your cut</label>
+    <select id="btcut"><option>The Butcher's Cut — ₹549</option><option>Ribeye Fade — ₹449</option><option>Cleaver Shave — ₹449</option><option>The whole hog — ₹899</option></select>
+    <button class="btn dark" style="width:100%" onclick="order()">Wrap it up</button>
+    <div id="bookMsg" aria-live="polite"></div>
+  </div>
+</section>
+
+<footer>Butcher &amp; Blade · Model Town, Ludhiana · "Prime cuts only" since 2015<br>Butcher-paper capes. Chalk-board honesty.</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal,.cut').forEach(el=>io.observe(el));
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('chop');setTimeout(()=>e.target.classList.remove('chop'),900)}}),{threshold:.6});
+document.querySelectorAll('.cleaver-div').forEach(el=>cio.observe(el));
+function order(){
+  const n=document.getElementById('btname').value.trim()||'friend';
+  document.getElementById('bookMsg').textContent='Order up, '+n+'! We\u2019ll have your chair ready.';
+}
+</script>
+</body>
+</html>

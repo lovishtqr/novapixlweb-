@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velvet &amp; Vermilion — Bridal Couture Studio, Mohali</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --oxblood:#5f1f24; --ivory:#faf6f0; --clay:#c9826a; --ink:#2b2120;
+  --ease:cubic-bezier(.22,.61,.21,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--ink);font-family:'Manrope',sans-serif;overflow-x:hidden;line-height:1.6}
+h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:var(--clay);color:var(--ivory)}
+
+/* ---------- HERO: layered parallax cinema ---------- */
+.hero{position:relative;min-height:100svh;overflow:hidden;background:var(--oxblood);color:var(--ivory);display:flex;align-items:flex-end}
+.layer{position:absolute;inset:-8%;pointer-events:none;will-change:transform}
+.l-arch{background:
+  radial-gradient(60% 55% at 50% 100%, rgba(201,130,106,.55), transparent 70%),
+  radial-gradient(120% 90% at 50% 115%, #7a2a30 0%, transparent 60%)}
+.l-arch::after{content:"";position:absolute;left:50%;bottom:-6%;width:min(72vw,560px);aspect-ratio:3/4.4;transform:translateX(-50%);
+  border:2px solid rgba(250,246,240,.35);border-bottom:none;border-radius:50% 50% 0 0/38% 38% 0 0;
+  background:linear-gradient(180deg, rgba(43,33,32,.35), rgba(43,33,32,.05) 60%, transparent)}
+.l-grain{background-image:radial-gradient(rgba(250,246,240,.14) 1px, transparent 1.4px);background-size:26px 26px;opacity:.5;mask-image:radial-gradient(80% 70% at 50% 40%, #000, transparent)}
+.l-petals svg{position:absolute;filter:blur(.3px);opacity:.85}
+.hero-inner{position:relative;z-index:3;width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem) clamp(3rem,7vh,5rem)}
+.kicker{font-size:.72rem;letter-spacing:.42em;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:1rem}
+.hero h1{font-size:clamp(2.9rem,9vw,7.2rem);max-width:14ch}
+.hero h1 em{font-style:italic;color:var(--clay);font-weight:400}
+.hero-sub{max-width:46ch;margin-top:1.2rem;font-size:clamp(1rem,1.6vw,1.2rem);color:rgba(250,246,240,.82)}
+.hero-cta{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--clay);color:var(--ink);font-weight:700;padding:1rem 2.1rem;border-radius:999px;text-decoration:none;font-size:.95rem;letter-spacing:.02em;border:2px solid var(--clay);transition:transform .25s var(--ease), background .25s}
+.btn:hover{transform:translateY(-3px);background:var(--ivory);border-color:var(--ivory)}
+.btn.ghost{background:transparent;color:var(--ivory);border-color:rgba(250,246,240,.5)}
+.btn.ghost:hover{border-color:var(--ivory);background:rgba(250,246,240,.08);color:var(--ivory)}
+.scroll-hint{position:absolute;right:clamp(1rem,4vw,3rem);bottom:2rem;z-index:3;writing-mode:vertical-rl;font-size:.7rem;letter-spacing:.4em;color:rgba(250,246,240,.6);text-transform:uppercase}
+
+/* ---------- reveal choreography (deterministic stagger) ---------- */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease), transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv[data-d="1"]{transition-delay:.12s}.rv[data-d="2"]{transition-delay:.24s}
+.rv[data-d="3"]{transition-delay:.36s}.rv[data-d="4"]{transition-delay:.48s}
+
+.wrap{max-width:1200px;margin:0 auto;padding:clamp(3.5rem,8vh,6.5rem) clamp(1.2rem,4vw,3rem)}
+.eyebrow{font-size:.7rem;letter-spacing:.42em;text-transform:uppercase;color:var(--oxblood);font-weight:700;margin-bottom:.8rem}
+.sec-title{font-size:clamp(2rem,5vw,3.6rem);max-width:18ch}
+.sec-title em{font-style:italic;color:var(--clay)}
+
+/* ---------- price menu: editorial rows ---------- */
+.menu{margin-top:2.5rem;border-top:2px solid var(--ink)}
+.menu-row{display:grid;grid-template-columns:1fr auto auto;gap:1rem;align-items:baseline;padding:1.5rem .4rem;border-bottom:1px solid rgba(43,33,32,.25);transition:background .3s, padding-left .3s}
+.menu-row:hover{background:rgba(201,130,106,.12);padding-left:1rem}
+.menu-row .name{font-family:'Fraunces',serif;font-size:clamp(1.25rem,2.6vw,1.8rem)}
+.menu-row .desc{grid-column:1/-1;font-size:.92rem;color:rgba(43,33,32,.72);margin-top:-.8rem}
+.menu-row .price{font-weight:700;font-size:1.2rem;color:var(--oxblood);white-space:nowrap}
+.menu-row .book{font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-bottom:2px solid var(--clay);white-space:nowrap}
+.menu-row .book:hover{color:var(--oxblood)}
+
+/* ---------- legacy story: editorial split ---------- */
+.story{background:var(--oxblood);color:var(--ivory)}
+.story .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.story-art{position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;
+  background:linear-gradient(160deg,#7a2a30,#4a161b 70%);}
+.story-art::before{content:"R.V.";position:absolute;inset:0;display:grid;place-items:center;font-family:'Fraunces',serif;font-size:clamp(6rem,18vw,12rem);color:rgba(250,246,240,.16);font-style:italic}
+.story-art::after{content:"";position:absolute;inset:14px;border:1px solid rgba(201,130,106,.6);border-radius:2px}
+.story h2{font-size:clamp(2rem,5vw,3.4rem);margin:.8rem 0 1.2rem}
+.story h2 em{font-style:italic;color:var(--clay)}
+.story p+p{margin-top:1rem}
+.story .sig{font-family:'Fraunces',serif;font-style:italic;font-size:1.6rem;color:var(--clay);margin-top:1.6rem}
+
+/* ---------- masonry gallery ---------- */
+.masonry{columns:3;column-gap:1rem;margin-top:2.5rem}
+.tile{break-inside:avoid;margin-bottom:1rem;border-radius:6px;overflow:hidden;position:relative;cursor:pointer}
+.tile .art{aspect-ratio:var(--ar,3/4);background:var(--bg);position:relative}
+.tile .art::after{content:attr(data-cap);position:absolute;left:0;right:0;bottom:0;padding:2.2rem .9rem .8rem;font-size:.8rem;font-weight:600;color:var(--ivory);
+  background:linear-gradient(transparent,rgba(43,33,32,.78))}
+.tile:hover .art{filter:saturate(1.15)}
+@media(max-width:700px){.masonry{columns:2}}
+@media(max-width:420px){.masonry{columns:2;column-gap:.6rem}.tile{margin-bottom:.6rem}}
+
+/* ---------- reviews ---------- */
+.reviews{background:#f3ece1;overflow:hidden}
+.rev-track{display:flex;transition:transform .7s var(--ease);margin-top:2.2rem}
+.rev{min-width:100%;padding:0 .4rem}
+.rev blockquote{font-family:'Fraunces',serif;font-size:clamp(1.4rem,3.4vw,2.2rem);font-style:italic;max-width:28ch}
+.rev cite{display:block;margin-top:1.2rem;font-style:normal;font-weight:700;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;color:var(--oxblood)}
+.rev-nav{display:flex;gap:.8rem;margin-top:1.8rem}
+.rev-nav button{width:52px;height:52px;border-radius:50%;border:2px solid var(--ink);background:transparent;font-size:1.2rem;cursor:pointer;transition:.25s}
+.rev-nav button:hover{background:var(--oxblood);border-color:var(--oxblood);color:var(--ivory)}
+.rev-dots{display:flex;gap:.5rem;margin-top:1rem}
+.rev-dots span{width:9px;height:9px;border-radius:50%;background:rgba(43,33,32,.25);transition:.3s}
+.rev-dots span.on{background:var(--oxblood);transform:scale(1.3)}
+
+/* ---------- visit ---------- */
+.visit-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4rem);margin-top:2rem}
+.map{background:#e9e0d2;border-radius:8px;min-height:340px;position:relative;overflow:hidden}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.visit-card h3{font-size:1.6rem;margin-bottom:.6rem}
+.visit-card p{margin:.35rem 0;color:rgba(43,33,32,.8)}
+form.book{margin-top:1.6rem;display:grid;gap:.9rem}
+form.book input,form.book select{font-family:inherit;font-size:1rem;padding:.9rem 1rem;border:1.5px solid rgba(43,33,32,.35);border-radius:6px;background:#fff;width:100%}
+form.book input:focus,form.book select:focus{outline:none;border-color:var(--oxblood)}
+.ok{display:none;background:#e7f2e4;border:1.5px solid #3f6b5e;border-radius:6px;padding:1rem;font-weight:600;color:#2c4a40}
+footer{background:var(--ink);color:var(--ivory);text-align:center;padding:2.2rem 1rem;font-size:.85rem;letter-spacing:.06em}
+footer b{color:var(--clay)}
+
+@media(max-width:760px){
+  .story .grid,.visit-grid{grid-template-columns:1fr}
+  .menu-row{grid-template-columns:1fr auto}.menu-row .book{grid-column:1/-1;justify-self:start}
+  .scroll-hint{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="layer l-arch" data-depth="0.06"></div>
+  <div class="layer l-grain" data-depth="0.12"></div>
+  <div class="layer l-petals" data-depth="0.22" aria-hidden="true">
+    <svg style="left:12%;top:18%" width="46" height="46" viewBox="0 0 46 46"><ellipse cx="23" cy="23" rx="20" ry="12" fill="#c9826a" transform="rotate(-24 23 23)" opacity=".8"/></svg>
+    <svg style="left:74%;top:30%" width="30" height="30" viewBox="0 0 46 46"><ellipse cx="23" cy="23" rx="20" ry="12" fill="#faf6f0" transform="rotate(30 23 23)" opacity=".55"/></svg>
+    <svg style="left:58%;top:12%" width="60" height="60" viewBox="0 0 46 46"><ellipse cx="23" cy="23" rx="20" ry="12" fill="#c9826a" transform="rotate(64 23 23)" opacity=".6"/></svg>
+  </div>
+  <div class="hero-inner">
+    <p class="kicker rv">Bridal Couture Studio · Mohali</p>
+    <h1 class="rv" data-d="1">The chair Mohali trusts with its <em>big day.</em></h1>
+    <p class="hero-sub rv" data-d="2">24 saal se Sector 8 ki sabse bharosemand kursi — bridal couture, editorial makeup and saree artistry, one bride at a time.</p>
+    <div class="hero-cta rv" data-d="3">
+      <a class="btn" href="#booking">Book Bridal Trial — ₹4,999</a>
+      <a class="btn ghost" href="#menu">View Price Menu</a>
+    </div>
+  </div>
+  <span class="scroll-hint">scroll</span>
+</header>
+
+<section class="wrap" id="menu">
+  <p class="eyebrow rv">Price Menu</p>
+  <h2 class="sec-title rv" data-d="1">Every service, priced <em>on the wall.</em></h2>
+  <div class="menu">
+    <div class="menu-row rv"><span class="name">Bridal Trial</span><span class="price">₹4,999</span><a class="book" href="#booking">Book</a><span class="desc">Full look rehearsal with Ritu Verma — makeup, hair trial and drape plan, 2.5 hours.</span></div>
+    <div class="menu-row rv" data-d="1"><span class="name">Party Makeup</span><span class="price">₹2,499</span><a class="book" href="#booking">Book</a><span class="desc">HD finish, lashes included, 60-minute slot. Sangeet-ready.</span></div>
+    <div class="menu-row rv" data-d="2"><span class="name">Saree Draping</span><span class="price">₹899</span><a class="book" href="#booking">Book</a><span class="desc">Six-yard artistry — Nivi, Gujarati or Bengali drape with pleat pinning.</span></div>
+    <div class="menu-row rv" data-d="3"><span class="name">Engagement Glam</span><span class="price">₹3,499</span><a class="book" href="#booking">Book</a><span class="desc">Soft-glam editorial look with hairstyling and touch-up kit.</span></div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap">
+    <div class="grid">
+      <div class="story-art rv" aria-hidden="true"></div>
+      <div>
+        <p class="eyebrow rv" style="color:var(--clay)">Legacy</p>
+        <h2 class="rv" data-d="1">One chair, <em>twenty-four</em> wedding seasons.</h2>
+        <p class="rv" data-d="2">Velvet &amp; Vermilion began in 2002 as a single makeup chair in SCO 387, Sector 8 — and never moved. Ritu Verma has dressed three generations of Mohali brides, and the studio still books only two brides per day.</p>
+        <p class="rv" data-d="3">No assembly line. No junior artists handed the brush mid-ceremony. The artist you trial with is the artist on your wedding morning.</p>
+        <p class="sig rv" data-d="4">— Ritu Verma, Founder &amp; Lead Artist</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <p class="eyebrow rv">Portfolio</p>
+  <h2 class="sec-title rv" data-d="1">Recent brides, <em>real mornings.</em></h2>
+  <div class="masonry">
+    <div class="tile rv"><div class="art" style="--ar:3/4;--bg:linear-gradient(150deg,#8a3038,#5f1f24)" data-cap="Anand Karaj · 5 AM glam"></div></div>
+    <div class="tile rv" data-d="1"><div class="art" style="--ar:1/1;--bg:radial-gradient(circle at 30% 20%,#d99a86,#8a3038)" data-cap="Sangeet editorial look"></div></div>
+    <div class="tile rv" data-d="2"><div class="art" style="--ar:3/4;--bg:linear-gradient(200deg,#c9826a,#5f1f24)" data-cap="Reception · HD finish"></div></div>
+    <div class="tile rv"><div class="art" style="--ar:4/5;--bg:linear-gradient(120deg,#7a2a30,#3a1418)" data-cap="Mehndi morning"></div></div>
+    <div class="tile rv" data-d="1"><div class="art" style="--ar:1/1;--bg:radial-gradient(circle at 70% 60%,#e0a583,#5f1f24)" data-cap="Bridal trial, Studio 1"></div></div>
+    <div class="tile rv" data-d="2"><div class="art" style="--ar:3/4;--bg:linear-gradient(170deg,#9c3a42,#2b2120)" data-cap="Cocktail · smokey eye"></div></div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="wrap">
+    <p class="eyebrow rv">Reviews</p>
+    <h2 class="sec-title rv" data-d="1">Brides, <em>in their words.</em></h2>
+    <div class="rev-track" id="revTrack">
+      <div class="rev"><blockquote>"Ritu ma'am did my mother's wedding makeup in 2009 and mine in 2025. Same steady hand, same calm room."</blockquote><cite>Simran K. — married March 2026</cite></div>
+      <div class="rev"><blockquote>"The trial was so honest — she told me what would NOT suit my face. Nobody does that."</blockquote><cite>Aishwarya R. — married January 2026</cite></div>
+      <div class="rev"><blockquote>"5 AM start, zero panic, and my saree pleats survived twelve hours of dancing."</blockquote><cite>Navdeep G. — married November 2025</cite></div>
+    </div>
+    <div class="rev-nav">
+      <button id="revPrev" aria-label="Previous review">←</button>
+      <button id="revNext" aria-label="Next review">→</button>
+    </div>
+    <div class="rev-dots" id="revDots"><span class="on"></span><span></span><span></span></div>
+  </div>
+</section>
+
+<section class="wrap" id="booking">
+  <p class="eyebrow rv">Visit</p>
+  <h2 class="sec-title rv" data-d="1">Find the <em>oxblood door.</em></h2>
+  <div class="visit-grid">
+    <div class="map rv" data-d="1" aria-label="Stylised map to SCO 387, Sector 8, Mohali">
+      <svg viewBox="0 0 400 340" preserveAspectRatio="xMidYMid slice">
+        <rect width="400" height="340" fill="#e9e0d2"/>
+        <path d="M0 90 H400 M0 190 H400 M110 0 V340 M250 0 V340" stroke="#cfc3ab" stroke-width="10"/>
+        <path d="M0 140 H400 M180 0 V340" stroke="#f7f1e3" stroke-width="26"/>
+        <path d="M40 280 C140 240 220 300 360 250" stroke="#9caf88" stroke-width="8" fill="none"/>
+        <circle cx="180" cy="140" r="46" fill="#5f1f24" opacity=".14"/>
+        <circle cx="180" cy="140" r="10" fill="#5f1f24"/>
+        <text x="180" y="178" text-anchor="middle" font-family="Manrope" font-size="13" font-weight="700" fill="#5f1f24">SCO 387 · SEC 8</text>
+        <text x="330" y="80" font-family="Manrope" font-size="11" fill="#8a7a6a">Phase 7 →</text>
+        <text x="24" y="320" font-family="Manrope" font-size="11" fill="#8a7a6a">← Landran Rd</text>
+      </svg>
+    </div>
+    <div class="visit-card rv" data-d="2">
+      <h3>Velvet &amp; Vermilion</h3>
+      <p><b>SCO 387, Sector 8, Mohali</b> — Punjab 160062</p>
+      <p>Open Tue–Sun · 10 AM – 7 PM · Mondays closed</p>
+      <p>Call / WhatsApp: <b>+91 98140 22771</b></p>
+      <form class="book" id="bookForm">
+        <input type="text" id="bkName" placeholder="Your name" required>
+        <input type="tel" id="bkPhone" placeholder="Phone number" pattern="[0-9+ ]{10,15}" required>
+        <select id="bkSvc" required>
+          <option value="">Choose a service…</option>
+          <option>Bridal Trial — ₹4,999</option>
+          <option>Party Makeup — ₹2,499</option>
+          <option>Saree Draping — ₹899</option>
+          <option>Engagement Glam — ₹3,499</option>
+        </select>
+        <button class="btn" type="submit" style="border:none;cursor:pointer">Request Booking</button>
+        <p class="ok" id="bookOk">Request received. Ritu's team will call you within 2 hours to confirm your slot.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>VELVET &amp; VERMILION · <b>SCO 387, Sector 8, Mohali</b> · bridal couture since 2002</footer>
+
+<script>
+// ---- deterministic parallax (rAF, fixed easing) ----
+const layers=[...document.querySelectorAll('.layer')];
+let px=0,py=0,tx=0,ty=0,sy=0;
+addEventListener('pointermove',e=>{tx=(e.clientX/innerWidth-.5)*2;ty=(e.clientY/innerHeight-.5)*2},{passive:true});
+addEventListener('scroll',()=>{sy=scrollY},{passive:true});
+(function tick(){
+  px+=(tx-px)*.06; py+=(ty-py)*.06;
+  const y=Math.min(sy,innerHeight*1.2);
+  layers.forEach(l=>{const d=+l.dataset.depth;
+    l.style.transform=`translate3d(${(-px*d*60).toFixed(2)}px,${(-py*d*40 - y*d*.9).toFixed(2)}px,0)`});
+  requestAnimationFrame(tick);
+})();
+// ---- staggered reveals ----
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// ---- review slider ----
+const track=document.getElementById('revTrack'),dots=[...document.getElementById('revDots').children];
+let ri=0;const N=dots.length;
+function go(i){ri=(i+N)%N;track.style.transform=`translateX(-${ri*100}%)`;dots.forEach((d,k)=>d.classList.toggle('on',k===ri))}
+document.getElementById('revPrev').onclick=()=>go(ri-1);
+document.getElementById('revNext').onclick=()=>go(ri+1);
+// ---- booking ----
+document.getElementById('bookForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  document.getElementById('bookOk').style.display='block';
+  e.target.querySelector('button').disabled=true;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crypt Cult — Horror Blackwork · Sector 34, Chandigarh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--crypt:#2a2a35;--ash:#b8b0a0;--void:#0f0f12;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--void);color:var(--ash);font-family:'Sarabun',sans-serif;font-weight:300;
+  font-size:clamp(1.05rem,2.1vw,1.25rem);line-height:1.65;overflow-x:hidden;}
+h1,h2,h3{font-family:'Creepster',cursive;font-weight:400;letter-spacing:.06em;line-height:1.2;}
+::selection{background:var(--ash);color:var(--void);}
+/* fog layers */
+.fog{position:fixed;inset:0;z-index:4;pointer-events:none;overflow:hidden;}
+.fog i{position:absolute;width:60vw;height:26vh;border-radius:50%;filter:blur(60px);background:rgba(184,176,160,.07);animation:drift 26s ease-in-out infinite alternate;}
+@keyframes drift{from{transform:translateX(-12vw)}to{transform:translateX(12vw)}}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px;position:relative;z-index:2;}
+section{padding:clamp(80px,11vh,130px) 0;}
+header.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 110%,#23232c 0%,var(--void) 62%);}
+/* candles */
+.candles{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:center;gap:min(9vw,90px);pointer-events:none;}
+.candle{width:26px;height:120px;background:linear-gradient(to right,#8a8474,#b8b0a0,#8a8474);border-radius:6px 6px 0 0;position:relative;}
+.candle::before{content:"";position:absolute;top:-26px;left:50%;transform:translateX(-50%);width:14px;height:26px;border-radius:50% 50% 40% 40%;
+  background:radial-gradient(circle at 50% 70%,#ffe9a8,#ff9d3c 60%,transparent 75%);animation:flick 1.6s ease-in-out infinite;transform-origin:50% 100%;}
+.candle::after{content:"";position:absolute;top:-70px;left:50%;transform:translateX(-50%);width:120px;height:120px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,180,90,.16),transparent 70%);animation:flick 1.6s ease-in-out infinite;}
+@keyframes flick{0%,100%{opacity:1;transform:translateX(-50%) scale(1)}25%{opacity:.75;transform:translateX(-54%) scale(.94)}60%{opacity:.95;transform:translateX(-46%) scale(1.05)}}
+.eyebrow{letter-spacing:.5em;text-transform:uppercase;font-size:.9rem;font-weight:700;color:#8a8474;margin-bottom:26px;}
+h1{font-size:clamp(3rem,12vw,7rem);margin-bottom:18px;color:var(--ash);text-shadow:0 0 40px rgba(255,180,90,.18);}
+.hero p.lede{max-width:36ch;margin:0 auto 40px;font-size:clamp(1.15rem,2.6vw,1.45rem);}
+.hero p.lede em{font-style:normal;color:#e8d9a8;}
+.btn{display:inline-block;font-family:'Sarabun',sans-serif;font-weight:700;letter-spacing:.24em;text-transform:uppercase;font-size:1rem;
+  color:var(--void);background:var(--ash);border:2px solid var(--ash);padding:16px 46px;text-decoration:none;cursor:pointer;transition:all .3s ease;}
+.btn:hover{background:transparent;color:var(--ash);}
+.btn.ghost{background:transparent;color:var(--ash);}
+h2.sec{font-size:clamp(2.4rem,7vw,3.8rem);text-align:center;margin-bottom:10px;}
+.kicker{text-align:center;letter-spacing:.4em;text-transform:uppercase;font-size:.85rem;font-weight:700;color:#8a8474;margin-bottom:54px;}
+/* dark flash — stone tablets */
+.flash{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:26px;}
+.tablet{background:linear-gradient(165deg,#2e2e38,#1b1b22);border:1px solid #3d3d4a;padding:26px 18px 22px;text-align:center;
+  clip-path:polygon(0 12px,12px 0,calc(100% - 12px) 0,100% 12px,100% calc(100% - 12px),calc(100% - 12px) 100%,12px 100%,0 calc(100% - 12px));
+  transition:transform .35s ease,box-shadow .35s ease;cursor:pointer;}
+.tablet:hover{transform:translateY(-8px);box-shadow:0 20px 40px -18px rgba(255,180,90,.25);}
+.tablet svg{width:100%;height:120px;display:block;margin-bottom:14px;}
+.tablet h3{font-size:1.6rem;margin-bottom:6px;color:var(--ash);}
+.tablet .tp{font-weight:700;letter-spacing:.1em;color:#e8d9a8;}
+.tablet .tn{font-size:.85rem;color:#8a8474;margin-top:6px;}
+/* artists — epitaphs */
+.epitaph{border:1px solid #3d3d4a;background:rgba(42,42,53,.5);padding:40px 34px;margin-bottom:24px;position:relative;}
+.epitaph::before{content:"R.I.P.";position:absolute;top:14px;right:22px;font-family:'Creepster',cursive;color:#3d3d4a;font-size:1.6rem;letter-spacing:.2em;}
+.epitaph h3{font-size:2rem;margin-bottom:8px;}
+.epitaph .espec{color:#e8d9a8;letter-spacing:.24em;text-transform:uppercase;font-size:.82rem;font-weight:700;margin-bottom:12px;}
+.epitaph p{max-width:60ch;}
+/* rituals (aftercare) accordion */
+.acc{max-width:720px;margin:0 auto;}
+.acc-item{border:1px solid #3d3d4a;margin-bottom:14px;background:rgba(42,42,53,.4);}
+.acc-head{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;background:none;border:none;cursor:pointer;
+  font-family:'Creepster',cursive;font-size:1.5rem;color:var(--ash);text-align:left;letter-spacing:.05em;}
+.acc-head .x{font-family:'Sarabun',sans-serif;font-weight:300;font-size:1.8rem;color:#e8d9a8;transition:transform .3s;flex-shrink:0;}
+.acc-item.open .acc-head .x{transform:rotate(45deg);}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.acc-body p{padding:0 24px 24px;}
+/* booking */
+form.book{max-width:560px;margin:0 auto;}
+.field{margin-bottom:24px;}
+.field label{display:block;font-size:.85rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:#8a8474;margin-bottom:8px;}
+.field input,.field select,.field textarea{width:100%;font-family:'Sarabun',sans-serif;font-weight:300;font-size:1.2rem;background:rgba(184,176,160,.05);border:1px solid #3d3d4a;color:var(--ash);padding:13px 16px;outline:none;}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--ash);}
+.field select option{color:#0f0f12;}
+.field textarea{min-height:100px;resize:vertical;}
+.age{display:flex;gap:14px;align-items:flex-start;margin:4px 0 26px;}
+.age input{width:22px;height:22px;margin-top:4px;accent-color:#b8b0a0;}
+#confirm{display:none;margin-top:28px;border:1px solid var(--ash);padding:26px;text-align:center;font-size:1.2rem;background:rgba(42,42,53,.5);}
+footer{padding:56px 0 90px;text-align:center;color:#8a8474;font-size:1rem;position:relative;z-index:2;}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease;}
+.reveal.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.fog,.candles{display:none}}
+</style>
+</head>
+<body>
+<div class="fog" aria-hidden="true"><i style="top:8%;left:-10%"></i><i style="top:44%;left:30%;animation-delay:-9s"></i><i style="top:72%;left:60%;animation-delay:-17s"></i></div>
+<header class="hero">
+  <div class="candles" aria-hidden="true"><div class="candle" style="height:90px"></div><div class="candle" style="height:130px;animation-delay:-.5s"></div><div class="candle" style="height:100px;animation-delay:-1.1s"></div><div class="candle" style="height:140px;animation-delay:-.3s"></div><div class="candle" style="height:95px;animation-delay:-.9s"></div></div>
+  <div class="wrap">
+    <div class="eyebrow reveal">Sector 34 · Chandigarh</div>
+    <h1 class="reveal">Crypt Cult</h1>
+    <p class="lede reveal">horror blackwork for the beautifully damned. <em>"Sleep is for the living."</em> Strictly 18+.</p>
+    <a class="btn reveal" href="#booking">Descend for a consult</a>
+  </div>
+</header>
+
+<section id="flash"><div class="wrap">
+  <h2 class="sec reveal">Dark flash</h2><div class="kicker reveal">etched this month · claim before burial</div>
+  <div class="flash">
+    <div class="tablet reveal"><svg viewBox="0 0 120 120"><g fill="none" stroke="#b8b0a0" stroke-width="3"><path d="M60 14 C40 14 30 34 30 54 C30 74 44 88 60 88 C76 88 90 74 90 54 C90 34 80 14 60 14 Z"/><circle cx="48" cy="52" r="7" fill="#b8b0a0" stroke="none"/><circle cx="72" cy="52" r="7" fill="#b8b0a0" stroke="none"/><path d="M60 60 L54 74 L66 74 Z" fill="#b8b0a0" stroke="none"/><path d="M44 90 L44 104 M54 92 L54 106 M66 92 L66 106 M76 90 L76 104" stroke-width="2"/></g></svg><h3>Grave Skull</h3><div class="tp">₹5,500</div><div class="tn">blackwork · 3 hrs</div></div>
+    <div class="tablet reveal"><svg viewBox="0 0 120 120"><g fill="none" stroke="#b8b0a0" stroke-width="3"><path d="M60 10 V110"/><path d="M40 40 Q60 30 80 40 M38 60 Q60 48 82 60 M40 80 Q60 70 80 80" stroke-width="2"/><circle cx="60" cy="10" r="6"/></g></svg><h3>Spine Candle</h3><div class="tp">₹4,000</div><div class="tn">fine blackwork · 2 hrs</div></div>
+    <div class="tablet reveal"><svg viewBox="0 0 120 120"><g fill="none" stroke="#b8b0a0" stroke-width="3"><path d="M30 90 Q60 90 60 60 Q60 30 90 30"/><path d="M30 90 L30 104 M90 30 L104 30" stroke-width="2"/><circle cx="60" cy="60" r="8" fill="#b8b0a0" stroke="none"/></g></svg><h3>Widow's Eye</h3><div class="tp">₹3,500</div><div class="tn">blackwork · 1.5 hrs</div></div>
+    <div class="tablet reveal"><svg viewBox="0 0 120 120"><g fill="none" stroke="#b8b0a0" stroke-width="3"><path d="M35 100 C35 70 45 60 45 40 C45 26 54 18 60 18 C66 18 75 26 75 40 C75 60 85 70 85 100"/><path d="M45 60 H75 M48 78 H72" stroke-width="2"/></g></svg><h3>Coffin Bell</h3><div class="tp">₹6,500</div><div class="tn">blackwork · 3.5 hrs</div></div>
+  </div>
+</div></section>
+
+<section id="artists"><div class="wrap">
+  <h2 class="sec reveal">The keepers</h2><div class="kicker reveal">resident artists</div>
+  <div class="epitaph reveal"><h3>Meher "Morgue" Singh</h3><div class="espec">horror realism · 9 yrs</div><p>Demons, graveyards, and things with too many teeth. Her realism work has won two national convention awards — the trophies gather dust next to the skull collection.</p></div>
+  <div class="epitaph reveal"><h3>Kabir "Crypt" Anand</h3><div class="espec">dark ornamental · dotwork</div><p>Mandalas for people who find regular mandalas too cheerful. Builds sleeves out of thorns, chains, and cathedral geometry.</p></div>
+  <div class="epitaph reveal"><h3>Zoya "Hex" Khan</h3><div class="espec">witchy illustrative · fine line</div><p>Moths, moons, and spellwork. Books out two months ahead every autumn — spooky season is her harvest.</p></div>
+</div></section>
+
+<section id="rituals"><div class="wrap">
+  <h2 class="sec reveal">Rituals</h2><div class="kicker reveal">aftercare, or the ink suffers</div>
+  <div class="acc reveal">
+    <div class="acc-item"><button class="acc-head">The first three nights <span class="x">+</span></button><div class="acc-body"><p>Second-skin stays on. Sleep on clean sheets. If it weeps, that is plasma, not a haunting — leave it alone.</p></div></div>
+    <div class="acc-item"><button class="acc-head">The peeling <span class="x">+</span></button><div class="acc-body"><p>Days 4–10 it will flake like old wallpaper. Do not pick. Moisturise thin, twice daily, with the balm we hand you.</p></div></div>
+    <div class="acc-item"><button class="acc-head">The sun ban <span class="x">+</span></button><div class="acc-body"><p>Four weeks of no direct sun, no tanning, no "just five minutes." After that: SPF 50 forever. The crypt protects its own.</p></div></div>
+    <div class="acc-item"><button class="acc-head">The resurrection <span class="x">+</span></button><div class="acc-body"><p>One free touch-up within a year. Bring the healed piece, we judge it honestly, we fix what needs fixing.</p></div></div>
+  </div>
+</div></section>
+
+<section id="booking"><div class="wrap">
+  <h2 class="sec reveal">Join the cult</h2><div class="kicker reveal">consultations by candlelight</div>
+  <form class="book reveal" id="bookForm">
+    <div class="field"><label for="bname">Name</label><input id="bname" required placeholder="Ira Sharma"></div>
+    <div class="field"><label for="bphone">Phone</label><input id="bphone" required inputmode="tel" placeholder="+91 98XXX XXXXX"></div>
+    <div class="field"><label for="bart">Keeper</label><select id="bart"><option>Meher "Morgue" Singh</option><option>Kabir "Crypt" Anand</option><option>Zoya "Hex" Khan</option><option>Whoever the dark chooses</option></select></div>
+    <div class="field"><label for="bidea">Your dark idea</label><textarea id="bidea" required placeholder="a haunted manor across the forearm, blackwork..."></textarea></div>
+    <label class="age"><input type="checkbox" id="bage" required><span>I confirm I am 18 or older. The cult checks ID.</span></label>
+    <button class="btn" type="submit" style="width:100%">Request an audience</button>
+    <div id="confirm" role="status"></div>
+  </form>
+</div></section>
+
+<footer class="wrap">Crypt Cult · SCO 55, Sector 34-A, Chandigarh · Wed–Mon, 12 PM – 10 PM<br>horror blackwork · 18+ · sleep is for the living</footer>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.acc-head').forEach(h=>h.addEventListener('click',()=>{
+  const item=h.parentElement, body=item.querySelector('.acc-body'), open=item.classList.contains('open');
+  document.querySelectorAll('.acc-item.open').forEach(o=>{o.classList.remove('open');o.querySelector('.acc-body').style.maxHeight=null;});
+  if(!open){item.classList.add('open');body.style.maxHeight=body.scrollHeight+'px';}
+}));
+document.getElementById('bookForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const n=document.getElementById('bname').value.trim(), a=document.getElementById('bart').value;
+  const c=document.getElementById('confirm'); c.style.display='block';
+  c.innerHTML='<strong>'+n+'</strong> — your audience with <strong>'+a+'</strong> is requested.<br>The candles are lit. We reply within three nights.';
+});
+</script>
+</body>
+</html>
