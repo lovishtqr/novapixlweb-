@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Velvet Razor — knock twice · Sector 26, Chandigarh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1e3a2f;--green-deep:#122a22;--gold:#d4af6a;--gold-soft:#e8cf9a;--cream:#efe7d3;--ink:#241f18}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--green-deep);color:var(--cream);font-family:'Comfortaa',sans-serif;overflow-x:hidden}
+h1,h2,.display{font-family:'Fascinate',cursive;font-weight:400}
+section{padding:88px 22px;max-width:1000px;margin:0 auto;position:relative}
+.eyebrow{font-size:12px;letter-spacing:.42em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+
+/* --- the door (password hero) --- */
+.door-stage{min-height:96vh;display:flex;align-items:center;justify-content:center;padding:40px 18px;position:relative;
+  background:radial-gradient(ellipse 65% 50% at 50% 40%,#24473a 0%,#122a22 72%)}
+.door{width:min(420px,88vw);aspect-ratio:3/4.4;background:linear-gradient(180deg,#2c4a3c,#1a3329);
+  border:10px solid #0d1f18;border-radius:8px;position:relative;box-shadow:0 40px 90px rgba(0,0,0,.6);
+  transform-origin:left center;transition:transform 1.4s cubic-bezier(.6,0,.3,1);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:34px 26px;text-align:center;z-index:3}
+.door.open{transform:perspective(1400px) rotateY(-72deg)}
+.door .knocker{width:64px;height:64px;border:5px solid var(--gold);border-radius:50%;margin-bottom:18px;
+  cursor:pointer;transition:transform .15s;position:relative}
+.door .knocker:active{transform:scale(.88)}
+.door h1{font-size:clamp(44px,10vw,72px);color:var(--gold);line-height:1.05}
+.door p{font-size:14.5px;line-height:1.7;color:#cdbf9f;margin-top:14px}
+.door input{margin-top:20px;background:#0d1f18;border:2px solid var(--gold);color:var(--cream);
+  font-family:'Comfortaa';font-size:16px;padding:13px 16px;width:100%;text-align:center;border-radius:6px;letter-spacing:.1em}
+.door input:focus{outline:2px solid var(--gold-soft)}
+.door .btn{margin-top:16px}
+#doorMsg{margin-top:12px;font-size:13.5px;color:var(--gold-soft);min-height:22px}
+.behind{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:30px;z-index:1;opacity:0;transition:opacity 1s .8s}
+.door-stage.entered .behind{opacity:1}
+.behind h2{font-size:clamp(50px,11vw,96px);color:var(--gold);line-height:1}
+.behind p{max-width:520px;margin:18px auto 0;line-height:1.75;color:#d8cba6}
+.btn{display:inline-block;background:var(--gold);color:var(--green-deep);font-weight:700;padding:15px 44px;
+  text-decoration:none;font-size:16px;border:2px solid var(--gold);border-radius:40px;margin-top:26px;
+  transition:transform .2s,background .2s,color .2s;cursor:pointer;font-family:'Comfortaa'}
+.btn:hover{transform:translateY(-3px);background:transparent;color:var(--gold)}
+.btn.ghost{background:transparent;color:var(--gold)}
+.btn.ghost:hover{background:var(--gold);color:var(--green-deep)}
+
+/* deco line draws */
+.deco{width:100%;max-width:560px;margin:24px auto;display:block}
+.deco path{stroke:var(--gold);stroke-width:2;fill:none;stroke-dasharray:700;stroke-dashoffset:700;transition:stroke-dashoffset 2s ease}
+.in .deco path{stroke-dashoffset:0}
+
+/* services — jazz cards */
+.jazz{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:38px}
+.jcard{background:#24473a;border:1.5px solid var(--gold);border-radius:4px;padding:32px 24px;text-align:center;
+  position:relative;overflow:hidden;transition:transform .3s}
+.jcard::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;
+  background:repeating-linear-gradient(90deg,var(--gold) 0 18px,transparent 18px 30px)}
+.jcard:hover{transform:translateY(-6px) rotate(.6deg)}
+.jcard h3{font-size:32px;color:var(--gold);margin:10px 0 8px;line-height:1.15}
+.jcard p{font-size:14px;line-height:1.7;color:#cdbf9f}
+.jcard .pr{font-family:'Fascinate';font-size:28px;color:var(--gold-soft);display:block;margin-top:12px}
+
+/* prices */
+.ptable{max-width:640px;margin:38px auto 0;border:2px solid var(--gold);border-radius:8px;overflow:hidden}
+.ptable .tr{display:flex;justify-content:space-between;padding:17px 28px;font-size:16px;border-bottom:1px solid rgba(212,175,106,.3);background:rgba(36,71,58,.5)}
+.ptable .tr:last-child{border:none}
+.ptable .tr b{font-family:'Fascinate';font-weight:400;font-size:26px;color:var(--gold)}
+.ptable .head{background:var(--gold);color:var(--green-deep);font-family:'Fascinate';font-size:26px}
+
+/* booking */
+.book{background:#24473a;border:2px solid var(--gold);border-radius:10px;padding:48px 34px;max-width:600px;margin:38px auto 0;text-align:center}
+.book label{display:block;text-align:left;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:16px 0 6px;font-weight:700}
+.book select,.book input{width:100%;background:#122a22;border:1.5px solid var(--gold);color:var(--cream);
+  padding:12px 14px;font-family:'Comfortaa';font-size:15px;border-radius:6px}
+#bookMsg{margin-top:16px;font-family:'Fascinate';font-size:30px;color:var(--gold);min-height:42px}
+
+h2.sec{font-size:clamp(46px,9vw,76px);text-align:center;color:var(--gold);margin:12px 0 6px}
+p.lead{text-align:center;max-width:620px;margin:0 auto 8px;font-size:16px;line-height:1.7;color:#cdbf9f}
+footer{text-align:center;padding:42px 20px;font-size:13px;color:#8a7f63;line-height:2}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:560px){section{padding:66px 16px}}
+</style>
+</head>
+<body>
+
+<div class="door-stage" id="stage">
+  <div class="behind">
+    <p class="eyebrow">You made it inside</p>
+    <h2>Welcome to<br>the Velvet Razor.</h2>
+    <p>A speakeasy barbershop behind an unmarked door in Sector 26. Jazz on the gramophone, whiskey-coloured lamplight, and cuts worth keeping secret. Open till midnight on Fridays.</p>
+    <a class="btn" href="#services">See what's inside</a>
+  </div>
+  <div class="door" id="door">
+    <div class="knocker" onclick="knock()" title="Knock twice" role="button" aria-label="Knock on the door" tabindex="0"></div>
+    <p class="eyebrow">The Velvet Razor · Sector 26</p>
+    <h1>Knock<br>twice.</h1>
+    <p>This is a members-and-friends barbershop. The password changes monthly — this month's is whispered at the counter of our friends. Try it below.</p>
+    <input id="pw" type="text" placeholder="the password…" maxlength="30" autocomplete="off">
+    <button class="btn" onclick="tryPw()">Whisper it</button>
+    <div id="doorMsg" aria-live="polite"></div>
+    <p style="font-size:12px;margin-top:14px;color:#8a7f63">Hint: it's what we promise every shave will be.</p>
+  </div>
+</div>
+
+<section class="reveal" id="services">
+  <p class="eyebrow" style="text-align:center">Inside · services</p>
+  <h2 class="sec">The joint's menu</h2>
+  <svg class="deco" viewBox="0 0 560 50" aria-hidden="true">
+    <path d="M10 25 h180 M370 25 h180 M280 6 l24 19 -24 19 -24 -19 Z M196 25 l-14 -8 v16 Z M364 25 l14 -8 v16 Z"/>
+  </svg>
+  <p class="lead">No walk-in menu out front — this one's for those who knocked.</p>
+  <div class="jazz">
+    <div class="jcard"><h3>The Midnight Cut</h3><p>Our signature after-dark cut: consultation over espresso, precision scissor work, hot-towel finish.</p><span class="pr">₹649</span></div>
+    <div class="jcard"><h3>Prohibition Shave</h3><p>Straight razor, three towels, bay-rum finish. Illegal in twelve states of boring.</p><span class="pr">₹549</span></div>
+    <div class="jcard"><h3>The Giggle Water</h3><p>Beard sculpt with cedar &amp; clove oil, hot detail, and a proper line-up.</p><span class="pr">₹399</span></div>
+    <div class="jcard"><h3>Last Call Combo</h3><p>Cut + shave + 15-minute head massage. Out before the lights come up.</p><span class="pr">₹1,099</span></div>
+  </div>
+</section>
+
+<section class="reveal" id="prices">
+  <p class="eyebrow" style="text-align:center">Inside · prices</p>
+  <h2 class="sec">The house tariff</h2>
+  <svg class="deco" viewBox="0 0 560 50" aria-hidden="true">
+    <path d="M10 25 h180 M370 25 h180 M280 6 l24 19 -24 19 -24 -19 Z"/>
+  </svg>
+  <div class="ptable">
+    <div class="tr head"><span>Service</span><span>Tariff</span></div>
+    <div class="tr"><span>Midnight cut</span><b>₹649</b></div>
+    <div class="tr"><span>Prohibition shave</span><b>₹549</b></div>
+    <div class="tr"><span>Giggle-water beard</span><b>₹399</b></div>
+    <div class="tr"><span>Last call combo</span><b>₹1,099</b></div>
+    <div class="tr"><span>Young flapper (under 12)</span><b>₹299</b></div>
+  </div>
+</section>
+
+<section class="reveal" id="booking">
+  <p class="eyebrow" style="text-align:center">Inside · booking</p>
+  <h2 class="sec">Reserve a stool</h2>
+  <p class="lead">SCO 12, Sector 26, Chandigarh · Tue–Sun 11 AM – 11 PM · Fri till midnight<br>+91 172 279 8890 — ask for the door, not the shop.</p>
+  <div class="book">
+    <label for="vname">Your alias</label><input id="vname" type="text" placeholder="e.g. Bugsy" maxlength="40">
+    <label for="vservice">Your pleasure</label>
+    <select id="vservice"><option>The Midnight Cut — ₹649</option><option>Prohibition Shave — ₹549</option><option>The Giggle Water — ₹399</option><option>Last Call Combo — ₹1,099</option></select>
+    <label for="vday">Evening</label>
+    <select id="vday"><option>Friday (till midnight)</option><option>Saturday</option><option>Thursday</option><option>Wednesday</option></select>
+    <button class="btn" style="width:100%" onclick="reserve()">Slip the note under the door</button>
+    <div id="bookMsg" aria-live="polite"></div>
+  </div>
+  <div style="text-align:center;margin-top:28px"><a class="btn ghost" href="#services">Back inside</a></div>
+</section>
+
+<footer>The Velvet Razor · Sector 26, Chandigarh · password: "close shave"<br>Open till midnight Fridays. Tell no one. Tell everyone.</footer>
+
+<script>
+let knocks=0;
+function knock(){
+  knocks++;
+  const d=document.getElementById('door');
+  d.style.transform='translateX('+(knocks%2? -6:6)+'px)';
+  setTimeout(()=>d.style.transform='',120);
+  if(knocks===2)document.getElementById('doorMsg').textContent='Someone heard that. Now the password…';
+}
+document.querySelector('.knocker').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();knock()}});
+function tryPw(){
+  const v=document.getElementById('pw').value.trim().toLowerCase();
+  if(v==='close shave'){
+    document.getElementById('door').classList.add('open');
+    document.getElementById('stage').classList.add('entered');
+    setTimeout(()=>document.getElementById('services').scrollIntoView({behavior:'smooth'}),1600);
+  }else{
+    document.getElementById('doorMsg').textContent='Wrong whisper. The door stays shut… for now.';
+  }
+}
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')tryPw()});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+function reserve(){
+  const n=document.getElementById('vname').value.trim()||'friend';
+  document.getElementById('bookMsg').textContent='Noted, '+n+'. Knock twice on the night.';
+}
+</script>
+</body>
+</html>

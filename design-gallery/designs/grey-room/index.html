@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Grey Room — Silver-Hair Studio · Grow It Out Gracefully · Mohali Phase 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Mukta:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--fog:#8e99a3;--mist:#f2f3f5;--char:#3c4148;--silver:#d7dde3;--line:#b9c0c8}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--mist);color:var(--char);font-family:'Mukta',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.7}
+h1,h2,h3,.serif{font-family:'EB Garamond',serif;font-weight:500;line-height:1.2}
+.wrap{width:min(1080px,90%);margin:0 auto}
+section{padding:clamp(70px,10vw,130px) 0;border-top:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:50;background:rgba(242,243,245,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.brand{font-family:'EB Garamond',serif;font-size:1.4rem;color:var(--char);text-decoration:none;letter-spacing:.04em}
+.brand em{font-style:italic;color:var(--fog)}
+nav ul{display:flex;gap:26px;list-style:none}
+nav a.nl{color:var(--char);text-decoration:none;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;font-weight:400}
+nav a.nl:hover{color:var(--fog)}
+.btn{display:inline-block;border:1px solid var(--char);color:var(--char);padding:15px 42px;text-decoration:none;letter-spacing:.22em;text-transform:uppercase;font-size:.8rem;font-weight:500;background:transparent;cursor:pointer;transition:background .3s,color .3s}
+.btn:hover{background:var(--char);color:var(--mist)}
+/* HERO — quiet gallery wall */
+.hero{min-height:90vh;display:flex;align-items:center;border-top:0;background:linear-gradient(180deg,var(--mist),#e9ebee)}
+.hero .wrap{text-align:center}
+.hero .no{font-size:.78rem;letter-spacing:.5em;color:var(--fog);text-transform:uppercase;margin-bottom:26px}
+.hero h1{font-size:clamp(2.8rem,7vw,5.4rem);font-style:italic;margin-bottom:20px}
+.hero h1 b{font-style:normal;font-weight:600}
+.hero p{max-width:52ch;margin:0 auto 36px;font-size:1.12rem;color:#5a6067}
+.foil-frame{width:min(560px,88vw);margin:44px auto 0;border:1px solid var(--line);padding:14px;background:#fff}
+.foil-frame .art{aspect-ratio:16/9;position:relative;overflow:hidden;background:#dfe2e6}
+.foil-frame .art svg{width:100%;height:100%;display:block}
+/* foil shimmer: a silver sheen sweeping on hover */
+.sheen{position:relative;overflow:hidden}
+.sheen::after{content:"";position:absolute;top:-20%;bottom:-20%;left:-70%;width:55%;transform:skewX(-18deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);transition:left .9s ease}
+.sheen:hover::after{left:130%}
+.placard{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--fog);margin-top:12px}
+/* philosophy */
+.philo{max-width:720px;margin:0 auto;text-align:center}
+.philo h2{font-size:clamp(2rem,4.6vw,3.4rem);font-style:italic;margin-bottom:22px}
+.philo p{font-size:1.15rem;color:#5a6067;margin-bottom:16px}
+.drop::first-letter{font-family:'EB Garamond',serif;font-size:3.4em;float:left;line-height:.85;padding-right:10px;color:var(--fog)}
+/* menu */
+.menu{max-width:760px;margin:0 auto}
+.mrow{display:grid;grid-template-columns:1fr auto;gap:8px 24px;padding:26px 0;border-bottom:1px solid var(--line)}
+.mrow h3{font-size:1.6rem}
+.mrow p{grid-column:1;font-size:.98rem;color:#5a6067}
+.mrow .pr{grid-row:1/3;align-self:center;font-family:'EB Garamond',serif;font-size:1.7rem;color:var(--char)}
+/* gallery — museum placards */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.piece{background:#fff;border:1px solid var(--line);padding:12px 12px 0;transition:transform .4s}
+.piece:hover{transform:translateY(-6px)}
+.piece .art{aspect-ratio:3/4;background:#dfe2e6}
+.piece .art svg{width:100%;height:100%;display:block}
+.piece .plq{padding:16px 6px 20px}
+.piece .plq b{font-family:'EB Garamond',serif;font-size:1.2rem;display:block}
+.piece .plq span{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--fog)}
+/* consult */
+.consult{background:var(--char);color:var(--mist);border-top:0}
+.consult h2{font-size:clamp(2rem,4.6vw,3.2rem);font-style:italic;margin-bottom:14px}
+.consult p{color:#c6ccd2;max-width:56ch;margin-bottom:30px}
+.consult .btn{border-color:var(--mist);color:var(--mist)}
+.consult .btn:hover{background:var(--mist);color:var(--char)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:680px;margin-top:28px}
+.full{grid-column:1/-1}
+label{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--silver);display:block;margin-bottom:6px}
+input,select,textarea{background:transparent;border:1px solid #6b7278;color:var(--mist);padding:13px;font-family:'Mukta',sans-serif;font-size:1rem;width:100%}
+input:focus,select:focus,textarea:focus{outline:1px solid var(--silver)}
+select option{color:#222}
+.confirm{display:none;max-width:680px;margin-top:18px;border:1px solid var(--silver);padding:18px;color:var(--mist)}
+footer{border-top:1px solid var(--line);padding:30px;text-align:center;font-size:.85rem;color:var(--fog);letter-spacing:.08em}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:760px){nav ul{display:none}.gal{grid-template-columns:1fr 1fr}form{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="#top">The <em>Grey</em> Room</a>
+<ul><li><a class="nl" href="#philosophy">Philosophy</a></li><li><a class="nl" href="#menu">Menu</a></li><li><a class="nl" href="#gallery">Gallery</a></li><li><a class="nl" href="#consult">Consult</a></li></ul></div></nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="no">Exhibit Nº 01 — Silver-Hair Studio</p>
+    <h1>Grow it out <b>gracefully.</b></h1>
+    <p>The Grey Room is Mohali's only studio devoted to silver — grey blending, silver toners, and grow-out plans that treat grey as an arrival, not a problem. No orange roots. No shame. Just silver, done museum-grade.</p>
+    <a class="btn" href="#consult">Book a Consultation</a>
+    <div class="foil-frame reveal">
+      <div class="art sheen">
+        <svg viewBox="0 0 560 315"><defs><linearGradient id="silv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2f3f5"/><stop offset=".5" stop-color="#8e99a3"/><stop offset="1" stop-color="#d7dde3"/></linearGradient></defs>
+        <rect width="560" height="315" fill="#e4e7ea"/>
+        <g fill="none" stroke="url(#silv)" stroke-width="10" stroke-linecap="round">
+          <path d="M120 280 C 160 180, 200 220, 240 120 S 320 140, 340 60"/>
+          <path d="M180 290 C 210 200, 250 230, 290 130 S 360 150, 380 80"/>
+          <path d="M240 295 C 265 210, 300 240, 335 150 S 400 160, 415 95"/>
+        </g>
+        <g fill="#8e99a3"><circle cx="240" cy="120" r="5"/><circle cx="335" cy="150" r="5"/><circle cx="415" cy="95" r="5"/></g>
+        </svg>
+      </div>
+      <p class="placard">Silver cascade, foil-lighted · Studio study Nº 14</p>
+    </div>
+  </div>
+</header>
+
+<section id="philosophy">
+  <div class="philo reveal">
+    <h2>Silver is not the absence of colour.</h2>
+    <p class="drop">For decades the industry sold you coverage — dye the grey, hide the years. We believe the opposite: grey hair has depth, dimension and light that no tube of dye can imitate. Our work is blending, toning and cutting so your silver reads as intentional.</p>
+    <p>Every plan begins with a strand test and a grow-out map. No two silvers are alike; neither are our formulas.</p>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <h2 class="serif reveal" style="text-align:center;font-size:clamp(2rem,4.6vw,3.2rem);margin-bottom:34px;font-style:italic">The Grey-Blending Menu</h2>
+    <div class="menu reveal">
+      <div class="mrow"><h3>Grey Blending</h3><span class="pr">₹2,799</span><p>Seamless lowlight-and-tone session that erases the line of demarcation. For grow-outs in progress.</p></div>
+      <div class="mrow"><h3>Silver Toner</h3><span class="pr">₹1,499</span><p>Gloss toner that kills yellow and lifts your natural silver to a clean, icy finish.</p></div>
+      <div class="mrow"><h3>The Full Transition</h3><span class="pr">₹6,999</span><p>Three-session grow-out plan with strand tests, cuts and toners mapped to your calendar.</p></div>
+      <div class="mrow"><h3>Silver Maintenance Cut</h3><span class="pr">₹899</span><p>Precision cut shaped for silver texture — grey hair moves differently; we cut for it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <h2 class="serif reveal" style="text-align:center;font-size:clamp(2rem,4.6vw,3.2rem);margin-bottom:8px;font-style:italic">Gallery</h2>
+    <p class="reveal" style="text-align:center;color:#5a6067;margin-bottom:40px">Hover any study — the foil shimmers, as it should.</p>
+    <div class="gal">
+      <div class="piece reveal"><div class="art sheen"><svg viewBox="0 0 300 400"><rect width="300" height="400" fill="#e4e7ea"/><g fill="none" stroke="#8e99a3" stroke-width="9" stroke-linecap="round"><path d="M80 380 C 100 260, 130 280, 150 160 S 190 170, 200 90"/><path d="M140 385 C 155 270, 180 290, 195 175 S 225 180, 232 105"/></g></svg></div><div class="plq"><b>Moonlit Bob</b><span>Silver toner · 2026</span></div></div>
+      <div class="piece reveal"><div class="art sheen"><svg viewBox="0 0 300 400"><rect width="300" height="400" fill="#dfe2e6"/><g fill="none" stroke="#3c4148" stroke-width="8" stroke-linecap="round"><path d="M60 380 C 90 250, 120 300, 150 180 S 200 190, 210 100"/><path d="M120 385 C 145 260, 170 310, 195 190 S 230 200, 238 110"/></g><g fill="none" stroke="#f2f3f5" stroke-width="3" stroke-linecap="round"><path d="M90 370 C 115 260, 140 300, 165 190"/></g></svg></div><div class="plq"><b>Salt &amp; Pepper Melt</b><span>Grey blending · 2026</span></div></div>
+      <div class="piece reveal"><div class="art sheen"><svg viewBox="0 0 300 400"><rect width="300" height="400" fill="#e9ebee"/><g fill="none" stroke="#d7dde3" stroke-width="11" stroke-linecap="round"><path d="M100 380 C 120 240, 150 270, 170 150 S 210 160, 215 80"/><circle cx="170" cy="150" r="6" fill="#8e99a3"/></g></svg></div><div class="plq"><b>Glacier Pixie</b><span>Icy toner · 2025</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="consult" id="consult">
+  <div class="wrap">
+    <p class="reveal" style="font-size:.78rem;letter-spacing:.4em;color:var(--fog);text-transform:uppercase;margin-bottom:16px">Final Exhibit</p>
+    <h2 class="reveal">Begin with a consultation.</h2>
+    <p class="reveal">Silver work is bespoke — we assess your grow-out, test a strand, and quote honestly. Consultations are ₹300, adjusted against your first service. SCO 88, Phase 3B2, Mohali.</p>
+    <a class="btn reveal" href="#cform" id="scrollform">Request a Slot</a>
+    <form id="cform" class="reveal" novalidate>
+      <div><label for="nm">Name</label><input id="nm" required placeholder="Meera Iyer"></div>
+      <div><label for="ph">Phone</label><input id="ph" required inputmode="tel" placeholder="+91 98XXX XXXXX"></div>
+      <div class="full"><label for="sv">Interested in</label><select id="sv"><option>Grey Blending — ₹2,799</option><option>Silver Toner — ₹1,499</option><option>The Full Transition — ₹6,999</option><option>Just the consultation — ₹300</option></select></div>
+      <div class="full"><button class="btn" type="submit">Send Request</button></div>
+    </form>
+    <div class="confirm" id="confirm" role="status"></div>
+  </div>
+</section>
+
+<footer>The Grey Room · SCO 88, Phase 3B2, Mohali · +91 172 505 3344 · Silver, seriously.</footer>
+
+<script>
+// placard slide-ups + slow reveals; sheen is CSS. Slow, unhurried — nothing bouncy.
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+document.getElementById('scrollform').addEventListener('click',function(e){e.preventDefault();document.getElementById('cform').scrollIntoView({behavior:'smooth',block:'center'});});
+document.getElementById('cform').addEventListener('submit',function(e){
+  e.preventDefault();
+  var nm=document.getElementById('nm').value.trim(),ph=document.getElementById('ph').value.trim();
+  var c=document.getElementById('confirm');
+  if(!nm||!ph){c.style.display='block';c.textContent='Kindly share your name and phone so we may respond.';return;}
+  c.style.display='block';
+  c.innerHTML='Thank you, '+nm+'. Your consultation request ('+document.getElementById('sv').value.split(' — ')[0]+') is received. We will call '+ph+' within one working day.';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curl Theory — Curly Hair Studio, Panchkula</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--copper:#7a4a21;--cream:#f7ecdd;--amber:#d9a05b;--bark:#2e2118;--ease:cubic-bezier(.3,.9,.3,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--bark);font-family:'Outfit',sans-serif;overflow-x:hidden;line-height:1.65}
+h1,h2,h3,.dserif{font-family:'DM Serif Display',serif;font-weight:400;line-height:1.1}
+img,svg{max-width:100%;display:block}
+::selection{background:var(--amber);color:var(--bark)}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:clamp(3.5rem,9vh,6rem) clamp(1.2rem,4vw,2.5rem);position:relative}
+
+/* marginalia — science notebook notes in the margins */
+.marg{position:absolute;font-size:.78rem;color:var(--copper);opacity:0;transform:translateY(14px);transition:opacity 1s ease,transform 1s ease;max-width:170px;line-height:1.5;font-style:italic;pointer-events:none}
+.marg.in{opacity:.85;transform:none}
+.marg::before{content:"✎ ";font-style:normal}
+@media(max-width:1100px){.marg{display:none}}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(247,236,221,.92);backdrop-filter:blur(10px);border-bottom:1.5px solid var(--copper)}
+.nav-in{max-width:1140px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:.9rem clamp(1.2rem,4vw,2.5rem)}
+.brand{font-family:'DM Serif Display';font-size:1.4rem;color:var(--copper)}
+.brand i{font-style:italic;color:var(--amber)}
+.nav-in a.cta{font-weight:600;font-size:.9rem;text-decoration:none;background:var(--copper);color:var(--cream);padding:.55rem 1.4rem;border-radius:999px;transition:.25s}
+.nav-in a.cta:hover{background:var(--bark)}
+
+/* hero with morphing blob */
+.hero{min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;align-items:center;max-width:1140px;margin:0 auto;padding:5.5rem clamp(1.2rem,4vw,2.5rem) 3rem}
+.kicker{display:inline-block;border:1.5px solid var(--copper);color:var(--copper);font-weight:600;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;padding:.45rem 1.1rem;border-radius:999px;margin-bottom:1.3rem}
+.hero h1{font-size:clamp(2.7rem,7.5vw,5.2rem)}
+.hero h1 i{color:var(--copper)}
+.hero p.lead{margin:1.3rem 0 2rem;font-size:1.12rem;max-width:44ch;color:#5a4632}
+.btn{display:inline-block;background:var(--copper);color:var(--cream);font-weight:600;text-decoration:none;padding:1rem 2.2rem;border-radius:999px;transition:.25s}
+.btn:hover{background:var(--bark);transform:translateY(-2px)}
+.blobwrap{position:relative;display:grid;place-items:center;min-height:320px}
+.blob{width:min(78%,400px);aspect-ratio:1;background:
+  radial-gradient(circle at 35% 30%,var(--amber),var(--copper) 70%);
+  animation:morph 11s ease-in-out infinite;position:relative;box-shadow:0 30px 60px rgba(122,74,33,.3)}
+@keyframes morph{
+  0%,100%{border-radius:58% 42% 55% 45%/52% 58% 42% 48%}
+  33%{border-radius:45% 55% 42% 58%/60% 42% 58% 40%}
+  66%{border-radius:55% 45% 60% 40%/42% 60% 40% 58%}}
+.blob .face{position:absolute;inset:0;display:grid;place-items:center}
+.blob .face svg{width:56%}
+.curl-tag{position:absolute;background:#fff;border:1.5px solid var(--copper);border-radius:999px;padding:.35rem 1rem;font-size:.8rem;font-weight:600;color:var(--copper);box-shadow:3px 3px 0 rgba(122,74,33,.2)}
+.ct1{top:8%;left:4%;transform:rotate(-6deg)}.ct2{bottom:10%;right:6%;transform:rotate(4deg)}
+
+/* quiz */
+.quiz-sec{background:var(--bark);color:var(--cream);border-radius:28px;margin:0 clamp(.8rem,3vw,2rem);padding:clamp(2.5rem,6vw,4.5rem) clamp(1.4rem,5vw,3.5rem);max-width:1080px;margin-left:auto;margin-right:auto;position:relative;overflow:hidden}
+.quiz-sec::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 85% 10%,rgba(217,160,91,.25),transparent 60%)}
+.qstep{display:none;position:relative;z-index:2;max-width:620px;margin:0 auto;text-align:center}
+.qstep.on{display:block;animation:qin .5s var(--ease)}
+@keyframes qin{from{opacity:0;transform:translateY(18px)}}
+.qstep .qno{font-size:.75rem;letter-spacing:.35em;color:var(--amber);text-transform:uppercase}
+.qstep h3{font-size:clamp(1.6rem,4.5vw,2.4rem);margin:.8rem 0 1.6rem}
+.qopts{display:grid;gap:.8rem}
+.qopts button{background:rgba(247,236,221,.07);border:1.5px solid rgba(217,160,91,.5);color:var(--cream);font-family:'Outfit';font-size:1.02rem;font-weight:500;padding:1rem 1.3rem;border-radius:14px;cursor:pointer;transition:.25s;text-align:left}
+.qopts button:hover{background:var(--amber);color:var(--bark);border-color:var(--amber);transform:translateX(6px)}
+.qresult h3{color:var(--amber)}
+.qresult .rec{background:rgba(217,160,91,.12);border:1.5px solid var(--amber);border-radius:16px;padding:1.6rem;margin:1.4rem 0}
+.qresult .rec .pr{font-family:'DM Serif Display';font-size:2rem;color:var(--cream)}
+.qbar{height:6px;background:rgba(247,236,221,.15);border-radius:99px;margin:0 auto 2rem;max-width:620px;position:relative;z-index:2;overflow:hidden}
+.qbar i{display:block;height:100%;background:var(--amber);width:0;transition:width .5s var(--ease)}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:1.2rem;margin-top:2.2rem}
+.svc{background:#fffdf7;border:1.5px solid rgba(122,74,33,.35);border-radius:20px;padding:1.7rem 1.5rem;position:relative;transition:transform .3s var(--ease)}
+.svc:hover{transform:translateY(-6px) rotate(-.6deg)}
+.svc .ico{width:52px;height:52px;border-radius:50%;background:linear-gradient(140deg,var(--amber),var(--copper));margin-bottom:1rem;display:grid;place-items:center}
+.svc h3{font-size:1.4rem;margin-bottom:.4rem}
+.svc p{font-size:.95rem;color:#5a4632;min-height:3.2em}
+.svc .pr{font-family:'DM Serif Display';font-size:1.7rem;color:var(--copper);margin-top:.7rem}
+.svc a{font-weight:600;font-size:.9rem;color:var(--copper);text-decoration:none;border-bottom:2px solid var(--amber)}
+
+/* stylists */
+.sty{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:1.2rem;margin-top:2.2rem}
+.stylist{background:linear-gradient(160deg,#3d2c1d,#2e2118);color:var(--cream);border-radius:20px;padding:1.8rem 1.6rem;position:relative;overflow:hidden}
+.stylist::after{content:"";position:absolute;top:-40px;right:-40px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(217,160,91,.35),transparent 70%)}
+.stylist .init{width:60px;height:60px;border-radius:50%;background:var(--amber);color:var(--bark);display:grid;place-items:center;font-family:'DM Serif Display';font-size:1.5rem;margin-bottom:1rem}
+.stylist h3{font-size:1.4rem}.stylist .role{color:var(--amber);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.stylist p{font-size:.93rem;color:rgba(247,236,221,.72);margin-top:.7rem}
+
+h2.sec{font-size:clamp(2.1rem,5.5vw,3.4rem);color:var(--copper)}
+.sec-sub{color:#5a4632;max-width:56ch;margin:.7rem 0 0}
+
+/* booking */
+.book-sec{background:linear-gradient(180deg,var(--cream),#efe0c8)}
+form.book{max-width:640px;display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+form.book input,form.book select{font-family:inherit;font-size:1rem;background:#fffdf7;border:1.5px solid rgba(122,74,33,.4);border-radius:12px;padding:.95rem 1rem;width:100%;color:var(--bark)}
+form.book input:focus,form.book select:focus{outline:none;border-color:var(--copper)}
+form.book .full{grid-column:1/-1}
+form.book .btn{border:none;cursor:pointer;text-align:center}
+.ok{display:none;grid-column:1/-1;background:#eef5e6;border:1.5px solid #5a7a3f;border-radius:12px;padding:1rem;font-weight:600;color:#3f5a2b}
+footer{text-align:center;padding:2rem;font-size:.85rem;color:#8a7358}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:880px){.hero{grid-template-columns:1fr}.blobwrap{min-height:280px}}
+@media(max-width:560px){form.book{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1}}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-in">
+  <span class="brand">Curl <i>Theory</i></span>
+  <a class="cta" href="#book">Book</a>
+</div></nav>
+
+<header class="hero">
+  <div>
+    <span class="kicker rv">Curly Hair Studio · Panchkula</span>
+    <h1 class="rv">We speak curl <i>fluently.</i></h1>
+    <p class="lead rv">A studio built only for wavy, curly and coily hair — Deva-style dry cuts, curl-by-curl shaping, and stylists who never reach for the thinning shears.</p>
+    <div class="rv"><a class="btn" href="#quiz">Take the Curl Quiz</a></div>
+  </div>
+  <div class="blobwrap rv" aria-hidden="true">
+    <div class="blob"><div class="face">
+      <svg viewBox="0 0 100 100"><circle cx="35" cy="42" r="5" fill="#2e2118"/><circle cx="65" cy="42" r="5" fill="#2e2118"/><path d="M32 66 Q50 78 68 66" stroke="#2e2118" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M20 30 Q30 14 44 22 M56 22 Q70 14 80 30 M14 48 Q8 60 18 68 M82 68 Q92 60 86 48" stroke="#2e2118" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg>
+    </div></div>
+    <span class="curl-tag ct1">2c · 3a · 3b</span>
+    <span class="curl-tag ct2">no thinning shears, ever</span>
+  </div>
+</header>
+
+<section class="wrap" id="quiz" style="padding-top:1rem">
+  <span class="marg" style="left:-40px;top:120px">fig. 1 — curl types 2a through 4c, as catalogued in-studio</span>
+  <div class="quiz-sec rv">
+    <p style="text-align:center;font-size:.75rem;letter-spacing:.4em;text-transform:uppercase;color:var(--amber);margin-bottom:1.6rem;position:relative;z-index:2">The Curl Quiz · 4 questions</p>
+    <div class="qbar"><i id="qbar"></i></div>
+    <div class="qstep on" data-q="0">
+      <p class="qno">Question 1 / 4</p><h3>How would you describe your curl pattern?</h3>
+      <div class="qopts">
+        <button data-v="wavy">Loose waves — mostly straight with a bend</button>
+        <button data-v="curly">Defined curls — ringlets or S-waves</button>
+        <button data-v="coily">Tight coils — zigzag or springy shrinkage</button>
+      </div>
+    </div>
+    <div class="qstep" data-q="1">
+      <p class="qno">Question 2 / 4</p><h3>What's your biggest frustration?</h3>
+      <div class="qopts">
+        <button data-v="frizz">Frizz by noon, every day</button>
+        <button data-v="shape">My cut grows out into a triangle</button>
+        <button data-v="dry">Dryness no oil seems to fix</button>
+      </div>
+    </div>
+    <div class="qstep" data-q="2">
+      <p class="qno">Question 3 / 4</p><h3>When did you last get a proper curl cut?</h3>
+      <div class="qopts">
+        <button data-v="never">Never — salons always straighten first</button>
+        <button data-v="long">Over a year ago</button>
+        <button data-v="recent">Within the last 6 months</button>
+      </div>
+    </div>
+    <div class="qstep" data-q="3">
+      <p class="qno">Question 4 / 4</p><h3>How much daily effort feels right?</h3>
+      <div class="qopts">
+        <button data-v="low">Minimal — wash and go</button>
+        <button data-v="med">Some — I enjoy a routine</button>
+        <button data-v="high">Maximum — styling is my hobby</button>
+      </div>
+    </div>
+    <div class="qstep qresult" data-q="4">
+      <p class="qno">Your prescription</p><h3 id="qTitle">The Curl Reset</h3>
+      <div class="rec"><p id="qDesc" style="color:rgba(247,236,221,.8)"></p><p class="pr" id="qPrice" style="margin-top:.8rem"></p></div>
+      <a class="btn" href="#book" style="background:var(--amber);color:var(--bark)">Book This Service</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <span class="marg" style="right:-30px;top:90px">note: all cuts performed dry, curl by curl — see "Deva-style method"</span>
+  <h2 class="sec rv">Services, by curl logic.</h2>
+  <p class="sec-sub rv">Priced per service, not per head of hair.</p>
+  <div class="svc-grid">
+    <div class="svc rv"><div class="ico"><svg width="26" height="26" viewBox="0 0 26 26"><path d="M4 20 Q8 8 13 14 T22 8" stroke="#fffdf7" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div><h3>Deva-Style Cut</h3><p>Dry cut, curl by curl, shaped to your spring factor. Includes curl coaching.</p><div class="pr">₹1,299</div><br><a href="#book">Book →</a></div>
+    <div class="svc rv"><div class="ico"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="8" fill="none" stroke="#fffdf7" stroke-width="2.5"/><path d="M13 5 v-3 M13 24 v-3 M5 13 h-3 M24 13 h-3" stroke="#fffdf7" stroke-width="2.5" stroke-linecap="round"/></svg></div><h3>Curl Spa</h3><p>Deep cleanse, protein-moisture balance treatment, diffused finish.</p><div class="pr">₹999</div><br><a href="#book">Book →</a></div>
+    <div class="svc rv"><div class="ico"><svg width="26" height="26" viewBox="0 0 26 26"><path d="M6 20 L13 6 L20 20 Z" fill="none" stroke="#fffdf7" stroke-width="2.5" stroke-linejoin="round"/></svg></div><h3>Color, Curl-Safe</h3><p>Foiling and balayage placed to respect curl clumps. No overlapping bleach.</p><div class="pr">₹2,799</div><br><a href="#book">Book →</a></div>
+    <div class="svc rv"><div class="ico"><svg width="26" height="26" viewBox="0 0 26 26"><path d="M4 13 h18 M13 4 v18" stroke="#fffdf7" stroke-width="2.5" stroke-linecap="round"/></svg></div><h3>First Curl Cut <span style="font-size:.8rem">(kids)</span></h3><p>Gentle first shaping for curl kids, with a take-home routine card.</p><div class="pr">₹699</div><br><a href="#book">Book →</a></div>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:0">
+  <h2 class="sec rv">The curl specialists.</h2>
+  <div class="sty">
+    <div class="stylist rv"><div class="init">DN</div><h3>Divya Nair</h3><p class="role">Founder · 3b curls herself</p><p>Trained in curl-by-curl cutting; cut 2,000+ curly heads. Believes the diffuser is a personality trait.</p></div>
+    <div class="stylist rv"><div class="init">AR</div><h3>Armaan Rathi</h3><p class="role">Color specialist</p><p>Places color so curls keep their clump pattern. No straightening before foils — ever.</p></div>
+    <div class="stylist rv"><div class="init">SK</div><h3>Simran Kaur</h3><p class="role">Curl coach</p><p>Runs the 30-minute curl routine sessions. Teaches plopping, praying hands and patience.</p></div>
+  </div>
+</section>
+
+<section class="wrap book-sec" id="book">
+  <h2 class="sec rv">Book your chair.</h2>
+  <p class="sec-sub rv">Curl Theory · SCO 45, Sector 8, Panchkula · Wed–Mon, 10 AM – 7 PM</p>
+  <form class="book rv" id="bookForm">
+    <input type="text" placeholder="Your name" required>
+    <input type="tel" placeholder="Phone" pattern="[0-9+ ]{10,15}" required>
+    <select required><option value="">Service…</option><option>Deva-Style Cut — ₹1,299</option><option>Curl Spa — ₹999</option><option>Color, Curl-Safe — ₹2,799</option><option>First Curl Cut — ₹699</option></select>
+    <select required><option value="">Curl type…</option><option>Wavy (2a–2c)</option><option>Curly (3a–3c)</option><option>Coily (4a–4c)</option><option>Not sure — help me</option></select>
+    <button class="btn full" type="submit">Request Booking</button>
+    <p class="ok" id="bookOk">Done! We'll call to confirm — and please arrive with your natural texture, no straightening.</p>
+  </form>
+</section>
+
+<footer>CURL THEORY · SCO 45, Sector 8, Panchkula · we speak curl fluently</footer>
+
+<script>
+// reveals + marginalia
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv,.marg').forEach(el=>io.observe(el));
+// blob morph responds to scroll (deterministic mapping)
+const blob=document.querySelector('.blob');
+addEventListener('scroll',()=>{const p=Math.min(scrollY/(innerHeight*2),1);
+  blob.style.transform=`scale(${(1+p*.12).toFixed(3)}) rotate(${(p*14).toFixed(1)}deg)`},{passive:true});
+// quiz
+const steps=[...document.querySelectorAll('.qstep')],bar=document.getElementById('qbar');
+let qi=0;const ans={};
+const recs={
+  wavy:{t:'The Wave Definition',d:'Deva-style cut + curl spa: we\'ll teach your waves to clump instead of frizz.',p:'₹1,299 + ₹999'},
+  curly:{t:'The Curl Reset',d:'Full curl-by-curl reshape with protein-moisture rebalance. The triangle ends here.',p:'₹1,299 + ₹999'},
+  coily:{t:'The Coil Sanctuary',d:'Gentle dry shaping + intensive moisture therapy, stretched finish, zero heat damage.',p:'₹1,499 + ₹1,199'}
+};
+document.querySelectorAll('.qopts button').forEach(b=>b.addEventListener('click',()=>{
+  ans['q'+qi]=b.dataset.v;
+  steps[qi].classList.remove('on');qi++;
+  bar.style.width=(qi/4*100)+'%';
+  if(qi===4){const r=recs[ans.q0]||recs.curly;
+    document.getElementById('qTitle').textContent=r.t;
+    document.getElementById('qDesc').textContent=r.d;
+    document.getElementById('qPrice').textContent=r.p;}
+  steps[qi].classList.add('on');
+}));
+document.getElementById('bookForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('bookOk').style.display='block';});
+</script>
+</body>
+</html>
