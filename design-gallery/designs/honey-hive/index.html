@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Honey &amp; Hive — Stripless Waxing Studio · Smooth as Honey · Zirakpur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--honey:#e8a93d;--cream:#fff6e6;--amber:#7a4a12;--ink:#2e2418;--wax:#f6c453}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'Hind',sans-serif;overflow-x:hidden;line-height:1.65}
+h1,h2,h3,.hand{font-family:'Gochi Hand',cursive;font-weight:400;line-height:1.15}
+.wrap{width:min(1120px,92%);margin:0 auto}
+section{padding:clamp(56px,8vw,100px) 0}
+nav{position:sticky;top:0;z-index:50;background:var(--ink)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+.brand{font-family:'Gochi Hand',cursive;font-size:1.7rem;color:var(--honey);text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none}
+nav a{color:var(--cream);text-decoration:none;font-size:.85rem;font-weight:600;letter-spacing:.06em}
+nav a:hover{color:var(--honey)}
+.btn{display:inline-block;background:var(--honey);color:var(--ink);font-weight:700;padding:15px 40px;border-radius:999px;text-decoration:none;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);cursor:pointer;transition:transform .15s,box-shadow .15s;font-size:1.02rem}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+/* HERO */
+.hero{text-align:center;padding:clamp(70px,10vw,130px) 0 40px;position:relative}
+.hero .hex-hero{width:170px;height:190px;margin:0 auto 24px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--honey);display:flex;align-items:center;justify-content:center;border:0;position:relative;animation:bob 4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.hero .hex-hero svg{width:60%}
+.hero h1{font-size:clamp(2.8rem,7vw,5.2rem);color:var(--amber);margin-bottom:14px}
+.hero h1 span{color:var(--honey)}
+.hero p{max-width:54ch;margin:0 auto 30px;font-size:1.1rem;font-weight:500}
+/* honeycomb menu — hex cells fill on scroll */
+.hive{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:960px;margin:0 auto}
+.hex{clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:#f3e3bd;aspect-ratio:.92; display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px;transition:background .6s,transform .3s;cursor:default}
+.hex b{font-family:'Gochi Hand',cursive;font-size:1.35rem;color:var(--amber);line-height:1.2}
+.hex span{font-weight:700;font-size:1.05rem;color:var(--ink);margin-top:6px}
+.hex small{font-size:.75rem;color:#8a6a35;letter-spacing:.06em}
+.hex.filled{background:var(--honey)}
+.hex:hover{transform:scale(1.05)}
+.hex:nth-child(even){transform:translateY(14px)}
+.hex:nth-child(even):hover{transform:translateY(14px) scale(1.05)}
+.sec-h{font-size:clamp(2.2rem,5vw,3.6rem);color:var(--amber);text-align:center;margin-bottom:10px}
+.sec-s{text-align:center;font-weight:500;color:#6b5433;max-width:58ch;margin:0 auto 40px}
+/* dripping honey divider */
+.drip{display:block;width:100%;height:56px;margin:-10px 0}
+/* hygiene promise */
+.promise{background:var(--ink);color:var(--cream);border-radius:26px;padding:clamp(30px,5vw,56px);display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.promise h2{color:var(--honey);font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:14px}
+.promise ul{list-style:none;margin-top:6px}
+.promise li{padding:11px 0;border-bottom:1px dashed rgba(232,169,61,.35);font-weight:500}
+.promise li::before{content:"";display:inline-block;width:14px;height:16px;margin-right:12px;background:var(--honey);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);vertical-align:-2px}
+.promise .big{font-family:'Gochi Hand',cursive;font-size:clamp(3rem,7vw,4.6rem);color:var(--honey);text-align:center;line-height:1.1}
+/* prices */
+.ptable{max-width:680px;margin:0 auto}
+.prow{display:flex;justify-content:space-between;padding:15px 6px;border-bottom:2px dotted var(--honey);font-weight:600;font-size:1.05rem}
+.prow .pr{color:var(--amber);font-weight:700}
+/* booking */
+.book{background:var(--honey);border-top:4px solid var(--ink);border-bottom:4px solid var(--ink)}
+.book .sec-h{color:var(--ink)}.book .sec-s{color:#5c3f10}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:700px;margin:0 auto}
+.full{grid-column:1/-1}
+label{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:6px}
+input,select{background:var(--cream);border:3px solid var(--ink);border-radius:12px;padding:13px;font-family:'Hind',sans-serif;font-size:1rem;width:100%}
+.confirm{display:none;max-width:700px;margin:18px auto 0;background:var(--cream);border:3px solid var(--ink);border-radius:12px;padding:20px;font-weight:500}
+footer{background:var(--ink);color:var(--cream);text-align:center;padding:28px;font-size:.9rem}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:760px){nav ul{display:none}.hive{grid-template-columns:repeat(2,1fr)}.promise{grid-template-columns:1fr}form{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="#top">Honey &amp; Hive</a>
+<ul><li><a href="#menu">Wax Menu</a></li><li><a href="#promise">Hygiene</a></li><li><a href="#prices">Prices</a></li><li><a href="#book">Book</a></li></ul></div></nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hex-hero"><svg viewBox="0 0 100 100"><path d="M50 12 C 62 26, 78 30, 74 48 C 70 64, 52 66, 44 56 C 36 46, 40 30, 50 12 Z" fill="#2e2418"/><ellipse cx="50" cy="74" rx="16" ry="8" fill="#2e2418" opacity=".45"/></svg></div>
+    <h1>Smooth as <span>honey,</span><br>sweet as the hive.</h1>
+    <p>Honey &amp; Hive is Zirakpur's stripless-wax-only studio. Warm honey wax, no strips, no double-dips — just skin that feels like it was never anything else.</p>
+    <a class="btn" href="#book">Book a Wax</a>
+  </div>
+</header>
+
+<svg class="drip" viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 H1200 V18 q-30 26 -60 0 q-26 34 -52 4 q-30 30 -60 2 q-28 36 -56 2 q-30 30 -60 4 q-26 32 -52 2 q-30 28 -60 2 q-28 34 -56 4 q-30 28 -60 2 q-28 32 -56 2 q-30 30 -60 4 q-28 30 -56 2 q-30 26 -60 0 q-30 28 -60 2 q-28 30 -56 0 q-26 26 -52 0 q-28 28 -56 0 q-30 24 -60 0 V0 Z" fill="#e8a93d"/></svg>
+
+<section id="menu">
+  <div class="wrap">
+    <h2 class="sec-h reveal">The Wax Menu</h2>
+    <p class="sec-s reveal">Every cell fills with honey as you scroll — tap nothing, just watch. All services use stripless honey wax.</p>
+    <div class="hive" id="hive">
+      <div class="hex"><b>Full Arms</b><span>₹499</span><small>30 MIN</small></div>
+      <div class="hex"><b>Full Legs</b><span>₹799</span><small>45 MIN</small></div>
+      <div class="hex"><b>Brazilian</b><span>₹1,299</span><small>40 MIN</small></div>
+      <div class="hex"><b>Underarms</b><span>₹249</span><small>15 MIN</small></div>
+      <div class="hex"><b>Full Back</b><span>₹899</span><small>40 MIN</small></div>
+      <div class="hex"><b>Bikini Line</b><span>₹649</span><small>25 MIN</small></div>
+      <div class="hex"><b>Full Body</b><span>₹2,499</span><small>90 MIN</small></div>
+      <div class="hex"><b>Face De-Fuzz</b><span>₹399</span><small>20 MIN</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="promise" style="padding-top:0">
+  <div class="wrap">
+    <div class="promise reveal">
+      <div>
+        <h2>The Hygiene Promise</h2>
+        <p style="color:#e8d3a3">Waxing is intimate. We treat it that way — every single appointment.</p>
+        <ul>
+          <li>Fresh wax pot per client — never double-dipped, ever</li>
+          <li>Hospital-grade sterilised tools, sealed before you</li>
+          <li>Disposable bed linen, changed between every guest</li>
+          <li>Pre- and post-wax soothing with aloe &amp; calendula</li>
+        </ul>
+      </div>
+      <div class="big">100%<br>stripless.<br>0%<br>shortcuts.</div>
+    </div>
+  </div>
+</section>
+
+<section id="prices" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="sec-h reveal">Straight Prices</h2>
+    <p class="sec-s reveal">No packages to decode, no "starting from" games.</p>
+    <div class="ptable reveal">
+      <div class="prow"><span>Full Arms</span><span class="pr">₹499</span></div>
+      <div class="prow"><span>Full Legs</span><span class="pr">₹799</span></div>
+      <div class="prow"><span>Brazilian</span><span class="pr">₹1,299</span></div>
+      <div class="prow"><span>Underarms</span><span class="pr">₹249</span></div>
+      <div class="prow"><span>Full Body (head-to-toe)</span><span class="pr">₹2,499</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <h2 class="sec-h reveal">Get in the Hive</h2>
+    <p class="sec-s reveal">Shop 12, VIP Road, Zirakpur · 10 AM – 8 PM · Ladies-only studio.</p>
+    <form id="bform" class="reveal" novalidate>
+      <div><label for="nm">Name</label><input id="nm" required placeholder="Pooja Verma"></div>
+      <div><label for="ph">Phone</label><input id="ph" required inputmode="tel" placeholder="+91 98XXX XXXXX"></div>
+      <div><label for="dt">Date</label><input id="dt" type="date" required></div>
+      <div><label for="sv">Service</label><select id="sv"><option>Full Arms — ₹499</option><option>Full Legs — ₹799</option><option>Brazilian — ₹1,299</option><option>Full Body — ₹2,499</option></select></div>
+      <div class="full"><button class="btn" type="submit" style="width:100%;box-shadow:4px 4px 0 #2e2418">Book My Slot</button></div>
+    </form>
+    <div class="confirm" id="confirm" role="status"></div>
+  </div>
+</section>
+
+<footer>Honey &amp; Hive · Shop 12, VIP Road, Zirakpur · +91 98765 43210 · Stay smooth, stay sweet.</footer>
+
+<script>
+// honeycomb cells fill on scroll (staggered by index)
+var cells=document.querySelectorAll('#hive .hex');
+var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('filled');cio.unobserve(e.target);}})},{threshold:.4});
+cells.forEach(function(c){cio.observe(c);});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+document.getElementById('bform').addEventListener('submit',function(e){
+  e.preventDefault();
+  var nm=document.getElementById('nm').value.trim(),ph=document.getElementById('ph').value.trim(),dt=document.getElementById('dt').value;
+  var c=document.getElementById('confirm');
+  if(!nm||!ph||!dt){c.style.display='block';c.textContent='We need your name, phone and date to hold your slot.';return;}
+  c.style.display='block';
+  c.innerHTML='<b>Sweet, '+nm+'!</b> Your '+document.getElementById('sv').value.split(' — ')[0]+' slot on '+dt+' is requested. We will WhatsApp '+ph+' to confirm.';
+});
+</script>
+</body>
+</html>
